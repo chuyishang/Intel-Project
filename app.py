@@ -37,7 +37,6 @@ controls = dbc.Card(
                     options=[
                        "TSMC", "SMIC", "UMC", "Global Foundries"
                     ],
-                    value="TSMC",
                 ),
             ]
         ),
@@ -47,7 +46,6 @@ controls = dbc.Card(
                 dcc.Dropdown(
                     id="metric-dropdown",
                     options = ["Revenue by Technology", "Revenue by Segment", "Revenue by Geography", "CapEx", "Inventory"],
-                    value="Revenue by Segment"
                 ),
             ]
         ),
@@ -79,13 +77,11 @@ controls = dbc.Card(
                 dbc.Label("Starting Year", html_for="start-dropdown"),
                 dcc.Dropdown(
                     options= np.arange(2001, 2021),
-                    value = 2001,
                     id = "start-dropdown"
                 ),
                 dbc.Label("Starting Quarter", html_for="startq-dropdown"),
                 dcc.Dropdown(
                     options= ["1", "2", "3", "4"],
-                    value = "1",
                     id = "startq-dropdown"
                 )
             ],
@@ -97,20 +93,25 @@ controls = dbc.Card(
                 dbc.Label("Ending Year", html_for="end-dropdown"),
                 dcc.Dropdown(
                     options= np.arange(2001, 2021),
-                    value = 2001,
                     id = "end-dropdown"
                 ),
                 dbc.Label("Ending Quarter", html_for="endq-dropdown"),
                 dcc.Dropdown(
                     options = ["1", "2", "3", "4"],
-                    value = "1",
                     id = "endq-dropdown"
                 )
                 
             ],
             className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
-        )
-        
+        ),
+
+        # html.Div(
+        #     [
+        #         html.Button("Download Graph", id= "btn-graph"),
+        #         dcc.Download(id="download-graph-png"),
+                
+        #     ]
+        # ),
     ],
     body=True,
 )
@@ -129,17 +130,20 @@ app.layout = dbc.Container(
     ],
     fluid=True,
 )
+
+#viz call back options
 @app.callback(
     Output("viz-dropdown","options"),
     Output("viz-dropdown","value"),
     Input("metric-dropdown","value")
 )
 def visualization_options(metric):
-    if metric == "CapEx" or metric == "Inventory":
-        return [],None
-    else:
+    if metric != "CapEx" and metric != "Inventory" and metric != None:
         return ["Comparison","Individual"],"Comparison"
+    else:
+        return [],None
 
+#submetric call back
 @app.callback(
     Output("submetric-dropdown","options"),
     Input("company-dropdown","value"),
@@ -147,13 +151,14 @@ def visualization_options(metric):
     Input("viz-dropdown","value")
 )
 def set_submetric(company,metric,viz):
-    if viz == "Comparison":
+    if viz == "Comparison" or viz == None:
         return []
     else:
         local_df = company_df[company] if company != "TSMC" else global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_dict[metric])]
         return local_df["sub-metric"].dropna().unique()
 
+#graph call back
 @app.callback(
     Output("graph", "figure"),
     [
@@ -170,6 +175,25 @@ def set_submetric(company,metric,viz):
 def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_year, end_quarter):
     if metric == "CapEx" or metric == "Inventory":
         submetric = None
+    graph = go.Figure()
+    graph.update_layout(
+        xaxis =  { "visible": False },
+        yaxis = { "visible": False },
+        annotations = [
+            {   
+                "text": "Data does not exist for selected time span. Choose different range",
+                "xref": "paper",
+                "yref": "paper",
+                "showarrow": False,
+                "font": {
+                    "size": 16
+                }
+            }
+        ]
+    )
+    if start_year == None or start_quarter == None or end_year == None or end_quarter == None:
+        return graph
+
     local_df = company_df[company] if company != "TSMC" else global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_dict[metric])]
     if (submetric != None or submetric != "NaN") and viz == "Individual":
@@ -181,27 +205,12 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     start_q = (start_quarter + "Q" + str(start_year)[-2:]) if company == "TSMC" else (str(start_year)[-2:] + "Q" + start_quarter)
     end_q = (end_quarter + "Q" + str(end_year)[-2:]) if company == "TSMC" else (str(end_year)[-2:] + "Q" + end_quarter)
 
-    try:
+    try:  
         index_start = local_df["quarter"].tolist().index(start_q)
         index_end = len(local_df["quarter"].tolist()) - local_df["quarter"].tolist()[::-1].index(end_q) - 1
     except ValueError:
-        graph = go.Figure()
-        graph.update_layout(
-            xaxis =  { "visible": False },
-            yaxis = { "visible": False },
-            annotations = [
-                {   
-                    "text": "Data does not exist for selected time span. Choose different range",
-                    "xref": "paper",
-                    "yref": "paper",
-                    "showarrow": False,
-                    "font": {
-                        "size": 16
-                    }
-                }
-            ]
-        )
         return graph
+
     filtered_data = local_df.iloc[index_start:index_end + 1]
     print(filtered_data)
     #parse data for $ or %
@@ -213,16 +222,40 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     filtered_data.loc[:,("value")] = cleaned_column
     
     if viz == "Comparison":
-        graph = px.bar(filtered_data, x="quarter", y="value", color="sub-metric", title=f'{metric} for {company}')
-    elif submetric != None or submetric != "NaN":
-        graph = px.line(filtered_data, x="quarter", y="value", title=f'{metric}: {submetric} for {company}', markers=True)
+        graph = px.bar(filtered_data, x="quarter", y="value",
+        color="sub-metric",
+        labels={
+                "quarter": "Quarters",
+                "value": "Percentage %",
+            },
+        title=f'{metric} for {company}')
+    elif submetric == None or submetric == "NaN":
+        graph = px.line(filtered_data, x="quarter", y="value",
+        labels={
+        "quarter": "Quarters",
+        "value": "US$ Dollars (Millions)",
+            },
+        title=f'{metric} for {company}', markers=True)
     else:
-        graph = px.line(filtered_data, x="quarter", y="value", title=f'{metric} for {company}', markers=True)
+        graph = px.line(filtered_data, x="quarter", y="value",
+        labels={
+        "quarter": "Quarters",
+        "value": "US$ Dollars (Millions)",
+            },
+        title=f'{metric}: {submetric} for {company}', markers=True)
     #scatter_plot = px.scatter(filtered_data, x="Quarters", y=y, title=f'{y} for TSMC', markers=True, trendline="ols")
     #results = px.get_trendline_results(line)
     return graph
 
-
+# @app.callback(
+#     Output("download-graph-png","data"),
+#     Input("btn-graph","n_clicks"),
+#     Input("graph","figure"),
+#     prevent_initial_call=True,
+# )
+# def export_graph(n_clicks,graph):
+#     graph = dcc.Graph(figure=graph)
+#     return dcc.send_bytes(graph,"data_vis")
 
 if __name__ == "__main__":
     app.run_server(debug=True)
