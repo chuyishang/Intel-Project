@@ -1,0 +1,6637 @@
+[
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "inv",
+        "value": "73.88"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "capex",
+        "value": "2.05"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "67%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "7%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_geo",
+        "sub-metric": "China",
+        "value": "13%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_geo",
+        "sub-metric": "EMEA",
+        "value": "7%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "10nm",
+        "value": "25%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "16/20nm",
+        "value": "20%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "28nm",
+        "value": "18%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "40/45nm",
+        "value": "10%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "65nm",
+        "value": "9%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "90nm",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "0.11/0.13um",
+        "value": "2%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "0.15/0.18um",
+        "value": "9%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_seg",
+        "sub-metric": "0.25um and above",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_tech",
+        "sub-metric": "Computer",
+        "value": "11%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_tech",
+        "sub-metric": "Communication",
+        "value": "62%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_tech",
+        "sub-metric": "Consumer",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q17",
+        "metric": "rev_tech",
+        "sub-metric": "Industrial/Standard",
+        "value": "22%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "inv",
+        "value": "82.98"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "capex",
+        "value": "3.14"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "59%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_geo",
+        "sub-metric": "China",
+        "value": "22%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_geo",
+        "sub-metric": "EMEA",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_seg",
+        "sub-metric": "Smartphone",
+        "value": "53%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_seg",
+        "sub-metric": "High Performance Computing",
+        "value": "29%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_seg",
+        "sub-metric": "Internet of Things",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_seg",
+        "sub-metric": "Automotive",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_seg",
+        "sub-metric": "Digital Consumer Electronics",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "7nm",
+        "value": "35%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "10nm",
+        "value": "1%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "16nm",
+        "value": "20%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "20nm",
+        "value": "1%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "28nm",
+        "value": "13%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "40/45nm",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "65nm",
+        "value": "7%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "90nm",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13um",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18um",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q19",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um and above",
+        "value": "1%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "inv",
+        "value": "85.79"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "capex",
+        "value": "6.39"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "58%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_geo",
+        "sub-metric": "China",
+        "value": "21%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "10%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_geo",
+        "sub-metric": "EMEA",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Smartphone",
+        "value": "47%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_seg",
+        "sub-metric": "High Performance Computing",
+        "value": "33%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Internet of Things",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Automotive",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Digital Consumer Electronics",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "7nm",
+        "value": "36%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "10nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "16nm",
+        "value": "18%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "20nm",
+        "value": "1%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "28nm",
+        "value": "14%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "40/45nm",
+        "value": "9%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "65nm",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "90nm",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13um",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18um",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q20",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um and above",
+        "value": "2%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "inv",
+        "value": "85.79"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "capex",
+        "value": "6.39"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "58%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_geo",
+        "sub-metric": "China",
+        "value": "21%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "10%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_geo",
+        "sub-metric": "EMEA",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Smartphone",
+        "value": "47%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_seg",
+        "sub-metric": "High Performance Computing",
+        "value": "33%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Internet of Things",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Automotive",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Digital Consumer Electronics",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "7nm",
+        "value": "36%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "10nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "16nm",
+        "value": "18%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "20nm",
+        "value": "1%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "28nm",
+        "value": "14%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "40/45nm",
+        "value": "9%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "65nm",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "90nm",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13um",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18um",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q20",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um and above",
+        "value": "2%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "inv",
+        "value": "154.57"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "capex",
+        "value": "3.19"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "67%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "17%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_geo",
+        "sub-metric": "China",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_geo",
+        "sub-metric": "EMEA",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Smartphone",
+        "value": "45%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_seg",
+        "sub-metric": "High Performance Computing",
+        "value": "35%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Internet of Things",
+        "value": "9%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Automotive",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Digital Consumer Electronics",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "5nm",
+        "value": "14%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "7nm",
+        "value": "35%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "10nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "16nm",
+        "value": "14%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "20nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "28nm",
+        "value": "11%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "40/45nm",
+        "value": "7%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "65nm",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "90nm",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13um",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18um",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "1Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um and above",
+        "value": "2%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "inv",
+        "value": "170.44"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "capex",
+        "value": "8.84"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "64%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "15%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_geo",
+        "sub-metric": "China",
+        "value": "11%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_geo",
+        "sub-metric": "EMEA",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Smartphone",
+        "value": "42%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_seg",
+        "sub-metric": "High Performance Computing",
+        "value": "39%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Internet of Things",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Automotive",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Digital Consumer Electronics",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "5nm",
+        "value": "18%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "7nm",
+        "value": "31%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "10nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "16nm",
+        "value": "14%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "20nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "28nm",
+        "value": "11%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "40/45nm",
+        "value": "7%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "65nm",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "90nm",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13um",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18um",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "2Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um and above",
+        "value": "2%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "inv",
+        "value": "182.23"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "capex",
+        "value": "5.97"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "65%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "13%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_geo",
+        "sub-metric": "China",
+        "value": "11%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_geo",
+        "sub-metric": "EMEA",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "5%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Smartphone",
+        "value": "44%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_seg",
+        "sub-metric": "High Performance Computing",
+        "value": "37%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Internet of Things",
+        "value": "9%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Automotive",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Digital Consumer Electronics",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "5nm",
+        "value": "18%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "7nm",
+        "value": "34%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "10nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "16nm",
+        "value": "13%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "20nm",
+        "value": "0%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "28nm",
+        "value": "10%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "40/45nm",
+        "value": "8%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "65nm",
+        "value": "4%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "90nm",
+        "value": "2%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13um",
+        "value": "3%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18um",
+        "value": "6%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "3Q21",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um and above",
+        "value": "2%"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q21",
+        "metric": "inv",
+        "value": "193.10"
+    },
+    {
+        "company": "TSMC",
+        "quarter": "4Q21",
+        "metric": "capex",
+        "value": "6.77"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "inv",
+        "value": "85,479"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "capex",
+        "value": "$1,950 million"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Computer25.1%26.7%33.3%49.8%71.6%\rCommunications56.0%55.8%48.2%32.5%14.5%\rConsumer12.7%13.5%11.7%11.3%9.7%\rOthers6.2%4.0%6.8%6.4%4.2%",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "By Technology (logic, memory & copper",
+        "value": "1Q04"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "interconnect only)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "0.13μm\r10.1%10.4%15.0%13.5%4.6%\r0.15μm\r15.7%17.5%10.0%0.0%0.0%\r0.18μm\r44.4%34.7%19.7%10.5%2.7%\r0.25μm\r8.3%10.6%33.7%57.4%82.5%\r0.35μm\r21.5%26.8%21.6%18.6%10.2%",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "By Logic Only(1)",
+        "value": "1Q04"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "0.13μm\r0.0%0.0%0.0%0.0%0.0%\r0.15μm\r4.4%1.9%0.3%0.1%0.0%\r0.18μm\r58.5%52.9%40.3%33.3%13.7%\r0.25μm\r5.0%3.4%15.1%7.6%35.5%\r0.35μm\r32.1%41.8%44.3%59.0%50.8%",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Fabless semiconductor companies36.6%30.8%31.1%38.2%48.9%\rIntegrated device manufacturers (IDM)54.0%62.7%49.2%29.9%8.2%\rSystem companies and Others9.4%6.5%19.7%31.9%42.9%",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "04Q1",
+        "metric": "rev_tech",
+        "sub-metric": "North America41.4%36.2%38.8%39.6%26.6%\rTaiwan13.3%9.5%24.8%42.1%67.2%\rSouth Korea12.2%17.7%11.4%10.4%0.7%\rJapan16.3%15.5%13.3%4.2%2.7%\rEurope15.1%19.7%9.7%1.6%0.1%\rAsia Pacific (ex. Japan, S. Korea and Taiwan)1.7%1.4%2.0%2.1%2.7%",
+        "value": NaN
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "39%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "28%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "49%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "38%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "58%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "53%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "37%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm and below",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "51%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "35%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "44%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "32%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "31%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "48%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "41%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "50%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "30%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "32%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "57%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "56%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "63%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "39%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "28%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "38%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "49%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "32%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "04Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "44%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "48%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "49%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "05Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "51%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "35%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "60%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "27%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "53%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "37%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "06Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "49%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15um<x<=0.18um",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.25um",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25um<x<=0.35um",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "51%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "37%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "27%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "07Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "50%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "35%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "60%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "32%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "57%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "31%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "08Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "49%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "41%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm and below",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "51%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm and below",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "09Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "53%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "30%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "30%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "10Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "49%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "39%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "31%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "48%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "34%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "41%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "11Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "50%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "41%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "40%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "12Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "31%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "44%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "34%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "41%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm and below",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm <x<=28nm",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "31%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "44%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "14Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "46%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "41%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "25%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "37%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "15Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "49%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "52%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "27%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "48%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm and below",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "42%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "4%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "17%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "28%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "47%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "43%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "45%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "28%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "37%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "51%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "34%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "52%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "38%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "51%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "1%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "15%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "31%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "59%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "24%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "33%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "59%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "26%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "30%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "55%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "31%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "55%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "16%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "30%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "57%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "14%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "23%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "10%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "29%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "61%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "5%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "63%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "9%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "11%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "2%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "22%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "65%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "21%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_geo",
+        "sub-metric": "ASIAPAC",
+        "value": "66%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Europe",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Japan",
+        "value": "6%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm and below",
+        "value": "0%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14nm<x<=28nm",
+        "value": "20%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28nm<x<=40nm",
+        "value": "18%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40nm<x<=65nm",
+        "value": "19%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "65nm<x<=90nm",
+        "value": "8%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90nm<x<=0.13um",
+        "value": "12%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13um<x<=0.18um",
+        "value": "13%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.18um<x<=0.35um",
+        "value": "7%"
+    },
+    {
+        "company": "UMC",
+        "quarter": "21Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.5um and above",
+        "value": "3%"
+    },
+    {
+        "company": "Global Foundries",
+        "quarter": "21Q3",
+        "metric": "capex",
+        "value": "(649)"
+    },
+    {
+        "company": "Global Foundries",
+        "quarter": "21Q3",
+        "metric": "inv",
+        "value": "1,121"
+    },
+    {
+        "company": "Global Foundries",
+        "quarter": "21Q4",
+        "metric": "capex",
+        "value": "($392)"
+    },
+    {
+        "company": "Global Foundries",
+        "quarter": "21Q4",
+        "metric": "inv",
+        "value": "1,078"
+    }
+]
