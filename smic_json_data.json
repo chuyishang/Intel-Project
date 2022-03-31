@@ -1,0 +1,2767 @@
+[
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "inv",
+        "value": "262,242"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "capex",
+        "value": "$130.3"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "1.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "46.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "43.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "8.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "55.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(2)China",
+        "value": "35.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(3)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "9.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": "!"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "interconnect only)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40/45!nm",
+        "value": "0.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "55/65!nm",
+        "value": "34.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90!nm",
+        "value": "9.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.13 μm",
+        "value": "11.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18!μm",
+        "value": "37.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "12Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35μm",
+        "value": "5.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "inv",
+        "value": "286,251"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "capex",
+        "value": "$114.3"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "1.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "39.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "48.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "10.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "48.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": "40.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "11.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "16.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "21.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "3.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.13 μm",
+        "value": "12.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "41.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "13Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "5.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "inv",
+        "value": "365,332"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "capex",
+        "value": "$367.6"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "4.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "49.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "37.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "8.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "32.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": "51.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "16.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "15.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "25.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "4.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.13 μm",
+        "value": "10.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "39.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "15Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "inv",
+        "value": "464,216"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "capex",
+        "value": "$480.6"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "3.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "44.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "37.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "14.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "33.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": "47.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "19.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "3.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "23.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "19.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "14.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "34.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "16Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "2.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "inv",
+        "value": "625,283"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "capex",
+        "value": "$451.1"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "5.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "45.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "37.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "8.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "3.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "41.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": "45.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "12.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "8.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "20.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "20.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "8.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "37.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "inv",
+        "value": "622,679"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "capex",
+        "value": "$498.7"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "6.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "42.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "37.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "8.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "4.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "38.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": "51.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "10.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "11.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "23.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "16.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "6.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "37.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "17Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "inv",
+        "value": "699,820"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "capex",
+        "value": "$322.2"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "inv",
+        "value": "697,021"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "capex",
+        "value": "$558.7"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "(3)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "inv",
+        "value": "697,964"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "capex",
+        "value": "$527.8"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "7.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "46.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "32.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "7.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "6.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "33.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": "57.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(3)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "9.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "7.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "18.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "21.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "8.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "39.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "inv",
+        "value": "593,009"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "capex",
+        "value": "$404.8"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "6.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "44.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "32.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "8.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "8.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": "31.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": "57.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(3)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "10.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "5.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "20.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "23.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "7.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "38.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "18Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "inv",
+        "value": "661,633"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "capex",
+        "value": "$439.6"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "(4)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_seg",
+        "sub-metric": "North America",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_seg",
+        "sub-metric": "China",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_seg",
+        "sub-metric": "(3)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "inv",
+        "value": "647,154"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "capex",
+        "value": "$908.1"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "(3)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_seg",
+        "sub-metric": "United States",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Mainland China and Hong Kong",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "inv",
+        "value": "645,821"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "capex",
+        "value": "$189.7"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "5.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "46.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "34.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "4.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "8.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_seg",
+        "sub-metric": "United States",
+        "value": "24.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Mainland China and Hong Kong",
+        "value": "60.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "14.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "4.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "18.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "29.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "6.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "35.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "4.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "inv",
+        "value": "628,885"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "capex",
+        "value": "$491.9"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "5.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "44.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "38.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "3.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "8.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_seg",
+        "sub-metric": "United States",
+        "value": "22.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Mainland China and Hong Kong",
+        "value": "65.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "12.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14 nm",
+        "value": "1.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "5.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "16.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "31.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "6.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "35.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "19Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "4.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "inv",
+        "value": "616,688"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "capex",
+        "value": "$777.2"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "5.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "48.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "35.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "2.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "7.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_seg",
+        "sub-metric": "United States",
+        "value": "25.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Mainland China and Hong Kong",
+        "value": "61.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "12.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14 nm",
+        "value": "1.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "28 nm",
+        "value": "6.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "14.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "32.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "1.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "5.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "33.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "4.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "inv",
+        "value": "669,202"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "capex",
+        "value": "$777.2"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Computer",
+        "value": "5.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Communications",
+        "value": "46.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Consumer",
+        "value": "36.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Auto/Industrial",
+        "value": "4.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_geo",
+        "sub-metric": "Others",
+        "value": "6.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_seg",
+        "sub-metric": "United States",
+        "value": "21.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Mainland China and Hong Kong",
+        "value": "66.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Eurasia",
+        "value": "12.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "14/28 nm",
+        "value": "9.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "15.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "30.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "2.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "5.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "33.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "4.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "inv",
+        "value": "647,625"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "capex",
+        "value": "$2,279"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "18.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_geo",
+        "sub-metric": "CHINAHK",
+        "value": "69.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_geo",
+        "sub-metric": "EURASIA",
+        "value": "11.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Phone",
+        "value": "46.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Home",
+        "value": "20.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Consumer Electronics",
+        "value": "17.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "16.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "14/28 nm",
+        "value": "14.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "17.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "25.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "3.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "4.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "31.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "inv",
+        "value": "798,776"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "capex",
+        "value": "$1,333"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "27.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_geo",
+        "sub-metric": "CHINAHK",
+        "value": "56.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_geo",
+        "sub-metric": "EURASIA",
+        "value": "16.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Phone",
+        "value": "36.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Home",
+        "value": "15.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Consumer Electronics",
+        "value": "20.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "27.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "14/28 nm",
+        "value": "5.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "14.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "34.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "3.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "6.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "32.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "20Q4",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "4.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "inv",
+        "value": "889,832"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "capex",
+        "value": "$534.1"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "27.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_geo",
+        "sub-metric": "CHINAHK",
+        "value": "55.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_geo",
+        "sub-metric": "EURASIA",
+        "value": "16.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Phone",
+        "value": "35.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Home",
+        "value": "13.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Consumer Electronics",
+        "value": "20.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "30.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "14/28 nm",
+        "value": "6.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "16.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "32.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "4.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "6.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "30.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q1",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "inv",
+        "value": "973,004"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "capex",
+        "value": "$770.8"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "23.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_geo",
+        "sub-metric": "CHINAHK",
+        "value": "62.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_geo",
+        "sub-metric": "EURASIA",
+        "value": "13.8%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Phone",
+        "value": "31.6%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Home",
+        "value": "12.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Consumer Electronics",
+        "value": "25.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "30.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "FinFET/28 nm",
+        "value": "14.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "14.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "29.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "3.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "5.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "28.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q2",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "inv",
+        "value": "1,105,443"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "capex",
+        "value": "$770.8"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_geo",
+        "sub-metric": "CHINAHK",
+        "value": "66.7%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "20.3%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_geo",
+        "sub-metric": "EURASIA",
+        "value": "13.0%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Phone",
+        "value": "31.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Smart Home",
+        "value": "12.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Consumer Electronics",
+        "value": "24.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Others",
+        "value": "31.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "FinFET/28 nm",
+        "value": "18.2%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "13.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "28.5%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "90 nm",
+        "value": "3.1%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.11/0.13 μm",
+        "value": "5.4%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 μm",
+        "value": "27.9%"
+    },
+    {
+        "company": "SMIC",
+        "quarter": "21Q3",
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 μm",
+        "value": "3.0%"
+    }
+]
