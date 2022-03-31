@@ -14,11 +14,14 @@ import re
 import csv
 
 """
-Read TSMC quarterly management reports and 
-extract revenue by technology, revenue by platform,
-revenue by geography, and capex.
+Taiwan Semiconductor Manufacturing Corporation
 """
+
+
 def parse_tsmc(url):
+  """
+  Read TSMC quarterly management reports and extract revenue by technology, revenue by platform, revenue by geography, and capex.
+  """
   cat_map = {'Wafer Revenue by Application': "", 'Wafer Revenue by Technology': "", 'Net Revenue by Geography': ""}
   # read PDF via tabula
   rev_dfs = read_pdf(url, pages=2)
@@ -45,11 +48,10 @@ def parse_tsmc(url):
 
   return {'tech':tech_df, 'segment':segment_df, 'geo': geo_df, 'capex':capex_df, 'inv':inv_df}
 
-"""
-Cleans TSMC's tech dataframe.
-"""
 def clean_tsmc_tech(df):
-
+  """
+  Cleans TSMC's tech dataframe.
+  """
   # if more tha two columns are unnamed:
   while not df.columns.str.contains('Net Revenue').any():
     df.columns = df.iloc[0]
@@ -74,11 +76,11 @@ def clean_tsmc_tech(df):
 
   return df
 
-"""
-Cleans TSMC's segment dataframe.
-"""
-def clean_tsmc_segment(df):
 
+def clean_tsmc_segment(df):
+  """
+  Cleans TSMC's segment dataframe.
+  """
   # if unnamed, replace colnames with first row
   while not df.columns.str.contains('Net Revenue').any():
     df.columns = df.iloc[0]
@@ -123,8 +125,7 @@ def clean_tsmc_geo(df):
   return df
 
 """
-Extracts capital expenditures from
-TSMC text pdf.
+Extracts capital expenditures from TSMC text pdf.
 """
 def extract_tsmc_capex(pdf):
   text = [p.extract_text() for p in pdf.pages if 'V. CapEx' in p.extract_text()][0] # find page with capex
@@ -134,8 +135,7 @@ def extract_tsmc_capex(pdf):
   return pd.DataFrame({'quarter':quarters, "capex":capex}) # return as df
 
 """
-Extracts inventory from TSMC
-text pdf.
+Extracts inventory from TSMC text pdf.
 """
 def extract_tsmc_inv(pdf):
     text = [p.extract_text() for p in pdf.pages if 'Inventories' in p.extract_text()][0] # find page with capex
@@ -143,6 +143,88 @@ def extract_tsmc_inv(pdf):
     inventory = re.search('Inventories\s*(\d+\.\d+)\s*(\d+\.\d+)\s*(\d+\.\d+)\s', text).groups()
     return pd.DataFrame({'quarter':quarters, "inv":inventory}) # return as df
 
+"""
+Semiconductor Manufacturing International Corporation
+"""
+
+def parse_smic_pdfplumber(url):
+    dfs = read_pdf(url, pages=[5, 6, 7, 8, 9])
+    df = [df for df in dfs if 'Revenue Analysis' in df.columns][0]
+    
+    rq = requests.get(url)
+    pdf = pdfplumber.open(BytesIO(rq.content))
+    inv_df = extract_smic_inv(pdf)
+    capex_df = extract_smic_capex(pdf)
+    
+    indices = df[df.iloc[:, 0].str.contains(r"By Geography|By Service Type|By Application|By Technology")].index.tolist()
+    geo_df = promote_row(df.iloc[indices[0]:indices[1], :])
+    service_df = promote_row(df.iloc[indices[1]:indices[2]-1, :])
+    segment_df = promote_row(df.iloc[indices[2]:indices[3], :])
+    tech_df = promote_row(df.iloc[indices[3]:, :])
+    
+    return {'inv': inv_df, 'capex' : capex_df,'geo':geo_df, 'service' : service_df, 
+    'segment' : segment_df, 'tech' : tech_df}
+
+def promote_row(df):
+  df.columns = df.iloc[0]
+  df = df[1:].reset_index(drop=True)
+  df.index.name = None
+  return df
+
+def extract_smic_inv(pdf):
+    text = ""
+    if len(pdf.pages) > 12:
+        for i in range(5,13):
+            text += pdf.pages[i].extract_text()
+    else:
+        for i in range(5,10):
+            text += pdf.pages[i].extract_text()
+    digits = "\s+(\d+,?\d+,?\d+)\s+(\d+,?\d+,?\d+)"
+    columnHeaders = "\s+(\dQ\d+)\s+(\dQ\d+)"
+    invCols = list(re.findall(f"(Amounts in US\$ thousands){columnHeaders}", text)[0])
+    inv = np.asarray(re.findall(f"(Inventories){digits}", text)[0])
+    curr_assets = np.asarray(re.findall(f"(Total current assets){digits}", text)[0])
+    curr_liabilities = np.asarray(re.findall(f"(Total current liabilities){digits}", text)[0])
+    smicSeg = np.array([inv, curr_assets, curr_liabilities])
+    segDF = pd.DataFrame(smicSeg, columns=invCols)
+    return segDF
+
+def extract_smic_capex(pdf, quarter):
+    """
+    Extracts capex from a SMIC text pdf. 
+    """
+    text = ""
+    if len(pdf.pages) > 12:
+        for i in range(5,13):
+            text += pdf.pages[i].extract_text()
+    else:
+        for i in range(5,10):
+            text += pdf.pages[i].extract_text()
+    # special case for table
+    if quarter == '12Q4':
+        capex_start = text.find('Capex Summary')
+        quarter_text = re.split('Capital expenditures for', text[capex_start:])[0]
+        quarters = re.findall('\dQ\d\d', quarter_text) or re.findall('\d\dQ\d', quarter_text)
+        capex_text = re.split('Capital expenditures', quarter_text)[1]
+        capex = re.findall('([\d\.,]+)\s', capex_text)
+        capex = [round(float(cpx.replace(',',''))/1000, 1) for cpx in capex]
+    else:
+        capex_start = text.find('Capital expenditures for')
+        if capex_start == -1: capex_start = text.find('Capital expenditures were')
+        target_text = re.split('\.\s', text[capex_start:])[0]
+        print(target_text)
+        quarters = re.findall('\d[QH]\d\d', target_text)
+        if not quarters:
+          quarters = re.findall('\d\dQ\d', target_text)
+          quarters = [q[:2] + q[2:] for q in quarters]
+        quarters = [q.replace('H', 'Q') for q in quarters]
+        capex = re.findall('\$([\d\.,]+) million', target_text) or re.findall('\$([\d\.,]+)M', target_text)
+    return pd.DataFrame({'quarter':quarters, "capex":capex})
+
+
+"""
+United Microelectronics Corporations
+"""
 
 """
 Read UMC quarterly management reports and 
