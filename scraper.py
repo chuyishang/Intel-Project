@@ -163,7 +163,6 @@ def pull_umc(year_quarter, url):
                 sub_geo = dict_geo_options_umc.get(sub_geo)
             aggregated_geo = {'company': 'UMC', 'quarter': year_quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
             data_umc.append(aggregated_geo)
-sen
         umc_tech = umc_dfs.get('tech')
         for index, row in umc_tech.iterrows():
             sub_tech = row[0]
