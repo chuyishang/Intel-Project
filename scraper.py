@@ -33,6 +33,8 @@ def parse_tsmc(url):
         if inHeader or inColumn:
           cat_map[key] = i
 
+
+
   tech_index = cat_map["Wafer Revenue by Technology"]
   segment_index = cat_map["Wafer Revenue by Application"]
   geo_index = cat_map["Net Revenue by Geography"]
