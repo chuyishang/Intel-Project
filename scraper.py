@@ -24,13 +24,13 @@ def pull(url, year_quarter, company):
   Selects correct pull function.
   """
   if company == 'tsmc':
-    pull_tsmc(url, year_quarter)
+    pull_tsmc(year_quarter, url)
   elif company == 'smic':
-    pull_smic(url, year_quarter)
+    pull_smic(year_quarter, url)
   elif company == 'umc':
-    pull_umc(url, year_quarter)
+    pull_umc(year_quarter, url)
   elif company == 'gf':
-    pull_gf(url, year_quarter)
+    pull_gf(year_quarter, url)
 
 
 """
@@ -44,41 +44,45 @@ def pull_tsmc(year_quarter, url):
   Pulls a single quarter's data for TSMC and returns as a dictionary.
   """
   data_tsmc = []
-  tsmc_dfs = parse_tsmc(url)
-  dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
-  year = year_quarter[:2]
-  quarter = year_quarter[2:]
+  try:
+    tsmc_dfs = parse_tsmc(url)
+    dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
+    year = year_quarter[:2]
+    quarter = year_quarter[2:]
 
-  tsmc_inv = tsmc_dfs.get('inv')
-  aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv.iat[0,1]}
-  data_tsmc.append(aggregated_inv)
-              
-  tsmc_capex = tsmc_dfs.get('capex')
-  aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex.iat[1,1]}
-  data_tsmc.append(aggregated_capex)
-              
-  tsmc_geo = tsmc_dfs.get('geo')
-  for index, row in tsmc_geo.iterrows():
-      sub_geo = index
-      sub_geo_value = row[0]
-      if sub_geo in dict_geo_options_tsmc:
-          sub_geo = dict_geo_options_tsmc.get(sub_geo)
-      aggregated_geo = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
-      data_tsmc.append(aggregated_geo)
+    tsmc_inv = tsmc_dfs.get('inv')
+    aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv.iat[0,1]}
+    data_tsmc.append(aggregated_inv)
+                
+    tsmc_capex = tsmc_dfs.get('capex')
+    aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex.iat[1,1]}
+    data_tsmc.append(aggregated_capex)
+                
+    tsmc_geo = tsmc_dfs.get('geo')
+    for index, row in tsmc_geo.iterrows():
+        sub_geo = index
+        sub_geo_value = row[0]
+        if sub_geo in dict_geo_options_tsmc:
+            sub_geo = dict_geo_options_tsmc.get(sub_geo)
+        aggregated_geo = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
+        data_tsmc.append(aggregated_geo)
 
-  tsmc_seg = tsmc_dfs.get('segment')
-  for index, row in tsmc_seg.iterrows():
-      sub_seg = index
-      sub_seg_value = row[0]
-      aggregated_seg = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
-      data_tsmc.append(aggregated_seg)
+    tsmc_seg = tsmc_dfs.get('segment')
+    for index, row in tsmc_seg.iterrows():
+        sub_seg = index
+        sub_seg_value = row[0]
+        aggregated_seg = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
+        data_tsmc.append(aggregated_seg)
 
-  tsmc_tech = tsmc_dfs.get('tech')
-  for index, row in tsmc_tech.iterrows():
-      sub_tech = index
-      sub_tech_value = row[0]
-      aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
-      data_tsmc.append(aggregated_tech)
+    tsmc_tech = tsmc_dfs.get('tech')
+    for index, row in tsmc_tech.iterrows():
+        sub_tech = index
+        sub_tech_value = row[0]
+        aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
+        data_tsmc.append(aggregated_tech)
+
+  except:
+    print(year_quarter, url)
 
   return data_tsmc
 
@@ -208,43 +212,47 @@ def pull_smic(year_quarter, url):
   Pulls a single quarter's data for SMIC and returns as a dictionary.
   """
   data_smic = []
-  smic_dfs = parse_smic_pdfplumber(url)
-  dict_geo_options_smic = {'North America(1)':'NORAM', 'United States':'US', 
-  'Mainland China and Hong Kong':'CHINAHK','Chinese Mainland and Hong Kong, China':'CHINAHK', 
-  'Eurasia(2)':'EURASIA', 'North America':'NORAM', 'Eurasia':'EURASIA'}
-  year = year_quarter[:2]
-  quarter = year_quarter[2:]
+  try:
+    smic_dfs = parse_smic_pdfplumber(url)
+    dict_geo_options_smic = {'North America(1)':'NORAM', 'United States':'US', 
+    'Mainland China and Hong Kong':'CHINAHK','Chinese Mainland and Hong Kong, China':'CHINAHK', 
+    'Eurasia(2)':'EURASIA', 'North America':'NORAM', 'Eurasia':'EURASIA'}
+    year = year_quarter[:2]
+    quarter = year_quarter[2:]
 
-  smic_inv = smic_dfs.get('inv')
-  aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': smic_inv.iat[0,1]}
-  data_smic.append(aggregated_inv)
-  
-  smic_capex = smic_dfs.get('capex')
-  aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex.iat[0,0]}
-  data_smic.append(aggregated_capex)
-  
-  smic_geo = smic_dfs.get('geo')
-  for _, row in smic_geo.iterrows():
-      sub_geo = row[0]
-      sub_geo_value = row[1]
-      if sub_geo in dict_geo_options_smic:
-          sub_geo = dict_geo_options_smic.get(sub_geo)
-      aggregated_geo = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
-      data_smic.append(aggregated_geo)
+    smic_inv = smic_dfs.get('inv')
+    aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': smic_inv.iat[0,1]}
+    data_smic.append(aggregated_inv)
+    
+    smic_capex = smic_dfs.get('capex')
+    aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex.iat[0,0]}
+    data_smic.append(aggregated_capex)
+    
+    smic_geo = smic_dfs.get('geo')
+    for _, row in smic_geo.iterrows():
+        sub_geo = row[0]
+        sub_geo_value = row[1]
+        if sub_geo in dict_geo_options_smic:
+            sub_geo = dict_geo_options_smic.get(sub_geo)
+        aggregated_geo = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
+        data_smic.append(aggregated_geo)
 
-  smic_seg = smic_dfs.get('segment')
-  for _, row in smic_seg.iterrows():
-      sub_seg = row[0]
-      sub_seg_value = row[1]
-      aggregated_seg = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
-      data_smic.append(aggregated_seg)
+    smic_seg = smic_dfs.get('segment')
+    for _, row in smic_seg.iterrows():
+        sub_seg = row[0]
+        sub_seg_value = row[1]
+        aggregated_seg = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
+        data_smic.append(aggregated_seg)
 
-  smic_tech = smic_dfs.get('tech')
-  for _, row in smic_tech.iterrows():
-      sub_tech = row[0]
-      sub_tech_value = row[1]
-      aggregated_tech = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
-      data_smic.append(aggregated_tech)
+    smic_tech = smic_dfs.get('tech')
+    for _, row in smic_tech.iterrows():
+        sub_tech = row[0]
+        sub_tech_value = row[1]
+        aggregated_tech = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
+        data_smic.append(aggregated_tech)
+
+  except:
+    print(year_quarter, url)
 
   return data_smic
 
@@ -350,26 +358,30 @@ def pull_umc(url, year_quarter):
   Pulls a single quarter's data for UMC and returns as a dictionary.
   """
   data_umc = []
-  umc_dfs = parse_umc(url)
-  dict_geo_options_umc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
-  year = year_quarter[:2]
-  quarter = year_quarter[2:]
-              
-  umc_geo = umc_dfs.get('geo')
-  for _, row in umc_geo.iterrows():
-      sub_geo = row[0]
-      sub_geo_value = row[1]
-      if sub_geo in dict_geo_options_umc:
-          sub_geo = dict_geo_options_umc.get(sub_geo)
-      aggregated_geo = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
-      data_umc.append(aggregated_geo)
+  try:
+    umc_dfs = parse_umc(url)
+    dict_geo_options_umc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
+    year = year_quarter[:2]
+    quarter = year_quarter[2:]
+                
+    umc_geo = umc_dfs.get('geo')
+    for _, row in umc_geo.iterrows():
+        sub_geo = row[0]
+        sub_geo_value = row[1]
+        if sub_geo in dict_geo_options_umc:
+            sub_geo = dict_geo_options_umc.get(sub_geo)
+        aggregated_geo = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
+        data_umc.append(aggregated_geo)
 
-  umc_tech = umc_dfs.get('tech')
-  for _, row in umc_tech.iterrows():
-      sub_tech = row[0]
-      sub_tech_value = row[1]
-      aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
-      data_umc.append(aggregated_tech)
+    umc_tech = umc_dfs.get('tech')
+    for _, row in umc_tech.iterrows():
+        sub_tech = row[0]
+        sub_tech_value = row[1]
+        aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
+        data_umc.append(aggregated_tech)
+
+  except:
+    print(year_quarter, url)
 
   return data_umc
 
@@ -450,17 +462,21 @@ def pull_gf(year_quarter, url):
   """
   data_gf = []
   
-  gf_dfs = parse_gf(url)
-  year = year_quarter[:2]
-  quarter = year_quarter[2:]
+  try:
+    gf_dfs = parse_gf(url)
+    year = year_quarter[:2]
+    quarter = year_quarter[2:]
 
-  gf_capex = gf_dfs.get('capex')
-  aggregated_capex = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': gf_capex.iat[0,2]}
-  data_gf.append(aggregated_capex)
+    gf_capex = gf_dfs.get('capex')
+    aggregated_capex = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': gf_capex.iat[0,2]}
+    data_gf.append(aggregated_capex)
 
-  gf_inv = gf_dfs.get('inv')
-  aggregated_inv = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': gf_inv.iat[0,2]}
-  data_gf.append(aggregated_inv)
+    gf_inv = gf_dfs.get('inv')
+    aggregated_inv = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': gf_inv.iat[0,2]}
+    data_gf.append(aggregated_inv)
+  
+  except:
+    print(year_quarter, url)
   
   return data_gf
 
