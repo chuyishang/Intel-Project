@@ -1,7 +1,7 @@
 from logging import Filterer
 from re import sub
 import dash
-from dash import Dash, html, dcc, Input, Output
+from dash import Dash, html, dcc, Input, Output, callback_context
 import plotly.express as px
 import pandas as pd
 import numpy as np
@@ -105,13 +105,13 @@ controls = dbc.Card(
             className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
         ),
 
-        # html.Div(
-        #     [
-        #         html.Button("Download Graph", id= "btn-graph"),
-        #         dcc.Download(id="download-graph-png"),
+        html.Div(
+            [
+                html.Button("Download Data", id= "btn-data"),
+                dcc.Download(id="download-data-csv"),
                 
-        #     ]
-        # ),
+            ]
+        ),
     ],
     body=True,
 )
@@ -158,6 +158,9 @@ parsing = dbc.Card(
                 ),
             ],
         ),
+        html.Div(
+            dcc.Store(id='dataframe', data = [])
+        )
     ],
     body=True,
 )
@@ -227,6 +230,7 @@ def set_submetric(company,metric,viz):
 #graph call back
 @app.callback(
     Output("graph", "figure"),
+    Output("dataframe","data"),
     [
         Input("company-dropdown", "value"),
         Input("metric-dropdown", "value"),
@@ -258,7 +262,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         ]
     )
     if start_year == None or start_quarter == None or end_year == None or end_quarter == None:
-        return graph
+        return graph, {}
 
     local_df = company_df[company] if company != "TSMC" else global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_dict[metric])]
@@ -275,7 +279,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         index_start = local_df["quarter"].tolist().index(start_q)
         index_end = len(local_df["quarter"].tolist()) - local_df["quarter"].tolist()[::-1].index(end_q) - 1
     except ValueError:
-        return graph
+        return graph, {}
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
     print(filtered_data)
@@ -311,17 +315,20 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         title=f'{metric}: {submetric} for {company}', markers=True)
     #scatter_plot = px.scatter(filtered_data, x="Quarters", y=y, title=f'{y} for TSMC', markers=True, trendline="ols")
     #results = px.get_trendline_results(line)
-    return graph
+    return graph,filtered_data.to_dict()
 
-# @app.callback(
-#     Output("download-graph-png","data"),
-#     Input("btn-graph","n_clicks"),
-#     Input("graph","figure"),
-#     prevent_initial_call=True,
-# )
-# def export_graph(n_clicks,graph):
-#     graph = dcc.Graph(figure=graph)
-#     return dcc.send_bytes(graph,"data_vis")
+@app.callback(
+    Output("download-data-csv","data"),
+    Input("btn-data","n_clicks"),
+    Input("dataframe","data"),
+    prevent_initial_call=True,
+)
+def export_graph(n_clicks,dataframe):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    if 'btn-data' in changed_id:
+        return dcc.send_data_frame(pd.DataFrame(dataframe).to_csv, "data_analysis.csv")
+    return None
+    
 
 if __name__ == "__main__":
     app.run_server(debug=True)
