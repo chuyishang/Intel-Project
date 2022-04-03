@@ -116,20 +116,87 @@ controls = dbc.Card(
     body=True,
 )
 
-app.layout = dbc.Container(
+parsing = dbc.Card(
     [
-        html.H1("Intel Competitor Analysis", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
-        html.Hr(),
-        dbc.Row(
+        html.Div(
             [
-                dbc.Col(controls, md=4),
-                dbc.Col(dcc.Graph(id="graph"), md=8),
+                dbc.Label("URL"),
+                dcc.Input(
+                    id="url-input".format("url"),
+                    type="url",
+                    placeholder="Enter URL to Parse".format("url"),
+                ),
             ],
-            align="center",
+        ),
+        html.Div(
+            [
+                dbc.Label("Company"),
+                dcc.Dropdown(
+                    id="company-input",
+                    options=[
+                       "TSMC", "SMIC", "UMC", "Global Foundries"
+                    ],
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                dbc.Label("Year"),
+                dcc.Input(
+                    id="year-input".format("number"),
+                    type="number",
+                    placeholder="Enter Year".format("number"),
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                dbc.Label("Quarter"),
+                dcc.Input(
+                    id="quarter-input".format("number"),
+                    type="number",
+                    placeholder="Enter Quarter (1-4)".format("number"),
+                ),
+            ],
         ),
     ],
-    fluid=True,
+    body=True,
 )
+app.layout = html.Div([
+    dcc.Tabs([
+        dcc.Tab(label="Visualization", children=[
+        dbc.Container(
+            [
+                html.H1("Intel Competitor Visualizations", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Hr(),
+                dbc.Row(
+                    [
+                        dbc.Col(controls, md=4),
+                        dbc.Col(dcc.Graph(id="graph"), md=8),
+                    ],
+                    align="center",
+                ),
+            ],
+            fluid=True,
+        )
+        ]),
+        dcc.Tab(label="Scraping", children=[
+        dbc.Container(
+            [
+                html.H1("Intel Competitor Parsing", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Hr(),
+                dbc.Row(
+                    [
+                        dbc.Col(parsing, md=4),
+                    ],
+                    align="center",
+                ),
+            ],
+            fluid=True,
+        )
+        ]),
+    ])
+])
 
 #viz call back options
 @app.callback(
