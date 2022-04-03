@@ -152,10 +152,9 @@ parsing = dbc.Card(
         html.Div(
             [
                 dbc.Label("Quarter"),
-                dcc.Input(
-                    id="quarter-input".format("number"),
-                    type="number",
-                    placeholder="Enter Quarter (1-4)".format("number"),
+                dcc.Dropdown(
+                    id="quarter-input",
+                    options=["1","2","3","4"]
                 ),
             ],
         ),
