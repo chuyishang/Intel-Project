@@ -20,8 +20,11 @@ def aggregate_company(pull_func, url_csv, company):
             for row in csv_reader:
                 year_quarter = row[0]
                 url = row[1]
-                pull_data = pull_func(url, year_quarter, company)
-                company_data = company_data + pull_data
+                try:
+                    pull_data = pull_func(url, year_quarter, company)
+                    company_data = company_data + pull_data
+                except:
+                    print(year_quarter, url)
     return company_data
 
 """
