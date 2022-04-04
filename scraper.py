@@ -25,13 +25,13 @@ def pull(url, year_quarter, company):
   Selects correct pull function.
   """
   if company == 'tsmc':
-    pull_tsmc(year_quarter, url)
+    return pull_tsmc(year_quarter, url)
   elif company == 'smic':
-    pull_smic(year_quarter, url)
+    return pull_smic(year_quarter, url)
   elif company == 'umc':
-    pull_umc(year_quarter, url)
+    return pull_umc(year_quarter, url)
   elif company == 'gf':
-    pull_gf(year_quarter, url)
+    return pull_gf(year_quarter, url)
 
 
 """
@@ -48,8 +48,8 @@ def pull_tsmc(year_quarter, url):
   try:
     tsmc_dfs = parse_tsmc(url)
     dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
-    year = year_quarter[:2]
-    quarter = year_quarter[2:]
+    year = year_quarter[2:]
+    quarter = year_quarter[:2]
 
     tsmc_inv = tsmc_dfs.get('inv')
     aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv.iat[0,1]}
@@ -250,7 +250,7 @@ def pull_smic(year_quarter, url):
   """
   data_smic = []
   try:
-    smic_dfs = parse_smic_pdfplumber(url)
+    smic_dfs = parse_smic(url, year_quarter)
     dict_geo_options_smic = {'North America(1)':'NORAM', 'United States':'US', 
     'Mainland China and Hong Kong':'CHINAHK','Chinese Mainland and Hong Kong, China':'CHINAHK', 
     'Eurasia(2)':'EURASIA', 'North America':'NORAM', 'Eurasia':'EURASIA'}
@@ -258,11 +258,13 @@ def pull_smic(year_quarter, url):
     quarter = year_quarter[2:]
 
     smic_inv = smic_dfs.get('inv')
-    aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': smic_inv.iat[0,1]}
+    inv_value_old = smic_inv.iat[0,1]
+    inv_value_converted = inv_value_old[:len(inv_value_old) - 4]
+    aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': inv_value_converted}
     data_smic.append(aggregated_inv)
     
     smic_capex = smic_dfs.get('capex')
-    aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex.iat[0,0]}
+    aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex.iat[0,1]}
     data_smic.append(aggregated_capex)
     
     smic_geo = smic_dfs.get('geo')
@@ -294,7 +296,7 @@ def pull_smic(year_quarter, url):
   return data_smic
 
 
-def parse_smic(url, quarter):
+def parse_smic(url, year_quarter):
   """
   Pulls all SMIC information from a URL. Missing pieces will have None value.
   """
@@ -304,7 +306,7 @@ def parse_smic(url, quarter):
   rq = requests.get(url)
   pdf = pdfplumber.open(BytesIO(rq.content))
   inv_df = extract_smic_inv(pdf)
-  capex_df = extract_smic_capex(pdf, quarter)
+  capex_df = extract_smic_capex(pdf, year_quarter)
   
   indices = df[df.iloc[:, 0].str.contains(r"By Geography|By Service Type|By Application|By Technology")].index.tolist()
   geo_df = promote_row(df.iloc[indices[0]:indices[1], :])
@@ -351,7 +353,7 @@ def extract_smic_inv(pdf):
   segDF = pd.DataFrame(smicSeg, columns=invCols)
   return segDF
 
-def extract_smic_capex(pdf, quarter):
+def extract_smic_capex(pdf, year_quarter):
   """
   Extracts capex from a SMIC text pdf. 
   """
@@ -363,7 +365,7 @@ def extract_smic_capex(pdf, quarter):
       for i in range(5,10):
           text += pdf.pages[i].extract_text()
   # special case for table
-  if quarter == '12Q4':
+  if year_quarter == '12Q4':
       capex_start = text.find('Capex Summary')
       quarter_text = re.split('Capital expenditures for', text[capex_start:])[0]
       quarters = re.findall('\dQ\d\d', quarter_text) or re.findall('\d\dQ\d', quarter_text)
@@ -374,7 +376,6 @@ def extract_smic_capex(pdf, quarter):
       capex_start = text.find('Capital expenditures for')
       if capex_start == -1: capex_start = text.find('Capital expenditures were')
       target_text = re.split('\.\s', text[capex_start:])[0]
-      print(target_text)
       quarters = re.findall('\d[QH]\d\d', target_text)
       if not quarters:
         quarters = re.findall('\d\dQ\d', target_text)
@@ -390,7 +391,7 @@ United Microelectronics Corporation
 ***********************************
 """
 
-def pull_umc(url, year_quarter):
+def pull_umc(year_quarter, url):
   """
   Pulls a single quarter's data for UMC and returns as a dictionary.
   """
@@ -518,7 +519,7 @@ def pull_gf(year_quarter, url):
   return data_gf
 
 
-def parse_gf(url, year_quarter):
+def parse_gf(url):
   """
   Pulls all GlobalFoundries information from a URL. Missing pieces will have None value.
   """
