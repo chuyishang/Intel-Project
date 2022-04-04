@@ -1,4 +1,5 @@
 # tabula 
+from multiprocessing.sharedctypes import Value
 from tabula import read_pdf
 from tabulate import tabulate
 
@@ -92,14 +93,26 @@ def parse_tsmc(url):
   Pulls all TSMC informaiton from a URL. Missing pieces will have None value.
   """
   rq = requests.get(url)
-  pdf = pdfplumber.open(BytesIO(rq.content))
+  try:
+    pdf = pdfplumber.open(BytesIO(rq.content))
+  except:
+    print("URL not working for " + url + "!")
+    return
   tsmc_text = ""
   for i in range(5):
       tsmc_text += pdf.pages[i].extract_text()
   tech_df = clean_tsmc_tech_robust(tsmc_text)
   geo_df = clean_tsmc_geo(tsmc_text)
-  capex_df = extract_tsmc_capex(pdf)
-  inv_df = extract_tsmc_inv(pdf)
+  try:
+    capex_df = extract_tsmc_capex(pdf)
+  except ValueError:
+    capex_df = None
+    print("Capex failed for " + url)
+  try:
+    inv_df = extract_tsmc_inv(pdf)
+  except IndexError:
+    inv_df = None
+    print("Inv failed for " + url)
   try: 
       platform_df = clean_tsmc_platform(tsmc_text)
   except IndexError:
@@ -118,19 +131,26 @@ def parse_tsmc(url):
   }
 
 def clean_tsmc_tech_robust(tsmc_text):
+  """
+  Cleans TSMC's tech dataframe.
+  """
   digits = "\s+(\dQ\d+)\s+(\dQ\d+)\s+(\dQ\d+)"
-  techCols = np.asarray(re.findall(f"(Wafer Revenue by Technology){digits}", tsmc_text)[0])
+  techCols = np.asarray(re.findall(f"(Wafer (?:Revenue|Rev\.) by Technology|By Application){digits}", tsmc_text)[0])
   techArray = []
   digit_re = "\d+(?:u|n)m"
   slash = "\d+(?:\.\d+)?\/\d+(?:\.\d+)?(?:u|n)m"
   above = "\d+(?:\.\d+)?(?:u|n)m\s+and\s+above"
+  plus = "\d+(?:\.\d+)?(?:u|n)m\+"
   numbers = "\s(\d+%)\s(\d+%)\s(\d+%)"
-  techRegex = f"({digit_re}|{slash}|{above}){numbers}"
+  techRegex = f"({digit_re}|{slash}|{above}|{plus}){numbers}"
   for i in re.finditer(techRegex, tsmc_text):
       techArray.append(list(i.groups()))
   techDF = pd.DataFrame(techArray, columns=techCols)
   ser = techDF.iloc[:, 0]
-  stop_index = ser[(ser.str.match(above) == True)].index[0] + 1
+  try:
+      stop_index = ser[(ser.str.match(above) == True)].index[0] + 1
+  except IndexError:
+      stop_index = ser[(ser.str.match(plus) == True)].index[0] + 1
   techDF = techDF.iloc[:stop_index, :]
   return techDF
   
@@ -157,7 +177,7 @@ def clean_tsmc_seg(tsmc_text):
   """
   digits = "\s+(\d+%)\s+(\d+%)\s+(\d+%)"
   quarters = "\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)"
-  segCols = np.asarray(re.findall(f"(Net Revenue by Application){quarters}", tsmc_text)[0])
+  segCols = np.asarray(re.findall(f"((?:Wafer|Net) (?:Revenue|Rev\.) by Application|By Application){quarters}", tsmc_text)[0])
   computer = np.asarray(re.findall(f"(Computer){digits}", tsmc_text)[0])
   comm = np.asarray(re.findall(f"(Communication){digits}", tsmc_text)[0])
   consumer = np.asarray(re.findall(f"(Consumer){digits}", tsmc_text)[0])
@@ -168,15 +188,32 @@ def clean_tsmc_seg(tsmc_text):
 
 def clean_tsmc_geo(tsmc_text):
   """
-  Cleans TSMC's geography dataframe.
+  Cleans TSMC's geo dataframe.
   """
+  umcRegions = []
   digits = "\s+(\d+%)\s+(\d+%)\s+(\d+%)"
-  regionCols = np.asarray(re.findall(r"(Net Revenue by Geography)\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)", tsmc_text)[0])
+  regionCols = np.asarray(re.findall(r"((?:Net|Wafer) (?:Revenue|Rev\.) by Geography|By Geography)\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)", tsmc_text)[0])
   NorthAm = np.asarray(re.findall(f"(North America){digits}", tsmc_text)[0])
+  umcRegions.append(NorthAm)
   China = np.asarray(re.findall(f"(China){digits}", tsmc_text)[0])
-  EMEA = np.asarray(re.findall(f"(EMEA){digits}", tsmc_text)[0])
+  umcRegions.append(China)
+  try:
+      EMEA = np.asarray(re.findall(f"(EMEA){digits}", tsmc_text)[0])
+      umcRegions.append(EMEA)
+  except IndexError:
+      pass
+  try:
+      europe = np.asarray(re.findall(f"(Europe){digits}", tsmc_text)[0])
+      umcRegions.append(europe)
+  except IndexError:
+      pass
+  try: 
+      APAC = np.asarray(re.findall(f"(Asia Pacific){digits}", tsmc_text)[0])
+      umcRegions.append(APAC)
+  except IndexError:
+      pass
   Japan = np.asarray(re.findall(f"(Japan){digits}", tsmc_text)[0])
-  umcRegions = np.array([NorthAm, China, EMEA, Japan])
+  umcRegions.append(Japan)
   geoDF = pd.DataFrame(umcRegions, columns=regionCols)
   return geoDF
 
