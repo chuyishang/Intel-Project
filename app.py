@@ -12,10 +12,10 @@ import scraper
 pd.options.mode.chained_assignment = None
 
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
-global_df = pd.read_json("json_data.json")
-umc = pd.read_json("umc_json_data.json")
-smic = pd.read_json("smic_json_data.json")
-gf = pd.read_json("gf_json_data.json")
+global_df = pd.read_json("data/data.json")
+umc = pd.read_json("data/umc_json_data.json")
+smic = pd.read_json("data/smic_json_data.json")
+gf = pd.read_json("data/gf_json_data.json")
 metric_dict = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv"}
 tsmc_subs = global_df.loc[global_df["company"] == "TSMC"]["sub-metric"].unique().tolist()
 company_df = {"SMIC": smic, "UMC": umc, "GlobalFoundries": gf}
