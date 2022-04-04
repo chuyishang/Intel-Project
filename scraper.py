@@ -25,13 +25,13 @@ def pull(url, year_quarter, company):
   Selects correct pull function.
   """
   if company == 'tsmc':
-    pull_tsmc(year_quarter, url)
+    return pull_tsmc(year_quarter, url)
   elif company == 'smic':
-    pull_smic(year_quarter, url)
+    return pull_smic(year_quarter, url)
   elif company == 'umc':
-    pull_umc(year_quarter, url)
+    return pull_umc(year_quarter, url)
   elif company == 'gf':
-    pull_gf(year_quarter, url)
+    return pull_gf(year_quarter, url)
 
 
 """
@@ -390,7 +390,7 @@ United Microelectronics Corporation
 ***********************************
 """
 
-def pull_umc(url, year_quarter):
+def pull_umc(year_quarter, url):
   """
   Pulls a single quarter's data for UMC and returns as a dictionary.
   """
