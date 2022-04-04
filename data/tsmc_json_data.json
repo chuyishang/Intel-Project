@@ -1,0 +1,3179 @@
+[
+    {
+        "company": "TSMC",
+        "year": "13",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "37.83"
+    },
+    {
+        "company": "TSMC",
+        "year": "13",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "38.62"
+    },
+    {
+        "company": "TSMC",
+        "year": "13",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "36.92"
+    },
+    {
+        "company": "TSMC",
+        "year": "13",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "37.50"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "43.48"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "50.95"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "capex",
+        "value": "37.79"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.25/0.35um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.50um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "65.34"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "capex",
+        "value": "42.13"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.25/0.35um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.50um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "66.34"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "capex",
+        "value": "52.54"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.25/0.35um"
+    },
+    {
+        "company": "TSMC",
+        "year": "14",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.50um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "64.60"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "capex",
+        "value": "52.65"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.25/0.35um"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.50um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "66.28"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "65.07"
+    },
+    {
+        "company": "TSMC",
+        "year": "15",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "67.05"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "57.24"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "60.71"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "capex",
+        "value": "1.15"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "53.88"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "capex",
+        "value": "2.26"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "48.68"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "capex",
+        "value": "3.25"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "16",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "50.39"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "capex",
+        "value": "3.53"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "61.01"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "capex",
+        "value": "3.29"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "73.89"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "capex",
+        "value": "3.47"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "73.88"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "capex",
+        "value": "2.05"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "17",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "85.22"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "capex",
+        "value": "2.05"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "99.03"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "capex",
+        "value": "2.45"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "2Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "105.34"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "capex",
+        "value": "2.01"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "7nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "3Q",
+        "metric": "rev_tech",
+        "sub-metric": 9,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "103.23"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "capex",
+        "value": "2.28"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "7nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "16/20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "18",
+        "quarter": "4Q",
+        "metric": "rev_tech",
+        "sub-metric": 9,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "108.68"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "capex",
+        "value": "3.72"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 0,
+        "value": "Computer"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 1,
+        "value": "Communication"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 2,
+        "value": "Consumer"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_seg",
+        "sub-metric": 3,
+        "value": "Industrial/Standard"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 0,
+        "value": "7nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 1,
+        "value": "10nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 2,
+        "value": "16nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 3,
+        "value": "20nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 4,
+        "value": "28nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 5,
+        "value": "40/45nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 6,
+        "value": "65nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 7,
+        "value": "90nm"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 8,
+        "value": "0.11/0.13um"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 9,
+        "value": "0.15/0.18um"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "1Q",
+        "metric": "rev_tech",
+        "sub-metric": 10,
+        "value": "0.25um and above"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "108.23"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "2Q",
+        "metric": "capex",
+        "value": "2.46"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "96.69"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "3Q",
+        "metric": "capex",
+        "value": "3.75"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "82.98"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "4Q",
+        "metric": "capex",
+        "value": "3.14"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "19",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "78.28"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "1Q",
+        "metric": "capex",
+        "value": "5.55"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "85.79"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "2Q",
+        "metric": "capex",
+        "value": "6.39"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "85.79"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "3Q",
+        "metric": "capex",
+        "value": "6.39"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "137.35"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "4Q",
+        "metric": "capex",
+        "value": "3.42"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "20",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "1Q",
+        "metric": "inv",
+        "value": "154.57"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "1Q",
+        "metric": "capex",
+        "value": "3.19"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "1Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "2Q",
+        "metric": "inv",
+        "value": "170.44"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "2Q",
+        "metric": "capex",
+        "value": "8.84"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "2Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "3Q",
+        "metric": "inv",
+        "value": "182.23"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "3Q",
+        "metric": "capex",
+        "value": "5.97"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "3Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "4Q",
+        "metric": "inv",
+        "value": "193.10"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "4Q",
+        "metric": "capex",
+        "value": "6.77"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 0,
+        "value": "North America"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 1,
+        "value": "China"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 2,
+        "value": "EMEA"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 3,
+        "value": "Asia Pacific"
+    },
+    {
+        "company": "TSMC",
+        "year": "21",
+        "quarter": "4Q",
+        "metric": "rev_geo",
+        "sub-metric": 4,
+        "value": "Japan"
+    }
+]
