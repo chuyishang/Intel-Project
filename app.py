@@ -294,6 +294,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_dict[metric])]
     if (submetric != None or submetric != "NaN") and viz == "Individual":
         local_df = local_df.loc[local_df["sub-metric"] == submetric]
+    local_df["quarter"] = local_df["year"].map(str) + local_df["quarter"].map(str)
     local_df = local_df.sort_values(by=["quarter"])
     print(local_df) # Test statement
     start_q = (start_quarter + "Q" + str(start_year)[-2:]) if company == "TSMC" else join_quarter_year(start_quarter, start_year)
