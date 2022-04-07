@@ -5123,6 +5123,14 @@
         "year": "19",
         "quarter": "Q3",
         "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "year": "19",
+        "quarter": "Q3",
+        "metric": "rev_seg",
         "sub-metric": "United States",
         "value": "24.7%"
     },
@@ -5149,6 +5157,14 @@
         "metric": "rev_seg",
         "sub-metric": "Eurasia",
         "value": "14.8%"
+    },
+    {
+        "company": "SMIC",
+        "year": "19",
+        "quarter": "Q3",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
     },
     {
         "company": "SMIC",
@@ -5265,6 +5281,14 @@
         "year": "19",
         "quarter": "Q4",
         "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "year": "19",
+        "quarter": "Q4",
+        "metric": "rev_seg",
         "sub-metric": "United States",
         "value": "22.2%"
     },
@@ -5281,8 +5305,24 @@
         "year": "19",
         "quarter": "Q4",
         "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "year": "19",
+        "quarter": "Q4",
+        "metric": "rev_seg",
         "sub-metric": "Eurasia",
         "value": "12.7%"
+    },
+    {
+        "company": "SMIC",
+        "year": "19",
+        "quarter": "Q4",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
     },
     {
         "company": "SMIC",
@@ -5407,6 +5447,14 @@
         "year": "20",
         "quarter": "Q1",
         "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "year": "20",
+        "quarter": "Q1",
+        "metric": "rev_seg",
         "sub-metric": "United States",
         "value": "25.5%"
     },
@@ -5423,8 +5471,24 @@
         "year": "20",
         "quarter": "Q1",
         "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "year": "20",
+        "quarter": "Q1",
+        "metric": "rev_seg",
         "sub-metric": "Eurasia",
         "value": "12.9%"
+    },
+    {
+        "company": "SMIC",
+        "year": "20",
+        "quarter": "Q1",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
     },
     {
         "company": "SMIC",
@@ -5549,6 +5613,14 @@
         "year": "20",
         "quarter": "Q2",
         "metric": "rev_seg",
+        "sub-metric": "(1)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "year": "20",
+        "quarter": "Q2",
+        "metric": "rev_seg",
         "sub-metric": "United States",
         "value": "21.6%"
     },
@@ -5565,8 +5637,24 @@
         "year": "20",
         "quarter": "Q2",
         "metric": "rev_seg",
+        "sub-metric": "(2)",
+        "value": NaN
+    },
+    {
+        "company": "SMIC",
+        "year": "20",
+        "quarter": "Q2",
+        "metric": "rev_seg",
         "sub-metric": "Eurasia",
         "value": "12.3%"
+    },
+    {
+        "company": "SMIC",
+        "year": "20",
+        "quarter": "Q2",
+        "metric": "rev_seg",
+        "sub-metric": "Wafer Revenue Analysis",
+        "value": NaN
     },
     {
         "company": "SMIC",
