@@ -237,11 +237,13 @@ app.layout = html.Div([
     Input("company-dropdown", "value")
 )
 def setMetric(company):
-    local_df = global_df
-    local_df = local_df.loc[(local_df["company"] == company)]
-    metrics = local_df["metric"].dropna().unique()
-    metrics = [var_to_metric[m] for m in metrics]
-    return metrics
+    if company:
+        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = local_df.loc[(local_df["company"] == company)]
+        metrics = local_df["metric"].dropna().unique()
+        metrics = [var_to_metric[m] for m in metrics]
+        return metrics
+    return ["Revenue by Technology", "Revenue by Segment", "Revenue by Geography", "CapEx", "Inventory"]
 
 #viz call back options
 @app.callback(
