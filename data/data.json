@@ -12537,19 +12537,5 @@
         "quarter": "Q3",
         "metric": "inv",
         "value": "1,121"
-    },
-    {
-        "company": "Global Foundries",
-        "year": "21",
-        "quarter": "Q4",
-        "metric": "capex",
-        "value": "(649)"
-    },
-    {
-        "company": "Global Foundries",
-        "year": "21",
-        "quarter": "Q4",
-        "metric": "inv",
-        "value": "1,121"
     }
 ]
