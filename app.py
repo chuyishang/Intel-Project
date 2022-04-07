@@ -14,20 +14,22 @@ import json
 pd.options.mode.chained_assignment = None
 
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+
+# Pull JSON files
 global_df = pd.read_json("data/data.json")
 umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
-metric_dict = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv"}
-tsmc_subs = global_df.loc[global_df["company"] == "TSMC"]["sub-metric"].unique().tolist()
-company_df = {"SMIC": smic, "UMC": umc, "GlobalFoundries": gf}
-company_abbrev = {"SMIC": "smic", "UMC": "umc", "GlobalFoundries": "gf", "TSMC":"tsmc"}
 
-#Dummy TSMC DataFrame
-#tsmc_rev = np.array([4496, 5796.7, 7250.1, 9186.5, 9520.5, 11336.4, 11522.9, 11898.9, 10562.6, 14984, 15253.4, 18098.7, 21323.1, 27244.1, 30126, 33856.1, 4910.1, 36839.7, 38215.1,47832.2])
-#tsmc_net_income = np.array([517.3, 771.8, 1687.9, 3297.1, 3342.1, 4536.2, 3899.3, 3569.2, 3186.5, 5771.8, 4793.1, 695.9, 6570.9, 9082.5, 10816.5, 11847.3, 12321.8, 12540.8, 12331.3, 18496.6])
-#tsmc_years = np.arange(2001,2021)
-#tsmc = pd.DataFrame({"Quarters":tsmc_years, "Revenue": tsmc_rev, "Net Income": tsmc_net_income})
+# Global dictionaries and variables
+metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv"}
+var_to_metric = {v:k for k, v in metric_to_var.items()}
+tsmc_subs = global_df.loc[global_df["company"] == "TSMC"]["sub-metric"].unique().tolist()
+company_df = {"SMIC": smic, "UMC": umc, "Global Foundries": gf}
+company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC":"tsmc"}
+firstYear = 2000
+currYear = 2022
+
 
 controls = dbc.Card(
     [  
@@ -37,7 +39,7 @@ controls = dbc.Card(
                 dcc.Dropdown(
                     id="company-dropdown",
                     options=[
-                       "TSMC", "SMIC", "UMC", "GlobalFoundries"
+                       "TSMC", "SMIC", "UMC", "Global Foundries"
                     ],
                 ),
             ]
@@ -78,7 +80,7 @@ controls = dbc.Card(
             [
                 dbc.Label("Starting Year", html_for="start-dropdown"),
                 dcc.Dropdown(
-                    options= np.arange(2001, 2021),
+                    options= np.arange(firstYear, currYear),
                     id = "start-dropdown"
                 ),
                 dbc.Label("Starting Quarter", html_for="startq-dropdown"),
@@ -94,7 +96,7 @@ controls = dbc.Card(
             [
                 dbc.Label("Ending Year", html_for="end-dropdown"),
                 dcc.Dropdown(
-                    options= np.arange(2001, 2021),
+                    options= np.arange(firstYear, currYear),
                     id = "end-dropdown"
                 ),
                 dbc.Label("Ending Quarter", html_for="endq-dropdown"),
@@ -138,7 +140,7 @@ parsing = dbc.Card(
                 dcc.Dropdown(
                     id="company-input",
                     options=[
-                       "TSMC", "SMIC", "UMC", "GlobalFoundries"
+                       "TSMC", "SMIC", "UMC", "Global Foundries"
                     ],
                 ),
             ],
@@ -230,6 +232,17 @@ app.layout = html.Div([
     ])
 ])
 
+@app.callback(
+    Output("metric-dropdown","options"),
+    Input("company-dropdown", "value")
+)
+def setMetric(company):
+    local_df = global_df
+    local_df = local_df.loc[(local_df["company"] == company)]
+    metrics = local_df["metric"].dropna().unique()
+    metrics = [var_to_metric[m] for m in metrics]
+    return metrics
+
 #viz call back options
 @app.callback(
     Output("viz-dropdown","options"),
@@ -254,8 +267,81 @@ def set_submetric(company,metric,viz):
         return []
     else:
         local_df = company_df[company] if company != "TSMC" else global_df
-        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_dict[metric])]
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         return local_df["sub-metric"].dropna().unique()
+
+@app.callback(
+    Output("start-dropdown","options"),
+    Input("company-dropdown","value"),
+    Input("metric-dropdown","value"),
+    Input("submetric-dropdown", "value"),
+)
+def setStartYear(company,metric,submetric):
+    if all([company, metric]):
+        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
+        if submetric:
+            local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
+        years = [2000 + y for y in local_df["year"].dropna().unique()]
+        return years
+    return np.arange(firstYear, currYear)
+
+@app.callback(
+    Output("startq-dropdown","options"),
+    Input("company-dropdown","value"),
+    Input("metric-dropdown","value"),
+    Input("submetric-dropdown", "value"),
+    Input("start-dropdown","value")
+)
+def setStartQuarter(company,metric,submetric, startYear):
+    if all([company, metric, startYear]):
+        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear - 2000)]
+        if submetric:
+            local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
+        quarters = local_df["quarter"].dropna().unique()
+        quarters = [q.replace("Q", "") for q in quarters]
+        return quarters
+    return [1, 2, 3, 4]
+
+@app.callback(
+    Output("end-dropdown","options"),
+    Input("company-dropdown","value"),
+    Input("metric-dropdown","value"),
+    Input("submetric-dropdown", "value"),
+    Input("start-dropdown", "value"),
+)
+def setEndYear(company,metric,submetric,startYear):
+    if all([company, metric, startYear]):
+        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
+        if submetric:
+            local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
+        years = [2000 + y for y in local_df.loc[(local_df["year"] + 2000) >= startYear]["year"].dropna().unique()]
+        return years
+    return np.arange(firstYear, currYear)
+
+@app.callback(
+    Output("endq-dropdown","options"),
+    Input("company-dropdown","value"),
+    Input("metric-dropdown","value"),
+    Input("submetric-dropdown", "value"),
+    Input("start-dropdown", "value"),
+    Input("startq-dropdown", "value"),
+    Input("end-dropdown", "value"),
+)
+def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
+    if all([company, metric, startYear, startQuarter, endYear]):
+        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
+        if submetric:
+            local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
+        quarters = local_df.loc[(local_df["year"] == endYear - 2000)]["quarter"].dropna().unique()
+        quarters = [q.replace("Q", "") for q in quarters]
+        if startYear == endYear:
+            quarters = [q for q in quarters if q >= startQuarter]
+        return quarters
+    return [1, 2, 3, 4]
 
 #graph call back
 @app.callback(
@@ -296,18 +382,20 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
 
     #local_df = company_df[company] if company != "TSMC" else global_df
     local_df = global_df
-    local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_dict[metric])]
+    local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
     if (submetric != None or submetric != "NaN") and viz == "Individual":
         local_df = local_df.loc[local_df["sub-metric"] == submetric]
-    local_df["quarter"] = local_df["year"].map(str) + local_df["quarter"].map(str)
-    local_df = local_df.sort_values(by=["quarter"])
+    local_df["quarter-string"] = local_df["year"].map(str) + local_df["quarter"].map(str)
+    local_df = local_df.sort_values(by=["quarter-string"])
     print(local_df) # Test statement
+    #start_q = join_quarter_year(start_quarter, start_year)
+    #end_q = join_quarter_year(end_quarter, end_year)
     start_q = (start_quarter + "Q" + str(start_year)[-2:]) if company == "TSMC" else join_quarter_year(start_quarter, start_year)
     end_q = (end_quarter + "Q" + str(end_year)[-2:]) if company == "TSMC" else join_quarter_year(end_quarter, end_year)
 
     try:  
-        index_start = local_df["quarter"].tolist().index(start_q)
-        index_end = len(local_df["quarter"].tolist()) - local_df["quarter"].tolist()[::-1].index(end_q) - 1
+        index_start = local_df["quarter-string"].tolist().index(start_q)
+        index_end = len(local_df["quarter-string"].tolist()) - local_df["quarter-string"].tolist()[::-1].index(end_q) - 1
     except ValueError:
         return graph, {}
 
@@ -317,29 +405,29 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     if "$" in str(filtered_data.iloc[0,filtered_data.columns.get_loc('value')]):
         cleaned_column = filtered_data["value"].str[1:].astype(float)
     else:
-        cleaned_column = filtered_data["value"].str[:-1].astype(float) / 100
-        
+        cleaned_column = filtered_data["value"].str[:-1].replace(",","").astype(float) / 100
     filtered_data.loc[:,("value")] = cleaned_column
     
     if viz == "Comparison":
-        graph = px.bar(filtered_data, x="quarter", y="value",
+        graph = px.bar(filtered_data, x="quarter-string", y="value",
         color="sub-metric",
         labels={
-                "quarter": "Quarters",
+                "quarter-string": "Quarters",
                 "value": "Percentage %",
+                "sub-metric": f'{metric.split()[-1]}'
             },
         title=f'{metric} for {company}')
     elif submetric == None or submetric == "NaN":
-        graph = px.line(filtered_data, x="quarter", y="value",
+        graph = px.line(filtered_data, x="quarter-string", y="value",
         labels={
-        "quarter": "Quarters",
+        "quarter-string": "Quarters",
         "value": "US$ Dollars (Millions)",
             },
         title=f'{metric} for {company}', markers=True)
     else:
-        graph = px.line(filtered_data, x="quarter", y="value",
+        graph = px.line(filtered_data, x="quarter-string", y="value",
         labels={
-        "quarter": "Quarters",
+        "quarter-string": "Quarters",
         "value": "US$ Dollars (Millions)",
             },
         title=f'{metric}: {submetric} for {company}', markers=True)
