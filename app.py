@@ -176,7 +176,8 @@ buttons = html.Div(
         html.Div(
             [
             html.Button("Approve", id= "btn-approve", style={"margin-right": 10, "display":"none"}, n_clicks=0),   
-            html.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, n_clicks=0)
+            html.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, n_clicks=0),
+            html.Button("Undo", id= "btn-undo", style={"margin-right": 10, "display":"none"}, n_clicks=0)
             ]   
         ),
         html.Div(
@@ -361,6 +362,7 @@ def export_graph(n_clicks,dataframe):
 @app.callback(
     Output("btn-approve","style"),
     Output("btn-reject","style"),
+    Output("btn-undo","style"),
     Output("confirmation-msg","style"),
     Output("df-scraped", "data"),
     Output("df-scraped", "columns"),
@@ -379,7 +381,7 @@ def scrape_pdf(url, company, year, quarter, click):
         new_json = scraper.pull(url, join_quarter_year(quarter, year), abbrev)
         new_df = pd.DataFrame.from_dict(new_json)
         #print(new_df) Test statement
-        return {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
     
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
@@ -388,27 +390,43 @@ def scrape_pdf(url, company, year, quarter, click):
     Output("confirmation-msg","children"),
     Input("btn-approve","n_clicks"),
     Input("btn-reject","n_clicks"),
+    Input("btn-undo","n_clicks"),
     Input("company-input","value"),
     Input("year-input","value"),
     Input("quarter-input","value"),
     Input("json-store","data"),
     prevent_initial_call=True,
 )
-def update_global(approve, reject, company, year, quarter,json_store):
+def update_global(approve, reject, undo, company, year, quarter,json_store):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     quarter_year = join_quarter_year(quarter, year)
+    
     if 'btn-reject' in changed_id:
         return 'Update has been rejected.'
-    elif 'btn-approve' in changed_id:
-        print("hello")
+    elif 'btn-approve' in changed_id: 
         with open("data/data.json") as json_data:
             old_data = json.load(json_data)
-        print(old_data)
-        old_data.extend(json_store)
-        print(old_data)
-        with open("data/data.json","w") as json_file:
-            json.dump(old_data,json_file,indent=4,separators=(',',': '))
-        return f'{company} {quarter_year} has been added to the global dataset.'
+            json_data.close()
+        if json_store[-1] in old_data:
+            return "Data already exists"
+        else:
+            old_data.extend(json_store)
+            with open("data/data.json","w") as json_file:
+                json.dump(old_data,json_file,indent=4,separators=(',',': '))
+                json_file.close()
+            return f'{company} {quarter_year} has been added to the global dataset.'
+    elif 'btn-undo' in changed_id:
+        with open("data/data.json") as current_json:
+            current = json.load(current_json)
+            current_json.close()
+        if json_store[-1] in current:
+            current = current[:-(len(json_store))]
+            with open("data/data.json","w") as json_file:
+                json.dump(current,json_file,indent=4,separators=(',',': '))
+                json_file.close()
+            return "Data been removed from global dataset."
+        else:
+            return "There is nothing left to undo"
     return
 
 def join_quarter_year(quarter, year):
