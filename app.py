@@ -9,6 +9,8 @@ import statsmodels.api as sm
 import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
 import scraper
+import json
+
 pd.options.mode.chained_assignment = None
 
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -109,7 +111,8 @@ controls = dbc.Card(
             [
                 html.Button("Download Data", id= "btn-data"),
                 dcc.Download(id="download-data-csv"),
-                dcc.Store(id="dataframe", data=[])
+                dcc.Store(id="dataframe", data=[]),
+                dcc.Store(id="json-store", data=[])
                 
             ]
         ),
@@ -290,7 +293,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     if start_year == None or start_quarter == None or end_year == None or end_quarter == None:
         return graph, {}
 
-    local_df = company_df[company] if company != "TSMC" else global_df
+    #local_df = company_df[company] if company != "TSMC" else global_df
+    local_df = global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_dict[metric])]
     if (submetric != None or submetric != "NaN") and viz == "Individual":
         local_df = local_df.loc[local_df["sub-metric"] == submetric]
@@ -360,6 +364,7 @@ def export_graph(n_clicks,dataframe):
     Output("confirmation-msg","style"),
     Output("df-scraped", "data"),
     Output("df-scraped", "columns"),
+    Output("json-store","data"),
     Input("url-input","value"),
     Input("company-input","value"),
     Input("year-input","value"),
@@ -374,7 +379,7 @@ def scrape_pdf(url, company, year, quarter, click):
         new_json = scraper.pull(url, join_quarter_year(quarter, year), abbrev)
         new_df = pd.DataFrame.from_dict(new_json)
         #print(new_df) Test statement
-        return {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
+        return {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
     
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
@@ -386,14 +391,23 @@ def scrape_pdf(url, company, year, quarter, click):
     Input("company-input","value"),
     Input("year-input","value"),
     Input("quarter-input","value"),
+    Input("json-store","data"),
     prevent_initial_call=True,
 )
-def update_global(approve, reject, company, year, quarter):
+def update_global(approve, reject, company, year, quarter,json_store):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     quarter_year = join_quarter_year(quarter, year)
     if 'btn-reject' in changed_id:
         return 'Update has been rejected.'
     elif 'btn-approve' in changed_id:
+        print("hello")
+        with open("data/data.json") as json_data:
+            old_data = json.load(json_data)
+        print(old_data)
+        old_data.extend(json_store)
+        print(old_data)
+        with open("data/data.json","w") as json_file:
+            json.dump(old_data,json_file,indent=4,separators=(',',': '))
         return f'{company} {quarter_year} has been added to the global dataset.'
     return
 

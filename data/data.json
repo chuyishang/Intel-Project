@@ -3299,7 +3299,7 @@
         "year": "12",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.13 μm",
+        "sub-metric": "0.13 \u03bcm",
         "value": "11.8%"
     },
     {
@@ -3307,7 +3307,7 @@
         "year": "12",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18!μm",
+        "sub-metric": "0.15/0.18!\u03bcm",
         "value": "37.5%"
     },
     {
@@ -3315,7 +3315,7 @@
         "year": "12",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35μm",
+        "sub-metric": "0.25/0.35\u03bcm",
         "value": "5.7%"
     },
     {
@@ -3441,7 +3441,7 @@
         "year": "13",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.13 μm",
+        "sub-metric": "0.13 \u03bcm",
         "value": "12.2%"
     },
     {
@@ -3449,7 +3449,7 @@
         "year": "13",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "41.5%"
     },
     {
@@ -3457,7 +3457,7 @@
         "year": "13",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "5.4%"
     },
     {
@@ -3583,7 +3583,7 @@
         "year": "15",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.13 μm",
+        "sub-metric": "0.13 \u03bcm",
         "value": "10.9%"
     },
     {
@@ -3591,7 +3591,7 @@
         "year": "15",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "39.9%"
     },
     {
@@ -3599,7 +3599,7 @@
         "year": "15",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.9%"
     },
     {
@@ -3733,7 +3733,7 @@
         "year": "16",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "14.8%"
     },
     {
@@ -3741,7 +3741,7 @@
         "year": "16",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "34.2%"
     },
     {
@@ -3749,7 +3749,7 @@
         "year": "16",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "2.5%"
     },
     {
@@ -3891,7 +3891,7 @@
         "year": "17",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "8.1%"
     },
     {
@@ -3899,7 +3899,7 @@
         "year": "17",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "37.8%"
     },
     {
@@ -3907,7 +3907,7 @@
         "year": "17",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.1%"
     },
     {
@@ -4049,7 +4049,7 @@
         "year": "17",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "6.3%"
     },
     {
@@ -4057,7 +4057,7 @@
         "year": "17",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "37.8%"
     },
     {
@@ -4065,7 +4065,7 @@
         "year": "17",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.2%"
     },
     {
@@ -4207,7 +4207,7 @@
         "year": "18",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": NaN
     },
     {
@@ -4215,7 +4215,7 @@
         "year": "18",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": NaN
     },
     {
@@ -4223,7 +4223,7 @@
         "year": "18",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": NaN
     },
     {
@@ -4373,7 +4373,7 @@
         "year": "18",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": NaN
     },
     {
@@ -4381,7 +4381,7 @@
         "year": "18",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": NaN
     },
     {
@@ -4389,7 +4389,7 @@
         "year": "18",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": NaN
     },
     {
@@ -4539,7 +4539,7 @@
         "year": "18",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "8.7%"
     },
     {
@@ -4547,7 +4547,7 @@
         "year": "18",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "39.5%"
     },
     {
@@ -4555,7 +4555,7 @@
         "year": "18",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.6%"
     },
     {
@@ -4705,7 +4705,7 @@
         "year": "18",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "7.3%"
     },
     {
@@ -4713,7 +4713,7 @@
         "year": "18",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "38.7%"
     },
     {
@@ -4721,7 +4721,7 @@
         "year": "18",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.6%"
     },
     {
@@ -4879,7 +4879,7 @@
         "year": "19",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": NaN
     },
     {
@@ -4887,7 +4887,7 @@
         "year": "19",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": NaN
     },
     {
@@ -4895,7 +4895,7 @@
         "year": "19",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": NaN
     },
     {
@@ -5045,7 +5045,7 @@
         "year": "19",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": NaN
     },
     {
@@ -5053,7 +5053,7 @@
         "year": "19",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": NaN
     },
     {
@@ -5061,7 +5061,7 @@
         "year": "19",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": NaN
     },
     {
@@ -5187,7 +5187,7 @@
         "year": "19",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "6.6%"
     },
     {
@@ -5195,7 +5195,7 @@
         "year": "19",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "35.8%"
     },
     {
@@ -5203,7 +5203,7 @@
         "year": "19",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "4.2%"
     },
     {
@@ -5329,7 +5329,7 @@
         "year": "19",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "6.2%"
     },
     {
@@ -5337,7 +5337,7 @@
         "year": "19",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "35.0%"
     },
     {
@@ -5345,7 +5345,7 @@
         "year": "19",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "4.1%"
     },
     {
@@ -5471,7 +5471,7 @@
         "year": "20",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.4%"
     },
     {
@@ -5479,7 +5479,7 @@
         "year": "20",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "33.4%"
     },
     {
@@ -5487,7 +5487,7 @@
         "year": "20",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "4.3%"
     },
     {
@@ -5605,7 +5605,7 @@
         "year": "20",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.4%"
     },
     {
@@ -5613,7 +5613,7 @@
         "year": "20",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "33.0%"
     },
     {
@@ -5621,7 +5621,7 @@
         "year": "20",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "4.3%"
     },
     {
@@ -5731,7 +5731,7 @@
         "year": "20",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "4.4%"
     },
     {
@@ -5739,7 +5739,7 @@
         "year": "20",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "31.2%"
     },
     {
@@ -5747,7 +5747,7 @@
         "year": "20",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.4%"
     },
     {
@@ -5857,7 +5857,7 @@
         "year": "20",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "6.2%"
     },
     {
@@ -5865,7 +5865,7 @@
         "year": "20",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "32.5%"
     },
     {
@@ -5873,7 +5873,7 @@
         "year": "20",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "4.0%"
     },
     {
@@ -5983,7 +5983,7 @@
         "year": "21",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "6.0%"
     },
     {
@@ -5991,7 +5991,7 @@
         "year": "21",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "30.3%"
     },
     {
@@ -5999,7 +5999,7 @@
         "year": "21",
         "quarter": "Q1",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.6%"
     },
     {
@@ -6109,7 +6109,7 @@
         "year": "21",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.9%"
     },
     {
@@ -6117,7 +6117,7 @@
         "year": "21",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "28.4%"
     },
     {
@@ -6125,7 +6125,7 @@
         "year": "21",
         "quarter": "Q2",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.2%"
     },
     {
@@ -6235,7 +6235,7 @@
         "year": "21",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.4%"
     },
     {
@@ -6243,7 +6243,7 @@
         "year": "21",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "27.9%"
     },
     {
@@ -6251,7 +6251,7 @@
         "year": "21",
         "quarter": "Q3",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.0%"
     },
     {
@@ -6361,7 +6361,7 @@
         "year": "21",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.3%"
     },
     {
@@ -6369,7 +6369,7 @@
         "year": "21",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "28.6%"
     },
     {
@@ -6377,7 +6377,7 @@
         "year": "21",
         "quarter": "Q4",
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "2.9%"
     },
     {
@@ -12543,13 +12543,13 @@
         "year": "21",
         "quarter": "Q4",
         "metric": "capex",
-        "value": "($392)"
+        "value": "(649)"
     },
     {
         "company": "Global Foundries",
         "year": "21",
         "quarter": "Q4",
         "metric": "inv",
-        "value": "1,078"
+        "value": "1,121"
     }
 ]
