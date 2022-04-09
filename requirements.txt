@@ -2,3 +2,4 @@ tabula-py
 tabulate
 pdfplumber
 yahoo_fin
+prophet
