@@ -1,6 +1,7 @@
 import scraper
 from csv import reader
 import json
+import pandas as pd
 
 """
 ***********************************************
@@ -13,18 +14,13 @@ def aggregate_company(pull_func, url_csv, company):
     Aggregates data for single company for all available years, returns as a dictionary.
     """
     company_data = []
-    with open(url_csv, 'r') as read_obj:
-        csv_reader = reader(read_obj)
-        header = next(csv_reader)
-        if header != None:
-            for row in csv_reader:
-                year_quarter = row[0]
-                url = row[1]
-                try:
-                    pull_data = pull_func(url, year_quarter, company)
-                    company_data = company_data + pull_data
-                except:
-                    print(year_quarter, url)
+    url_df = pd.read_csv(url_csv)
+    for index, row in url_df.iterrows():
+        year = row['year']
+        quarter = row['quarter']
+        url = row['url']
+        pull_data = pull_func(url, year, quarter, company)
+        company_data.extend(pull_data)
     return company_data
 
 """
