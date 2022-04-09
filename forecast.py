@@ -32,7 +32,7 @@ with open('data/tsmc_json_data.json') as f:
 tsmc_df = pd.DataFrame(data)
 # df = pd.read_json('data/tsmc_json_data.json', lines=False)
 for i in np.arange(len(tsmc_df)):
-    if int(tsmc_df["year"][i]) >= 0:
+    if int(tsmc_df["year"][i]) >= 0 and int(tsmc_df["year"][i]) <= 21:
         tsmc_df["year"][i] = "20" + tsmc_df["year"][i]
     else:
         tsmc_df["year"][i] = "19" + tsmc_df["year"][i]
