@@ -498,7 +498,7 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
             old_data = json.load(json_data)
             json_data.close()
         if json_store[-1] in old_data:
-            return "Data already exists"
+            return "Data already exists in the global dataset."
         else:
             old_data.extend(json_store)
             with open("data/data.json","w") as json_file:
@@ -516,7 +516,7 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
                 json_file.close()
             return "Data been removed from global dataset."
         else:
-            return "There is nothing left to undo"
+            return "There is nothing left to undo."
     return
 
 def join_quarter_year(quarter, year):
