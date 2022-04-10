@@ -20,18 +20,18 @@ Pull Single Quarter Data from Company
 *************************************
 """
 
-def pull(url, year_quarter, company):
+def pull(url, year, quarter, company):
   """
   Selects correct pull function.
   """
   if company == 'tsmc':
-    return pull_tsmc(year_quarter, url)
+    return pull_tsmc(year, quarter, url)
   elif company == 'smic':
-    return pull_smic(year_quarter, url)
+    return pull_smic(year, quarter, url)
   elif company == 'umc':
-    return pull_umc(year_quarter, url)
+    return pull_umc(year, quarter, url)
   elif company == 'gf':
-    return pull_gf(year_quarter, url)
+    return pull_gf(year, quarter, url)
 
 
 """
@@ -40,7 +40,7 @@ Taiwan Semiconductor Manufacturing Corporation
 **********************************************
 """
 
-def pull_tsmc(year_quarter, url):
+def pull_tsmc(year, quarter, url):
   """
   Pulls a single quarter's data for TSMC and returns as a dictionary.
   """
@@ -48,8 +48,6 @@ def pull_tsmc(year_quarter, url):
   try:
     tsmc_dfs = parse_tsmc(url)
     dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
-    year = year_quarter[2:]
-    quarter = year_quarter[:2]
 
     tsmc_inv = tsmc_dfs.get('inv')
     aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv.iat[0,1]}
@@ -82,8 +80,9 @@ def pull_tsmc(year_quarter, url):
         aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
         data_tsmc.append(aggregated_tech)
 
-  except:
-    print(year_quarter, url)
+  except Exception as err:
+    print(year, quarter, url)
+    print(err)
 
   return data_tsmc
 
@@ -92,12 +91,9 @@ def parse_tsmc(url):
   """
   Pulls all TSMC informaiton from a URL. Missing pieces will have None value.
   """
+  print(f'url: {url}')
   rq = requests.get(url)
-  try:
-    pdf = pdfplumber.open(BytesIO(rq.content))
-  except:
-    print("URL not working for " + url + "!")
-    return
+  pdf = pdfplumber.open(BytesIO(rq.content))
   tsmc_text = ""
   for i in range(5):
       tsmc_text += pdf.pages[i].extract_text()
@@ -117,10 +113,12 @@ def parse_tsmc(url):
       platform_df = clean_tsmc_platform(tsmc_text)
   except IndexError:
       platform_df = None
+      print("Platform df failed for " + url)
   try: 
       seg_df = clean_tsmc_seg(tsmc_text)
   except IndexError:
       seg_df = None
+      print("Segment df failed for " + url)
   return {
     'tech': tech_df,
     'platform': platform_df,
@@ -177,7 +175,7 @@ def clean_tsmc_seg(tsmc_text):
   """
   digits = "\s+(\d+%)\s+(\d+%)\s+(\d+%)"
   quarters = "\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)"
-  segCols = np.asarray(re.findall(f"((?:Wafer|Net) (?:Revenue|Rev\.) by Application|By Application){quarters}", tsmc_text)[0])
+  segCols = np.asarray(re.findall(f"((?:Wafer|Net) (?:Revenue|Rev\.|Sales) by Application|By Application|By Customer Type){quarters}", tsmc_text)[0])
   computer = np.asarray(re.findall(f"(Computer){digits}", tsmc_text)[0])
   comm = np.asarray(re.findall(f"(Communication){digits}", tsmc_text)[0])
   consumer = np.asarray(re.findall(f"(Consumer){digits}", tsmc_text)[0])
@@ -244,18 +242,17 @@ Semiconductor Manufacturing International Corporation
 *****************************************************
 """
 
-def pull_smic(year_quarter, url):
+def pull_smic(year, quarter, url):
   """
   Pulls a single quarter's data for SMIC and returns as a dictionary.
   """
   data_smic = []
   try:
+    year_quarter = '{}Q{}'.format(year, quarter)
     smic_dfs = parse_smic(url, year_quarter)
     dict_geo_options_smic = {'North America(1)':'NORAM', 'United States':'US', 
     'Mainland China and Hong Kong':'CHINAHK','Chinese Mainland and Hong Kong, China':'CHINAHK', 
     'Eurasia(2)':'EURASIA', 'North America':'NORAM', 'Eurasia':'EURASIA'}
-    year = year_quarter[:2]
-    quarter = year_quarter[2:]
 
     smic_inv = smic_dfs.get('inv')
     inv_value_old = smic_inv.iat[0,1]
@@ -290,8 +287,9 @@ def pull_smic(year_quarter, url):
         aggregated_tech = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
         data_smic.append(aggregated_tech)
 
-  except:
-    print(year_quarter, url)
+  except Exception as err:
+    print(year, quarter, url)
+    print(err)
 
   return data_smic
 
@@ -391,7 +389,7 @@ United Microelectronics Corporation
 ***********************************
 """
 
-def pull_umc(year_quarter, url):
+def pull_umc(year, quarter, url):
   """
   Pulls a single quarter's data for UMC and returns as a dictionary.
   """
@@ -399,8 +397,7 @@ def pull_umc(year_quarter, url):
   try:
     umc_dfs = parse_umc(url)
     dict_geo_options_umc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
-    year = year_quarter[:2]
-    quarter = year_quarter[2:]
+    year_quarter = '{}Q{}'.format(year, quarter)
                 
     umc_geo = umc_dfs.get('geo')
     for _, row in umc_geo.iterrows():
@@ -418,8 +415,9 @@ def pull_umc(year_quarter, url):
         aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
         data_umc.append(aggregated_tech)
 
-  except:
-    print(year_quarter, url)
+  except Exception as err:
+    print(year, quarter, url)
+    print(err)
 
   return data_umc
 
@@ -494,7 +492,7 @@ Global Foundries
 ****************
 """
 
-def pull_gf(year_quarter, url):
+def pull_gf(year, quarter, url):
   """
   Pulls a single quarter's data for GlobalFoundries and returns as a dictionary.
   """
@@ -502,8 +500,6 @@ def pull_gf(year_quarter, url):
   
   try:
     gf_dfs = parse_gf(url)
-    year = year_quarter[:2]
-    quarter = year_quarter[2:]
 
     gf_capex = gf_dfs.get('capex')
     aggregated_capex = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': gf_capex.iat[0,2]}
@@ -513,8 +509,9 @@ def pull_gf(year_quarter, url):
     aggregated_inv = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': gf_inv.iat[0,2]}
     data_gf.append(aggregated_inv)
   
-  except:
-    print(year_quarter, url)
+  except Exception as err:
+    print(year, quarter, url)
+    print(err)
   
   return data_gf
 
