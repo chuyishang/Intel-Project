@@ -468,7 +468,7 @@ def scrape_pdf(url, company, year, quarter, click):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-scrape' in changed_id:
         abbrev = company_abbrev[company]
-        new_json = scraper.pull(url, join_quarter_year(quarter, year), abbrev)
+        new_json = scraper.pull(url, quarter, year, abbrev)
         new_df = pd.DataFrame.from_dict(new_json)
         #print(new_df) Test statement
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
