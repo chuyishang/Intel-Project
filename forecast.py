@@ -1,16 +1,6 @@
 import pandas as pd
 import numpy as np
 from prophet import Prophet
-import json
-
-"""
-Converts json for specific company to df
-"""
-def json_to_df(json_path):
-    with open(json_path) as f:
-        data = json.load(f)
-    df = pd.DataFrame(data)
-    return df
 
 """
 Reformats df to have two columns, one datetime column and one value column
@@ -32,14 +22,10 @@ def df_datetime_metric(df, metric):
     df = df.rename(columns={"value": "y"})
     return df
 
-tsmc_df = json_to_df('data/tsmc_json_data.json')
-tsmc_capex_df = df_datetime_metric(tsmc_df, 'capex')
-print(tsmc_capex_df)
-
 """
 Forecasts data given df and timeframe
 """
-def fut_forecast(df, timeframe):
+def fut_forecast(df, year):
 
     m = Prophet()
     m.fit(df)
@@ -48,13 +34,7 @@ def fut_forecast(df, timeframe):
     future.tail()
 
     forecast = m.predict(future)
-    # forecast[['date', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
     return forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
-
-    # fig1 = m.plot(forecast)
-    # fig2 = m.plot_components(forecast)
-
-print(fut_forecast(tsmc_capex_df, [2003,2004,2005]))
 
 # TO DO: Process data for metrics with submetrics
 # QUESTION: Plot multiple companies forecasts together?
