@@ -50,11 +50,15 @@ def pull_tsmc(year, quarter, url):
     dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
 
     tsmc_inv = tsmc_dfs.get('inv')
-    aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv.iat[0,1]}
+    tsmc_inv_value = tsmc_inv.iat[0,1]
+    tsmc_inv_value_commaless = tsmc_inv_value.replace(",","")
+    aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv_value_commaless}
     data_tsmc.append(aggregated_inv)
                 
     tsmc_capex = tsmc_dfs.get('capex')
-    aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex.iat[1,1]}
+    tsmc_capex_value = tsmc_capex.iat[1,1]
+    tsmc_capex_value_commaless = tsmc_capex_value.replace(",","")
+    aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex_value_commaless}
     data_tsmc.append(aggregated_capex)
                 
     tsmc_geo = tsmc_dfs.get('geo')
@@ -257,11 +261,14 @@ def pull_smic(year, quarter, url):
     smic_inv = smic_dfs.get('inv')
     inv_value_old = smic_inv.iat[0,1]
     inv_value_converted = inv_value_old[:len(inv_value_old) - 4]
-    aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': inv_value_converted}
+    inv_value_converted_commaless = inv_value_converted.replace(",","")
+    aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': inv_value_converted_commaless}
     data_smic.append(aggregated_inv)
     
     smic_capex = smic_dfs.get('capex')
-    aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex.iat[0,1]}
+    smic_capex_value = smic_capex.iat[0,1]
+    smic_capex_value_commaless = smic_capex_value.replace(",","")
+    aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex_value_commaless}
     data_smic.append(aggregated_capex)
     
     smic_geo = smic_dfs.get('geo')
@@ -415,12 +422,20 @@ def pull_umc(year, quarter, url):
         aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
         data_umc.append(aggregated_tech)
 
+    # umc_seg = umc_dfs.get('segment')
+    # for _, row in umc_seg.iterrows():
+    #     sub_seg = row[0]
+    #     sub_seg_value = row[1]
+    #     aggregated_seg = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
+    #     data_umc.append(aggregated_seg)
+    
+    # currently commented out because umc_seg scraper scrapes wrong table
+
   except Exception as err:
     print(year, quarter, url)
     print(err)
 
   return data_umc
-
 
 def parse_umc(url):
   """
@@ -502,11 +517,15 @@ def pull_gf(year, quarter, url):
     gf_dfs = parse_gf(url)
 
     gf_capex = gf_dfs.get('capex')
-    aggregated_capex = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': gf_capex.iat[0,2]}
+    gf_capex_value = gf_capex.iat[0,2]
+    gf_capex_value_commaless = gf_capex_value.replace(",","")
+    aggregated_capex = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': gf_capex_value_commaless}
     data_gf.append(aggregated_capex)
 
     gf_inv = gf_dfs.get('inv')
-    aggregated_inv = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': gf_inv.iat[0,2]}
+    gf_inv_value = gf_inv.iat[0,2]
+    gf_inv_value_commaless = gf_inv_value.replace(",","")
+    aggregated_inv = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': gf_inv_value_commaless}
     data_gf.append(aggregated_inv)
   
   except Exception as err:
