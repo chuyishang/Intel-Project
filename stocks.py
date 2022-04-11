@@ -34,6 +34,7 @@ def get_revenue(ticker):
         revenue_df.drop(["fiscalDateEnding"], axis=1, inplace=True)
         if min(revenue_df['quarter']) == 0:
             revenue_df['quarter'] = [q + 1 for q in revenue_df['quarter']]
+        revenue_df['totalRevenue'] = pd.to_numeric(revenue_df['totalRevenue'])
         return revenue_df
     return pd.DataFrame()
 
