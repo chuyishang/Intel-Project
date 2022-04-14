@@ -1,6146 +1,6146 @@
 [
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "39%"
+        "value": "39"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "28%"
+        "value": "28"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q1",
+        "year": 2004,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "49%"
+        "value": "49"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "38%"
+        "value": "38"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q1",
+        "year": 2005,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q1",
+        "year": 2006,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q1",
+        "year": 2007,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "58%"
+        "value": "58"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q1",
+        "year": 2008,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "53%"
+        "value": "53"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "37%"
+        "value": "37"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q1",
+        "year": 2009,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm and below",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q1",
+        "year": 2010,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "51%"
+        "value": "51"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "35%"
+        "value": "35"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q1",
+        "year": 2011,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q1",
+        "year": 2012,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "44%"
+        "value": "44"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "32%"
+        "value": "32"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q1",
+        "year": 2013,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "31%"
+        "value": "31"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q1",
+        "year": 2014,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q1",
+        "year": 2015,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "48%"
+        "value": "48"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q1",
+        "year": 2016,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "41%"
+        "value": "41"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "50%"
+        "value": "50"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q1",
+        "year": 2017,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "30%"
+        "value": "30"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q1",
+        "year": 2018,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "32%"
+        "value": "32"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "57%"
+        "value": "57"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q1",
+        "year": 2019,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "56%"
+        "value": "56"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q1",
+        "year": 2020,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "63%"
+        "value": "63"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q1",
+        "year": 2021,
+        "quarter": 1,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "39%"
+        "value": "39"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "28%"
+        "value": "28"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q2",
+        "year": 2004,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "38%"
+        "value": "38"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q3",
+        "year": 2004,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "49%"
+        "value": "49"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "32%"
+        "value": "32"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "04",
-        "quarter": "Q4",
+        "year": 2004,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "44%"
+        "value": "44"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q2",
+        "year": 2005,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "48%"
+        "value": "48"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q3",
+        "year": 2005,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "49%"
+        "value": "49"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "05",
-        "quarter": "Q4",
+        "year": 2005,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "51%"
+        "value": "51"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "35%"
+        "value": "35"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q2",
+        "year": 2006,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "60%"
+        "value": "60"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "27%"
+        "value": "27"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q3",
+        "year": 2006,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "53%"
+        "value": "53"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "37%"
+        "value": "37"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "06",
-        "quarter": "Q4",
+        "year": 2006,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q2",
+        "year": 2007,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "49%"
+        "value": "49"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.15um<x<=0.18um",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.25um",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.25um<x<=0.35um",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q3",
+        "year": 2007,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "51%"
+        "value": "51"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "37%"
+        "value": "37"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "27%"
+        "value": "27"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "07",
-        "quarter": "Q4",
+        "year": 2007,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "50%"
+        "value": "50"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "35%"
+        "value": "35"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q2",
+        "year": 2008,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "60%"
+        "value": "60"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "32%"
+        "value": "32"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q3",
+        "year": 2008,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "57%"
+        "value": "57"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "31%"
+        "value": "31"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "08",
-        "quarter": "Q4",
+        "year": 2008,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q2",
+        "year": 2009,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "49%"
+        "value": "49"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "41%"
+        "value": "41"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm and below",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q3",
+        "year": 2009,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "51%"
+        "value": "51"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm and below",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "09",
-        "quarter": "Q4",
+        "year": 2009,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q2",
+        "year": 2010,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q3",
+        "year": 2010,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "53%"
+        "value": "53"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "30%"
+        "value": "30"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "30%"
+        "value": "30"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "10",
-        "quarter": "Q4",
+        "year": 2010,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "49%"
+        "value": "49"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "39%"
+        "value": "39"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "31%"
+        "value": "31"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q2",
+        "year": 2011,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "48%"
+        "value": "48"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "34%"
+        "value": "34"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q3",
+        "year": 2011,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "41%"
+        "value": "41"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "11",
-        "quarter": "Q4",
+        "year": 2011,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q2",
+        "year": 2012,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "50%"
+        "value": "50"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "41%"
+        "value": "41"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q3",
+        "year": 2012,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "40%"
+        "value": "40"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "12",
-        "quarter": "Q4",
+        "year": 2012,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "31%"
+        "value": "31"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q2",
+        "year": 2013,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "44%"
+        "value": "44"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "34%"
+        "value": "34"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q3",
+        "year": 2013,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "41%"
+        "value": "41"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm and below",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "13",
-        "quarter": "Q4",
+        "year": 2013,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm <x<=28nm",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "31%"
+        "value": "31"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q2",
+        "year": 2014,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "44%"
+        "value": "44"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q3",
+        "year": 2014,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "14",
-        "quarter": "Q4",
+        "year": 2014,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "46%"
+        "value": "46"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q2",
+        "year": 2015,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "41%"
+        "value": "41"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "25%"
+        "value": "25"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q3",
+        "year": 2015,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "37%"
+        "value": "37"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "15",
-        "quarter": "Q4",
+        "year": 2015,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "49%"
+        "value": "49"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q2",
+        "year": 2016,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "52%"
+        "value": "52"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "27%"
+        "value": "27"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q3",
+        "year": 2016,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "48%"
+        "value": "48"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm and below",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "16",
-        "quarter": "Q4",
+        "year": 2016,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "42%"
+        "value": "42"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "4%"
+        "value": "4"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "17%"
+        "value": "17"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "28%"
+        "value": "28"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q2",
+        "year": 2017,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "47%"
+        "value": "47"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q3",
+        "year": 2017,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "43%"
+        "value": "43"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "45%"
+        "value": "45"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "28%"
+        "value": "28"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "17",
-        "quarter": "Q4",
+        "year": 2017,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "37%"
+        "value": "37"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "51%"
+        "value": "51"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q2",
+        "year": 2018,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "34%"
+        "value": "34"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "52%"
+        "value": "52"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q3",
+        "year": 2018,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "38%"
+        "value": "38"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "51%"
+        "value": "51"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "1%"
+        "value": "1"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "15%"
+        "value": "15"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "18",
-        "quarter": "Q4",
+        "year": 2018,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "31%"
+        "value": "31"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "59%"
+        "value": "59"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "24%"
+        "value": "24"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q2",
+        "year": 2019,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "33%"
+        "value": "33"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "59%"
+        "value": "59"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "26%"
+        "value": "26"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q3",
+        "year": 2019,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "30%"
+        "value": "30"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "55%"
+        "value": "55"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "19",
-        "quarter": "Q4",
+        "year": 2019,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "31%"
+        "value": "31"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "55%"
+        "value": "55"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "16%"
+        "value": "16"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q2",
+        "year": 2020,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "30%"
+        "value": "30"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "57%"
+        "value": "57"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "14%"
+        "value": "14"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "23%"
+        "value": "23"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "10%"
+        "value": "10"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q3",
+        "year": 2020,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "29%"
+        "value": "29"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "61%"
+        "value": "61"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "5%"
+        "value": "5"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "20",
-        "quarter": "Q4",
+        "year": 2020,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "63%"
+        "value": "63"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "9%"
+        "value": "9"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "11%"
+        "value": "11"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q2",
+        "year": 2021,
+        "quarter": 2,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "2%"
+        "value": "2"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "22%"
+        "value": "22"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "65%"
+        "value": "65"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q3",
+        "year": 2021,
+        "quarter": 3,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "NORAM",
-        "value": "21%"
+        "value": "21"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "ASIAPAC",
-        "value": "66%"
+        "value": "66"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Europe",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_geo",
         "sub-metric": "Japan",
-        "value": "6%"
+        "value": "6"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm and below",
-        "value": "0%"
+        "value": "0"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "14nm<x<=28nm",
-        "value": "20%"
+        "value": "20"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "28nm<x<=40nm",
-        "value": "18%"
+        "value": "18"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "40nm<x<=65nm",
-        "value": "19%"
+        "value": "19"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "65nm<x<=90nm",
-        "value": "8%"
+        "value": "8"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "90nm<x<=0.13um",
-        "value": "12%"
+        "value": "12"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.13um<x<=0.18um",
-        "value": "13%"
+        "value": "13"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.18um<x<=0.35um",
-        "value": "7%"
+        "value": "7"
     },
     {
         "company": "UMC",
-        "year": "21",
-        "quarter": "Q4",
+        "year": 2021,
+        "quarter": 4,
         "metric": "rev_tech",
         "sub-metric": "0.5um and above",
-        "value": "3%"
+        "value": "3"
     }
 ]

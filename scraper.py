@@ -51,18 +51,9 @@ def pull_tsmc(year, quarter, url):
   try:
     tsmc_dfs = parse_tsmc(url)
     dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
-
-    rq = requests.get(url)
-    pdf = pdfplumber.open(BytesIO(rq.content))
-    text = ""
-    text += pdf.pages[0].extract_text()
-    revenue_regex = "\$\d+,*\d*\.*\d*"
-    revenue = re.findall(f"{revenue_regex}", text)[0]
-    revenue_no_dollar_sign = revenue.replace("$","")
-    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
-    revenue_num_millions = float(revenue_no_comma) * 1000
     conv = converter.Converter()
-    tsmc_rev_converted = conv.twd_usd(revenue_num_millions, year, quarter)
+
+    tsmc_rev_converted = get_rev_tsmc(year, quarter, url)
     aggregated_rev = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': tsmc_rev_converted}
     data_tsmc.append(aggregated_rev)
 
@@ -114,6 +105,23 @@ def pull_tsmc(year, quarter, url):
 
   return data_tsmc
 
+def get_rev_tsmc(year, quarter, url):
+  tsmc_rev_converted = 0
+  try:
+    rq = requests.get(url)
+    pdf = pdfplumber.open(BytesIO(rq.content))
+    text = ""
+    text += pdf.pages[0].extract_text()
+    revenue_regex = "\$\d+,*\d*\.*\d*"
+    revenue = re.findall(f"{revenue_regex}", text)[0]
+    revenue_no_dollar_sign = revenue.replace("$","")
+    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
+    revenue_num_millions = float(revenue_no_comma) * 1000
+    conv = converter.Converter()
+    tsmc_rev_converted = conv.twd_usd(revenue_num_millions, year, quarter)
+  except:
+    print(year, quarter, url)
+  return tsmc_rev_converted
 
 def parse_tsmc(url):
   """
@@ -282,15 +290,7 @@ def pull_smic(year, quarter, url):
     'Mainland China and Hong Kong':'CHINAHK','Chinese Mainland and Hong Kong, China':'CHINAHK', 
     'Eurasia(2)':'EURASIA', 'North America':'NORAM', 'Eurasia':'EURASIA'}
 
-    rq = requests.get(url)
-    pdf = pdfplumber.open(BytesIO(rq.content))
-    text = ""
-    text += pdf.pages[0].extract_text()
-    revenue_regex = "\$\d+,*\d*\.*\d*"
-    revenue = re.findall(f"{revenue_regex}", text)[0]
-    revenue_no_dollar_sign = revenue.replace("$","")
-    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
-    revenue_num = float(revenue_no_comma)
+    revenue_num = get_rev_smic(year, quarter, url)
     aggregated_rev = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': revenue_num}
     data_smic.append(aggregated_rev)
 
@@ -339,6 +339,21 @@ def pull_smic(year, quarter, url):
 
   return data_smic
 
+def get_rev_smic(year, quarter, url):
+  revenue_num = 0
+  try:
+    rq = requests.get(url)
+    pdf = pdfplumber.open(BytesIO(rq.content))
+    text = ""
+    text += pdf.pages[0].extract_text()
+    revenue_regex = "\$\d+,*\d*\.*\d*"
+    revenue = re.findall(f"{revenue_regex}", text)[0]
+    revenue_no_dollar_sign = revenue.replace("$","")
+    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
+    revenue_num = float(revenue_no_comma)
+  except:
+    print(year, quarter, url)
+  return revenue_num
 
 def parse_smic(url, year_quarter):
   """
