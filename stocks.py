@@ -61,5 +61,5 @@ def get_exchange_rate(fromCurr, toCurr):
     data = r.json()
     return data['Realtime Currency Exchange Rate']['Exchange Rate']
 
-print(get_revenue('SMIC')) # Need to pull TSMC and SMIC revenue
+print(get_revenue('UMC')) # Need to pull TSMC and SMIC revenue
 #rint(get_customer_revenue('TSMC'))

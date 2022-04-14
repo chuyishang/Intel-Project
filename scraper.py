@@ -14,6 +14,9 @@ import pandas as pd
 import re
 import csv
 
+# currency conversion
+import converter
+
 """
 *************************************
 Pull Single Quarter Data from Company
@@ -49,39 +52,60 @@ def pull_tsmc(year, quarter, url):
     tsmc_dfs = parse_tsmc(url)
     dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
 
+    rq = requests.get(url)
+    pdf = pdfplumber.open(BytesIO(rq.content))
+    text = ""
+    text += pdf.pages[0].extract_text()
+    revenue_regex = "\$\d+,*\d*\.*\d*"
+    revenue = re.findall(f"{revenue_regex}", text)[0]
+    revenue_no_dollar_sign = revenue.replace("$","")
+    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
+    revenue_num_millions = float(revenue_no_comma) * 1000
+    conv = converter.Converter()
+    tsmc_rev_converted = conv.twd_usd(revenue_num_millions, year, quarter)
+    aggregated_rev = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': tsmc_rev_converted}
+    data_tsmc.append(aggregated_rev)
+
     tsmc_inv = tsmc_dfs.get('inv')
     tsmc_inv_value = tsmc_inv.iat[0,1]
     tsmc_inv_value_commaless = tsmc_inv_value.replace(",","")
-    aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv_value_commaless}
+    tsmc_inv_millions = float(tsmc_inv_value_commaless) * 1000
+    tsmc_inv_converted = conv.twd_usd(tsmc_inv_millions, year, quarter)
+    aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv_converted}
     data_tsmc.append(aggregated_inv)
-                
+    
     tsmc_capex = tsmc_dfs.get('capex')
     tsmc_capex_value = tsmc_capex.iat[1,1]
     tsmc_capex_value_commaless = tsmc_capex_value.replace(",","")
-    aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex_value_commaless}
+    tsmc_capex_millions = float(tsmc_capex_value_commaless) * 1000
+    tsmc_capex_converted = conv.twd_usd(tsmc_capex_millions, year, quarter)
+    aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex_converted}
     data_tsmc.append(aggregated_capex)
                 
     tsmc_geo = tsmc_dfs.get('geo')
     for index, row in tsmc_geo.iterrows():
         sub_geo = index
         sub_geo_value = row[0]
+        sub_geo_no_percent = sub_geo_value.replace("%","")
         if sub_geo in dict_geo_options_tsmc:
             sub_geo = dict_geo_options_tsmc.get(sub_geo)
-        aggregated_geo = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
+        aggregated_geo = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
         data_tsmc.append(aggregated_geo)
 
     tsmc_seg = tsmc_dfs.get('segment')
     for index, row in tsmc_seg.iterrows():
         sub_seg = index
         sub_seg_value = row[0]
-        aggregated_seg = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
+        sub_seg_no_percent = sub_seg_value.replace("%","")
+        aggregated_seg = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
         data_tsmc.append(aggregated_seg)
 
     tsmc_tech = tsmc_dfs.get('tech')
     for index, row in tsmc_tech.iterrows():
         sub_tech = index
         sub_tech_value = row[0]
-        aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
+        sub_tech_no_percent = sub_tech_value.replace("%","")
+        aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
         data_tsmc.append(aggregated_tech)
 
   except Exception as err:
@@ -258,6 +282,18 @@ def pull_smic(year, quarter, url):
     'Mainland China and Hong Kong':'CHINAHK','Chinese Mainland and Hong Kong, China':'CHINAHK', 
     'Eurasia(2)':'EURASIA', 'North America':'NORAM', 'Eurasia':'EURASIA'}
 
+    rq = requests.get(url)
+    pdf = pdfplumber.open(BytesIO(rq.content))
+    text = ""
+    text += pdf.pages[0].extract_text()
+    revenue_regex = "\$\d+,*\d*\.*\d*"
+    revenue = re.findall(f"{revenue_regex}", text)[0]
+    revenue_no_dollar_sign = revenue.replace("$","")
+    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
+    revenue_num = float(revenue_no_comma)
+    aggregated_rev = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': revenue_num}
+    data_smic.append(aggregated_rev)
+
     smic_inv = smic_dfs.get('inv')
     inv_value_old = smic_inv.iat[0,1]
     inv_value_converted = inv_value_old[:len(inv_value_old) - 4]
@@ -275,23 +311,26 @@ def pull_smic(year, quarter, url):
     for _, row in smic_geo.iterrows():
         sub_geo = row[0]
         sub_geo_value = row[1]
+        sub_geo_no_percent = sub_geo_value.replace("%","")
         if sub_geo in dict_geo_options_smic:
             sub_geo = dict_geo_options_smic.get(sub_geo)
-        aggregated_geo = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
+        aggregated_geo = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
         data_smic.append(aggregated_geo)
 
     smic_seg = smic_dfs.get('segment')
     for _, row in smic_seg.iterrows():
         sub_seg = row[0]
         sub_seg_value = row[1]
-        aggregated_seg = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
+        sub_seg_no_percent = sub_seg_value.replace("%","")
+        aggregated_seg = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
         data_smic.append(aggregated_seg)
 
     smic_tech = smic_dfs.get('tech')
     for _, row in smic_tech.iterrows():
         sub_tech = row[0]
         sub_tech_value = row[1]
-        aggregated_tech = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
+        sub_tech_no_percent = sub_tech_value.replace("%","")
+        aggregated_tech = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
         data_smic.append(aggregated_tech)
 
   except Exception as err:
@@ -410,23 +449,26 @@ def pull_umc(year, quarter, url):
     for _, row in umc_geo.iterrows():
         sub_geo = row[0]
         sub_geo_value = row[1]
+        sub_geo_no_percent = sub_geo_value.replace("%","")
         if sub_geo in dict_geo_options_umc:
             sub_geo = dict_geo_options_umc.get(sub_geo)
-        aggregated_geo = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_value}
+        aggregated_geo = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
         data_umc.append(aggregated_geo)
 
     umc_tech = umc_dfs.get('tech')
     for _, row in umc_tech.iterrows():
         sub_tech = row[0]
         sub_tech_value = row[1]
-        aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_value}
+        sub_tech_no_percent = sub_tech_value.replace("%","")
+        aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
         data_umc.append(aggregated_tech)
 
     # umc_seg = umc_dfs.get('segment')
     # for _, row in umc_seg.iterrows():
     #     sub_seg = row[0]
     #     sub_seg_value = row[1]
-    #     aggregated_seg = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_value}
+    #     sub_seg_no_percent = sub_seg_value.replace("%","")
+    #     aggregated_seg = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
     #     data_umc.append(aggregated_seg)
     
     # currently commented out because umc_seg scraper scrapes wrong table
