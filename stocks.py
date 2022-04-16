@@ -1,15 +1,17 @@
+from codecs import ignore_errors
 import time
 import requests
 import pandas as pd
 import numpy as np
 import threading
+import converter
 
 api_key = '2CCS30TFYFGYBXKB'
 # Dictionary mapping each competitor's ticker to a list of its top customers' ticker, if the customer is in the US
 top_customers = {'TSMC':['AAPL', 'AMD', 'QCOM', 'AVGO', 'NVDA', 'SONY', 'MRVL', 'STM', 'ADI', 'INTC'],
                 'SMIC':['QCOM', 'AVGO', 'TXN'],
                 'UMC':['QCOM', 'AMD'],
-                'GF':['QCOM', 'NXPI', 'QRVO', 'CRUS', 'AMD', 'SWKS', 'AVGO']
+                'GFS':['QCOM', 'NXPI', 'QRVO', 'CRUS', 'AMD', 'SWKS', 'AVGO']
             }
 # Tracks number of calls to API so the program can sleep once it reaches 5
 call_count = 0
@@ -19,7 +21,7 @@ DataFrame columns: ['reportedCurrency', 'totalRevenue', 'year', 'quarter']
 '''
 def get_revenue(ticker):
     global call_count
-    if call_count == 5:
+    if call_count >= 5:
         time.sleep(60)
         call_count = 0
     url = f'https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol={ticker}&apikey={api_key}'
@@ -34,17 +36,20 @@ def get_revenue(ticker):
         revenue_df.drop(["fiscalDateEnding"], axis=1, inplace=True)
         if min(revenue_df['quarter']) == 0:
             revenue_df['quarter'] = [q + 1 for q in revenue_df['quarter']]
-        revenue_df['totalRevenue'] = pd.to_numeric(revenue_df['totalRevenue'])
+        revenue_df['totalRevenue'] = pd.to_numeric(revenue_df['totalRevenue'], errors='ignore')
         return revenue_df
     return pd.DataFrame()
 
 '''
-Returns DataFrame with past 5 years of quarterly revenue for all companies in top_customers[COMPANY].
+Returns DataFrame with past 5 years of quarterly revenue for all companies in tickerList.
 '''
-def get_customer_revenue(company):
+def get_revenue_list(tickerList):
     df = pd.DataFrame()
-    for ticker in top_customers[company]:
+    for ticker in tickerList:
         ticker_df = get_revenue(ticker)
+        if ticker_df["reportedCurrency"][0] == "TWD":
+            ticker_df["reportedCurrency"] = ticker_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
+            ticker_df["totalRevenue"] = ticker_df.apply(lambda x:converter.Converter().twd_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
         ticker_df.rename({"totalRevenue":f'{ticker.lower()}Revenue'}, axis=1, inplace=True)
         if df.empty:
             df = ticker_df
@@ -61,5 +66,5 @@ def get_exchange_rate(fromCurr, toCurr):
     data = r.json()
     return data['Realtime Currency Exchange Rate']['Exchange Rate']
 
-print(get_revenue('UMC')) # Need to pull TSMC and SMIC revenue
-#rint(get_customer_revenue('TSMC'))
+#print(get_revenue_list(['GFS','UMC'])) # Need to pull TSMC and SMIC revenue
+#print(get_customer_revenue('TSMC'))
