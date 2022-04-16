@@ -124,7 +124,9 @@ controls = dbc.Card(
     body=True,
 )
 
-parsing = dbc.Card(
+parsing = html.Div(
+    [
+    dbc.Card(
     [
         html.Div(
             [
@@ -173,6 +175,48 @@ parsing = dbc.Card(
         ),
     ],
     body=True,
+    ),
+    dbc.Card(
+    [
+        html.Div(
+            [
+                dbc.Label("Company"),
+                dcc.Dropdown(
+                    id="manual-company-input",
+                    options=[
+                       "TSMC", "SMIC", "UMC", "Global Foundries"
+                    ],
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                dbc.Label("Year"),
+                dcc.Input(
+                    id="manual-year-input".format("number"),
+                    type="number",
+                    placeholder="Enter Year".format("number"),
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                dbc.Label("Quarter"),
+                dcc.Dropdown(
+                    id="manual-quarter-input",
+                    options=[1, 2, 3, 4]
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                html.Button("Manual Input", id= "btn-manual", style={"margin-top": 10}, n_clicks=0),   
+            ]
+        )
+    ],
+    body=True,
+    )
+    ]
 )
 
 puller = dbc.Card(
@@ -262,6 +306,31 @@ app.layout = html.Div([
                         dbc.Col(
                             [
                                 dash_table.DataTable(data=[], id="df-scraped"),
+                                dash_table.DataTable(
+                                    id = 'manual-dt',
+                                    columns=(
+                                        [{'id': 'capex','name':'Capex'}]+
+                                        [{'id': 'inventory','name':'Inventory'}]
+                                    ),
+                                    data=[
+                                        {'column-{}'.format(i): (j + (i-1)*2) for i in range(1, 2)}
+                                        for j in range(1)
+                                    ],
+                                    editable=True
+                                ),
+                                dash_table.DataTable(
+                                    id = 'submetrics-dt',
+                                    columns=(
+                                        [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
+                                        [{'id': 'rev-seg-value','name':'Value'}]
+                                    ),
+                                    data=[
+                                        {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                        for j in range(5)
+                                    ],
+                                    editable=True,
+                                    row_deletable=True
+                                ),
                                 buttons
                             ]
                             , md=8)
@@ -535,7 +604,16 @@ def scrape_pdf(url, company, year, quarter, click):
         new_df = pd.DataFrame.from_dict(new_json)
         #print(new_df) Test statement
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
-    
+
+# @app.callback(
+#     Output("btn-approve","style"),
+#     Output("btn-reject","style"),
+#     Output("btn-undo","style"),
+#     Output("confirmation-msg","style"),
+#     Output(""),
+#     Input("btn-manual"),
+#     prevent_initial_call=True
+# )
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
     #Output("btn-approve","style"),
