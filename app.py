@@ -231,21 +231,22 @@ puller = dbc.Card(
         ),
 
         html.Div([
-            dbc.Label("Company Ticker 1"),
+            dbc.Label("Company Tickers"),
             dcc.Dropdown(
-                    id="ticker1",
-                    options=ticker_options
-                ),
-            dbc.Label("Company Ticker 2"),
-            dcc.Dropdown(
-                    id="ticker2",
-                    options=ticker_options
+                    id="ticker-dropdown",
+                    options=ticker_options,
+                    multi=True
                 ),
             ]
         ),
         html.Div(
             [
-                html.Button("Pull Revenue", id= "btn-pull", style={"margin-top": 10}, n_clicks=0),   
+                html.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10}, n_clicks=0),   
+            ]
+        ),
+        html.Div(
+            [
+                html.Button("Update All Tickers", id= "btn-update-all", style={"margin-top": 10}, n_clicks=0),   
             ]
         ),
         html.Div(
@@ -343,7 +344,7 @@ app.layout = html.Div([
         ]),
         dcc.Tab(label="Pulling", children=[
             dbc.Container([
-                html.H1("Pulling Revenue from Tickers", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -489,8 +490,9 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
         Input("start-dropdown", "value"),
         Input("startq-dropdown", "value"),
         Input("end-dropdown", "value"),
-        Input("endq-dropdown", "value")
+        Input("endq-dropdown", "value"),
     ],
+    prevent_initial_call=True,
 )
 def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_year, end_quarter):
     if metric == "CapEx" or metric == "Inventory":
@@ -667,44 +669,49 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
     return
 
 @app.callback(
-    Output("ticker1", "options"),
-    Output("ticker2", "options"),
+    Output("ticker-dropdown", "options"),
     Input("input-ticker", "value"),
     Input("btn-add-ticker", "n_clicks"),
-    Input("ticker1", "options"),
-    Input("ticker2", "options"),
+    Input("ticker-dropdown", "options"),
+    prevent_initial_call=True,
 )
-def add_ticker(new_ticker, btn, t1, t2):
+def add_ticker(new_ticker, btn, tickers):
     global ticker_options
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-add-ticker' in changed_id:
-        t1.append(new_ticker.upper())
-        t2.append(new_ticker.upper())
+        tickers.append(new_ticker.upper())
     ticker_options.append(new_ticker.upper())
-    return t1, t2
+    return tickers
 
 @app.callback(
     Output("df-pulled", "data"),
     Output("df-pulled", "columns"),
     #Output("json-store-pull","data"),
-    Input("ticker1", "value"),
-    Input("ticker2", "value"),
-    Input("btn-pull", "n_clicks")
+    Input("ticker-dropdown", "value"),
+    Input("ticker-dropdown", "options"),
+    Input("btn-pull", "n_clicks"),
+    Input("btn-update-all", "n_clicks"),
+    prevent_initial_call=True,
 )
-def pull_revenue(t1, t2, btn):
+def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-pull' in changed_id:
-        print(t1, t2) # Test statement
-        new_df = stocks.get_revenue_list([t1, t2])
-        new_json = pd.DataFrame.to_json(new_df)
-        print(new_df) # Test statement
-        old_data = pd.read_csv("data/revenue.csv")
-        old_cols = old_data.columns
-        new_cols = new_df.columns
-        combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
-        combined = pd.merge(old_data, new_df, how='outer', on=combine_cols).fillna(0) if ~old_data.empty else new_df
-        combined.to_csv("data/revenue.csv", index=False)
-        return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
+        tickers = tickerVal
+    elif 'btn-update-all' in changed_id:
+        tickers = tickerOptions
+    old_data = pd.read_csv("data/revenue.csv")
+    old_cols = old_data.columns
+    #tickers = [t for t in tickers if f'{t.lower()}Revenue' in old_cols and old_data[f'{t.lower()}Revenue']]
+    new_df = stocks.get_revenue_list(tickers)
+    print(new_df) # Test statement
+    old_data = pd.read_csv("data/revenue.csv")
+    old_cols = old_data.columns
+    new_cols = new_df.columns
+    combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
+    combined = pd.merge(old_data, new_df, how='outer', on=combine_cols).drop_duplicates() if ~old_data.empty else new_df
+    combined = combined.replace("", np.nan)
+    combined.to_csv("data/revenue.csv", index=False)
+    return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
