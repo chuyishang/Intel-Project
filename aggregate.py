@@ -2,6 +2,7 @@ import scraper
 from csv import reader
 import json
 import pandas as pd
+import argparse
 
 """
 ***********************************************
@@ -23,38 +24,45 @@ def aggregate_company(pull_func, url_csv, company):
         company_data.extend(pull_data)
     return company_data
 
-"""
-Aggregates data for TSMC for all available years, returns as a json file.
-"""
-tsmc_data = aggregate_company(scraper.pull, 'urls/tsmc_urls.csv', 'tsmc')
-with open('tsmc_json_data.json', 'w', encoding='utf-8') as f:
-    json.dump(tsmc_data, f, ensure_ascii=False, indent=4)
+VALID_COMPS = ['tsmc', 'smic', 'umc', 'gf']
 
-"""
-Aggregates data for SMIC for all available years, returns as a json file.
-"""
-smic_data = aggregate_company(scraper.pull, 'urls/smic_urls.csv', 'smic')
-with open('smic_json_data.json', 'w', encoding='utf-8') as f:
-    json.dump(smic_data, f, ensure_ascii=False, indent=4)
+def main():
+    parser = argparse.ArgumentParser()
+    add_arg = parser.add_argument
+    add_arg('--all', action='store_true')
+    add_arg('--comp', type=str)
+    add_arg('--qtr', type=int)
+    add_arg('--year', type=int)
 
-"""
-Aggregates data for UMC for all available years, returns as a json file.
-"""
-umc_data = aggregate_company(scraper.pull, 'urls/umc_urls.csv', 'umc')
-with open('umc_json_data.json', 'w', encoding='utf-8') as f:
-    json.dump(umc_data, f, ensure_ascii=False, indent=4)
+    args = parser.parse_args()
+    url_files = {
+        'tsmc':'urls/tsmc_urls.csv',
+        'smic':'urls/smic_urls.csv',
+        'umc':'urls/umc_urls.csv',
+        'gf':'urls/gf_urls.csv',
+    }
 
-"""
-Aggregates data for GlobalFoundries for all available years, returns as a json file.
-"""
-gf_data = aggregate_company(scraper.pull, 'urls/gf_urls.csv', 'gf')
-with open('gf_json_data.json', 'w', encoding='utf-8') as f:
-    json.dump(gf_data, f, ensure_ascii=False, indent=4)
+    if args.all:
+        all_df = pd.DataFrame()
+        for comp, url_file in url_files.items():
+            comp_data = aggregate_company(scraper.pull, url_file, comp)
+            all_df = all_df.append(comp_data)
+        quit()
+    
+    company = args.comp
+    quarter = args.qtr
+    year = args.year
 
-"""
-Aggregates data for all companies for all available years, returns as a json file.
-"""
-data = tsmc_data + smic_data + umc_data + gf_data
-with open('data.json', 'w', encoding='utf-8') as f:
-    json.dump(data, f, ensure_ascii=False, indent=4)
+    if not all([company, quarter, year]):
+        raise RuntimeError('If not collecting all with --all, then --comp, --qtr, and --year must be specified.')
 
+    if not company in VALID_COMPS:
+        raise RuntimeError(f'--comp must be one of {VALID_COMPS}')
+
+    url_file = url_files[args.comp]
+    url_df = pd.read_csv(url_file)
+    url = url_df[(url_df['year'] == args.year) & (url_df['quarter'] == args.qtr)].iloc[0]['url']
+    print(scraper.pull(url, year, quarter, company))
+
+if __name__ == "__main__":
+    main()
