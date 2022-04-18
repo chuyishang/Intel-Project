@@ -1,3 +1,4 @@
+import csv
 from logging import Filterer
 from re import sub
 import dash
@@ -8,7 +9,7 @@ import numpy as np
 import statsmodels.api as sm
 import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
-import scraper
+import scraper, stocks
 import json
 
 pd.options.mode.chained_assignment = None
@@ -29,6 +30,7 @@ company_df = {"SMIC": smic, "UMC": umc, "Global Foundries": gf}
 company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC":"tsmc"}
 firstYear = 2000
 currYear = 2022
+ticker_options = ["GFS", "UMC"]
 
 
 controls = dbc.Card(
@@ -122,7 +124,9 @@ controls = dbc.Card(
     body=True,
 )
 
-parsing = dbc.Card(
+parsing = html.Div(
+    [
+    dbc.Card(
     [
         html.Div(
             [
@@ -171,6 +175,89 @@ parsing = dbc.Card(
         ),
     ],
     body=True,
+    ),
+    dbc.Card(
+    [
+        html.Div(
+            [
+                dbc.Label("Company"),
+                dcc.Dropdown(
+                    id="manual-company-input",
+                    options=[
+                       "TSMC", "SMIC", "UMC", "Global Foundries"
+                    ],
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                dbc.Label("Year"),
+                dcc.Input(
+                    id="manual-year-input".format("number"),
+                    type="number",
+                    placeholder="Enter Year".format("number"),
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                dbc.Label("Quarter"),
+                dcc.Dropdown(
+                    id="manual-quarter-input",
+                    options=[1, 2, 3, 4]
+                ),
+            ],
+        ),
+        html.Div(
+            [
+                html.Button("Manual Input", id= "btn-manual", style={"margin-top": 10}, n_clicks=0),   
+            ]
+        )
+    ],
+    body=True,
+    )
+    ]
+)
+
+puller = dbc.Card(
+    [
+        html.Div([
+            dbc.Label("New Ticker"),
+            dcc.Input(
+                    id="input-ticker",
+                ),
+            html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10}, n_clicks=0),
+        ],
+        ),
+
+        html.Div([
+            dbc.Label("Company Ticker 1"),
+            dcc.Dropdown(
+                    id="ticker1",
+                    options=ticker_options
+                ),
+            dbc.Label("Company Ticker 2"),
+            dcc.Dropdown(
+                    id="ticker2",
+                    options=ticker_options
+                ),
+            ]
+        ),
+        html.Div(
+            [
+                html.Button("Pull Revenue", id= "btn-pull", style={"margin-top": 10}, n_clicks=0),   
+            ]
+        ),
+        html.Div(
+            [
+                dcc.Download(id="download-rev-csv"),
+                #dcc.Store(id="json-store-pull", data=[])
+                
+            ]
+        ),
+
+    ],
+    body=True
 )
 
 buttons = html.Div(
@@ -219,6 +306,31 @@ app.layout = html.Div([
                         dbc.Col(
                             [
                                 dash_table.DataTable(data=[], id="df-scraped"),
+                                dash_table.DataTable(
+                                    id = 'manual-dt',
+                                    columns=(
+                                        [{'id': 'capex','name':'Capex'}]+
+                                        [{'id': 'inventory','name':'Inventory'}]
+                                    ),
+                                    data=[
+                                        {'column-{}'.format(i): (j + (i-1)*2) for i in range(1, 2)}
+                                        for j in range(1)
+                                    ],
+                                    editable=True
+                                ),
+                                dash_table.DataTable(
+                                    id = 'submetrics-dt',
+                                    columns=(
+                                        [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
+                                        [{'id': 'rev-seg-value','name':'Value'}]
+                                    ),
+                                    data=[
+                                        {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                        for j in range(5)
+                                    ],
+                                    editable=True,
+                                    row_deletable=True
+                                ),
                                 buttons
                             ]
                             , md=8)
@@ -229,6 +341,26 @@ app.layout = html.Div([
             fluid=True,
         )
         ]),
+        dcc.Tab(label="Pulling", children=[
+            dbc.Container([
+                html.H1("Pulling Revenue from Tickers", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Hr(),
+                dbc.Row(
+                    [
+                        dbc.Col(puller, md=4),
+                        dbc.Col(
+                            [dash_table.DataTable(data=[], id="df-pulled")
+                            ],
+                            md=8
+                        )
+                    ],
+                    align="center",
+                ),
+            ],
+            fluid=True
+            )
+        ],
+        )
     ])
 ])
 
@@ -472,7 +604,16 @@ def scrape_pdf(url, company, year, quarter, click):
         new_df = pd.DataFrame.from_dict(new_json)
         #print(new_df) Test statement
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
-    
+
+# @app.callback(
+#     Output("btn-approve","style"),
+#     Output("btn-reject","style"),
+#     Output("btn-undo","style"),
+#     Output("confirmation-msg","style"),
+#     Output(""),
+#     Input("btn-manual"),
+#     prevent_initial_call=True
+# )
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
     #Output("btn-approve","style"),
@@ -518,6 +659,46 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
         else:
             return "There is nothing left to undo."
     return
+
+@app.callback(
+    Output("ticker1", "options"),
+    Output("ticker2", "options"),
+    Input("input-ticker", "value"),
+    Input("btn-add-ticker", "n_clicks"),
+    Input("ticker1", "options"),
+    Input("ticker2", "options"),
+)
+def add_ticker(new_ticker, btn, t1, t2):
+    global ticker_options
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    if 'btn-add-ticker' in changed_id:
+        t1.append(new_ticker.upper())
+        t2.append(new_ticker.upper())
+    ticker_options.append(new_ticker.upper())
+    return t1, t2
+
+@app.callback(
+    Output("df-pulled", "data"),
+    Output("df-pulled", "columns"),
+    #Output("json-store-pull","data"),
+    Input("ticker1", "value"),
+    Input("ticker2", "value"),
+    Input("btn-pull", "n_clicks")
+)
+def pull_revenue(t1, t2, btn):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    if 'btn-pull' in changed_id:
+        print(t1, t2) # Test statement
+        new_df = stocks.get_revenue_list([t1, t2])
+        new_json = pd.DataFrame.to_json(new_df)
+        print(new_df) # Test statement
+        old_data = pd.read_csv("data/revenue.csv")
+        old_cols = old_data.columns
+        new_cols = new_df.columns
+        combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
+        combined = pd.merge(old_data, new_df, how='outer', on=combine_cols).fillna(0) if ~old_data.empty else new_df
+        combined.to_csv("data/revenue.csv", index=False)
+        return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
