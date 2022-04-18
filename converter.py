@@ -31,7 +31,3 @@ class Converter:
             else:
                 return
         return twd_value / twd_usd_rate
-
-conv = Converter()
-x = conv.twd_usd(37.83, 2013, 1)
-print(x)
