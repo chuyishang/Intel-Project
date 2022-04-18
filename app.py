@@ -11,6 +11,8 @@ import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
 import scraper, stocks
 import json
+import pickle
+from datetime import datetime
 
 pd.options.mode.chained_assignment = None
 
@@ -29,9 +31,11 @@ tsmc_subs = global_df.loc[global_df["company"] == "TSMC"]["sub-metric"].unique()
 company_df = {"SMIC": smic, "UMC": umc, "Global Foundries": gf}
 company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC":"tsmc"}
 firstYear = 2000
-currYear = 2022
-ticker_options = ["GFS", "UMC"]
+currYear = datetime.now().year
 
+# Read ticker options
+with open("tickers.txt", "rb") as f:
+    ticker_options = pickle.load(f)
 
 controls = dbc.Card(
     [  
@@ -70,8 +74,6 @@ controls = dbc.Card(
                 dbc.Label("Submetric"),
                 dcc.Dropdown(
                     id="submetric-dropdown",
-                    #options = global_df["sub-metric"].dropna().unique(),
-                    #options = ["Smartphone", "Internet of Things", "High Performance Computing", "Automotive", "Digital Consumer Electronics", "Others"],
                     value=""
                 ),
                 
@@ -222,11 +224,12 @@ parsing = html.Div(
 puller = dbc.Card(
     [
         html.Div([
-            dbc.Label("New Ticker"),
+            dbc.Label("Custom Ticker"),
             dcc.Input(
                     id="input-ticker",
                 ),
             html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10}, n_clicks=0),
+            html.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10}, n_clicks=0),
         ],
         ),
 
@@ -417,7 +420,7 @@ def setStartYear(company,metric,submetric):
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
-        years = [2000 + y for y in local_df["year"].dropna().unique()]
+        years = local_df["year"].dropna().unique()
         return years
     return np.arange(firstYear, currYear)
 
@@ -431,11 +434,10 @@ def setStartYear(company,metric,submetric):
 def setStartQuarter(company,metric,submetric, startYear):
     if all([company, metric, startYear]):
         local_df = global_df
-        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear - 2000)]
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear)]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
         quarters = local_df["quarter"].dropna().unique()
-        quarters = [q.replace("Q", "") for q in quarters]
         return quarters
     return [1, 2, 3, 4]
 
@@ -452,7 +454,7 @@ def setEndYear(company,metric,submetric,startYear):
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
-        years = [2000 + y for y in local_df.loc[(local_df["year"] + 2000) >= startYear]["year"].dropna().unique()]
+        years = local_df.loc[(local_df["year"]) >= startYear]["year"].dropna().unique()
         return years
     return np.arange(firstYear, currYear)
 
@@ -471,8 +473,7 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
-        quarters = local_df.loc[(local_df["year"] == endYear - 2000)]["quarter"].dropna().unique()
-        quarters = [q.replace("Q", "") for q in quarters]
+        quarters = local_df.loc[local_df["year"] == endYear]["quarter"].dropna().unique()
         if startYear == endYear:
             quarters = [q for q in quarters if q >= startQuarter]
         return quarters
@@ -516,18 +517,14 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     if start_year == None or start_quarter == None or end_year == None or end_quarter == None:
         return graph, {}
 
-    #local_df = company_df[company] if company != "TSMC" else global_df
     local_df = global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
     if (submetric != None or submetric != "NaN") and viz == "Individual":
         local_df = local_df.loc[local_df["sub-metric"] == submetric]
-    local_df["quarter-string"] = local_df["year"].map(str) + local_df["quarter"].map(str)
+    local_df["quarter-string"] = local_df["year"].map(lambda x: str(x)[-2:]) + "Q" + local_df["quarter"].map(str)
     local_df = local_df.sort_values(by=["quarter-string"])
-    print(local_df) # Test statement
-    #start_q = join_quarter_year(start_quarter, start_year)
-    #end_q = join_quarter_year(end_quarter, end_year)
-    start_q = (start_quarter + "Q" + str(start_year)[-2:]) if company == "TSMC" else join_quarter_year(start_quarter, start_year)
-    end_q = (end_quarter + "Q" + str(end_year)[-2:]) if company == "TSMC" else join_quarter_year(end_quarter, end_year)
+    start_q = join_quarter_year(start_quarter, start_year)
+    end_q = join_quarter_year(end_quarter, end_year)
 
     try:  
         index_start = local_df["quarter-string"].tolist().index(start_q)
@@ -536,13 +533,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         return graph, {}
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
-    print(filtered_data)
-    #parse data for $ or %
-    if "$" in str(filtered_data.iloc[0,filtered_data.columns.get_loc('value')]):
-        cleaned_column = filtered_data["value"].str[1:].astype(float)
-    else:
-        cleaned_column = filtered_data["value"].str[:-1].replace(",","").astype(float) / 100
-    filtered_data.loc[:,("value")] = cleaned_column
+    filtered_data.loc[:,("value")] = filtered_data["value"].astype(float)
     
     if viz == "Comparison":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
@@ -604,7 +595,6 @@ def scrape_pdf(url, company, year, quarter, click):
         abbrev = company_abbrev[company]
         new_json = scraper.pull(url, quarter, year, abbrev)
         new_df = pd.DataFrame.from_dict(new_json)
-        #print(new_df) Test statement
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
 
 # @app.callback(
@@ -666,27 +656,36 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
             return "Data been removed from global dataset."
         else:
             return "There is nothing left to undo."
-    return
+    return ""
 
 @app.callback(
     Output("ticker-dropdown", "options"),
     Input("input-ticker", "value"),
     Input("btn-add-ticker", "n_clicks"),
+    Input("btn-remove-ticker", "n_clicks"),
     Input("ticker-dropdown", "options"),
     prevent_initial_call=True,
 )
-def add_ticker(new_ticker, btn, tickers):
-    global ticker_options
+def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-add-ticker' in changed_id:
-        tickers.append(new_ticker.upper())
-    ticker_options.append(new_ticker.upper())
+        new_ticker = new_ticker.upper()
+        if new_ticker not in tickers:
+            tickers.append(new_ticker)
+            with open("tickers.txt", "wb") as f:
+                pickle.dump(tickers, f)
+    elif 'btn-remove-ticker' in changed_id:
+        try:
+            tickers.remove(new_ticker)
+        except:
+            'Placeholder'
+        with open("tickers.txt", "wb") as f:
+            pickle.dump(tickers, f)
     return tickers
 
 @app.callback(
     Output("df-pulled", "data"),
     Output("df-pulled", "columns"),
-    #Output("json-store-pull","data"),
     Input("ticker-dropdown", "value"),
     Input("ticker-dropdown", "options"),
     Input("btn-pull", "n_clicks"),
@@ -694,24 +693,30 @@ def add_ticker(new_ticker, btn, tickers):
     prevent_initial_call=True,
 )
 def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate):
-    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
-    if 'btn-pull' in changed_id:
-        tickers = tickerVal
-    elif 'btn-update-all' in changed_id:
-        tickers = tickerOptions
-    old_data = pd.read_csv("data/revenue.csv")
-    old_cols = old_data.columns
-    #tickers = [t for t in tickers if f'{t.lower()}Revenue' in old_cols and old_data[f'{t.lower()}Revenue']]
-    new_df = stocks.get_revenue_list(tickers)
-    print(new_df) # Test statement
-    old_data = pd.read_csv("data/revenue.csv")
-    old_cols = old_data.columns
-    new_cols = new_df.columns
-    combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
-    combined = pd.merge(old_data, new_df, how='outer', on=combine_cols).drop_duplicates() if ~old_data.empty else new_df
-    combined = combined.replace("", np.nan)
-    combined.to_csv("data/revenue.csv", index=False)
-    return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
+    if btnPull + btnUpdate > 0:
+        changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+        tickers = []
+        if 'btn-pull' in changed_id:
+            tickers = tickerVal
+        elif 'btn-update-all' in changed_id:
+            tickers = tickerOptions
+        old_df = pd.read_csv("data/revenue.csv")
+        old_cols = old_df.columns
+        #Pull tickers that haven't been updated yet, FIXME: Check more rigorously
+        filtered_tickers = [t for t in tickers if (f'{t.lower()}_revenue' not in old_cols or not old_df.iloc[-1,:][f'{t.lower()}_revenue'])]
+        if filtered_tickers:
+            new_df = stocks.get_revenue_list(filtered_tickers).replace({"":np.nan, "None":0.0})
+            new_cols = new_df.columns
+            combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
+            combined = pd.merge(old_df, new_df, how='outer', on=combine_cols).fillna(0.0) if (not old_df.empty) else new_df
+            combined = combined.drop_duplicates().groupby(["year", "quarter", "reportedCurrency"], as_index=False).max()
+            #print(combined)
+            combined.to_csv("data/revenue.csv", index=False)
+            return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
+        recent_cols = ["year","quarter","reportedCurrency"] + [f'{t.lower()}_revenue' for t in tickers]
+        recent_df = old_df[recent_cols]
+        return recent_df.to_dict('records'), [{"name": i, "id": i} for i in recent_df.columns]
+    return [],[]
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
