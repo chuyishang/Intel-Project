@@ -23,14 +23,14 @@ def df_datetime_metric(df, metric):
     return df
 
 """
-Forecasts data given df and timeframe
+Forecasts data given df and year
 """
 def fut_forecast(df, year):
 
     m = Prophet()
     m.fit(df)
-    
-    future = m.make_future_dataframe(periods=len(timeframe))
+
+    future = m.make_future_dataframe(periods=year)
     future.tail()
 
     forecast = m.predict(future)
