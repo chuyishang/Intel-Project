@@ -28,7 +28,6 @@ def fut_forecast(df, metric, years=3):
     m.fit(df)
 
     future = m.make_future_dataframe(periods=years)
-    future.tail()
 
     forecast = m.predict(future)
     return forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
