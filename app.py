@@ -1,7 +1,4 @@
-import csv
 from logging import Filterer
-from re import sub
-import dash
 from dash import Dash, html, dcc, Input, Output, callback_context, dash_table
 import plotly.express as px
 import pandas as pd
@@ -9,13 +6,10 @@ import numpy as np
 import statsmodels.api as sm
 import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
-import scraper, stocks
-import json
-import pickle
 from datetime import datetime
+import scraper, stocks, json, pickle
 
 pd.options.mode.chained_assignment = None
-
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Pull JSON files
