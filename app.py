@@ -31,7 +31,7 @@ currYear = datetime.now().year
 with open("tickers.txt", "rb") as f:
     ticker_options = pickle.load(f)
 
-controls = dbc.Card(
+controls = html.Div(
     [  
         html.Div(
             [
@@ -117,7 +117,8 @@ controls = dbc.Card(
             ]
         ),
     ],
-    body=True,
+    #style={'verticalAlign': 'top', 'margin-top':0}
+    #body=True,
 )
 
 parsing = html.Div(
@@ -284,8 +285,18 @@ app.layout = html.Div([
                 html.Hr(),
                 dbc.Row(
                     [
-                        dbc.Col(controls, md=4),
-                        dbc.Col(dcc.Graph(id="graph"), md=8),
+                        dbc.Col(controls, md=4, style={"position":"top"}),
+                        dbc.Col([
+                            dcc.Graph(id="graph"),
+                            dash_table.DataTable(
+                                data=[],
+                                id="df-viz",
+                                style_table={
+                                    'height': 400,
+                                    'overflowY': 'scroll'
+                                }
+                                )],
+                            md=8),
                     ],
                     align="center",
                 ),
@@ -382,7 +393,7 @@ def setMetric(company):
     Input("metric-dropdown","value")
 )
 def visualization_options(metric):
-    if metric != "CapEx" and metric != "Inventory" and metric != None:
+    if metric != "CapEx" and metric != "Inventory" and metric != "Revenue" and metric != None:
         return ["Comparison","Individual"],"Comparison"
     else:
         return [],None
@@ -477,6 +488,8 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
 @app.callback(
     Output("graph", "figure"),
     Output("dataframe","data"),
+    Output("df-viz", "data"),
+    Output("df-viz", "columns"),
     [
         Input("company-dropdown", "value"),
         Input("metric-dropdown", "value"),
@@ -552,7 +565,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         "value": "US$ Dollars (Millions)",
             },
         title=f'{metric}: {submetric} for {company}', markers=True)
-    return graph,filtered_data.to_dict()
+    return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns]
 
 # Download data callback
 @app.callback(
