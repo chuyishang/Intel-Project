@@ -23,7 +23,7 @@ smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
 
 # Global dictionaries and variables
-metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv"}
+metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev"}
 var_to_metric = {v:k for k, v in metric_to_var.items()}
 tsmc_subs = global_df.loc[global_df["company"] == "TSMC"]["sub-metric"].unique().tolist()
 company_df = {"SMIC": smic, "UMC": umc, "Global Foundries": gf}
@@ -319,7 +319,7 @@ app.layout = html.Div([
                                     editable=True
                                 ),
                                 dash_table.DataTable(
-                                    id = 'submetrics-dt',
+                                    id = 'seg-submetrics-dt',
                                     columns=(
                                         [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
                                         [{'id': 'rev-seg-value','name':'Value'}]
@@ -370,7 +370,7 @@ app.layout = html.Div([
 )
 def setMetric(company):
     if company:
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company)]
         metrics = local_df["metric"].dropna().unique()
         metrics = [var_to_metric[m] for m in metrics]
@@ -400,7 +400,7 @@ def set_submetric(company,metric,viz):
     if viz == "Comparison" or viz == None:
         return []
     else:
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         return local_df["sub-metric"].dropna().unique()
 
@@ -412,7 +412,7 @@ def set_submetric(company,metric,viz):
 )
 def setStartYear(company,metric,submetric):
     if all([company, metric]):
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
@@ -429,7 +429,7 @@ def setStartYear(company,metric,submetric):
 )
 def setStartQuarter(company,metric,submetric, startYear):
     if all([company, metric, startYear]):
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear - 2000)]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
@@ -447,7 +447,7 @@ def setStartQuarter(company,metric,submetric, startYear):
 )
 def setEndYear(company,metric,submetric,startYear):
     if all([company, metric, startYear]):
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
@@ -466,7 +466,7 @@ def setEndYear(company,metric,submetric,startYear):
 )
 def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
     if all([company, metric, startYear, startQuarter, endYear]):
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
@@ -610,10 +610,16 @@ def scrape_pdf(url, company, year, quarter, click):
 #     Output("btn-reject","style"),
 #     Output("btn-undo","style"),
 #     Output("confirmation-msg","style"),
-#     Output(""),
+#     Output("manual-dt","style"),
+#     Output("seg-submetrics-dt","style"),
+#     Output("seg-submetrics-dt","data"),
+#     Input("manual-company-input","value"),
+#     Input("manual-year-input","value"),
+#     Input("manual-quarter-input","value"),
 #     Input("btn-manual"),
 #     prevent_initial_call=True
 # )
+
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
     #Output("btn-approve","style"),
