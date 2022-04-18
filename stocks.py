@@ -50,7 +50,7 @@ def get_revenue_list(tickerList):
         if ticker_df["reportedCurrency"][0] == "TWD":
             ticker_df["reportedCurrency"] = ticker_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
             ticker_df["totalRevenue"] = ticker_df.apply(lambda x:converter.Converter().twd_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
-        ticker_df.rename({"totalRevenue":f'{ticker.lower()}Revenue'}, axis=1, inplace=True)
+        ticker_df.rename({"totalRevenue":f'{ticker.lower()}_revenue'}, axis=1, inplace=True)
         if df.empty:
             df = ticker_df
         else:
