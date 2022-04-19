@@ -132,6 +132,7 @@ parsing = html.Div(
                     id="url-input".format("url"),
                     type="url",
                     placeholder="Enter URL to Parse".format("url"),
+                    style={"margin-left": 10}
                 ),
             ],
         ),
@@ -153,6 +154,7 @@ parsing = html.Div(
                     id="year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
+                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -193,6 +195,7 @@ parsing = html.Div(
                     id="manual-year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
+                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -222,12 +225,16 @@ puller = dbc.Card(
             dbc.Label("Custom Ticker"),
             dcc.Input(
                     id="input-ticker",
+                    style={"margin-left": 10}
                 ),
-            html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10}, n_clicks=0),
-            html.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10}, n_clicks=0),
         ],
         ),
 
+        html.Div([
+            html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, n_clicks=0),
+            html.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, n_clicks=0),
+        ]
+        ),
         html.Div([
             dbc.Label("Company Tickers"),
             dcc.Dropdown(
@@ -239,12 +246,9 @@ puller = dbc.Card(
         ),
         html.Div(
             [
-                html.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10}, n_clicks=0),   
-            ]
-        ),
-        html.Div(
-            [
+                html.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),
                 html.Button("Update All Tickers", id= "btn-update-all", style={"margin-top": 10}, n_clicks=0),   
+   
             ]
         ),
         html.Div(
@@ -550,21 +554,21 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 "value": "Percentage %",
                 "sub-metric": f'{metric.split()[-1]}'
             },
-        title=f'{metric} for {company}')
+        title=f'{metric} for {company} from {start_q} to {end_q}')
     elif submetric == None or submetric == "NaN":
         graph = px.line(filtered_data, x="quarter-string", y="value",
         labels={
         "quarter-string": "Quarters",
         "value": "US$ Dollars (Millions)",
             },
-        title=f'{metric} for {company}', markers=True)
+        title=f'{metric} for {company} from {start_q} to {end_q}', markers=True)
     else:
         graph = px.line(filtered_data, x="quarter-string", y="value",
         labels={
         "quarter-string": "Quarters",
         "value": "US$ Dollars (Millions)",
             },
-        title=f'{metric}: {submetric} for {company}', markers=True)
+        title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
     return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns]
 
 # Download data callback
