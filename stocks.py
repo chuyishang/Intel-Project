@@ -5,9 +5,10 @@ import pandas as pd
 import numpy as np
 import threading
 import converter
+import time
 
 api_key = '2CCS30TFYFGYBXKB'
-# Dictionary mapping each competitor's ticker to a list of its top customers' ticker, if the customer is in the US
+# Dictionary mapping each competitor's ticker to a list of its top customers' ticker, if the customer is on a US stock exchange
 top_customers = {'TSMC':['AAPL', 'AMD', 'QCOM', 'AVGO', 'NVDA', 'SONY', 'MRVL', 'STM', 'ADI', 'INTC'],
                 'SMIC':['QCOM', 'AVGO', 'TXN'],
                 'UMC':['QCOM', 'AMD'],
@@ -15,15 +16,17 @@ top_customers = {'TSMC':['AAPL', 'AMD', 'QCOM', 'AVGO', 'NVDA', 'SONY', 'MRVL', 
             }
 # Tracks number of calls to API so the program can sleep once it reaches 5
 call_count = 0
+start_time = time.time()
 '''
 Returns DataFrame with past 5 years of quarterly revenue for TICKER. If data does not exist, return empty DataFrame.
 DataFrame columns: ['reportedCurrency', 'totalRevenue', 'year', 'quarter']
 '''
 def get_revenue(ticker):
-    global call_count
+    global call_count, start_time
     if call_count >= 5:
-        time.sleep(60)
+        time.sleep(max(60 - (time.time() - start_time), 0))
         call_count = 0
+        start_time = time.time()
     url = f'https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol={ticker}&apikey={api_key}'
     call_count += 1
     r = requests.get(url)

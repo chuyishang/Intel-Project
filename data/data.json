@@ -8906,7 +8906,7 @@
         "year": 2014,
         "quarter": 2,
         "metric": "rev_tech",
-        "sub-metric": "40nm <x<=28nm",
+        "sub-metric": "28nm<x<=40nm",
         "value": "21"
     },
     {
