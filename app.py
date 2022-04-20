@@ -305,9 +305,10 @@ app.layout = html.Div([
                 html.Hr(),
                 dbc.Row(
                     [
-                        dbc.Col(controls, md=4),
+                        dbc.Col(controls, md=4, align='start'),
                         dbc.Col([
                             dcc.Graph(id="graph"),
+                            html.Div(
                             dash_table.DataTable(
                                 data=[],
                                 id="df-viz",
@@ -315,7 +316,10 @@ app.layout = html.Div([
                                     'height': 400,
                                     'overflowY': 'scroll'
                                 }
-                                )
+                                ),
+                                id="data-table-block",
+                                style={"display":"none"},
+                            )
                             ],
                             md=8),
                     ],
@@ -548,6 +552,7 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
     Output("dataframe","data"),
     Output("df-viz", "data"),
     Output("df-viz", "columns"),
+    Output("data-table-block","style"),
     [
         Input("company-dropdown", "value"),
         Input("metric-dropdown", "value"),
@@ -580,7 +585,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         ]
     )
     if start_year == None or start_quarter == None or end_year == None or end_quarter == None:
-        return graph, {}, np.array([]) ,[]
+        return graph, {}, np.array([]) ,[], {"display":"none"}
 
     local_df = global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
@@ -595,7 +600,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         index_start = local_df["quarter-string"].tolist().index(start_q)
         index_end = len(local_df["quarter-string"].tolist()) - local_df["quarter-string"].tolist()[::-1].index(end_q) - 1
     except ValueError:
-        return graph, {}, np.array([]) ,[]
+        return graph, {}, np.array([]) ,[], {"display":"none"}
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
     filtered_data.loc[:,("value")] = filtered_data["value"].astype(float)
@@ -623,7 +628,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         "value": "US$ Dollars (Millions)",
             },
         title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
-    return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns]
+    return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns], {"display":"inline"}
 
 # Download data callback
 @app.callback(
