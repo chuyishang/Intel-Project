@@ -1,5 +1,5 @@
 from logging import Filterer
-from dash import Dash, html, dcc, Input, Output, callback_context, dash_table
+from dash import Dash, html, dcc, Input, Output, State, callback_context, dash_table
 import plotly.express as px
 import pandas as pd
 import numpy as np
@@ -8,6 +8,7 @@ import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
 from datetime import datetime
 import scraper, stocks, json, pickle
+import random
 
 pd.options.mode.chained_assignment = None
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -276,6 +277,21 @@ buttons = html.Div(
     ],
 )
 
+manual_buttons = html.Div(
+    [
+        html.Div(
+            [
+            html.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, n_clicks=0),   
+            html.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, n_clicks=0)
+            ]   
+        ),
+        html.Div(
+            id='confirmation-msg2',
+            children='Press "Add to Data" to add the manually inputted data to the dataset.',
+            style={"display":"none"}
+        ),    
+    ],
+)
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label="Visualization", children=[
@@ -285,7 +301,7 @@ app.layout = html.Div([
                 html.Hr(),
                 dbc.Row(
                     [
-                        dbc.Col(controls, md=4, style={"position":"top"}),
+                        dbc.Col(controls, md=4),
                         dbc.Col([
                             dcc.Graph(id="graph"),
                             dash_table.DataTable(
@@ -295,7 +311,8 @@ app.layout = html.Div([
                                     'height': 400,
                                     'overflowY': 'scroll'
                                 }
-                                )],
+                                )
+                            ],
                             md=8),
                     ],
                     align="center",
@@ -315,31 +332,68 @@ app.layout = html.Div([
                         dbc.Col(
                             [
                                 dash_table.DataTable(data=[], id="df-scraped"),
-                                dash_table.DataTable(
-                                    id = 'manual-dt',
-                                    columns=(
-                                        [{'id': 'capex','name':'Capex'}]+
-                                        [{'id': 'inventory','name':'Inventory'}]
+                                html.Div(
+                                    [
+                                    dash_table.DataTable(
+                                        id = 'manual-dt',
+                                        columns=(
+                                            [{'id': 'revenue','name':'Revenue ($USD)'}]+
+                                            [{'id': 'inventory','name':'Inventory ($USD)'}]+
+                                            [{'id': 'capex','name':'Capex ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*3) for i in range(1, 3)}
+                                            for j in range(1)
+                                        ],
+                                        editable=True
                                     ),
-                                    data=[
-                                        {'column-{}'.format(i): (j + (i-1)*2) for i in range(1, 2)}
-                                        for j in range(1)
-                                    ],
-                                    editable=True
-                                ),
-                                dash_table.DataTable(
-                                    id = 'seg-submetrics-dt',
-                                    columns=(
-                                        [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
-                                        [{'id': 'rev-seg-value','name':'Value'}]
+                                    dash_table.DataTable(
+                                        id = 'seg-submetrics-dt',
+                                        columns=(
+                                            [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
+                                            [{'id': 'rev-seg-value','name':'Value ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                            for j in range(5)
+                                        ],
+                                        editable=True,
+                                        row_deletable=True
                                     ),
-                                    data=[
-                                        {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
-                                        for j in range(5)
+                                    html.Button('Add Row', id='seg-rows', n_clicks=0),
+                                    dash_table.DataTable(
+                                        id = 'tech-submetrics-dt',
+                                        columns=(
+                                            [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
+                                            [{'id': 'rev-tech-value','name':'Value ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                            for j in range(5)
+                                        ],
+                                        editable=True,
+                                        row_deletable=True
+                                    ),
+                                    html.Button('Add Row', id='tech-rows', n_clicks=0),
+                                    dash_table.DataTable(
+                                        id = 'geo-submetrics-dt',
+                                        columns=(
+                                            [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
+                                            [{'id': 'rev-geo-value','name':'Value ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                            for j in range(5)
+                                        ],
+                                        editable=True,
+                                        row_deletable=True
+                                    ),
+                                    html.Button('Add Row', id='geo-rows', n_clicks=0),
                                     ],
-                                    editable=True,
-                                    row_deletable=True
+                                    id='manual-input',
+                                    style={"display":"none"},
                                 ),
+                                manual_buttons,
                                 buttons
                             ]
                             , md=8)
@@ -604,20 +658,59 @@ def scrape_pdf(url, company, year, quarter, click):
         new_df = pd.DataFrame.from_dict(new_json)
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
 
-# @app.callback(
-#     Output("btn-approve","style"),
-#     Output("btn-reject","style"),
-#     Output("btn-undo","style"),
-#     Output("confirmation-msg","style"),
-#     Output("manual-dt","style"),
-#     Output("seg-submetrics-dt","style"),
-#     Output("seg-submetrics-dt","data"),
-#     Input("manual-company-input","value"),
-#     Input("manual-year-input","value"),
-#     Input("manual-quarter-input","value"),
-#     Input("btn-manual"),
-#     prevent_initial_call=True
-# )
+@app.callback(
+    Output("btn-add","style"),
+    Output("btn-undo-manual","style"),
+    Output("confirmation-msg2","style"),
+    Output("manual-input","style"),
+    Output("seg-submetrics-dt","data"),
+    Output("tech-submetrics-dt","data"),
+    Output("geo-submetrics-dt","data"),
+    Input("manual-company-input","value"),
+    Input("manual-year-input","value"),
+    Input("manual-quarter-input","value"),
+    Input("btn-manual","n_clicks"),
+    Input("seg-submetrics-dt","columns"),
+    Input("tech-submetrics-dt","columns"),
+    Input("geo-submetrics-dt","columns"),
+    Input('seg-rows', 'n_clicks'),
+    State("seg-submetrics-dt", 'data'),
+    Input('tech-rows', 'n_clicks'),
+    State("tech-submetrics-dt", 'data'),
+    Input('geo-rows', 'n_clicks'),
+    State("geo-submetrics-dt", 'data'),
+    prevent_initial_call=True
+)
+def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_clicks,sr,tech_clicks,tr,geo_clicks,gr):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    if 'btn-manual' in changed_id:
+        local_df = global_df.loc[global_df["company"] == company]
+        last_year = local_df.sort_values(by='year',ascending=False)["year"].tolist()[0]
+        last_quarter = local_df.sort_values(by='year',ascending=False)["quarter"].tolist()[0]
+        local_df = local_df.loc[(local_df["year"] == last_year) & (local_df["quarter"] == last_quarter)]
+        rev_seg = local_df.loc[local_df["metric"] == metric_to_var["Revenue by Segment"]]["sub-metric"].dropna().unique()
+        rev_tech = local_df.loc[local_df["metric"] == metric_to_var["Revenue by Technology"]]["sub-metric"].dropna().unique()
+        rev_geo = local_df.loc[local_df["metric"] == metric_to_var["Revenue by Geography"]]["sub-metric"].dropna().unique()
+        rev_seg_data = [
+            dict({"rev-seg":rev_seg[j]}, **{c['id']: None for c in columns1[1:]}) for j in range(len(rev_seg))
+        ]
+        tech_seg_data = [
+            dict({"rev-tech":rev_tech[j]}, **{c['id']: None for c in columns2[1:]}) for j in range(len(rev_tech))
+        ]
+        geo_seg_data = [
+            dict({"rev-geo":rev_geo[j]}, **{c['id']: None for c in columns3[1:]}) for j in range(len(rev_geo))
+        ]
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data
+    if 'seg-rows' in changed_id:
+        sr.append({c['id']: None for c in columns1})
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+    if 'tech-rows' in changed_id:
+        tr.append({c['id']: None for c in columns2})
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+    if 'geo-rows' in changed_id:
+        gr.append({c['id']: None for c in columns3})
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr
 
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
@@ -664,6 +757,100 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
         else:
             return "There is nothing left to undo."
     return ""
+@app.callback(
+    Output("confirmation-msg2","children"),
+    Input("btn-add","n_clicks"),
+    Input("btn-undo-manual","n_clicks"),
+    Input("manual-company-input","value"),
+    Input("manual-year-input","value"),
+    Input("manual-quarter-input","value"),
+    Input("manual-dt","data"),
+    Input("seg-submetrics-dt","data"),
+    Input("tech-submetrics-dt","data"),
+    Input("geo-submetrics-dt","data"),
+    Input("manual-dt","columns"),
+    Input("seg-submetrics-dt","columns"),
+    Input("tech-submetrics-dt","columns"),
+    Input("geo-submetrics-dt","columns"),
+    prevent_initial_call=True,
+)
+def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    manual_df = pd.DataFrame(manual, columns=[c['id'] for c in mc])
+    seg_df = pd.DataFrame(seg, columns=[c['id'] for c in sc])
+    tech_df = pd.DataFrame(tech, columns=[c['id'] for c in tc])
+    geo_df = pd.DataFrame(geo, columns=[c['id'] for c in gc])
+    if 'btn-add' in changed_id:
+        if not(manual_df.isnull().values.any()) and not(seg_df.isnull().values.any()) and not(tech_df.isnull().values.any()) and not(geo_df.isnull().values.any()):
+            master_df = pd.DataFrame(data=[],columns=['metric','sub-metric','value'])
+            seg_df.insert(0,'metric',"rev_seg")
+            tech_df.insert(0,'metric',"tech_seg")
+            geo_df.insert(0,'metric',"geo_seg")
+            seg_df = seg_df.rename(columns={seg_df.columns[0]: "metric", seg_df.columns[1]: "sub-metric", seg_df.columns[2]: "value"})
+            tech_df = tech_df.rename(columns={tech_df.columns[0]: "metric", tech_df.columns[1]: "sub-metric", tech_df.columns[2]: "value"})
+            geo_df = geo_df.rename(columns={geo_df.columns[0]: "metric", geo_df.columns[1]: "sub-metric", geo_df.columns[2]: "value"})
+            master_df = master_df.append(seg_df).append(tech_df).append(geo_df)
+            master_df.insert(0,"quarter",quarter)
+            master_df.insert(0,"year",year)
+            master_df.insert(0,"company",company)
+            metrics_df = pd.DataFrame({
+                "company":company,
+                "year":year,
+                "quarter":quarter,
+                "metric":["rev","inv","capex"],
+                "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
+            })
+            master_json = master_df.to_dict('records')
+            metrics_json = metrics_df.to_dict('records')
+            with open("data/data.json") as json_data:
+                old_data = json.load(json_data)
+                json_data.close()
+            if master_json[-1] in old_data:
+                return "Data already exists in the global dataset."
+            else:
+                old_data.extend(master_json)
+                old_data.extend(metrics_json)
+                print(old_data)
+                with open("data/data.json","w") as json_file:
+                    json.dump(old_data,json_file,indent=4,separators=(',',': '))
+                    json_file.close()
+                return f'{company} {year} Q{quarter} has been added to the global dataset.'
+        else:
+            return "Unable to add to dataset. Certain values are blank."
+    
+    if 'btn-undo-manual' in changed_id:
+        master_df = pd.DataFrame(data=[],columns=['metric','sub-metric','value'])
+        seg_df.insert(0,'metric',"rev_seg")
+        tech_df.insert(0,'metric',"tech_seg")
+        geo_df.insert(0,'metric',"geo_seg")
+        seg_df = seg_df.rename(columns={seg_df.columns[0]: "metric", seg_df.columns[1]: "sub-metric", seg_df.columns[2]: "value"})
+        tech_df = tech_df.rename(columns={tech_df.columns[0]: "metric", tech_df.columns[1]: "sub-metric", tech_df.columns[2]: "value"})
+        geo_df = geo_df.rename(columns={geo_df.columns[0]: "metric", geo_df.columns[1]: "sub-metric", geo_df.columns[2]: "value"})
+        master_df = master_df.append(seg_df).append(tech_df).append(geo_df)
+        master_df.insert(0,"quarter",quarter)
+        master_df.insert(0,"year",year)
+        master_df.insert(0,"company",company)
+        metrics_df = pd.DataFrame({
+            "company":company,
+            "year":year,
+            "quarter":quarter,
+            "metric":["rev","inv","capex"],
+            "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
+        })
+        master_json = master_df.to_dict('records')
+        metrics_json = metrics_df.to_dict('records')
+        with open("data/data.json") as current_json:
+            current = json.load(current_json)
+            current_json.close()
+        if master_json[-1] in current:
+            current = current[:-(len(master_json)+len(metrics_json))]
+            with open("data/data.json","w") as json_file:
+                json.dump(current,json_file,indent=4,separators=(',',': '))
+                json_file.close()
+            return "Data been removed from global dataset."
+        else:
+            return "There is nothing left to undo."
+
 
 @app.callback(
     Output("ticker-dropdown", "options"),
