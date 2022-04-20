@@ -580,7 +580,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         ]
     )
     if start_year == None or start_quarter == None or end_year == None or end_quarter == None:
-        return graph, {}
+        return graph, {}, np.array([]) ,[]
 
     local_df = global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
@@ -595,7 +595,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         index_start = local_df["quarter-string"].tolist().index(start_q)
         index_end = len(local_df["quarter-string"].tolist()) - local_df["quarter-string"].tolist()[::-1].index(end_q) - 1
     except ValueError:
-        return graph, {}
+        return graph, {}, np.array([]) ,[]
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
     filtered_data.loc[:,("value")] = filtered_data["value"].astype(float)
@@ -814,7 +814,6 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
             else:
                 old_data.extend(master_json)
                 old_data.extend(metrics_json)
-                print(old_data)
                 with open("data/data.json","w") as json_file:
                     json.dump(old_data,json_file,indent=4,separators=(',',': '))
                     json_file.close()
