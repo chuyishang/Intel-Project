@@ -1,0 +1,1443 @@
+company,year,quarter,metric,sub-metric,value
+TSMC,2009,1,rev,,1170.3703703703704
+TSMC,2009,2,rev,,2243.0104276862626
+TSMC,2009,3,rev,,2741.2374276135324
+TSMC,2009,4,rev,,2820.9526726910703
+TSMC,2010,1,rev,,2884.0919755983105
+TSMC,2010,2,rev,,3350.6783719074224
+TSMC,2010,3,rev,,3513.302034428795
+TSMC,2010,4,rev,,3599.346405228758
+TSMC,2011,1,rev,,3630.0378918360316
+TSMC,2011,2,rev,,3854.551796302755
+TSMC,2011,3,rev,,3688.2577069622444
+TSMC,2011,4,rev,,3498.496491814233
+TSMC,2012,1,rev,,3562.7215937869323
+TSMC,2012,2,rev,,4396.155166495022
+TSMC,2012,3,rev,,4722.26861284612
+TSMC,2012,4,rev,,4496.917808219178
+TSMC,2013,1,rev,,4495.767016593295
+TSMC,2013,1,inv,,1281.070098205215
+TSMC,2013,2,rev,,5289.068331410735
+TSMC,2013,2,inv,,1310.3073895636833
+TSMC,2013,3,rev,,5422.044355511089
+TSMC,2013,3,inv,,1231.282307820577
+TSMC,2013,4,rev,,4956.152277362338
+TSMC,2013,4,inv,,1274.643099932019
+TSMC,2014,1,rev,,4888.522427440633
+TSMC,2014,1,inv,,1434.0369393139842
+TSMC,2014,2,rev,,6070.315091210614
+TSMC,2014,2,inv,,1689.883913764511
+TSMC,2014,2,capex,,1253.3996683250416
+TSMC,2014,2,rev_geo,NORAM,67
+TSMC,2014,2,rev_geo,China,8
+TSMC,2014,2,rev_geo,EMEA,6
+TSMC,2014,2,rev_geo,ASIAPAC,14
+TSMC,2014,2,rev_geo,Japan,5
+TSMC,2014,2,rev_seg,Computer,11
+TSMC,2014,2,rev_seg,Communication,54
+TSMC,2014,2,rev_seg,Consumer,12
+TSMC,2014,2,rev_seg,Industrial/Standard,23
+TSMC,2014,2,rev_tech,28nm,37
+TSMC,2014,2,rev_tech,40/45nm,19
+TSMC,2014,2,rev_tech,65nm,15
+TSMC,2014,2,rev_tech,90nm,7
+TSMC,2014,2,rev_tech,0.11/0.13um,3
+TSMC,2014,2,rev_tech,0.15/0.18um,14
+TSMC,2014,2,rev_tech,0.25/0.35um,4
+TSMC,2014,2,rev_tech,0.50um and above,1
+TSMC,2014,3,rev,,6954.655843507768
+TSMC,2014,3,inv,,2173.725007485279
+TSMC,2014,3,capex,,1401.5768987657607
+TSMC,2014,3,rev_geo,NORAM,69
+TSMC,2014,3,rev_geo,China,6
+TSMC,2014,3,rev_geo,EMEA,6
+TSMC,2014,3,rev_geo,ASIAPAC,13
+TSMC,2014,3,rev_geo,Japan,6
+TSMC,2014,3,rev_seg,Computer,9
+TSMC,2014,3,rev_seg,Communication,59
+TSMC,2014,3,rev_seg,Consumer,10
+TSMC,2014,3,rev_seg,Industrial/Standard,22
+TSMC,2014,3,rev_tech,20nm,9
+TSMC,2014,3,rev_tech,28nm,34
+TSMC,2014,3,rev_tech,40/45nm,17
+TSMC,2014,3,rev_tech,65nm,13
+TSMC,2014,3,rev_tech,90nm,6
+TSMC,2014,3,rev_tech,0.11/0.13um,3
+TSMC,2014,3,rev_tech,0.15/0.18um,13
+TSMC,2014,3,rev_tech,0.25/0.35um,4
+TSMC,2014,3,rev_tech,0.50um and above,1
+TSMC,2014,4,rev,,7312.520538941833
+TSMC,2014,4,inv,,2180.0854419980283
+TSMC,2014,4,capex,,1726.585606309563
+TSMC,2014,4,rev_geo,NORAM,74
+TSMC,2014,4,rev_geo,China,6
+TSMC,2014,4,rev_geo,EMEA,6
+TSMC,2014,4,rev_geo,ASIAPAC,9
+TSMC,2014,4,rev_geo,Japan,5
+TSMC,2014,4,rev_seg,Computer,9
+TSMC,2014,4,rev_seg,Communication,65
+TSMC,2014,4,rev_seg,Consumer,7
+TSMC,2014,4,rev_seg,Industrial/Standard,19
+TSMC,2014,4,rev_tech,20nm,21
+TSMC,2014,4,rev_tech,28nm,30
+TSMC,2014,4,rev_tech,40/45nm,13
+TSMC,2014,4,rev_tech,65nm,11
+TSMC,2014,4,rev_tech,90nm,6
+TSMC,2014,4,rev_tech,0.11/0.13um,2
+TSMC,2014,4,rev_tech,0.15/0.18um,12
+TSMC,2014,4,rev_tech,0.25/0.35um,4
+TSMC,2014,4,rev_tech,0.50um and above,1
+TSMC,2015,1,rev,,6997.478726757012
+TSMC,2015,1,inv,,2035.9281437125746
+TSMC,2015,1,capex,,1659.312953041286
+TSMC,2015,1,rev_geo,NORAM,69
+TSMC,2015,1,rev_geo,China,8
+TSMC,2015,1,rev_geo,EMEA,6
+TSMC,2015,1,rev_geo,ASIAPAC,12
+TSMC,2015,1,rev_geo,Japan,5
+TSMC,2015,1,rev_seg,Computer,8
+TSMC,2015,1,rev_seg,Communication,60
+TSMC,2015,1,rev_seg,Consumer,10
+TSMC,2015,1,rev_seg,Industrial/Standard,22
+TSMC,2015,1,rev_tech,20nm,16
+TSMC,2015,1,rev_tech,28nm,30
+TSMC,2015,1,rev_tech,40/45nm,15
+TSMC,2015,1,rev_tech,65nm,12
+TSMC,2015,1,rev_tech,90nm,7
+TSMC,2015,1,rev_tech,0.11/0.13um,2
+TSMC,2015,1,rev_tech,0.15/0.18um,13
+TSMC,2015,1,rev_tech,0.25/0.35um,4
+TSMC,2015,1,rev_tech,0.50um and above,1
+TSMC,2015,2,rev,,6711.5321790264625
+TSMC,2015,2,inv,,2165.3054557334203
+TSMC,2015,3,rev,,6716.0735730990455
+TSMC,2015,3,inv,,2056.443966879464
+TSMC,2015,4,rev,,369.9478990042236
+TSMC,2015,4,inv,,2067.083885686099
+TSMC,2016,1,rev,,6077.7110772630895
+TSMC,2016,1,inv,,1709.524236179554
+TSMC,2016,2,rev,,6870.160441058043
+TSMC,2016,2,inv,,1880.3815895434552
+TSMC,2016,2,capex,,35.61915381279812
+TSMC,2016,2,rev_geo,NORAM,61
+TSMC,2016,2,rev_geo,China,10
+TSMC,2016,2,rev_geo,EMEA,6
+TSMC,2016,2,rev_geo,ASIAPAC,18
+TSMC,2016,2,rev_geo,Japan,5
+TSMC,2016,2,rev_seg,Computer,8
+TSMC,2016,2,rev_seg,Communication,59
+TSMC,2016,2,rev_seg,Consumer,12
+TSMC,2016,2,rev_seg,Industrial/Standard,21
+TSMC,2016,2,rev_tech,16/20nm,23
+TSMC,2016,2,rev_tech,28nm,28
+TSMC,2016,2,rev_tech,40/45nm,15
+TSMC,2016,2,rev_tech,65nm,12
+TSMC,2016,2,rev_tech,90nm,5
+TSMC,2016,2,rev_tech,0.11/0.13um,2
+TSMC,2016,2,rev_tech,0.15/0.18um,11
+TSMC,2016,2,rev_tech,0.25um and above,4
+TSMC,2016,3,rev,,8184.361053491735
+TSMC,2016,3,inv,,1693.3811050348859
+TSMC,2016,3,capex,,71.02897730844175
+TSMC,2016,3,rev_geo,NORAM,68
+TSMC,2016,3,rev_geo,China,6
+TSMC,2016,3,rev_geo,EMEA,6
+TSMC,2016,3,rev_geo,ASIAPAC,15
+TSMC,2016,3,rev_geo,Japan,5
+TSMC,2016,3,rev_seg,Computer,8
+TSMC,2016,3,rev_seg,Communication,60
+TSMC,2016,3,rev_seg,Consumer,11
+TSMC,2016,3,rev_seg,Industrial/Standard,21
+TSMC,2016,3,rev_tech,16/20nm,31
+TSMC,2016,3,rev_tech,28nm,24
+TSMC,2016,3,rev_tech,40/45nm,13
+TSMC,2016,3,rev_tech,65nm,11
+TSMC,2016,3,rev_tech,90nm,5
+TSMC,2016,3,rev_tech,0.11/0.13um,3
+TSMC,2016,3,rev_tech,0.15/0.18um,9
+TSMC,2016,3,rev_tech,0.25um and above,4
+TSMC,2016,4,rev,,8320.271599454263
+TSMC,2016,4,inv,,1544.5632515785132
+TSMC,2016,4,capex,,103.1189516768728
+TSMC,2016,4,rev_geo,NORAM,69
+TSMC,2016,4,rev_geo,China,8
+TSMC,2016,4,rev_geo,EMEA,6
+TSMC,2016,4,rev_geo,ASIAPAC,11
+TSMC,2016,4,rev_geo,Japan,6
+TSMC,2016,4,rev_seg,Computer,8
+TSMC,2016,4,rev_seg,Communication,66
+TSMC,2016,4,rev_seg,Consumer,6
+TSMC,2016,4,rev_seg,Industrial/Standard,20
+TSMC,2016,4,rev_tech,16/20nm,33
+TSMC,2016,4,rev_tech,28nm,24
+TSMC,2016,4,rev_tech,40/45nm,12
+TSMC,2016,4,rev_tech,65nm,11
+TSMC,2016,4,rev_tech,90nm,5
+TSMC,2016,4,rev_tech,0.11/0.13um,2
+TSMC,2016,4,rev_tech,0.15/0.18um,10
+TSMC,2016,4,rev_tech,0.25um and above,3
+TSMC,2017,1,rev,,7506.257621462038
+TSMC,2017,1,inv,,1617.0335665233297
+TSMC,2017,1,capex,,113.27899364610744
+TSMC,2017,1,rev_geo,NORAM,63
+TSMC,2017,1,rev_geo,China,11
+TSMC,2017,1,rev_geo,EMEA,6
+TSMC,2017,1,rev_geo,ASIAPAC,13
+TSMC,2017,1,rev_geo,Japan,7
+TSMC,2017,1,rev_seg,Computer,9
+TSMC,2017,1,rev_seg,Communication,61
+TSMC,2017,1,rev_seg,Consumer,9
+TSMC,2017,1,rev_seg,Industrial/Standard,21
+TSMC,2017,1,rev_tech,16/20nm,31
+TSMC,2017,1,rev_tech,28nm,25
+TSMC,2017,1,rev_tech,40/45nm,13
+TSMC,2017,1,rev_tech,65nm,11
+TSMC,2017,1,rev_tech,90nm,4
+TSMC,2017,1,rev_tech,0.11/0.13um,2
+TSMC,2017,1,rev_tech,0.15/0.18um,11
+TSMC,2017,1,rev_tech,0.25um and above,3
+TSMC,2017,2,rev,,7091.554199688298
+TSMC,2017,2,inv,,2023.0792187551813
+TSMC,2017,2,capex,,109.09573233411811
+TSMC,2017,2,rev_geo,NORAM,60
+TSMC,2017,2,rev_geo,China,11
+TSMC,2017,2,rev_geo,EMEA,7
+TSMC,2017,2,rev_geo,ASIAPAC,14
+TSMC,2017,2,rev_geo,Japan,8
+TSMC,2017,2,rev_seg,Computer,8
+TSMC,2017,2,rev_seg,Communication,58
+TSMC,2017,2,rev_seg,Consumer,9
+TSMC,2017,2,rev_seg,Industrial/Standard,25
+TSMC,2017,2,rev_tech,10nm,1
+TSMC,2017,2,rev_tech,16/20nm,26
+TSMC,2017,2,rev_tech,28nm,27
+TSMC,2017,2,rev_tech,40/45nm,13
+TSMC,2017,2,rev_tech,65nm,10
+TSMC,2017,2,rev_tech,90nm,5
+TSMC,2017,2,rev_tech,0.11/0.13um,3
+TSMC,2017,2,rev_tech,0.15/0.18um,11
+TSMC,2017,2,rev_tech,0.25um and above,4
+TSMC,2017,3,rev,,8348.289678466173
+TSMC,2017,3,inv,,2446.769760588099
+TSMC,2017,3,capex,,114.90446703533229
+TSMC,2017,3,rev_geo,NORAM,64
+TSMC,2017,3,rev_geo,China,11
+TSMC,2017,3,rev_geo,EMEA,8
+TSMC,2017,3,rev_geo,ASIAPAC,10
+TSMC,2017,3,rev_geo,Japan,7
+TSMC,2017,3,rev_seg,Computer,10
+TSMC,2017,3,rev_seg,Communication,56
+TSMC,2017,3,rev_seg,Consumer,9
+TSMC,2017,3,rev_seg,Industrial/Standard,25
+TSMC,2017,3,rev_tech,10nm,10
+TSMC,2017,3,rev_tech,16/20nm,24
+TSMC,2017,3,rev_tech,28nm,23
+TSMC,2017,3,rev_tech,40/45nm,12
+TSMC,2017,3,rev_tech,65nm,10
+TSMC,2017,3,rev_tech,90nm,5
+TSMC,2017,3,rev_tech,0.11/0.13um,3
+TSMC,2017,3,rev_tech,0.15/0.18um,10
+TSMC,2017,3,rev_tech,0.25um and above,3
+TSMC,2017,4,rev,,9205.385865419694
+TSMC,2017,4,inv,,2450.1707956090604
+TSMC,2017,4,capex,,67.98660166484264
+TSMC,2017,4,rev_geo,NORAM,67
+TSMC,2017,4,rev_geo,China,13
+TSMC,2017,4,rev_geo,EMEA,7
+TSMC,2017,4,rev_geo,ASIAPAC,7
+TSMC,2017,4,rev_geo,Japan,6
+TSMC,2017,4,rev_seg,Computer,11
+TSMC,2017,4,rev_seg,Communication,62
+TSMC,2017,4,rev_seg,Consumer,5
+TSMC,2017,4,rev_seg,Industrial/Standard,22
+TSMC,2017,4,rev_tech,10nm,25
+TSMC,2017,4,rev_tech,16/20nm,20
+TSMC,2017,4,rev_tech,28nm,18
+TSMC,2017,4,rev_tech,40/45nm,10
+TSMC,2017,4,rev_tech,65nm,9
+TSMC,2017,4,rev_tech,90nm,4
+TSMC,2017,4,rev_tech,0.11/0.13um,2
+TSMC,2017,4,rev_tech,0.15/0.18um,9
+TSMC,2017,4,rev_tech,0.25um and above,3
+TSMC,2018,1,rev,,8507.252837694181
+TSMC,2018,1,inv,,2922.3963512911077
+TSMC,2018,1,capex,,70.29937244950447
+TSMC,2018,1,rev_geo,NORAM,59
+TSMC,2018,1,rev_geo,China,19
+TSMC,2018,1,rev_geo,EMEA,7
+TSMC,2018,1,rev_geo,ASIAPAC,8
+TSMC,2018,1,rev_geo,Japan,7
+TSMC,2018,1,rev_seg,Computer,15
+TSMC,2018,1,rev_seg,Communication,55
+TSMC,2018,1,rev_seg,Consumer,7
+TSMC,2018,1,rev_seg,Industrial/Standard,23
+TSMC,2018,1,rev_tech,10nm,19
+TSMC,2018,1,rev_tech,16/20nm,22
+TSMC,2018,1,rev_tech,28nm,20
+TSMC,2018,1,rev_tech,40/45nm,11
+TSMC,2018,1,rev_tech,65nm,9
+TSMC,2018,1,rev_tech,90nm,5
+TSMC,2018,1,rev_tech,0.11/0.13um,2
+TSMC,2018,1,rev_tech,0.15/0.18um,9
+TSMC,2018,1,rev_tech,0.25um and above,3
+TSMC,2018,2,rev,,7874.96202275259
+TSMC,2018,2,inv,,3343.0104985990615
+TSMC,2018,2,capex,,82.70600546872362
+TSMC,2018,2,rev_geo,NORAM,53
+TSMC,2018,2,rev_geo,China,23
+TSMC,2018,2,rev_geo,EMEA,7
+TSMC,2018,2,rev_geo,ASIAPAC,10
+TSMC,2018,2,rev_geo,Japan,7
+TSMC,2018,2,rev_seg,Computer,21
+TSMC,2018,2,rev_seg,Communication,48
+TSMC,2018,2,rev_seg,Consumer,8
+TSMC,2018,2,rev_seg,Industrial/Standard,23
+TSMC,2018,2,rev_tech,10nm,13
+TSMC,2018,2,rev_tech,16/20nm,25
+TSMC,2018,2,rev_tech,28nm,23
+TSMC,2018,2,rev_tech,40/45nm,11
+TSMC,2018,2,rev_tech,65nm,9
+TSMC,2018,2,rev_tech,90nm,5
+TSMC,2018,2,rev_tech,0.11/0.13um,2
+TSMC,2018,2,rev_tech,0.15/0.18um,9
+TSMC,2018,2,rev_tech,0.25um and above,3
+TSMC,2018,3,rev,,8517.07668149699
+TSMC,2018,3,inv,,3446.087411672337
+TSMC,2018,3,capex,,65.7550379481811
+TSMC,2018,3,rev_geo,NORAM,61
+TSMC,2018,3,rev_geo,China,16
+TSMC,2018,3,rev_geo,EMEA,7
+TSMC,2018,3,rev_geo,ASIAPAC,10
+TSMC,2018,3,rev_geo,Japan,6
+TSMC,2018,3,rev_seg,Computer,13
+TSMC,2018,3,rev_seg,Communication,56
+TSMC,2018,3,rev_seg,Consumer,7
+TSMC,2018,3,rev_seg,Industrial/Standard,24
+TSMC,2018,3,rev_tech,7nm,11
+TSMC,2018,3,rev_tech,10nm,6
+TSMC,2018,3,rev_tech,16/20nm,25
+TSMC,2018,3,rev_tech,28nm,19
+TSMC,2018,3,rev_tech,40/45nm,12
+TSMC,2018,3,rev_tech,65nm,8
+TSMC,2018,3,rev_tech,90nm,4
+TSMC,2018,3,rev_tech,0.11/0.13um,3
+TSMC,2018,3,rev_tech,0.15/0.18um,9
+TSMC,2018,3,rev_tech,0.25um and above,3
+TSMC,2018,4,rev,,9367.968446915816
+TSMC,2018,4,inv,,3337.3205741626793
+TSMC,2018,4,capex,,73.71007371007371
+TSMC,2018,4,rev_geo,NORAM,69
+TSMC,2018,4,rev_geo,China,13
+TSMC,2018,4,rev_geo,EMEA,6
+TSMC,2018,4,rev_geo,ASIAPAC,7
+TSMC,2018,4,rev_geo,Japan,5
+TSMC,2018,4,rev_seg,Computer,11
+TSMC,2018,4,rev_seg,Communication,64
+TSMC,2018,4,rev_seg,Consumer,5
+TSMC,2018,4,rev_seg,Industrial/Standard,20
+TSMC,2018,4,rev_tech,7nm,23
+TSMC,2018,4,rev_tech,10nm,6
+TSMC,2018,4,rev_tech,16/20nm,21
+TSMC,2018,4,rev_tech,28nm,17
+TSMC,2018,4,rev_tech,40/45nm,10
+TSMC,2018,4,rev_tech,65nm,8
+TSMC,2018,4,rev_tech,90nm,3
+TSMC,2018,4,rev_tech,0.11/0.13um,2
+TSMC,2018,4,rev_tech,0.15/0.18um,8
+TSMC,2018,4,rev_tech,0.25um and above,2
+TSMC,2019,1,rev,,7126.564129301356
+TSMC,2019,1,inv,,3541.449426485923
+TSMC,2019,1,capex,,121.22002085505736
+TSMC,2019,1,rev_geo,NORAM,60
+TSMC,2019,1,rev_geo,China,18
+TSMC,2019,1,rev_geo,EMEA,7
+TSMC,2019,1,rev_geo,ASIAPAC,9
+TSMC,2019,1,rev_geo,Japan,6
+TSMC,2019,1,rev_seg,Computer,10
+TSMC,2019,1,rev_seg,Communication,62
+TSMC,2019,1,rev_seg,Consumer,5
+TSMC,2019,1,rev_seg,Industrial/Standard,23
+TSMC,2019,1,rev_tech,7nm,22
+TSMC,2019,1,rev_tech,10nm,4
+TSMC,2019,1,rev_tech,16nm,16
+TSMC,2019,1,rev_tech,20nm,1
+TSMC,2019,1,rev_tech,28nm,20
+TSMC,2019,1,rev_tech,40/45nm,12
+TSMC,2019,1,rev_tech,65nm,8
+TSMC,2019,1,rev_tech,90nm,3
+TSMC,2019,1,rev_tech,0.11/0.13um,3
+TSMC,2019,1,rev_tech,0.15/0.18um,8
+TSMC,2019,1,rev_tech,0.25um and above,3
+TSMC,2019,2,rev,,7801.119994820833
+TSMC,2019,2,inv,,3503.382643317256
+TSMC,2019,2,capex,,79.62968957368983
+TSMC,2019,2,rev_geo,NORAM,61
+TSMC,2019,2,rev_geo,China,17
+TSMC,2019,2,rev_geo,EMEA,6
+TSMC,2019,2,rev_geo,ASIAPAC,10
+TSMC,2019,2,rev_geo,Japan,6
+TSMC,2019,3,rev,,9406.496758040701
+TSMC,2019,3,inv,,3103.614303139244
+TSMC,2019,3,capex,,120.3697759517237
+TSMC,2019,3,rev_geo,NORAM,60
+TSMC,2019,3,rev_geo,China,20
+TSMC,2019,3,rev_geo,EMEA,6
+TSMC,2019,3,rev_geo,ASIAPAC,9
+TSMC,2019,3,rev_geo,Japan,5
+TSMC,2019,4,rev,,10408.819476343591
+TSMC,2019,4,inv,,2722.619594461579
+TSMC,2019,4,capex,,103.02513288273508
+TSMC,2019,4,rev_geo,NORAM,59
+TSMC,2019,4,rev_geo,China,22
+TSMC,2019,4,rev_geo,EMEA,6
+TSMC,2019,4,rev_geo,ASIAPAC,8
+TSMC,2019,4,rev_geo,Japan,5
+TSMC,2020,1,rev,,10235.286363935938
+TSMC,2020,1,inv,,2579.582152507744
+TSMC,2020,1,capex,,182.89066104264154
+TSMC,2020,1,rev_geo,NORAM,56
+TSMC,2020,1,rev_geo,China,22
+TSMC,2020,1,rev_geo,EMEA,6
+TSMC,2020,1,rev_geo,ASIAPAC,11
+TSMC,2020,1,rev_geo,Japan,5
+TSMC,2020,2,rev,,10434.578183772166
+TSMC,2020,2,inv,,2881.179473401397
+TSMC,2020,2,capex,,214.60236432025792
+TSMC,2020,2,rev_geo,NORAM,58
+TSMC,2020,2,rev_geo,China,21
+TSMC,2020,2,rev_geo,EMEA,6
+TSMC,2020,2,rev_geo,ASIAPAC,10
+TSMC,2020,2,rev_geo,Japan,5
+TSMC,2020,3,rev,,12149.504039267818
+TSMC,2020,3,inv,,3732.8288509390873
+TSMC,2020,3,capex,,144.5273886218768
+TSMC,2020,3,rev_geo,NORAM,59
+TSMC,2020,3,rev_geo,China,22
+TSMC,2020,3,rev_geo,EMEA,5
+TSMC,2020,3,rev_geo,ASIAPAC,10
+TSMC,2020,3,rev_geo,Japan,4
+TSMC,2020,4,rev,,12647.984886649874
+TSMC,2020,4,inv,,4805.13574027428
+TSMC,2020,4,capex,,119.64735516372797
+TSMC,2020,4,rev_geo,NORAM,73
+TSMC,2020,4,rev_geo,China,6
+TSMC,2020,4,rev_geo,EMEA,5
+TSMC,2020,4,rev_geo,ASIAPAC,12
+TSMC,2020,4,rev_geo,Japan,4
+TSMC,2021,1,rev,,12942.752044569836
+TSMC,2021,1,inv,,5520.159994285918
+TSMC,2021,1,capex,,113.92450269633227
+TSMC,2021,1,rev_geo,NORAM,67
+TSMC,2021,1,rev_geo,China,6
+TSMC,2021,1,rev_geo,EMEA,6
+TSMC,2021,1,rev_geo,ASIAPAC,17
+TSMC,2021,1,rev_geo,Japan,4
+TSMC,2021,2,rev,,13364.576599870717
+TSMC,2021,2,inv,,6120.8072972778855
+TSMC,2021,2,capex,,317.46031746031747
+TSMC,2021,2,rev_geo,NORAM,64
+TSMC,2021,2,rev_geo,China,11
+TSMC,2021,2,rev_geo,EMEA,6
+TSMC,2021,2,rev_geo,ASIAPAC,15
+TSMC,2021,2,rev_geo,Japan,4
+TSMC,2021,3,rev,,14846.759756534193
+TSMC,2021,3,inv,,6524.52559971357
+TSMC,2021,3,capex,,213.74865735767992
+TSMC,2021,3,rev_geo,NORAM,65
+TSMC,2021,3,rev_geo,China,11
+TSMC,2021,3,rev_geo,EMEA,6
+TSMC,2021,3,rev_geo,ASIAPAC,13
+TSMC,2021,3,rev_geo,Japan,5
+TSMC,2021,4,rev,,15749.766371935879
+TSMC,2021,4,inv,,6940.550643375746
+TSMC,2021,4,capex,,243.33261447775143
+TSMC,2021,4,rev_geo,NORAM,66
+TSMC,2021,4,rev_geo,China,12
+TSMC,2021,4,rev_geo,EMEA,5
+TSMC,2021,4,rev_geo,ASIAPAC,12
+TSMC,2021,4,rev_geo,Japan,5
+SMIC,2012,3,rev,,461.2
+SMIC,2012,3,inv,,262
+SMIC,2012,3,capex,,130.3
+SMIC,2012,3,rev_geo,Computer,1.5
+SMIC,2012,3,rev_geo,Communications,46.7
+SMIC,2012,3,rev_geo,Consumer,43.1
+SMIC,2012,3,rev_geo,Others,8.7
+SMIC,2012,3,rev_seg,North America,55.2
+SMIC,2012,3,rev_seg,(2)China,35.3
+SMIC,2013,4,rev,,491.8
+SMIC,2013,4,inv,,286
+SMIC,2013,4,capex,,114.3
+SMIC,2013,4,rev_geo,Computer,1.9
+SMIC,2013,4,rev_geo,Communications,39.8
+SMIC,2013,4,rev_geo,Consumer,48.3
+SMIC,2013,4,rev_geo,Others,10.0
+SMIC,2013,4,rev_seg,North America,48.3
+SMIC,2015,2,rev,,546.6
+SMIC,2015,2,inv,,365
+SMIC,2015,2,capex,,367.6
+SMIC,2015,2,rev_geo,Computer,4.5
+SMIC,2015,2,rev_geo,Communications,49.4
+SMIC,2015,2,rev_geo,Consumer,37.7
+SMIC,2015,2,rev_geo,Others,8.4
+SMIC,2015,2,rev_seg,North America,32.0
+SMIC,2016,4,rev,,814.8
+SMIC,2016,4,inv,,464
+SMIC,2016,4,capex,,480.6
+SMIC,2016,4,rev_geo,Computer,3.9
+SMIC,2016,4,rev_geo,Communications,44.3
+SMIC,2016,4,rev_geo,Consumer,37.4
+SMIC,2016,4,rev_geo,Others,14.4
+SMIC,2016,4,rev_seg,North America,33.2
+SMIC,2017,3,rev,,769.7
+SMIC,2017,3,inv,,625
+SMIC,2017,3,capex,,451.1
+SMIC,2017,3,rev_geo,Computer,5.8
+SMIC,2017,3,rev_geo,Communications,45.3
+SMIC,2017,3,rev_geo,Consumer,37.0
+SMIC,2017,3,rev_geo,Auto/Industrial,8.1
+SMIC,2017,3,rev_geo,Others,3.8
+SMIC,2017,3,rev_seg,North America,41.9
+SMIC,2017,4,rev,,787.2
+SMIC,2017,4,inv,,622
+SMIC,2017,4,capex,,498.7
+SMIC,2017,4,rev_geo,Computer,6.6
+SMIC,2017,4,rev_geo,Communications,42.5
+SMIC,2017,4,rev_geo,Consumer,37.6
+SMIC,2017,4,rev_geo,Auto/Industrial,8.8
+SMIC,2017,4,rev_geo,Others,4.5
+SMIC,2017,4,rev_seg,North America,38.1
+SMIC,2018,1,rev,,831.0
+SMIC,2018,1,inv,,699
+SMIC,2018,1,capex,,322.2
+SMIC,2018,2,rev,,890.7
+SMIC,2018,2,inv,,697
+SMIC,2018,2,capex,,558.7
+SMIC,2018,3,rev,,850.7
+SMIC,2018,3,inv,,697
+SMIC,2018,3,capex,,527.8
+SMIC,2018,3,rev_geo,Computer,7.5
+SMIC,2018,3,rev_geo,Communications,46.3
+SMIC,2018,3,rev_geo,Consumer,32.5
+SMIC,2018,3,rev_geo,Auto/Industrial,7.5
+SMIC,2018,3,rev_geo,Others,6.2
+SMIC,2018,4,rev,,787.6
+SMIC,2018,4,inv,,593
+SMIC,2018,4,capex,,404.8
+SMIC,2018,4,rev_geo,Computer,6.4
+SMIC,2018,4,rev_geo,Communications,44.7
+SMIC,2018,4,rev_geo,Consumer,32.1
+SMIC,2018,4,rev_geo,Auto/Industrial,8.0
+SMIC,2018,4,rev_geo,Others,8.8
+SMIC,2019,1,rev,,668.9
+SMIC,2019,1,inv,,661
+SMIC,2019,1,capex,,439.6
+SMIC,2019,2,rev,,790.9
+SMIC,2019,2,inv,,647
+SMIC,2019,2,capex,,908.1
+SMIC,2019,3,rev,,816.5
+SMIC,2019,3,inv,,645
+SMIC,2019,3,capex,,189.7
+SMIC,2019,3,rev_geo,Computer,5.6
+SMIC,2019,3,rev_geo,Communications,46.1
+SMIC,2019,3,rev_geo,Consumer,34.9
+SMIC,2019,3,rev_geo,Auto/Industrial,4.8
+SMIC,2019,3,rev_geo,Others,8.6
+SMIC,2019,4,rev,,839.4
+SMIC,2019,4,inv,,628
+SMIC,2019,4,capex,,491.9
+SMIC,2019,4,rev_geo,Computer,5.5
+SMIC,2019,4,rev_geo,Communications,44.4
+SMIC,2019,4,rev_geo,Consumer,38.1
+SMIC,2019,4,rev_geo,Auto/Industrial,3.1
+SMIC,2019,4,rev_geo,Others,8.9
+SMIC,2020,1,rev,,904.9
+SMIC,2020,1,inv,,616
+SMIC,2020,1,capex,,777.2
+SMIC,2020,1,rev_geo,Computer,5.1
+SMIC,2020,1,rev_geo,Communications,48.9
+SMIC,2020,1,rev_geo,Consumer,35.4
+SMIC,2020,1,rev_geo,Auto/Industrial,2.9
+SMIC,2020,1,rev_geo,Others,7.7
+SMIC,2020,2,rev,,938.5
+SMIC,2020,2,inv,,669
+SMIC,2020,2,capex,,1342.5
+SMIC,2020,2,rev_geo,Computer,5.9
+SMIC,2020,2,rev_geo,Communications,46.9
+SMIC,2020,2,rev_geo,Consumer,36.9
+SMIC,2020,2,rev_geo,Auto/Industrial,4.3
+SMIC,2020,2,rev_geo,Others,6.0
+SMIC,2020,3,rev,,1082.5
+SMIC,2020,3,inv,,647
+SMIC,2020,3,capex,,2279.7
+SMIC,2020,3,rev_geo,NORAM,18.6
+SMIC,2020,3,rev_geo,CHINAHK,69.7
+SMIC,2020,3,rev_geo,EURASIA,11.7
+SMIC,2020,3,rev_seg,Smart Phone,46.1
+SMIC,2020,3,rev_seg,Smart Home,20.5
+SMIC,2020,3,rev_seg,Consumer Electronics,17.0
+SMIC,2020,3,rev_seg,Others,16.4
+SMIC,2020,3,rev_tech,14/28 nm,14.6
+SMIC,2020,3,rev_tech,40/45 nm,17.2
+SMIC,2020,3,rev_tech,55/65 nm,25.8
+SMIC,2020,3,rev_tech,90 nm,3.4
+SMIC,2020,3,rev_tech,0.11/0.13 μm,4.4
+SMIC,2020,3,rev_tech,0.15/0.18 μm,31.2
+SMIC,2020,3,rev_tech,0.25/0.35 μm,3.4
+SMIC,2020,4,rev,,981.1
+SMIC,2020,4,inv,,798
+SMIC,2020,4,capex,,1333.4
+SMIC,2020,4,rev_geo,NORAM,27.7
+SMIC,2020,4,rev_geo,CHINAHK,56.1
+SMIC,2020,4,rev_geo,EURASIA,16.2
+SMIC,2020,4,rev_seg,Smart Phone,36.7
+SMIC,2020,4,rev_seg,Smart Home,15.8
+SMIC,2020,4,rev_seg,Consumer Electronics,20.2
+SMIC,2020,4,rev_seg,Others,27.3
+SMIC,2020,4,rev_tech,14/28 nm,5.0
+SMIC,2020,4,rev_tech,40/45 nm,14.8
+SMIC,2020,4,rev_tech,55/65 nm,34.0
+SMIC,2020,4,rev_tech,90 nm,3.5
+SMIC,2020,4,rev_tech,0.11/0.13 μm,6.2
+SMIC,2020,4,rev_tech,0.15/0.18 μm,32.5
+SMIC,2020,4,rev_tech,0.25/0.35 μm,4.0
+SMIC,2021,1,rev,,1103.6
+SMIC,2021,1,inv,,889
+SMIC,2021,1,capex,,534.1
+SMIC,2021,1,rev_geo,NORAM,27.7
+SMIC,2021,1,rev_geo,CHINAHK,55.6
+SMIC,2021,1,rev_geo,EURASIA,16.7
+SMIC,2021,1,rev_seg,Smart Phone,35.2
+SMIC,2021,1,rev_seg,Smart Home,13.9
+SMIC,2021,1,rev_seg,Consumer Electronics,20.4
+SMIC,2021,1,rev_seg,Others,30.5
+SMIC,2021,1,rev_tech,14/28 nm,6.9
+SMIC,2021,1,rev_tech,40/45 nm,16.3
+SMIC,2021,1,rev_tech,55/65 nm,32.8
+SMIC,2021,1,rev_tech,90 nm,4.1
+SMIC,2021,1,rev_tech,0.11/0.13 μm,6.0
+SMIC,2021,1,rev_tech,0.15/0.18 μm,30.3
+SMIC,2021,1,rev_tech,0.25/0.35 μm,3.6
+SMIC,2021,2,rev,,1344.1
+SMIC,2021,2,inv,,973
+SMIC,2021,2,capex,,770.8
+SMIC,2021,2,rev_geo,NORAM,23.3
+SMIC,2021,2,rev_geo,CHINAHK,62.9
+SMIC,2021,2,rev_geo,EURASIA,13.8
+SMIC,2021,2,rev_seg,Smart Phone,31.6
+SMIC,2021,2,rev_seg,Smart Home,12.4
+SMIC,2021,2,rev_seg,Consumer Electronics,25.1
+SMIC,2021,2,rev_seg,Others,30.9
+SMIC,2021,2,rev_tech,FinFET/28 nm,14.5
+SMIC,2021,2,rev_tech,40/45 nm,14.9
+SMIC,2021,2,rev_tech,55/65 nm,29.9
+SMIC,2021,2,rev_tech,90 nm,3.2
+SMIC,2021,2,rev_tech,0.11/0.13 μm,5.9
+SMIC,2021,2,rev_tech,0.15/0.18 μm,28.4
+SMIC,2021,2,rev_tech,0.25/0.35 μm,3.2
+SMIC,2021,3,rev,,1415.3
+SMIC,2021,3,inv,,1105
+SMIC,2021,3,capex,,1080.9
+SMIC,2021,3,rev_geo,CHINAHK,66.7
+SMIC,2021,3,rev_geo,NORAM,20.3
+SMIC,2021,3,rev_geo,EURASIA,13.0
+SMIC,2021,3,rev_seg,Smart Phone,31.5
+SMIC,2021,3,rev_seg,Smart Home,12.5
+SMIC,2021,3,rev_seg,Consumer Electronics,24.1
+SMIC,2021,3,rev_seg,Others,31.9
+SMIC,2021,3,rev_tech,FinFET/28 nm,18.2
+SMIC,2021,3,rev_tech,40/45 nm,13.9
+SMIC,2021,3,rev_tech,55/65 nm,28.5
+SMIC,2021,3,rev_tech,90 nm,3.1
+SMIC,2021,3,rev_tech,0.11/0.13 μm,5.4
+SMIC,2021,3,rev_tech,0.15/0.18 μm,27.9
+SMIC,2021,3,rev_tech,0.25/0.35 μm,3.0
+SMIC,2021,4,rev,,1580.1
+SMIC,2021,4,inv,,1193
+SMIC,2021,4,capex,,2130.0
+SMIC,2021,4,rev_geo,CHINAHK,68.3
+SMIC,2021,4,rev_geo,NORAM,19.6
+SMIC,2021,4,rev_geo,EURASIA,12.1
+SMIC,2021,4,rev_seg,Smart Phone,31.2
+SMIC,2021,4,rev_seg,Smart Home,12.7
+SMIC,2021,4,rev_seg,Consumer Electronics,23.7
+SMIC,2021,4,rev_seg,Others,32.4
+SMIC,2021,4,rev_tech,FinFET/28 nm,18.6
+SMIC,2021,4,rev_tech,40/45 nm,15.3
+SMIC,2021,4,rev_tech,55/65 nm,26.8
+SMIC,2021,4,rev_tech,90 nm,2.5
+SMIC,2021,4,rev_tech,0.11/0.13 μm,5.3
+SMIC,2021,4,rev_tech,0.15/0.18 μm,28.6
+SMIC,2021,4,rev_tech,0.25/0.35 μm,2.9
+UMC,2004,1,rev_geo,NORAM,39
+UMC,2004,1,rev_geo,ASIAPAC,40
+UMC,2004,1,rev_geo,Europe,18
+UMC,2004,1,rev_geo,Japan,3
+UMC,2004,1,rev_tech,0.15um<x<=0.18um,28
+UMC,2004,1,rev_tech,0.18um<x<=0.25um,25
+UMC,2004,1,rev_tech,0.25um<x<=0.35um,25
+UMC,2004,1,rev_tech,0.5um and above,12
+UMC,2005,1,rev_geo,NORAM,49
+UMC,2005,1,rev_geo,ASIAPAC,38
+UMC,2005,1,rev_geo,Europe,11
+UMC,2005,1,rev_geo,Japan,2
+UMC,2005,1,rev_tech,0.15um<x<=0.18um,20
+UMC,2005,1,rev_tech,0.18um<x<=0.25um,10
+UMC,2005,1,rev_tech,0.25um<x<=0.35um,20
+UMC,2005,1,rev_tech,0.5um and above,11
+UMC,2006,1,rev_geo,NORAM,46
+UMC,2006,1,rev_geo,ASIAPAC,43
+UMC,2006,1,rev_geo,Europe,9
+UMC,2006,1,rev_geo,Japan,2
+UMC,2006,1,rev_tech,0.15um<x<=0.18um,21
+UMC,2006,1,rev_tech,0.18um<x<=0.25um,5
+UMC,2006,1,rev_tech,0.25um<x<=0.35um,21
+UMC,2006,1,rev_tech,0.5um and above,8
+UMC,2007,1,rev_geo,NORAM,47
+UMC,2007,1,rev_geo,ASIAPAC,43
+UMC,2007,1,rev_geo,Europe,7
+UMC,2007,1,rev_geo,Japan,3
+UMC,2007,1,rev_tech,0.15um<x<=0.18um,19
+UMC,2007,1,rev_tech,0.18um<x<=0.25um,6
+UMC,2007,1,rev_tech,0.25um<x<=0.35um,19
+UMC,2007,1,rev_tech,0.5um and above,8
+UMC,2008,1,rev_geo,NORAM,58
+UMC,2008,1,rev_geo,ASIAPAC,29
+UMC,2008,1,rev_geo,Europe,11
+UMC,2008,1,rev_geo,Japan,2
+UMC,2008,1,rev_tech,90nm<x<=0.13um,21
+UMC,2008,1,rev_tech,0.13um<x<=0.18um,22
+UMC,2008,1,rev_tech,0.18um<x<=0.35um,14
+UMC,2008,1,rev_tech,0.5um and above,6
+UMC,2009,1,rev_geo,NORAM,53
+UMC,2009,1,rev_geo,ASIAPAC,37
+UMC,2009,1,rev_geo,Europe,9
+UMC,2009,1,rev_geo,Japan,1
+UMC,2009,1,rev_tech,90nm<x<=0.13um,16
+UMC,2009,1,rev_tech,0.13um<x<=0.18um,22
+UMC,2009,1,rev_tech,0.18um<x<=0.35um,18
+UMC,2009,1,rev_tech,0.5um and above,6
+UMC,2010,1,rev_geo,NORAM,47
+UMC,2010,1,rev_geo,ASIAPAC,42
+UMC,2010,1,rev_geo,Europe,10
+UMC,2010,1,rev_geo,Japan,1
+UMC,2010,1,rev_tech,65nm and below,18
+UMC,2010,1,rev_tech,65nm<x<=90nm,22
+UMC,2010,1,rev_tech,90nm<x<=0.13um,25
+UMC,2010,1,rev_tech,0.13um<x<=0.18um,18
+UMC,2010,1,rev_tech,0.18um<x<=0.35um,11
+UMC,2010,1,rev_tech,0.5um and above,6
+UMC,2011,1,rev_geo,NORAM,51
+UMC,2011,1,rev_geo,ASIAPAC,35
+UMC,2011,1,rev_geo,Europe,13
+UMC,2011,1,rev_geo,Japan,1
+UMC,2011,1,rev_tech,40nm and below,6
+UMC,2011,1,rev_tech,40nm<x<=65nm,29
+UMC,2011,1,rev_tech,65nm<x<=90nm,15
+UMC,2011,1,rev_tech,90nm<x<=0.13um,23
+UMC,2011,1,rev_tech,0.13um<x<=0.18um,13
+UMC,2011,1,rev_tech,0.18um<x<=0.35um,9
+UMC,2011,1,rev_tech,0.5um and above,5
+UMC,2012,1,rev_geo,NORAM,45
+UMC,2012,1,rev_geo,ASIAPAC,46
+UMC,2012,1,rev_geo,Europe,8
+UMC,2012,1,rev_geo,Japan,1
+UMC,2012,1,rev_tech,40nm and below,9
+UMC,2012,1,rev_tech,40nm<x<=65nm,40
+UMC,2012,1,rev_tech,65nm<x<=90nm,6
+UMC,2012,1,rev_tech,90nm<x<=0.13um,20
+UMC,2012,1,rev_tech,0.13um<x<=0.18um,10
+UMC,2012,1,rev_tech,0.18um<x<=0.35um,11
+UMC,2012,1,rev_tech,0.5um and above,4
+UMC,2013,1,rev_geo,NORAM,44
+UMC,2013,1,rev_geo,ASIAPAC,46
+UMC,2013,1,rev_geo,Europe,9
+UMC,2013,1,rev_geo,Japan,1
+UMC,2013,1,rev_tech,40nm and below,18
+UMC,2013,1,rev_tech,40nm<x<=65nm,32
+UMC,2013,1,rev_tech,65nm<x<=90nm,6
+UMC,2013,1,rev_tech,90nm<x<=0.13um,14
+UMC,2013,1,rev_tech,0.13um<x<=0.18um,15
+UMC,2013,1,rev_tech,0.18um<x<=0.35um,11
+UMC,2013,1,rev_tech,0.5um and above,4
+UMC,2014,1,rev_geo,NORAM,45
+UMC,2014,1,rev_geo,ASIAPAC,45
+UMC,2014,1,rev_geo,Europe,7
+UMC,2014,1,rev_geo,Japan,3
+UMC,2014,1,rev_tech,40nm and below,20
+UMC,2014,1,rev_tech,40nm<x<=65nm,31
+UMC,2014,1,rev_tech,65nm<x<=90nm,7
+UMC,2014,1,rev_tech,90nm<x<=0.13um,14
+UMC,2014,1,rev_tech,0.13um<x<=0.18um,12
+UMC,2014,1,rev_tech,0.18um<x<=0.35um,12
+UMC,2014,1,rev_tech,0.5um and above,4
+UMC,2015,1,rev_geo,NORAM,47
+UMC,2015,1,rev_geo,ASIAPAC,40
+UMC,2015,1,rev_geo,Europe,7
+UMC,2015,1,rev_geo,Japan,6
+UMC,2015,1,rev_tech,28nm and below,9
+UMC,2015,1,rev_tech,28nm<x<=40nm,24
+UMC,2015,1,rev_tech,40nm<x<=65nm,23
+UMC,2015,1,rev_tech,65nm<x<=90nm,5
+UMC,2015,1,rev_tech,90nm<x<=0.13um,13
+UMC,2015,1,rev_tech,0.13um<x<=0.18um,12
+UMC,2015,1,rev_tech,0.18um<x<=0.35um,11
+UMC,2015,1,rev_tech,0.5um and above,3
+UMC,2016,1,rev_geo,NORAM,48
+UMC,2016,1,rev_geo,ASIAPAC,45
+UMC,2016,1,rev_geo,Europe,3
+UMC,2016,1,rev_geo,Japan,4
+UMC,2016,1,rev_tech,28nm and below,8
+UMC,2016,1,rev_tech,28nm<x<=40nm,29
+UMC,2016,1,rev_tech,40nm<x<=65nm,19
+UMC,2016,1,rev_tech,65nm<x<=90nm,4
+UMC,2016,1,rev_tech,90nm<x<=0.13um,12
+UMC,2016,1,rev_tech,0.13um<x<=0.18um,13
+UMC,2016,1,rev_tech,0.18um<x<=0.35um,12
+UMC,2016,1,rev_tech,0.5um and above,3
+UMC,2017,1,rev_geo,NORAM,41
+UMC,2017,1,rev_geo,ASIAPAC,50
+UMC,2017,1,rev_geo,Europe,5
+UMC,2017,1,rev_geo,Japan,4
+UMC,2017,1,rev_tech,28nm and below,17
+UMC,2017,1,rev_tech,28nm<x<=40nm,29
+UMC,2017,1,rev_tech,40nm<x<=65nm,13
+UMC,2017,1,rev_tech,65nm<x<=90nm,4
+UMC,2017,1,rev_tech,90nm<x<=0.13um,11
+UMC,2017,1,rev_tech,0.13um<x<=0.18um,13
+UMC,2017,1,rev_tech,0.18um<x<=0.35um,10
+UMC,2017,1,rev_tech,0.5um and above,3
+UMC,2018,1,rev_geo,NORAM,42
+UMC,2018,1,rev_geo,ASIAPAC,47
+UMC,2018,1,rev_geo,Europe,8
+UMC,2018,1,rev_geo,Japan,3
+UMC,2018,1,rev_tech,14nm and below,2
+UMC,2018,1,rev_tech,14nm<x<=28nm,12
+UMC,2018,1,rev_tech,28nm<x<=40nm,30
+UMC,2018,1,rev_tech,40nm<x<=65nm,13
+UMC,2018,1,rev_tech,65nm<x<=90nm,6
+UMC,2018,1,rev_tech,90nm<x<=0.13um,11
+UMC,2018,1,rev_tech,0.13um<x<=0.18um,13
+UMC,2018,1,rev_tech,0.18um<x<=0.35um,10
+UMC,2018,1,rev_tech,0.5um and above,3
+UMC,2019,1,rev_geo,NORAM,32
+UMC,2019,1,rev_geo,ASIAPAC,57
+UMC,2019,1,rev_geo,Europe,7
+UMC,2019,1,rev_geo,Japan,4
+UMC,2019,1,rev_tech,14nm and below,0
+UMC,2019,1,rev_tech,14nm<x<=28nm,10
+UMC,2019,1,rev_tech,28nm<x<=40nm,20
+UMC,2019,1,rev_tech,40nm<x<=65nm,14
+UMC,2019,1,rev_tech,65nm<x<=90nm,12
+UMC,2019,1,rev_tech,90nm<x<=0.13um,15
+UMC,2019,1,rev_tech,0.13um<x<=0.18um,15
+UMC,2019,1,rev_tech,0.18um<x<=0.35um,11
+UMC,2019,1,rev_tech,0.5um and above,3
+UMC,2020,1,rev_geo,NORAM,29
+UMC,2020,1,rev_geo,ASIAPAC,56
+UMC,2020,1,rev_geo,Europe,6
+UMC,2020,1,rev_geo,Japan,9
+UMC,2020,1,rev_tech,14nm and below,0
+UMC,2020,1,rev_tech,14nm<x<=28nm,9
+UMC,2020,1,rev_tech,28nm<x<=40nm,25
+UMC,2020,1,rev_tech,40nm<x<=65nm,16
+UMC,2020,1,rev_tech,65nm<x<=90nm,15
+UMC,2020,1,rev_tech,90nm<x<=0.13um,11
+UMC,2020,1,rev_tech,0.13um<x<=0.18um,13
+UMC,2020,1,rev_tech,0.18um<x<=0.35um,8
+UMC,2020,1,rev_tech,0.5um and above,3
+UMC,2021,1,rev_geo,NORAM,23
+UMC,2021,1,rev_geo,ASIAPAC,63
+UMC,2021,1,rev_geo,Europe,8
+UMC,2021,1,rev_geo,Japan,6
+UMC,2021,1,rev_tech,14nm and below,0
+UMC,2021,1,rev_tech,14nm<x<=28nm,20
+UMC,2021,1,rev_tech,28nm<x<=40nm,20
+UMC,2021,1,rev_tech,40nm<x<=65nm,18
+UMC,2021,1,rev_tech,65nm<x<=90nm,8
+UMC,2021,1,rev_tech,90nm<x<=0.13um,11
+UMC,2021,1,rev_tech,0.13um<x<=0.18um,13
+UMC,2021,1,rev_tech,0.18um<x<=0.35um,8
+UMC,2021,1,rev_tech,0.5um and above,2
+UMC,2004,2,rev_geo,NORAM,43
+UMC,2004,2,rev_geo,ASIAPAC,39
+UMC,2004,2,rev_geo,Europe,14
+UMC,2004,2,rev_geo,Japan,4
+UMC,2004,2,rev_tech,0.15um<x<=0.18um,24
+UMC,2004,2,rev_tech,0.18um<x<=0.25um,22
+UMC,2004,2,rev_tech,0.25um<x<=0.35um,28
+UMC,2004,2,rev_tech,0.5um and above,12
+UMC,2004,3,rev_geo,NORAM,40
+UMC,2004,3,rev_geo,ASIAPAC,38
+UMC,2004,3,rev_geo,Europe,18
+UMC,2004,3,rev_geo,Japan,4
+UMC,2004,3,rev_tech,0.15um<x<=0.18um,26
+UMC,2004,3,rev_tech,0.18um<x<=0.25um,25
+UMC,2004,3,rev_tech,0.25um<x<=0.35um,22
+UMC,2004,3,rev_tech,0.5um and above,10
+UMC,2004,4,rev_geo,NORAM,49
+UMC,2004,4,rev_geo,ASIAPAC,32
+UMC,2004,4,rev_geo,Europe,16
+UMC,2004,4,rev_geo,Japan,3
+UMC,2004,4,rev_tech,0.15um<x<=0.18um,19
+UMC,2004,4,rev_tech,0.18um<x<=0.25um,12
+UMC,2004,4,rev_tech,0.25um<x<=0.35um,17
+UMC,2004,4,rev_tech,0.5um and above,9
+UMC,2005,2,rev_geo,NORAM,44
+UMC,2005,2,rev_geo,ASIAPAC,45
+UMC,2005,2,rev_geo,Europe,9
+UMC,2005,2,rev_geo,Japan,2
+UMC,2005,2,rev_tech,0.15um<x<=0.18um,20
+UMC,2005,2,rev_tech,0.18um<x<=0.25um,11
+UMC,2005,2,rev_tech,0.25um<x<=0.35um,25
+UMC,2005,2,rev_tech,0.5um and above,11
+UMC,2005,3,rev_geo,NORAM,48
+UMC,2005,3,rev_geo,ASIAPAC,43
+UMC,2005,3,rev_geo,Europe,7
+UMC,2005,3,rev_geo,Japan,2
+UMC,2005,3,rev_tech,0.15um<x<=0.18um,19
+UMC,2005,3,rev_tech,0.18um<x<=0.25um,8
+UMC,2005,3,rev_tech,0.25um<x<=0.35um,22
+UMC,2005,3,rev_tech,0.5um and above,9
+UMC,2005,4,rev_geo,NORAM,49
+UMC,2005,4,rev_geo,ASIAPAC,42
+UMC,2005,4,rev_geo,Europe,7
+UMC,2005,4,rev_geo,Japan,2
+UMC,2005,4,rev_tech,0.15um<x<=0.18um,19
+UMC,2005,4,rev_tech,0.18um<x<=0.25um,6
+UMC,2005,4,rev_tech,0.25um<x<=0.35um,19
+UMC,2005,4,rev_tech,0.5um and above,8
+UMC,2006,2,rev_geo,NORAM,51
+UMC,2006,2,rev_geo,ASIAPAC,35
+UMC,2006,2,rev_geo,Europe,11
+UMC,2006,2,rev_geo,Japan,3
+UMC,2006,2,rev_tech,0.15um<x<=0.18um,20
+UMC,2006,2,rev_tech,0.18um<x<=0.25um,6
+UMC,2006,2,rev_tech,0.25um<x<=0.35um,18
+UMC,2006,2,rev_tech,0.5um and above,9
+UMC,2006,3,rev_geo,NORAM,60
+UMC,2006,3,rev_geo,ASIAPAC,27
+UMC,2006,3,rev_geo,Europe,10
+UMC,2006,3,rev_geo,Japan,3
+UMC,2006,3,rev_tech,0.15um<x<=0.18um,19
+UMC,2006,3,rev_tech,0.18um<x<=0.25um,6
+UMC,2006,3,rev_tech,0.25um<x<=0.35um,13
+UMC,2006,3,rev_tech,0.5um and above,9
+UMC,2006,4,rev_geo,NORAM,53
+UMC,2006,4,rev_geo,ASIAPAC,37
+UMC,2006,4,rev_geo,Europe,7
+UMC,2006,4,rev_geo,Japan,3
+UMC,2006,4,rev_tech,0.15um<x<=0.18um,18
+UMC,2006,4,rev_tech,0.18um<x<=0.25um,6
+UMC,2006,4,rev_tech,0.25um<x<=0.35um,17
+UMC,2006,4,rev_tech,0.5um and above,9
+UMC,2007,2,rev_geo,NORAM,47
+UMC,2007,2,rev_geo,ASIAPAC,43
+UMC,2007,2,rev_geo,Europe,8
+UMC,2007,2,rev_geo,Japan,2
+UMC,2007,2,rev_tech,0.15um<x<=0.18um,20
+UMC,2007,2,rev_tech,0.18um<x<=0.25um,4
+UMC,2007,2,rev_tech,0.25um<x<=0.35um,18
+UMC,2007,2,rev_tech,0.5um and above,7
+UMC,2007,3,rev_geo,NORAM,49
+UMC,2007,3,rev_geo,ASIAPAC,40
+UMC,2007,3,rev_geo,Europe,9
+UMC,2007,3,rev_geo,Japan,2
+UMC,2007,3,rev_tech,0.15um<x<=0.18um,17
+UMC,2007,3,rev_tech,0.18um<x<=0.25um,3
+UMC,2007,3,rev_tech,0.25um<x<=0.35um,17
+UMC,2007,3,rev_tech,0.5um and above,6
+UMC,2007,4,rev_geo,NORAM,51
+UMC,2007,4,rev_geo,ASIAPAC,37
+UMC,2007,4,rev_geo,Europe,10
+UMC,2007,4,rev_geo,Japan,2
+UMC,2007,4,rev_tech,90nm<x<=0.13um,22
+UMC,2007,4,rev_tech,0.13um<x<=0.18um,27
+UMC,2007,4,rev_tech,0.18um<x<=0.35um,18
+UMC,2007,4,rev_tech,0.5um and above,7
+UMC,2008,2,rev_geo,NORAM,50
+UMC,2008,2,rev_geo,ASIAPAC,35
+UMC,2008,2,rev_geo,Europe,13
+UMC,2008,2,rev_geo,Japan,2
+UMC,2008,2,rev_tech,90nm<x<=0.13um,21
+UMC,2008,2,rev_tech,0.13um<x<=0.18um,20
+UMC,2008,2,rev_tech,0.18um<x<=0.35um,18
+UMC,2008,2,rev_tech,0.5um and above,5
+UMC,2008,3,rev_geo,NORAM,60
+UMC,2008,3,rev_geo,ASIAPAC,32
+UMC,2008,3,rev_geo,Europe,6
+UMC,2008,3,rev_geo,Japan,2
+UMC,2008,3,rev_tech,90nm<x<=0.13um,20
+UMC,2008,3,rev_tech,0.13um<x<=0.18um,21
+UMC,2008,3,rev_tech,0.18um<x<=0.35um,16
+UMC,2008,3,rev_tech,0.5um and above,5
+UMC,2008,4,rev_geo,NORAM,57
+UMC,2008,4,rev_geo,ASIAPAC,31
+UMC,2008,4,rev_geo,Europe,10
+UMC,2008,4,rev_geo,Japan,2
+UMC,2008,4,rev_tech,90nm<x<=0.13um,22
+UMC,2008,4,rev_tech,0.13um<x<=0.18um,23
+UMC,2008,4,rev_tech,0.18um<x<=0.35um,15
+UMC,2008,4,rev_tech,0.5um and above,5
+UMC,2009,2,rev_geo,NORAM,47
+UMC,2009,2,rev_geo,ASIAPAC,42
+UMC,2009,2,rev_geo,Europe,10
+UMC,2009,2,rev_geo,Japan,1
+UMC,2009,2,rev_tech,90nm<x<=0.13um,19
+UMC,2009,2,rev_tech,0.13um<x<=0.18um,21
+UMC,2009,2,rev_tech,0.18um<x<=0.35um,16
+UMC,2009,2,rev_tech,0.5um and above,5
+UMC,2009,3,rev_geo,NORAM,49
+UMC,2009,3,rev_geo,ASIAPAC,41
+UMC,2009,3,rev_geo,Europe,9
+UMC,2009,3,rev_geo,Japan,1
+UMC,2009,3,rev_tech,65nm and below,14
+UMC,2009,3,rev_tech,65nm<x<=90nm,26
+UMC,2009,3,rev_tech,90nm<x<=0.13um,21
+UMC,2009,3,rev_tech,0.13um<x<=0.18um,21
+UMC,2009,3,rev_tech,0.18um<x<=0.35um,13
+UMC,2009,3,rev_tech,0.5um and above,5
+UMC,2009,4,rev_geo,NORAM,51
+UMC,2009,4,rev_geo,ASIAPAC,40
+UMC,2009,4,rev_geo,Europe,8
+UMC,2009,4,rev_geo,Japan,1
+UMC,2009,4,rev_tech,65nm and below,17
+UMC,2009,4,rev_tech,65nm<x<=90nm,25
+UMC,2009,4,rev_tech,90nm<x<=0.13um,23
+UMC,2009,4,rev_tech,0.13um<x<=0.18um,19
+UMC,2009,4,rev_tech,0.18um<x<=0.35um,11
+UMC,2009,4,rev_tech,0.5um and above,5
+UMC,2010,2,rev_geo,NORAM,46
+UMC,2010,2,rev_geo,ASIAPAC,42
+UMC,2010,2,rev_geo,Europe,11
+UMC,2010,2,rev_geo,Japan,1
+UMC,2010,2,rev_tech,40nm<x<=65nm,21
+UMC,2010,2,rev_tech,65nm<x<=90nm,18
+UMC,2010,2,rev_tech,90nm<x<=0.13um,22
+UMC,2010,2,rev_tech,0.13um<x<=0.18um,18
+UMC,2010,2,rev_tech,0.18um<x<=0.35um,13
+UMC,2010,2,rev_tech,0.5um and above,5
+UMC,2010,3,rev_geo,NORAM,46
+UMC,2010,3,rev_geo,ASIAPAC,40
+UMC,2010,3,rev_geo,Europe,13
+UMC,2010,3,rev_geo,Japan,1
+UMC,2010,3,rev_tech,40nm<x<=65nm,26
+UMC,2010,3,rev_tech,65nm<x<=90nm,14
+UMC,2010,3,rev_tech,90nm<x<=0.13um,24
+UMC,2010,3,rev_tech,0.13um<x<=0.18um,15
+UMC,2010,3,rev_tech,0.18um<x<=0.35um,12
+UMC,2010,3,rev_tech,0.5um and above,5
+UMC,2010,4,rev_geo,NORAM,53
+UMC,2010,4,rev_geo,ASIAPAC,30
+UMC,2010,4,rev_geo,Europe,16
+UMC,2010,4,rev_geo,Japan,1
+UMC,2010,4,rev_tech,40nm and below,5
+UMC,2010,4,rev_tech,40nm<x<=65nm,30
+UMC,2010,4,rev_tech,65nm<x<=90nm,16
+UMC,2010,4,rev_tech,90nm<x<=0.13um,20
+UMC,2010,4,rev_tech,0.13um<x<=0.18um,14
+UMC,2010,4,rev_tech,0.18um<x<=0.35um,10
+UMC,2010,4,rev_tech,0.5um and above,5
+UMC,2011,2,rev_geo,NORAM,49
+UMC,2011,2,rev_geo,ASIAPAC,39
+UMC,2011,2,rev_geo,Europe,11
+UMC,2011,2,rev_geo,Japan,1
+UMC,2011,2,rev_tech,40nm and below,6
+UMC,2011,2,rev_tech,40nm<x<=65nm,31
+UMC,2011,2,rev_tech,65nm<x<=90nm,13
+UMC,2011,2,rev_tech,90nm<x<=0.13um,24
+UMC,2011,2,rev_tech,0.13um<x<=0.18um,12
+UMC,2011,2,rev_tech,0.18um<x<=0.35um,9
+UMC,2011,2,rev_tech,0.5um and above,5
+UMC,2011,3,rev_geo,NORAM,48
+UMC,2011,3,rev_geo,ASIAPAC,40
+UMC,2011,3,rev_geo,Europe,11
+UMC,2011,3,rev_geo,Japan,1
+UMC,2011,3,rev_tech,40nm and below,6
+UMC,2011,3,rev_tech,40nm<x<=65nm,34
+UMC,2011,3,rev_tech,65nm<x<=90nm,8
+UMC,2011,3,rev_tech,90nm<x<=0.13um,24
+UMC,2011,3,rev_tech,0.13um<x<=0.18um,13
+UMC,2011,3,rev_tech,0.18um<x<=0.35um,11
+UMC,2011,3,rev_tech,0.5um and above,4
+UMC,2011,4,rev_geo,NORAM,47
+UMC,2011,4,rev_geo,ASIAPAC,43
+UMC,2011,4,rev_geo,Europe,9
+UMC,2011,4,rev_geo,Japan,1
+UMC,2011,4,rev_tech,40nm and below,8
+UMC,2011,4,rev_tech,40nm<x<=65nm,41
+UMC,2011,4,rev_tech,65nm<x<=90nm,6
+UMC,2011,4,rev_tech,90nm<x<=0.13um,23
+UMC,2011,4,rev_tech,0.13um<x<=0.18um,10
+UMC,2011,4,rev_tech,0.18um<x<=0.35um,9
+UMC,2011,4,rev_tech,0.5um and above,3
+UMC,2012,2,rev_geo,NORAM,45
+UMC,2012,2,rev_geo,ASIAPAC,46
+UMC,2012,2,rev_geo,Europe,8
+UMC,2012,2,rev_geo,Japan,1
+UMC,2012,2,rev_tech,40nm and below,9
+UMC,2012,2,rev_tech,40nm<x<=65nm,40
+UMC,2012,2,rev_tech,65nm<x<=90nm,7
+UMC,2012,2,rev_tech,90nm<x<=0.13um,18
+UMC,2012,2,rev_tech,0.13um<x<=0.18um,10
+UMC,2012,2,rev_tech,0.18um<x<=0.35um,11
+UMC,2012,2,rev_tech,0.5um and above,5
+UMC,2012,3,rev_geo,NORAM,50
+UMC,2012,3,rev_geo,ASIAPAC,40
+UMC,2012,3,rev_geo,Europe,9
+UMC,2012,3,rev_geo,Japan,1
+UMC,2012,3,rev_tech,40nm and below,13
+UMC,2012,3,rev_tech,40nm<x<=65nm,41
+UMC,2012,3,rev_tech,65nm<x<=90nm,7
+UMC,2012,3,rev_tech,90nm<x<=0.13um,15
+UMC,2012,3,rev_tech,0.13um<x<=0.18um,9
+UMC,2012,3,rev_tech,0.18um<x<=0.35um,11
+UMC,2012,3,rev_tech,0.5um and above,4
+UMC,2012,4,rev_geo,NORAM,45
+UMC,2012,4,rev_geo,ASIAPAC,45
+UMC,2012,4,rev_geo,Europe,9
+UMC,2012,4,rev_geo,Japan,1
+UMC,2012,4,rev_tech,40nm and below,15
+UMC,2012,4,rev_tech,40nm<x<=65nm,40
+UMC,2012,4,rev_tech,65nm<x<=90nm,7
+UMC,2012,4,rev_tech,90nm<x<=0.13um,15
+UMC,2012,4,rev_tech,0.13um<x<=0.18um,10
+UMC,2012,4,rev_tech,0.18um<x<=0.35um,10
+UMC,2012,4,rev_tech,0.5um and above,3
+UMC,2013,2,rev_geo,NORAM,47
+UMC,2013,2,rev_geo,ASIAPAC,42
+UMC,2013,2,rev_geo,Europe,8
+UMC,2013,2,rev_geo,Japan,3
+UMC,2013,2,rev_tech,40nm and below,20
+UMC,2013,2,rev_tech,40nm<x<=65nm,31
+UMC,2013,2,rev_tech,65nm<x<=90nm,6
+UMC,2013,2,rev_tech,90nm<x<=0.13um,15
+UMC,2013,2,rev_tech,0.13um<x<=0.18um,13
+UMC,2013,2,rev_tech,0.18um<x<=0.35um,11
+UMC,2013,2,rev_tech,0.5um and above,4
+UMC,2013,3,rev_geo,NORAM,43
+UMC,2013,3,rev_geo,ASIAPAC,44
+UMC,2013,3,rev_geo,Europe,7
+UMC,2013,3,rev_geo,Japan,6
+UMC,2013,3,rev_tech,40nm and below,20
+UMC,2013,3,rev_tech,40nm<x<=65nm,34
+UMC,2013,3,rev_tech,65nm<x<=90nm,6
+UMC,2013,3,rev_tech,90nm<x<=0.13um,16
+UMC,2013,3,rev_tech,0.13um<x<=0.18um,11
+UMC,2013,3,rev_tech,0.18um<x<=0.35um,10
+UMC,2013,3,rev_tech,0.5um and above,3
+UMC,2013,4,rev_geo,NORAM,47
+UMC,2013,4,rev_geo,ASIAPAC,41
+UMC,2013,4,rev_geo,Europe,8
+UMC,2013,4,rev_geo,Japan,4
+UMC,2013,4,rev_tech,40nm and below,24
+UMC,2013,4,rev_tech,40nm<x<=65nm,29
+UMC,2013,4,rev_tech,65nm<x<=90nm,7
+UMC,2013,4,rev_tech,90nm<x<=0.13um,14
+UMC,2013,4,rev_tech,0.13um<x<=0.18um,12
+UMC,2013,4,rev_tech,0.18um<x<=0.35um,11
+UMC,2013,4,rev_tech,0.5um and above,3
+UMC,2014,2,rev_geo,NORAM,43
+UMC,2014,2,rev_geo,ASIAPAC,46
+UMC,2014,2,rev_geo,Europe,5
+UMC,2014,2,rev_geo,Japan,6
+UMC,2014,2,rev_tech,28nm and below,1
+UMC,2014,2,rev_tech,40nm <x<=28nm,21
+UMC,2014,2,rev_tech,40nm<x<=65nm,31
+UMC,2014,2,rev_tech,65nm<x<=90nm,6
+UMC,2014,2,rev_tech,90nm<x<=0.13um,13
+UMC,2014,2,rev_tech,0.13um<x<=0.18um,13
+UMC,2014,2,rev_tech,0.18um<x<=0.35um,12
+UMC,2014,2,rev_tech,0.5um and above,3
+UMC,2014,3,rev_geo,NORAM,45
+UMC,2014,3,rev_geo,ASIAPAC,44
+UMC,2014,3,rev_geo,Europe,6
+UMC,2014,3,rev_geo,Japan,5
+UMC,2014,3,rev_tech,28nm and below,3
+UMC,2014,3,rev_tech,28nm<x<=40nm,24
+UMC,2014,3,rev_tech,40nm<x<=65nm,26
+UMC,2014,3,rev_tech,65nm<x<=90nm,7
+UMC,2014,3,rev_tech,90nm<x<=0.13um,14
+UMC,2014,3,rev_tech,0.13um<x<=0.18um,12
+UMC,2014,3,rev_tech,0.18um<x<=0.35um,11
+UMC,2014,3,rev_tech,0.5um and above,3
+UMC,2014,4,rev_geo,NORAM,45
+UMC,2014,4,rev_geo,ASIAPAC,42
+UMC,2014,4,rev_geo,Europe,8
+UMC,2014,4,rev_geo,Japan,5
+UMC,2014,4,rev_tech,28nm and below,7
+UMC,2014,4,rev_tech,28nm<x<=40nm,21
+UMC,2014,4,rev_tech,40nm<x<=65nm,24
+UMC,2014,4,rev_tech,65nm<x<=90nm,7
+UMC,2014,4,rev_tech,90nm<x<=0.13um,14
+UMC,2014,4,rev_tech,0.13um<x<=0.18um,12
+UMC,2014,4,rev_tech,0.18um<x<=0.35um,12
+UMC,2014,4,rev_tech,0.5um and above,3
+UMC,2015,2,rev_geo,NORAM,46
+UMC,2015,2,rev_geo,ASIAPAC,42
+UMC,2015,2,rev_geo,Europe,6
+UMC,2015,2,rev_geo,Japan,6
+UMC,2015,2,rev_tech,28nm and below,11
+UMC,2015,2,rev_tech,28nm<x<=40nm,22
+UMC,2015,2,rev_tech,40nm<x<=65nm,21
+UMC,2015,2,rev_tech,65nm<x<=90nm,6
+UMC,2015,2,rev_tech,90nm<x<=0.13um,14
+UMC,2015,2,rev_tech,0.13um<x<=0.18um,12
+UMC,2015,2,rev_tech,0.18um<x<=0.35um,11
+UMC,2015,2,rev_tech,0.5um and above,3
+UMC,2015,3,rev_geo,NORAM,45
+UMC,2015,3,rev_geo,ASIAPAC,41
+UMC,2015,3,rev_geo,Europe,6
+UMC,2015,3,rev_geo,Japan,8
+UMC,2015,3,rev_tech,28nm and below,10
+UMC,2015,3,rev_tech,28nm<x<=40nm,25
+UMC,2015,3,rev_tech,40nm<x<=65nm,21
+UMC,2015,3,rev_tech,65nm<x<=90nm,4
+UMC,2015,3,rev_tech,90nm<x<=0.13um,14
+UMC,2015,3,rev_tech,0.13um<x<=0.18um,11
+UMC,2015,3,rev_tech,0.18um<x<=0.35um,12
+UMC,2015,3,rev_tech,0.5um and above,3
+UMC,2015,4,rev_geo,NORAM,47
+UMC,2015,4,rev_geo,ASIAPAC,37
+UMC,2015,4,rev_geo,Europe,6
+UMC,2015,4,rev_geo,Japan,10
+UMC,2015,4,rev_tech,28nm and below,11
+UMC,2015,4,rev_tech,28nm<x<=40nm,24
+UMC,2015,4,rev_tech,40nm<x<=65nm,23
+UMC,2015,4,rev_tech,65nm<x<=90nm,4
+UMC,2015,4,rev_tech,90nm<x<=0.13um,12
+UMC,2015,4,rev_tech,0.13um<x<=0.18um,11
+UMC,2015,4,rev_tech,0.18um<x<=0.35um,12
+UMC,2015,4,rev_tech,0.5um and above,3
+UMC,2016,2,rev_geo,NORAM,49
+UMC,2016,2,rev_geo,ASIAPAC,45
+UMC,2016,2,rev_geo,Europe,4
+UMC,2016,2,rev_geo,Japan,2
+UMC,2016,2,rev_tech,28nm and below,17
+UMC,2016,2,rev_tech,28nm<x<=40nm,26
+UMC,2016,2,rev_tech,40nm<x<=65nm,18
+UMC,2016,2,rev_tech,65nm<x<=90nm,4
+UMC,2016,2,rev_tech,90nm<x<=0.13um,11
+UMC,2016,2,rev_tech,0.13um<x<=0.18um,12
+UMC,2016,2,rev_tech,0.18um<x<=0.35um,9
+UMC,2016,2,rev_tech,0.5um and above,3
+UMC,2016,3,rev_geo,NORAM,52
+UMC,2016,3,rev_geo,ASIAPAC,42
+UMC,2016,3,rev_geo,Europe,4
+UMC,2016,3,rev_geo,Japan,2
+UMC,2016,3,rev_tech,28nm and below,21
+UMC,2016,3,rev_tech,28nm<x<=40nm,27
+UMC,2016,3,rev_tech,40nm<x<=65nm,15
+UMC,2016,3,rev_tech,65nm<x<=90nm,4
+UMC,2016,3,rev_tech,90nm<x<=0.13um,11
+UMC,2016,3,rev_tech,0.13um<x<=0.18um,11
+UMC,2016,3,rev_tech,0.18um<x<=0.35um,8
+UMC,2016,3,rev_tech,0.5um and above,3
+UMC,2016,4,rev_geo,NORAM,48
+UMC,2016,4,rev_geo,ASIAPAC,45
+UMC,2016,4,rev_geo,Europe,4
+UMC,2016,4,rev_geo,Japan,3
+UMC,2016,4,rev_tech,28nm and below,22
+UMC,2016,4,rev_tech,28nm<x<=40nm,26
+UMC,2016,4,rev_tech,40nm<x<=65nm,14
+UMC,2016,4,rev_tech,65nm<x<=90nm,3
+UMC,2016,4,rev_tech,90nm<x<=0.13um,11
+UMC,2016,4,rev_tech,0.13um<x<=0.18um,11
+UMC,2016,4,rev_tech,0.18um<x<=0.35um,10
+UMC,2016,4,rev_tech,0.5um and above,3
+UMC,2017,2,rev_geo,NORAM,42
+UMC,2017,2,rev_geo,ASIAPAC,47
+UMC,2017,2,rev_geo,Europe,7
+UMC,2017,2,rev_geo,Japan,4
+UMC,2017,2,rev_tech,14nm<x<=28nm,17
+UMC,2017,2,rev_tech,28nm<x<=40nm,28
+UMC,2017,2,rev_tech,40nm<x<=65nm,12
+UMC,2017,2,rev_tech,65nm<x<=90nm,5
+UMC,2017,2,rev_tech,90nm<x<=0.13um,12
+UMC,2017,2,rev_tech,0.13um<x<=0.18um,12
+UMC,2017,2,rev_tech,0.18um<x<=0.35um,10
+UMC,2017,2,rev_tech,0.5um and above,3
+UMC,2017,3,rev_geo,NORAM,43
+UMC,2017,3,rev_geo,ASIAPAC,47
+UMC,2017,3,rev_geo,Europe,8
+UMC,2017,3,rev_geo,Japan,2
+UMC,2017,3,rev_tech,14nm<x<=28nm,15
+UMC,2017,3,rev_tech,28nm<x<=40nm,29
+UMC,2017,3,rev_tech,40nm<x<=65nm,12
+UMC,2017,3,rev_tech,65nm<x<=90nm,6
+UMC,2017,3,rev_tech,90nm<x<=0.13um,12
+UMC,2017,3,rev_tech,0.13um<x<=0.18um,12
+UMC,2017,3,rev_tech,0.18um<x<=0.35um,10
+UMC,2017,3,rev_tech,0.5um and above,3
+UMC,2017,4,rev_geo,NORAM,43
+UMC,2017,4,rev_geo,ASIAPAC,45
+UMC,2017,4,rev_geo,Europe,9
+UMC,2017,4,rev_geo,Japan,3
+UMC,2017,4,rev_tech,14nm<x<=28nm,15
+UMC,2017,4,rev_tech,28nm<x<=40nm,28
+UMC,2017,4,rev_tech,40nm<x<=65nm,12
+UMC,2017,4,rev_tech,65nm<x<=90nm,5
+UMC,2017,4,rev_tech,90nm<x<=0.13um,12
+UMC,2017,4,rev_tech,0.13um<x<=0.18um,13
+UMC,2017,4,rev_tech,0.18um<x<=0.35um,10
+UMC,2017,4,rev_tech,0.5um and above,3
+UMC,2018,2,rev_geo,NORAM,37
+UMC,2018,2,rev_geo,ASIAPAC,51
+UMC,2018,2,rev_geo,Europe,9
+UMC,2018,2,rev_geo,Japan,3
+UMC,2018,2,rev_tech,14nm and below,3
+UMC,2018,2,rev_tech,14nm<x<=28nm,15
+UMC,2018,2,rev_tech,28nm<x<=40nm,26
+UMC,2018,2,rev_tech,40nm<x<=65nm,12
+UMC,2018,2,rev_tech,65nm<x<=90nm,7
+UMC,2018,2,rev_tech,90nm<x<=0.13um,11
+UMC,2018,2,rev_tech,0.13um<x<=0.18um,13
+UMC,2018,2,rev_tech,0.18um<x<=0.35um,10
+UMC,2018,2,rev_tech,0.5um and above,3
+UMC,2018,3,rev_geo,NORAM,34
+UMC,2018,3,rev_geo,ASIAPAC,52
+UMC,2018,3,rev_geo,Europe,11
+UMC,2018,3,rev_geo,Japan,3
+UMC,2018,3,rev_tech,14nm and below,5
+UMC,2018,3,rev_tech,14nm<x<=28nm,13
+UMC,2018,3,rev_tech,28nm<x<=40nm,22
+UMC,2018,3,rev_tech,40nm<x<=65nm,12
+UMC,2018,3,rev_tech,65nm<x<=90nm,10
+UMC,2018,3,rev_tech,90nm<x<=0.13um,11
+UMC,2018,3,rev_tech,0.13um<x<=0.18um,14
+UMC,2018,3,rev_tech,0.18um<x<=0.35um,10
+UMC,2018,3,rev_tech,0.5um and above,3
+UMC,2018,4,rev_geo,NORAM,38
+UMC,2018,4,rev_geo,ASIAPAC,51
+UMC,2018,4,rev_geo,Europe,8
+UMC,2018,4,rev_geo,Japan,3
+UMC,2018,4,rev_tech,14nm and below,1
+UMC,2018,4,rev_tech,14nm<x<=28nm,10
+UMC,2018,4,rev_tech,28nm<x<=40nm,23
+UMC,2018,4,rev_tech,40nm<x<=65nm,13
+UMC,2018,4,rev_tech,65nm<x<=90nm,11
+UMC,2018,4,rev_tech,90nm<x<=0.13um,13
+UMC,2018,4,rev_tech,0.13um<x<=0.18um,15
+UMC,2018,4,rev_tech,0.18um<x<=0.35um,11
+UMC,2018,4,rev_tech,0.5um and above,3
+UMC,2019,2,rev_geo,NORAM,31
+UMC,2019,2,rev_geo,ASIAPAC,59
+UMC,2019,2,rev_geo,Europe,7
+UMC,2019,2,rev_geo,Japan,3
+UMC,2019,2,rev_tech,14nm and below,0
+UMC,2019,2,rev_tech,14nm<x<=28nm,13
+UMC,2019,2,rev_tech,28nm<x<=40nm,24
+UMC,2019,2,rev_tech,40nm<x<=65nm,14
+UMC,2019,2,rev_tech,65nm<x<=90nm,12
+UMC,2019,2,rev_tech,90nm<x<=0.13um,14
+UMC,2019,2,rev_tech,0.13um<x<=0.18um,12
+UMC,2019,2,rev_tech,0.18um<x<=0.35um,8
+UMC,2019,2,rev_tech,0.5um and above,3
+UMC,2019,3,rev_geo,NORAM,33
+UMC,2019,3,rev_geo,ASIAPAC,59
+UMC,2019,3,rev_geo,Europe,6
+UMC,2019,3,rev_geo,Japan,2
+UMC,2019,3,rev_tech,14nm and below,0
+UMC,2019,3,rev_tech,14nm<x<=28nm,12
+UMC,2019,3,rev_tech,28nm<x<=40nm,26
+UMC,2019,3,rev_tech,40nm<x<=65nm,14
+UMC,2019,3,rev_tech,65nm<x<=90nm,12
+UMC,2019,3,rev_tech,90nm<x<=0.13um,11
+UMC,2019,3,rev_tech,0.13um<x<=0.18um,13
+UMC,2019,3,rev_tech,0.18um<x<=0.35um,9
+UMC,2019,3,rev_tech,0.5um and above,3
+UMC,2019,4,rev_geo,NORAM,30
+UMC,2019,4,rev_geo,ASIAPAC,55
+UMC,2019,4,rev_geo,Europe,6
+UMC,2019,4,rev_geo,Japan,9
+UMC,2019,4,rev_tech,14nm and below,0
+UMC,2019,4,rev_tech,14nm<x<=28nm,10
+UMC,2019,4,rev_tech,28nm<x<=40nm,22
+UMC,2019,4,rev_tech,40nm<x<=65nm,16
+UMC,2019,4,rev_tech,65nm<x<=90nm,18
+UMC,2019,4,rev_tech,90nm<x<=0.13um,11
+UMC,2019,4,rev_tech,0.13um<x<=0.18um,12
+UMC,2019,4,rev_tech,0.18um<x<=0.35um,8
+UMC,2019,4,rev_tech,0.5um and above,3
+UMC,2020,2,rev_geo,NORAM,31
+UMC,2020,2,rev_geo,ASIAPAC,55
+UMC,2020,2,rev_geo,Europe,5
+UMC,2020,2,rev_geo,Japan,9
+UMC,2020,2,rev_tech,14nm and below,0
+UMC,2020,2,rev_tech,14nm<x<=28nm,13
+UMC,2020,2,rev_tech,28nm<x<=40nm,23
+UMC,2020,2,rev_tech,40nm<x<=65nm,16
+UMC,2020,2,rev_tech,65nm<x<=90nm,13
+UMC,2020,2,rev_tech,90nm<x<=0.13um,11
+UMC,2020,2,rev_tech,0.13um<x<=0.18um,13
+UMC,2020,2,rev_tech,0.18um<x<=0.35um,8
+UMC,2020,2,rev_tech,0.5um and above,3
+UMC,2020,3,rev_geo,NORAM,30
+UMC,2020,3,rev_geo,ASIAPAC,57
+UMC,2020,3,rev_geo,Europe,6
+UMC,2020,3,rev_geo,Japan,7
+UMC,2020,3,rev_tech,14nm and below,0
+UMC,2020,3,rev_tech,14nm<x<=28nm,14
+UMC,2020,3,rev_tech,28nm<x<=40nm,23
+UMC,2020,3,rev_tech,40nm<x<=65nm,19
+UMC,2020,3,rev_tech,65nm<x<=90nm,10
+UMC,2020,3,rev_tech,90nm<x<=0.13um,11
+UMC,2020,3,rev_tech,0.13um<x<=0.18um,13
+UMC,2020,3,rev_tech,0.18um<x<=0.35um,8
+UMC,2020,3,rev_tech,0.5um and above,2
+UMC,2020,4,rev_geo,NORAM,29
+UMC,2020,4,rev_geo,ASIAPAC,61
+UMC,2020,4,rev_geo,Europe,5
+UMC,2020,4,rev_geo,Japan,5
+UMC,2020,4,rev_tech,14nm and below,0
+UMC,2020,4,rev_tech,14nm<x<=28nm,18
+UMC,2020,4,rev_tech,28nm<x<=40nm,22
+UMC,2020,4,rev_tech,40nm<x<=65nm,18
+UMC,2020,4,rev_tech,65nm<x<=90nm,8
+UMC,2020,4,rev_tech,90nm<x<=0.13um,11
+UMC,2020,4,rev_tech,0.13um<x<=0.18um,13
+UMC,2020,4,rev_tech,0.18um<x<=0.35um,8
+UMC,2020,4,rev_tech,0.5um and above,2
+UMC,2021,2,rev_geo,NORAM,22
+UMC,2021,2,rev_geo,ASIAPAC,63
+UMC,2021,2,rev_geo,Europe,8
+UMC,2021,2,rev_geo,Japan,7
+UMC,2021,2,rev_tech,14nm and below,0
+UMC,2021,2,rev_tech,14nm<x<=28nm,20
+UMC,2021,2,rev_tech,28nm<x<=40nm,18
+UMC,2021,2,rev_tech,40nm<x<=65nm,19
+UMC,2021,2,rev_tech,65nm<x<=90nm,9
+UMC,2021,2,rev_tech,90nm<x<=0.13um,11
+UMC,2021,2,rev_tech,0.13um<x<=0.18um,13
+UMC,2021,2,rev_tech,0.18um<x<=0.35um,8
+UMC,2021,2,rev_tech,0.5um and above,2
+UMC,2021,3,rev_geo,NORAM,22
+UMC,2021,3,rev_geo,ASIAPAC,65
+UMC,2021,3,rev_geo,Europe,7
+UMC,2021,3,rev_geo,Japan,6
+UMC,2021,3,rev_tech,14nm and below,0
+UMC,2021,3,rev_tech,14nm<x<=28nm,19
+UMC,2021,3,rev_tech,28nm<x<=40nm,18
+UMC,2021,3,rev_tech,40nm<x<=65nm,19
+UMC,2021,3,rev_tech,65nm<x<=90nm,8
+UMC,2021,3,rev_tech,90nm<x<=0.13um,12
+UMC,2021,3,rev_tech,0.13um<x<=0.18um,13
+UMC,2021,3,rev_tech,0.18um<x<=0.35um,8
+UMC,2021,3,rev_tech,0.5um and above,3
+UMC,2021,4,rev_geo,NORAM,21
+UMC,2021,4,rev_geo,ASIAPAC,66
+UMC,2021,4,rev_geo,Europe,7
+UMC,2021,4,rev_geo,Japan,6
+UMC,2021,4,rev_tech,14nm and below,0
+UMC,2021,4,rev_tech,14nm<x<=28nm,20
+UMC,2021,4,rev_tech,28nm<x<=40nm,18
+UMC,2021,4,rev_tech,40nm<x<=65nm,19
+UMC,2021,4,rev_tech,65nm<x<=90nm,8
+UMC,2021,4,rev_tech,90nm<x<=0.13um,12
+UMC,2021,4,rev_tech,0.13um<x<=0.18um,13
+UMC,2021,4,rev_tech,0.18um<x<=0.35um,7
+UMC,2021,4,rev_tech,0.5um and above,3
+Global Foundries,2021,3,capex,,(649)
+Global Foundries,2021,3,inv,,1121
+Global Foundries,2021,4,capex,,($392)
+Global Foundries,2021,4,inv,,1078
