@@ -9,6 +9,10 @@ import dash_bootstrap_components as dbc
 from datetime import datetime
 import scraper, stocks, json, pickle
 import random
+from prophet import Prophet
+from forecast import *
+from prophet.plot import plot_plotly, plot_components_plotly
+import dash_daq as daq
 
 pd.options.mode.chained_assignment = None
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -107,7 +111,14 @@ controls = html.Div(
             ],
             className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
         ),
-
+        dbc.Label("Turn on Forecast", html_for="forecasting_switch"),
+        daq.BooleanSwitch(id='forecasting-switch', on=False),
+        dbc.Label("Years to Forecast", html_for="forecasting-dropdown"),
+        dcc.Dropdown(
+            options = ["1", "2", "3", "4","5","6","7","8"],
+            id = "forecasting-dropdown",
+            value="3"
+        ),
         html.Div(
             [
                 html.Button("Download Data", id= "btn-data"),
@@ -562,10 +573,12 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
         Input("startq-dropdown", "value"),
         Input("end-dropdown", "value"),
         Input("endq-dropdown", "value"),
+        Input("forecasting-switch", "on"),
+        Input("forecasting-dropdown", "value"),
     ],
     prevent_initial_call=True,
 )
-def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_year, end_quarter):
+def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_year, end_quarter,forecast_check,forecast_years):
     if metric == "CapEx" or metric == "Inventory":
         submetric = None
     graph = go.Figure()
@@ -604,7 +617,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
     filtered_data.loc[:,("value")] = filtered_data["value"].astype(float)
-    
+
     if viz == "Comparison":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
         color="sub-metric",
@@ -615,19 +628,34 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             },
         title=f'{metric} for {company} from {start_q} to {end_q}')
     elif submetric == None or submetric == "NaN":
-        graph = px.line(filtered_data, x="quarter-string", y="value",
-        labels={
-        "quarter-string": "Quarters",
-        "value": "US$ Dollars (Millions)",
-            },
-        title=f'{metric} for {company} from {start_q} to {end_q}', markers=True)
+        if forecast_check == True:
+            forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
+            print(forecast_data)
+            forecast = fut_forecast(forecast_data,int(forecast_years))
+            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            graph = fig
+        else:
+            graph = px.line(filtered_data, x="quarter-string", y="value",
+            labels={
+            "quarter-string": "Quarters",
+            "value": "US$ Dollars (Millions)",
+                },
+            title=f'{metric} for {company} from {start_q} to {end_q}', markers=True)
     else:
-        graph = px.line(filtered_data, x="quarter-string", y="value",
-        labels={
-        "quarter-string": "Quarters",
-        "value": "US$ Dollars (Millions)",
-            },
-        title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
+        if forecast_check == True:
+            forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
+            print(forecast_data)
+            forecast = fut_forecast(forecast_data,int(forecast_years))
+            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            graph = fig
+        else:
+            graph = px.line(filtered_data, x="quarter-string", y="value",
+            labels={
+            "quarter-string": "Quarters",
+            "value": "US$ Dollars (Millions)",
+                },
+            title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
+
     return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns], {"display":"inline"}
 
 # Download data callback

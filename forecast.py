@@ -7,21 +7,19 @@ import json
 Reformats df to have two columns, one datetime column and one value column
 """
 
-def df_datetime_metric(df, metric):
+def df_datetime_metric(df):
     df["combined"] = df["year"].astype(str) + "-" + "Q" + df["quarter"].astype(str)
     df["ds"] = pd.to_datetime(df['combined'], errors='coerce')
     df = df.drop(["combined", "year", "quarter", "company", "sub-metric"], axis=1)
-    df = df[['metric', 'ds', 'value']]
-    df = df.loc[df['metric'] == metric]
-    df = df.drop(["metric"], axis=1)
+    df = df[['ds', 'value']]
     df = df.rename(columns={"value": "y"})
     return df
 
 """
 Forecasts data given df, metric, and year
 """
-def fut_forecast(df, metric, years=3):
-    df = df_datetime_metric(df, metric)
+def fut_forecast(df, years=3):
+    df = df_datetime_metric(df)
     m = Prophet()
     m.fit(df)
 
