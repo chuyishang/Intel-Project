@@ -1,19 +1,16 @@
-import csv
 from logging import Filterer
-from re import sub
-import dash
-from dash import Dash, html, dcc, Input, Output, callback_context, dash_table
+from dash import Dash, html, dcc, Input, Output, State, callback_context, dash_table
 import plotly.express as px
 import pandas as pd
 import numpy as np
 import statsmodels.api as sm
 import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
-import scraper, stocks
-import json
+from datetime import datetime
+import scraper, stocks, json, pickle
+import random
 
 pd.options.mode.chained_assignment = None
-
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Pull JSON files
@@ -23,17 +20,19 @@ smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
 
 # Global dictionaries and variables
-metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv"}
+metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev"}
 var_to_metric = {v:k for k, v in metric_to_var.items()}
 tsmc_subs = global_df.loc[global_df["company"] == "TSMC"]["sub-metric"].unique().tolist()
 company_df = {"SMIC": smic, "UMC": umc, "Global Foundries": gf}
 company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC":"tsmc"}
 firstYear = 2000
-currYear = 2022
-ticker_options = ["GFS", "UMC"]
+currYear = datetime.now().year
 
+# Read ticker options
+with open("tickers.txt", "rb") as f:
+    ticker_options = pickle.load(f)
 
-controls = dbc.Card(
+controls = html.Div(
     [  
         html.Div(
             [
@@ -70,8 +69,6 @@ controls = dbc.Card(
                 dbc.Label("Submetric"),
                 dcc.Dropdown(
                     id="submetric-dropdown",
-                    #options = global_df["sub-metric"].dropna().unique(),
-                    #options = ["Smartphone", "Internet of Things", "High Performance Computing", "Automotive", "Digital Consumer Electronics", "Others"],
                     value=""
                 ),
                 
@@ -121,7 +118,8 @@ controls = dbc.Card(
             ]
         ),
     ],
-    body=True,
+    #style={'verticalAlign': 'top', 'margin-top':0}
+    #body=True,
 )
 
 parsing = html.Div(
@@ -135,6 +133,7 @@ parsing = html.Div(
                     id="url-input".format("url"),
                     type="url",
                     placeholder="Enter URL to Parse".format("url"),
+                    style={"margin-left": 10}
                 ),
             ],
         ),
@@ -156,6 +155,7 @@ parsing = html.Div(
                     id="year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
+                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -196,6 +196,7 @@ parsing = html.Div(
                     id="manual-year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
+                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -222,30 +223,33 @@ parsing = html.Div(
 puller = dbc.Card(
     [
         html.Div([
-            dbc.Label("New Ticker"),
+            dbc.Label("Custom Ticker"),
             dcc.Input(
                     id="input-ticker",
+                    style={"margin-left": 10}
                 ),
-            html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10}, n_clicks=0),
         ],
         ),
 
         html.Div([
-            dbc.Label("Company Ticker 1"),
+            html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, n_clicks=0),
+            html.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, n_clicks=0),
+        ]
+        ),
+        html.Div([
+            dbc.Label("Company Tickers"),
             dcc.Dropdown(
-                    id="ticker1",
-                    options=ticker_options
-                ),
-            dbc.Label("Company Ticker 2"),
-            dcc.Dropdown(
-                    id="ticker2",
-                    options=ticker_options
+                    id="ticker-dropdown",
+                    options=ticker_options,
+                    multi=True
                 ),
             ]
         ),
         html.Div(
             [
-                html.Button("Pull Revenue", id= "btn-pull", style={"margin-top": 10}, n_clicks=0),   
+                html.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),
+                html.Button("Update All Tickers", id= "btn-update-all", style={"margin-top": 10}, n_clicks=0),   
+   
             ]
         ),
         html.Div(
@@ -277,6 +281,21 @@ buttons = html.Div(
     ],
 )
 
+manual_buttons = html.Div(
+    [
+        html.Div(
+            [
+            html.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, n_clicks=0),   
+            html.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, n_clicks=0)
+            ]   
+        ),
+        html.Div(
+            id='confirmation-msg2',
+            children='Press "Add to Data" to add the manually inputted data to the dataset.',
+            style={"display":"none"}
+        ),    
+    ],
+)
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label="Visualization", children=[
@@ -286,8 +305,23 @@ app.layout = html.Div([
                 html.Hr(),
                 dbc.Row(
                     [
-                        dbc.Col(controls, md=4),
-                        dbc.Col(dcc.Graph(id="graph"), md=8),
+                        dbc.Col(controls, md=4, align='start'),
+                        dbc.Col([
+                            dcc.Graph(id="graph"),
+                            html.Div(
+                            dash_table.DataTable(
+                                data=[],
+                                id="df-viz",
+                                style_table={
+                                    'height': 400,
+                                    'overflowY': 'scroll'
+                                }
+                                ),
+                                id="data-table-block",
+                                style={"display":"none"},
+                            )
+                            ],
+                            md=8),
                     ],
                     align="center",
                 ),
@@ -306,31 +340,68 @@ app.layout = html.Div([
                         dbc.Col(
                             [
                                 dash_table.DataTable(data=[], id="df-scraped"),
-                                dash_table.DataTable(
-                                    id = 'manual-dt',
-                                    columns=(
-                                        [{'id': 'capex','name':'Capex'}]+
-                                        [{'id': 'inventory','name':'Inventory'}]
+                                html.Div(
+                                    [
+                                    dash_table.DataTable(
+                                        id = 'manual-dt',
+                                        columns=(
+                                            [{'id': 'revenue','name':'Revenue ($USD)'}]+
+                                            [{'id': 'inventory','name':'Inventory ($USD)'}]+
+                                            [{'id': 'capex','name':'Capex ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*3) for i in range(1, 3)}
+                                            for j in range(1)
+                                        ],
+                                        editable=True
                                     ),
-                                    data=[
-                                        {'column-{}'.format(i): (j + (i-1)*2) for i in range(1, 2)}
-                                        for j in range(1)
-                                    ],
-                                    editable=True
-                                ),
-                                dash_table.DataTable(
-                                    id = 'submetrics-dt',
-                                    columns=(
-                                        [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
-                                        [{'id': 'rev-seg-value','name':'Value'}]
+                                    dash_table.DataTable(
+                                        id = 'seg-submetrics-dt',
+                                        columns=(
+                                            [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
+                                            [{'id': 'rev-seg-value','name':'Value ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                            for j in range(5)
+                                        ],
+                                        editable=True,
+                                        row_deletable=True
                                     ),
-                                    data=[
-                                        {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
-                                        for j in range(5)
+                                    html.Button('Add Row', id='seg-rows', n_clicks=0),
+                                    dash_table.DataTable(
+                                        id = 'tech-submetrics-dt',
+                                        columns=(
+                                            [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
+                                            [{'id': 'rev-tech-value','name':'Value ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                            for j in range(5)
+                                        ],
+                                        editable=True,
+                                        row_deletable=True
+                                    ),
+                                    html.Button('Add Row', id='tech-rows', n_clicks=0),
+                                    dash_table.DataTable(
+                                        id = 'geo-submetrics-dt',
+                                        columns=(
+                                            [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
+                                            [{'id': 'rev-geo-value','name':'Value ($USD)'}]
+                                        ),
+                                        data=[
+                                            {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
+                                            for j in range(5)
+                                        ],
+                                        editable=True,
+                                        row_deletable=True
+                                    ),
+                                    html.Button('Add Row', id='geo-rows', n_clicks=0),
                                     ],
-                                    editable=True,
-                                    row_deletable=True
+                                    id='manual-input',
+                                    style={"display":"none"},
                                 ),
+                                manual_buttons,
                                 buttons
                             ]
                             , md=8)
@@ -343,7 +414,7 @@ app.layout = html.Div([
         ]),
         dcc.Tab(label="Pulling", children=[
             dbc.Container([
-                html.H1("Pulling Revenue from Tickers", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -370,7 +441,7 @@ app.layout = html.Div([
 )
 def setMetric(company):
     if company:
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company)]
         metrics = local_df["metric"].dropna().unique()
         metrics = [var_to_metric[m] for m in metrics]
@@ -384,7 +455,7 @@ def setMetric(company):
     Input("metric-dropdown","value")
 )
 def visualization_options(metric):
-    if metric != "CapEx" and metric != "Inventory" and metric != None:
+    if metric != "CapEx" and metric != "Inventory" and metric != "Revenue" and metric != None:
         return ["Comparison","Individual"],"Comparison"
     else:
         return [],None
@@ -400,7 +471,7 @@ def set_submetric(company,metric,viz):
     if viz == "Comparison" or viz == None:
         return []
     else:
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         return local_df["sub-metric"].dropna().unique()
 
@@ -412,11 +483,11 @@ def set_submetric(company,metric,viz):
 )
 def setStartYear(company,metric,submetric):
     if all([company, metric]):
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
-        years = [2000 + y for y in local_df["year"].dropna().unique()]
+        years = local_df["year"].dropna().unique()
         return years
     return np.arange(firstYear, currYear)
 
@@ -429,12 +500,11 @@ def setStartYear(company,metric,submetric):
 )
 def setStartQuarter(company,metric,submetric, startYear):
     if all([company, metric, startYear]):
-        local_df = company_df[company] if company != "TSMC" else global_df
-        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear - 2000)]
+        local_df = global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear)]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
         quarters = local_df["quarter"].dropna().unique()
-        quarters = [q.replace("Q", "") for q in quarters]
         return quarters
     return [1, 2, 3, 4]
 
@@ -447,11 +517,11 @@ def setStartQuarter(company,metric,submetric, startYear):
 )
 def setEndYear(company,metric,submetric,startYear):
     if all([company, metric, startYear]):
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
-        years = [2000 + y for y in local_df.loc[(local_df["year"] + 2000) >= startYear]["year"].dropna().unique()]
+        years = local_df.loc[(local_df["year"]) >= startYear]["year"].dropna().unique()
         return years
     return np.arange(firstYear, currYear)
 
@@ -466,12 +536,11 @@ def setEndYear(company,metric,submetric,startYear):
 )
 def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
     if all([company, metric, startYear, startQuarter, endYear]):
-        local_df = company_df[company] if company != "TSMC" else global_df
+        local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
-        quarters = local_df.loc[(local_df["year"] == endYear - 2000)]["quarter"].dropna().unique()
-        quarters = [q.replace("Q", "") for q in quarters]
+        quarters = local_df.loc[local_df["year"] == endYear]["quarter"].dropna().unique()
         if startYear == endYear:
             quarters = [q for q in quarters if q >= startQuarter]
         return quarters
@@ -481,6 +550,9 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
 @app.callback(
     Output("graph", "figure"),
     Output("dataframe","data"),
+    Output("df-viz", "data"),
+    Output("df-viz", "columns"),
+    Output("data-table-block","style"),
     [
         Input("company-dropdown", "value"),
         Input("metric-dropdown", "value"),
@@ -489,8 +561,9 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
         Input("start-dropdown", "value"),
         Input("startq-dropdown", "value"),
         Input("end-dropdown", "value"),
-        Input("endq-dropdown", "value")
+        Input("endq-dropdown", "value"),
     ],
+    prevent_initial_call=True,
 )
 def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_year, end_quarter):
     if metric == "CapEx" or metric == "Inventory":
@@ -512,35 +585,25 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         ]
     )
     if start_year == None or start_quarter == None or end_year == None or end_quarter == None:
-        return graph, {}
+        return graph, {}, np.array([]) ,[], {"display":"none"}
 
-    #local_df = company_df[company] if company != "TSMC" else global_df
     local_df = global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
     if (submetric != None or submetric != "NaN") and viz == "Individual":
         local_df = local_df.loc[local_df["sub-metric"] == submetric]
-    local_df["quarter-string"] = local_df["year"].map(str) + local_df["quarter"].map(str)
+    local_df["quarter-string"] = local_df["year"].map(lambda x: str(x)[-2:]) + "Q" + local_df["quarter"].map(str)
     local_df = local_df.sort_values(by=["quarter-string"])
-    print(local_df) # Test statement
-    #start_q = join_quarter_year(start_quarter, start_year)
-    #end_q = join_quarter_year(end_quarter, end_year)
-    start_q = (start_quarter + "Q" + str(start_year)[-2:]) if company == "TSMC" else join_quarter_year(start_quarter, start_year)
-    end_q = (end_quarter + "Q" + str(end_year)[-2:]) if company == "TSMC" else join_quarter_year(end_quarter, end_year)
+    start_q = join_quarter_year(start_quarter, start_year)
+    end_q = join_quarter_year(end_quarter, end_year)
 
     try:  
         index_start = local_df["quarter-string"].tolist().index(start_q)
         index_end = len(local_df["quarter-string"].tolist()) - local_df["quarter-string"].tolist()[::-1].index(end_q) - 1
     except ValueError:
-        return graph, {}
+        return graph, {}, np.array([]) ,[], {"display":"none"}
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
-    print(filtered_data)
-    #parse data for $ or %
-    if "$" in str(filtered_data.iloc[0,filtered_data.columns.get_loc('value')]):
-        cleaned_column = filtered_data["value"].str[1:].astype(float)
-    else:
-        cleaned_column = filtered_data["value"].str[:-1].replace(",","").astype(float) / 100
-    filtered_data.loc[:,("value")] = cleaned_column
+    filtered_data.loc[:,("value")] = filtered_data["value"].astype(float)
     
     if viz == "Comparison":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
@@ -550,22 +613,22 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 "value": "Percentage %",
                 "sub-metric": f'{metric.split()[-1]}'
             },
-        title=f'{metric} for {company}')
+        title=f'{metric} for {company} from {start_q} to {end_q}')
     elif submetric == None or submetric == "NaN":
         graph = px.line(filtered_data, x="quarter-string", y="value",
         labels={
         "quarter-string": "Quarters",
         "value": "US$ Dollars (Millions)",
             },
-        title=f'{metric} for {company}', markers=True)
+        title=f'{metric} for {company} from {start_q} to {end_q}', markers=True)
     else:
         graph = px.line(filtered_data, x="quarter-string", y="value",
         labels={
         "quarter-string": "Quarters",
         "value": "US$ Dollars (Millions)",
             },
-        title=f'{metric}: {submetric} for {company}', markers=True)
-    return graph,filtered_data.to_dict()
+        title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
+    return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns], {"display":"inline"}
 
 # Download data callback
 @app.callback(
@@ -602,18 +665,62 @@ def scrape_pdf(url, company, year, quarter, click):
         abbrev = company_abbrev[company]
         new_json = scraper.pull(url, quarter, year, abbrev)
         new_df = pd.DataFrame.from_dict(new_json)
-        #print(new_df) Test statement
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
 
-# @app.callback(
-#     Output("btn-approve","style"),
-#     Output("btn-reject","style"),
-#     Output("btn-undo","style"),
-#     Output("confirmation-msg","style"),
-#     Output(""),
-#     Input("btn-manual"),
-#     prevent_initial_call=True
-# )
+@app.callback(
+    Output("btn-add","style"),
+    Output("btn-undo-manual","style"),
+    Output("confirmation-msg2","style"),
+    Output("manual-input","style"),
+    Output("seg-submetrics-dt","data"),
+    Output("tech-submetrics-dt","data"),
+    Output("geo-submetrics-dt","data"),
+    Input("manual-company-input","value"),
+    Input("manual-year-input","value"),
+    Input("manual-quarter-input","value"),
+    Input("btn-manual","n_clicks"),
+    Input("seg-submetrics-dt","columns"),
+    Input("tech-submetrics-dt","columns"),
+    Input("geo-submetrics-dt","columns"),
+    Input('seg-rows', 'n_clicks'),
+    State("seg-submetrics-dt", 'data'),
+    Input('tech-rows', 'n_clicks'),
+    State("tech-submetrics-dt", 'data'),
+    Input('geo-rows', 'n_clicks'),
+    State("geo-submetrics-dt", 'data'),
+    prevent_initial_call=True
+)
+def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_clicks,sr,tech_clicks,tr,geo_clicks,gr):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    if 'btn-manual' in changed_id:
+        local_df = global_df.loc[global_df["company"] == company]
+        last_year = local_df.sort_values(by='year',ascending=False)["year"].tolist()[0]
+        last_quarter = local_df.sort_values(by='year',ascending=False)["quarter"].tolist()[0]
+        local_df = local_df.loc[(local_df["year"] == last_year) & (local_df["quarter"] == last_quarter)]
+        rev_seg = local_df.loc[local_df["metric"] == metric_to_var["Revenue by Segment"]]["sub-metric"].dropna().unique()
+        rev_tech = local_df.loc[local_df["metric"] == metric_to_var["Revenue by Technology"]]["sub-metric"].dropna().unique()
+        rev_geo = local_df.loc[local_df["metric"] == metric_to_var["Revenue by Geography"]]["sub-metric"].dropna().unique()
+        rev_seg_data = [
+            dict({"rev-seg":rev_seg[j]}, **{c['id']: None for c in columns1[1:]}) for j in range(len(rev_seg))
+        ]
+        tech_seg_data = [
+            dict({"rev-tech":rev_tech[j]}, **{c['id']: None for c in columns2[1:]}) for j in range(len(rev_tech))
+        ]
+        geo_seg_data = [
+            dict({"rev-geo":rev_geo[j]}, **{c['id']: None for c in columns3[1:]}) for j in range(len(rev_geo))
+        ]
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data
+    if 'seg-rows' in changed_id:
+        sr.append({c['id']: None for c in columns1})
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+    if 'tech-rows' in changed_id:
+        tr.append({c['id']: None for c in columns2})
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+    if 'geo-rows' in changed_id:
+        gr.append({c['id']: None for c in columns3})
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr
+
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
     #Output("btn-approve","style"),
@@ -658,47 +765,160 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
             return "Data been removed from global dataset."
         else:
             return "There is nothing left to undo."
-    return
+    return ""
+@app.callback(
+    Output("confirmation-msg2","children"),
+    Input("btn-add","n_clicks"),
+    Input("btn-undo-manual","n_clicks"),
+    Input("manual-company-input","value"),
+    Input("manual-year-input","value"),
+    Input("manual-quarter-input","value"),
+    Input("manual-dt","data"),
+    Input("seg-submetrics-dt","data"),
+    Input("tech-submetrics-dt","data"),
+    Input("geo-submetrics-dt","data"),
+    Input("manual-dt","columns"),
+    Input("seg-submetrics-dt","columns"),
+    Input("tech-submetrics-dt","columns"),
+    Input("geo-submetrics-dt","columns"),
+    prevent_initial_call=True,
+)
+def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    manual_df = pd.DataFrame(manual, columns=[c['id'] for c in mc])
+    seg_df = pd.DataFrame(seg, columns=[c['id'] for c in sc])
+    tech_df = pd.DataFrame(tech, columns=[c['id'] for c in tc])
+    geo_df = pd.DataFrame(geo, columns=[c['id'] for c in gc])
+    if 'btn-add' in changed_id:
+        if not(manual_df.isnull().values.any()) and not(seg_df.isnull().values.any()) and not(tech_df.isnull().values.any()) and not(geo_df.isnull().values.any()):
+            master_df = pd.DataFrame(data=[],columns=['metric','sub-metric','value'])
+            seg_df.insert(0,'metric',"rev_seg")
+            tech_df.insert(0,'metric',"tech_seg")
+            geo_df.insert(0,'metric',"geo_seg")
+            seg_df = seg_df.rename(columns={seg_df.columns[0]: "metric", seg_df.columns[1]: "sub-metric", seg_df.columns[2]: "value"})
+            tech_df = tech_df.rename(columns={tech_df.columns[0]: "metric", tech_df.columns[1]: "sub-metric", tech_df.columns[2]: "value"})
+            geo_df = geo_df.rename(columns={geo_df.columns[0]: "metric", geo_df.columns[1]: "sub-metric", geo_df.columns[2]: "value"})
+            master_df = master_df.append(seg_df).append(tech_df).append(geo_df)
+            master_df.insert(0,"quarter",quarter)
+            master_df.insert(0,"year",year)
+            master_df.insert(0,"company",company)
+            metrics_df = pd.DataFrame({
+                "company":company,
+                "year":year,
+                "quarter":quarter,
+                "metric":["rev","inv","capex"],
+                "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
+            })
+            master_json = master_df.to_dict('records')
+            metrics_json = metrics_df.to_dict('records')
+            with open("data/data.json") as json_data:
+                old_data = json.load(json_data)
+                json_data.close()
+            if master_json[-1] in old_data:
+                return "Data already exists in the global dataset."
+            else:
+                old_data.extend(master_json)
+                old_data.extend(metrics_json)
+                with open("data/data.json","w") as json_file:
+                    json.dump(old_data,json_file,indent=4,separators=(',',': '))
+                    json_file.close()
+                return f'{company} {year} Q{quarter} has been added to the global dataset.'
+        else:
+            return "Unable to add to dataset. Certain values are blank."
+    
+    if 'btn-undo-manual' in changed_id:
+        master_df = pd.DataFrame(data=[],columns=['metric','sub-metric','value'])
+        seg_df.insert(0,'metric',"rev_seg")
+        tech_df.insert(0,'metric',"tech_seg")
+        geo_df.insert(0,'metric',"geo_seg")
+        seg_df = seg_df.rename(columns={seg_df.columns[0]: "metric", seg_df.columns[1]: "sub-metric", seg_df.columns[2]: "value"})
+        tech_df = tech_df.rename(columns={tech_df.columns[0]: "metric", tech_df.columns[1]: "sub-metric", tech_df.columns[2]: "value"})
+        geo_df = geo_df.rename(columns={geo_df.columns[0]: "metric", geo_df.columns[1]: "sub-metric", geo_df.columns[2]: "value"})
+        master_df = master_df.append(seg_df).append(tech_df).append(geo_df)
+        master_df.insert(0,"quarter",quarter)
+        master_df.insert(0,"year",year)
+        master_df.insert(0,"company",company)
+        metrics_df = pd.DataFrame({
+            "company":company,
+            "year":year,
+            "quarter":quarter,
+            "metric":["rev","inv","capex"],
+            "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
+        })
+        master_json = master_df.to_dict('records')
+        metrics_json = metrics_df.to_dict('records')
+        with open("data/data.json") as current_json:
+            current = json.load(current_json)
+            current_json.close()
+        if master_json[-1] in current:
+            current = current[:-(len(master_json)+len(metrics_json))]
+            with open("data/data.json","w") as json_file:
+                json.dump(current,json_file,indent=4,separators=(',',': '))
+                json_file.close()
+            return "Data been removed from global dataset."
+        else:
+            return "There is nothing left to undo."
+
 
 @app.callback(
-    Output("ticker1", "options"),
-    Output("ticker2", "options"),
+    Output("ticker-dropdown", "options"),
     Input("input-ticker", "value"),
     Input("btn-add-ticker", "n_clicks"),
-    Input("ticker1", "options"),
-    Input("ticker2", "options"),
+    Input("btn-remove-ticker", "n_clicks"),
+    Input("ticker-dropdown", "options"),
+    prevent_initial_call=True,
 )
-def add_ticker(new_ticker, btn, t1, t2):
-    global ticker_options
+def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-add-ticker' in changed_id:
-        t1.append(new_ticker.upper())
-        t2.append(new_ticker.upper())
-    ticker_options.append(new_ticker.upper())
-    return t1, t2
+        new_ticker = new_ticker.upper()
+        if new_ticker not in tickers:
+            tickers.append(new_ticker)
+            with open("tickers.txt", "wb") as f:
+                pickle.dump(tickers, f)
+    elif 'btn-remove-ticker' in changed_id:
+        try:
+            tickers.remove(new_ticker)
+        except:
+            'Placeholder'
+        with open("tickers.txt", "wb") as f:
+            pickle.dump(tickers, f)
+    return tickers
 
 @app.callback(
     Output("df-pulled", "data"),
     Output("df-pulled", "columns"),
-    #Output("json-store-pull","data"),
-    Input("ticker1", "value"),
-    Input("ticker2", "value"),
-    Input("btn-pull", "n_clicks")
+    Input("ticker-dropdown", "value"),
+    Input("ticker-dropdown", "options"),
+    Input("btn-pull", "n_clicks"),
+    Input("btn-update-all", "n_clicks"),
+    prevent_initial_call=True,
 )
-def pull_revenue(t1, t2, btn):
-    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
-    if 'btn-pull' in changed_id:
-        print(t1, t2) # Test statement
-        new_df = stocks.get_revenue_list([t1, t2])
-        new_json = pd.DataFrame.to_json(new_df)
-        print(new_df) # Test statement
-        old_data = pd.read_csv("data/revenue.csv")
-        old_cols = old_data.columns
-        new_cols = new_df.columns
-        combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
-        combined = pd.merge(old_data, new_df, how='outer', on=combine_cols).fillna(0) if ~old_data.empty else new_df
-        combined.to_csv("data/revenue.csv", index=False)
-        return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
+def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate):
+    if btnPull + btnUpdate > 0:
+        changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+        tickers = []
+        if 'btn-pull' in changed_id:
+            tickers = tickerVal
+        elif 'btn-update-all' in changed_id:
+            tickers = tickerOptions
+        old_df = pd.read_csv("data/revenue.csv")
+        old_cols = old_df.columns
+        #Pull tickers that haven't been updated yet, FIXME: Check more rigorously
+        filtered_tickers = [t for t in tickers if (f'{t.lower()}_revenue' not in old_cols or not old_df.iloc[-1,:][f'{t.lower()}_revenue'])]
+        if filtered_tickers:
+            new_df = stocks.get_revenue_list(filtered_tickers).replace({"":np.nan, "None":0.0})
+            new_cols = new_df.columns
+            combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
+            combined = pd.merge(old_df, new_df, how='outer', on=combine_cols).fillna(0.0) if (not old_df.empty) else new_df
+            combined = combined.drop_duplicates().groupby(["year", "quarter", "reportedCurrency"], as_index=False).max()
+            #print(combined)
+            combined.to_csv("data/revenue.csv", index=False)
+            return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
+        recent_cols = ["year","quarter","reportedCurrency"] + [f'{t.lower()}_revenue' for t in tickers]
+        recent_df = old_df[recent_cols]
+        return recent_df.to_dict('records'), [{"name": i, "id": i} for i in recent_df.columns]
+    return [],[]
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)

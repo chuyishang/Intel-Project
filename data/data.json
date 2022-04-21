@@ -4433,7 +4433,7 @@
         "year": 2020,
         "quarter": 3,
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "4.4"
     },
     {
@@ -4441,7 +4441,7 @@
         "year": 2020,
         "quarter": 3,
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "31.2"
     },
     {
@@ -4449,7 +4449,7 @@
         "year": 2020,
         "quarter": 3,
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.4"
     },
     {
@@ -4566,7 +4566,7 @@
         "year": 2020,
         "quarter": 4,
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "6.2"
     },
     {
@@ -4574,7 +4574,7 @@
         "year": 2020,
         "quarter": 4,
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "32.5"
     },
     {
@@ -4582,7 +4582,7 @@
         "year": 2020,
         "quarter": 4,
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "4.0"
     },
     {
@@ -4699,7 +4699,7 @@
         "year": 2021,
         "quarter": 1,
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "6.0"
     },
     {
@@ -4707,7 +4707,7 @@
         "year": 2021,
         "quarter": 1,
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "30.3"
     },
     {
@@ -4715,7 +4715,7 @@
         "year": 2021,
         "quarter": 1,
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.6"
     },
     {
@@ -4832,7 +4832,7 @@
         "year": 2021,
         "quarter": 2,
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.9"
     },
     {
@@ -4840,7 +4840,7 @@
         "year": 2021,
         "quarter": 2,
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "28.4"
     },
     {
@@ -4848,7 +4848,7 @@
         "year": 2021,
         "quarter": 2,
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.2"
     },
     {
@@ -4965,7 +4965,7 @@
         "year": 2021,
         "quarter": 3,
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.4"
     },
     {
@@ -4973,7 +4973,7 @@
         "year": 2021,
         "quarter": 3,
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "27.9"
     },
     {
@@ -4981,7 +4981,7 @@
         "year": 2021,
         "quarter": 3,
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "3.0"
     },
     {
@@ -5098,7 +5098,7 @@
         "year": 2021,
         "quarter": 4,
         "metric": "rev_tech",
-        "sub-metric": "0.11/0.13 μm",
+        "sub-metric": "0.11/0.13 \u03bcm",
         "value": "5.3"
     },
     {
@@ -5106,7 +5106,7 @@
         "year": 2021,
         "quarter": 4,
         "metric": "rev_tech",
-        "sub-metric": "0.15/0.18 μm",
+        "sub-metric": "0.15/0.18 \u03bcm",
         "value": "28.6"
     },
     {
@@ -5114,7 +5114,7 @@
         "year": 2021,
         "quarter": 4,
         "metric": "rev_tech",
-        "sub-metric": "0.25/0.35 μm",
+        "sub-metric": "0.25/0.35 \u03bcm",
         "value": "2.9"
     },
     {
@@ -8906,7 +8906,7 @@
         "year": 2014,
         "quarter": 2,
         "metric": "rev_tech",
-        "sub-metric": "40nm <x<=28nm",
+        "sub-metric": "28nm<x<=40nm",
         "value": "21"
     },
     {

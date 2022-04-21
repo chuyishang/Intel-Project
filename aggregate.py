@@ -47,6 +47,7 @@ def main():
         for comp, url_file in url_files.items():
             comp_data = aggregate_company(scraper.pull, url_file, comp)
             all_df = all_df.append(comp_data)
+            all_df.to_csv('data.csv', index=False)
         quit()
     
     company = args.comp
@@ -57,7 +58,7 @@ def main():
         raise RuntimeError('If not collecting all with --all, then --comp, --qtr, and --year must be specified.')
 
     if not company in VALID_COMPS:
-        raise RuntimeError(f'--comp must be one of {VALID_COMPS}')
+        raise RuntimeError(f"--comp must be one of {','.join(VALID_COMPS)}")
 
     url_file = url_files[args.comp]
     url_df = pd.read_csv(url_file)

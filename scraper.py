@@ -54,7 +54,7 @@ def pull_tsmc(year, quarter, url):
     conv = converter.Converter()
 
     tsmc_rev_converted = get_rev_tsmc(year, quarter, url)
-    aggregated_rev = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': tsmc_rev_converted}
+    aggregated_rev = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'sub-metric': '','value': tsmc_rev_converted}
     data_tsmc.append(aggregated_rev)
 
     tsmc_inv = tsmc_dfs.get('inv')
@@ -75,8 +75,8 @@ def pull_tsmc(year, quarter, url):
                 
     tsmc_geo = tsmc_dfs.get('geo')
     for index, row in tsmc_geo.iterrows():
-        sub_geo = index
-        sub_geo_value = row[0]
+        sub_geo = row[0]
+        sub_geo_value = row[1]
         sub_geo_no_percent = sub_geo_value.replace("%","")
         if sub_geo in dict_geo_options_tsmc:
             sub_geo = dict_geo_options_tsmc.get(sub_geo)
@@ -85,16 +85,16 @@ def pull_tsmc(year, quarter, url):
 
     tsmc_seg = tsmc_dfs.get('segment')
     for index, row in tsmc_seg.iterrows():
-        sub_seg = index
-        sub_seg_value = row[0]
+        sub_seg = row[0]
+        sub_seg_value = row[1]
         sub_seg_no_percent = sub_seg_value.replace("%","")
         aggregated_seg = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
         data_tsmc.append(aggregated_seg)
 
     tsmc_tech = tsmc_dfs.get('tech')
     for index, row in tsmc_tech.iterrows():
-        sub_tech = index
-        sub_tech_value = row[0]
+        sub_tech = row[0]
+        sub_tech_value = row[1]
         sub_tech_no_percent = sub_tech_value.replace("%","")
         aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
         data_tsmc.append(aggregated_tech)
