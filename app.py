@@ -36,7 +36,7 @@ currYear = datetime.now().year
 with open("tickers.txt", "rb") as f:
     ticker_options = pickle.load(f)
 
-controls = html.Div(
+controls = dbc.Card(
     [  
         html.Div(
             [
@@ -129,8 +129,8 @@ controls = html.Div(
             ]
         ),
     ],
-    #style={'verticalAlign': 'top', 'margin-top':0}
-    #body=True,
+    style={'verticalAlign': 'top', 'margin-top':0},
+    body=True,
 )
 
 parsing = html.Div(
@@ -347,7 +347,7 @@ app.layout = html.Div([
                 html.Hr(),
                 dbc.Row(
                     [
-                        dbc.Col(parsing, md=4),
+                        dbc.Col(parsing, md=4, align='start'),
                         dbc.Col(
                             [
                                 dash_table.DataTable(data=[], id="df-scraped"),
@@ -429,7 +429,7 @@ app.layout = html.Div([
                 html.Hr(),
                 dbc.Row(
                     [
-                        dbc.Col(puller, md=4),
+                        dbc.Col(puller, md=4, align='start'),
                         dbc.Col(
                             [dash_table.DataTable(data=[], id="df-pulled")
                             ],
