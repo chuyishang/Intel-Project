@@ -46,7 +46,7 @@ def get_revenue(ticker):
 '''
 Returns DataFrame with past 5 years of quarterly revenue for all companies in tickerList.
 '''
-def get_revenue_list(ticker_list):
+def get_revenue_list(ticker_list=[]):
     df = pd.DataFrame()
     for ticker in ticker_list:
         ticker_df = get_revenue(ticker)
