@@ -9,9 +9,9 @@ import dash_bootstrap_components as dbc
 from datetime import datetime
 import scraper, stocks, json, pickle
 import random
-from prophet import Prophet
-from forecast import *
-from prophet.plot import plot_plotly, plot_components_plotly
+#from prophet import Prophet
+#from forecast import *
+#from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 
 pd.options.mode.chained_assignment = None
@@ -32,8 +32,20 @@ company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC"
 firstYear = 2000
 currYear = datetime.now().year
 
+# Run once when pull-tickers.txt is empty
+#with open("regression-tickers.txt", "wb") as file:
+#    pickle.dump(["UMC", "GFS"], file)
+
 # Read ticker options
-with open("tickers.txt", "rb") as f:
+with open("regression-tickers.txt", "rb") as f:
+    customer_ticker_options = pickle.load(f)
+
+# Run once when pull-tickers.txt is empty
+#with open("pull-tickers.txt", "wb") as file:
+#    pickle.dump(["UMC", "GFS"], file)
+
+# Read ticker options
+with open("pull-tickers.txt", "rb") as f:
     ticker_options = pickle.load(f)
 
 controls = dbc.Card(
@@ -307,6 +319,52 @@ manual_buttons = html.Div(
         ),    
     ],
 )
+
+regression = dbc.Card(
+    [
+        html.Div(
+            [
+                dbc.Label("Company"),
+                dcc.Dropdown(
+                    options=[
+                       "TSMC", "SMIC", "UMC", "Global Foundries"
+                    ],
+                    style={"margin-bottom": 10}
+                ),
+            ],
+        ),
+        html.Div([
+            dbc.Label("Custom Ticker"),
+            dcc.Input(
+                    id="input-ticker-regression",
+                    style={"margin-left": 10}
+                ),
+        ],
+        ),
+
+        html.Div([
+            html.Button("Add Ticker", id= "btn-add-ticker-regression", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, n_clicks=0),
+            html.Button("Remove Ticker", id= "btn-remove-ticker-regression", style={"margin-top": 10, "margin-bottom": 10}, n_clicks=0),
+        ]
+        ),
+        html.Div([
+            dbc.Label("Customer Tickers"),
+            dcc.Dropdown(
+                    id="regression-ticker-dropdown",
+                    options=customer_ticker_options,
+                    multi=True
+                ),
+            ]
+        ),
+        html.Div(
+            [
+                html.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),   
+            ]
+        ),
+    ],
+    body=True
+)
+
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label="Visualization", children=[
@@ -432,6 +490,28 @@ app.layout = html.Div([
                         dbc.Col(puller, md=4, align='start'),
                         dbc.Col(
                             [dash_table.DataTable(data=[], id="df-pulled")
+                            ],
+                            md=8
+                        )
+                    ],
+                    align="center",
+                ),
+            ],
+            fluid=True
+            )
+        ],
+        ),
+
+        dcc.Tab(label="Regression", children=[
+            dbc.Container([
+                html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Hr(),
+                dbc.Row(
+                    [
+                        dbc.Col(regression, md=4, align='start'),
+                        dbc.Col([
+                                dcc.Graph(id="regression-graph1", style={"display":"none"}),
+                                dcc.Graph(id="regression-graph2", style={"display":"none"}),
                             ],
                             md=8
                         )
@@ -631,8 +711,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            forecast = fut_forecast(forecast_data,int(forecast_years))
-            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            #forecast = fut_forecast(forecast_data,int(forecast_years))
+            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
             graph = fig
         else:
             graph = px.line(filtered_data, x="quarter-string", y="value",
@@ -645,8 +725,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            forecast = fut_forecast(forecast_data,int(forecast_years))
-            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            #forecast = fut_forecast(forecast_data,int(forecast_years))
+            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
             graph = fig
         else:
             graph = px.line(filtered_data, x="quarter-string", y="value",
@@ -902,14 +982,39 @@ def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
         new_ticker = new_ticker.upper()
         if new_ticker not in tickers:
             tickers.append(new_ticker)
-            with open("tickers.txt", "wb") as f:
+            with open("pull-tickers.txt", "wb") as f:
                 pickle.dump(tickers, f)
     elif 'btn-remove-ticker' in changed_id:
         try:
-            tickers.remove(new_ticker)
+            tickers.remove(new_ticker.upper())
         except:
             'Placeholder'
-        with open("tickers.txt", "wb") as f:
+        with open("pull-tickers.txt", "wb") as f:
+            pickle.dump(tickers, f)
+    return tickers
+
+@app.callback(
+    Output("regression-ticker-dropdown", "options"),
+    Input("input-ticker-regression", "value"),
+    Input("btn-add-ticker-regression", "n_clicks"),
+    Input("btn-remove-ticker-regression", "n_clicks"),
+    Input("regression-ticker-dropdown", "options"),
+    prevent_initial_call=True,
+)
+def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    if 'btn-add-ticker-regression' in changed_id:
+        new_ticker = new_ticker.upper()
+        if new_ticker not in tickers:
+            tickers.append(new_ticker)
+            with open("regression-tickers.txt", "wb") as f:
+                pickle.dump(tickers, f)
+    elif 'btn-remove-ticker-regression' in changed_id:
+        try:
+            tickers.remove(new_ticker.upper())
+        except:
+            'Placeholder'
+        with open("regression-tickers.txt", "wb") as f:
             pickle.dump(tickers, f)
     return tickers
 
