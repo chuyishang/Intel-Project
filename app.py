@@ -9,9 +9,9 @@ import dash_bootstrap_components as dbc
 from datetime import datetime
 import scraper, stocks, json, pickle
 import random
-#from prophet import Prophet
-#from forecast import *
-#from prophet.plot import plot_plotly, plot_components_plotly
+from prophet import Prophet
+from forecast import *
+from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 
 pd.options.mode.chained_assignment = None
@@ -711,8 +711,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            #forecast = fut_forecast(forecast_data,int(forecast_years))
-            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            forecast = fut_forecast(forecast_data,int(forecast_years))
+            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
             graph = fig
         else:
             graph = px.line(filtered_data, x="quarter-string", y="value",
@@ -725,8 +725,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            #forecast = fut_forecast(forecast_data,int(forecast_years))
-            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            forecast = fut_forecast(forecast_data,int(forecast_years))
+            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
             graph = fig
         else:
             graph = px.line(filtered_data, x="quarter-string", y="value",
