@@ -19,6 +19,7 @@ app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Pull JSON files
 global_df = pd.read_json("data/data.json")
+global_df = pd.read_csv("data/data.csv")
 umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
@@ -547,7 +548,7 @@ def setMetric(company):
 )
 def visualization_options(metric):
     if metric != "CapEx" and metric != "Inventory" and metric != "Revenue" and metric != None:
-        return ["Comparison","Individual"],"Comparison"
+        return ["Comparison (Percent)","Comparison (Revenue)","Individual"],"Comparison (Percent)"
     else:
         return [],None
 
@@ -559,7 +560,7 @@ def visualization_options(metric):
     Input("viz-dropdown","value")
 )
 def set_submetric(company,metric,viz):
-    if viz == "Comparison" or viz == None:
+    if viz == "Comparison (Percent)" or viz == "Comparison (Revenue)" or viz == None:
         return []
     else:
         local_df = global_df
@@ -682,6 +683,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
 
     local_df = global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
+    rev_df = global_df.loc[(global_df["company"] == company) & (global_df["metric"] == metric_to_var["Revenue"])]
+    rev_df["quarter-string"] = rev_df["year"].map(lambda x: str(x)[-2:]) + "Q" + rev_df["quarter"].map(str)
+    rev_df = rev_df.sort_values(by=["quarter-string"])
     if (submetric != None or submetric != "NaN") and viz == "Individual":
         local_df = local_df.loc[local_df["sub-metric"] == submetric]
     local_df["quarter-string"] = local_df["year"].map(lambda x: str(x)[-2:]) + "Q" + local_df["quarter"].map(str)
@@ -696,14 +700,28 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         return graph, {}, np.array([]) ,[], {"display":"none"}
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
-    filtered_data.loc[:,("value")] = filtered_data["value"].astype(float)
+    rev_filtered = rev_df.iloc[index_start:index_end + 1]
+    filtered_data.loc[:,("value")] = filtered_data["value"].astype(float).round(2)
+    rev_filtered = rev_filtered[["quarter-string", "value"]]
+    rev_filtered.columns = ["quarter-string","revenue"]
 
-    if viz == "Comparison":
+    if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
         color="sub-metric",
         labels={
                 "quarter-string": "Quarters",
                 "value": "Percentage %",
+                "sub-metric": f'{metric.split()[-1]}'
+            },
+        title=f'{metric} for {company} from {start_q} to {end_q}')
+    elif viz == "Comparison (Revenue)":
+        filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
+        filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
+        graph = px.line(filtered_data, x="quarter-string", y="rev",
+        color="sub-metric",
+        labels={
+                "quarter-string": "Quarters",
+                "rev": "Dollar $USD",
                 "sub-metric": f'{metric.split()[-1]}'
             },
         title=f'{metric} for {company} from {start_q} to {end_q}')
