@@ -976,19 +976,22 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
     Input("ticker-dropdown", "options"),
     prevent_initial_call=True,
 )
-def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
+def change_tickers(new_tickers, btnAdd, btnRemove, tickers):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-add-ticker' in changed_id:
-        new_ticker = new_ticker.upper()
-        if new_ticker not in tickers:
-            tickers.append(new_ticker)
-            with open("pull-tickers.txt", "wb") as f:
-                pickle.dump(tickers, f)
+        new_tickers = new_tickers.split(",")
+        ticker_set = set(tickers)
+        for t in new_tickers:
+            t = t.upper()
+            tickers.append(t) if t not in ticker_set else 'Ignore'
+        with open("pull-tickers.txt", "wb") as f:
+            pickle.dump(tickers, f)
     elif 'btn-remove-ticker' in changed_id:
-        try:
-            tickers.remove(new_ticker.upper())
-        except:
-            'Placeholder'
+        for t in new_tickers:
+            try:
+                tickers.remove(t.upper())
+            except:
+                'Placeholder'
         with open("pull-tickers.txt", "wb") as f:
             pickle.dump(tickers, f)
     return tickers

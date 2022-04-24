@@ -44,7 +44,6 @@ def get_revenue(ticker):
             revenue_df["reportedCurrency"] = revenue_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
             revenue_df["totalRevenue"] = revenue_df.apply(lambda x:converter.Converter().twd_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
         revenue_df.rename({"totalRevenue":f'{ticker.lower()}_revenue'}, axis=1, inplace=True)
-        revenue_df = revenue_df.drop('reportedCurrency', axis=1)
         return revenue_df
     return pd.DataFrame()
 
@@ -55,7 +54,7 @@ def get_revenue_list(ticker_list=[]):
     df = pd.DataFrame()
     for ticker in ticker_list:
         ticker_df = get_revenue(ticker)
-        df = pd.merge(df, ticker_df, how='outer', on=['year', 'quarter']).fillna(0) if not df.empty else ticker_df
+        df = pd.merge(df, ticker_df, how='outer', on=['year', 'quarter', 'reportedCurrency']).fillna(0) if not df.empty else ticker_df
     return df
 
 '''
