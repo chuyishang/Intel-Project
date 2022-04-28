@@ -19,6 +19,7 @@ app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Pull JSON files
 global_df = pd.read_json("data/data.json")
+global_df = pd.read_csv("data/data.csv")
 umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
@@ -32,8 +33,20 @@ company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC"
 firstYear = 2000
 currYear = datetime.now().year
 
+# Run once when pull-tickers.txt is empty
+#with open("regression-tickers.txt", "wb") as file:
+#    pickle.dump(["UMC", "GFS"], file)
+
 # Read ticker options
-with open("tickers.txt", "rb") as f:
+with open("regression-tickers.txt", "rb") as f:
+    customer_ticker_options = pickle.load(f)
+
+# Run once when pull-tickers.txt is empty
+#with open("pull-tickers.txt", "wb") as file:
+#    pickle.dump(["UMC", "GFS"], file)
+
+# Read ticker options
+with open("pull-tickers.txt", "rb") as f:
     ticker_options = pickle.load(f)
 
 controls = dbc.Card(
@@ -307,6 +320,52 @@ manual_buttons = html.Div(
         ),    
     ],
 )
+
+regression = dbc.Card(
+    [
+        html.Div(
+            [
+                dbc.Label("Company"),
+                dcc.Dropdown(
+                    options=[
+                       "TSMC", "SMIC", "UMC", "Global Foundries"
+                    ],
+                    style={"margin-bottom": 10}
+                ),
+            ],
+        ),
+        html.Div([
+            dbc.Label("Custom Ticker"),
+            dcc.Input(
+                    id="input-ticker-regression",
+                    style={"margin-left": 10}
+                ),
+        ],
+        ),
+
+        html.Div([
+            html.Button("Add Ticker", id= "btn-add-ticker-regression", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, n_clicks=0),
+            html.Button("Remove Ticker", id= "btn-remove-ticker-regression", style={"margin-top": 10, "margin-bottom": 10}, n_clicks=0),
+        ]
+        ),
+        html.Div([
+            dbc.Label("Customer Tickers"),
+            dcc.Dropdown(
+                    id="regression-ticker-dropdown",
+                    options=customer_ticker_options,
+                    multi=True
+                ),
+            ]
+        ),
+        html.Div(
+            [
+                html.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),   
+            ]
+        ),
+    ],
+    body=True
+)
+
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label="Visualization", children=[
@@ -442,6 +501,28 @@ app.layout = html.Div([
             fluid=True
             )
         ],
+        ),
+
+        dcc.Tab(label="Regression", children=[
+            dbc.Container([
+                html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Hr(),
+                dbc.Row(
+                    [
+                        dbc.Col(regression, md=4, align='start'),
+                        dbc.Col([
+                                dcc.Graph(id="regression-graph1", style={"display":"none"}),
+                                dcc.Graph(id="regression-graph2", style={"display":"none"}),
+                            ],
+                            md=8
+                        )
+                    ],
+                    align="center",
+                ),
+            ],
+            fluid=True
+            )
+        ],
         )
     ])
 ])
@@ -467,7 +548,7 @@ def setMetric(company):
 )
 def visualization_options(metric):
     if metric != "CapEx" and metric != "Inventory" and metric != "Revenue" and metric != None:
-        return ["Comparison","Individual"],"Comparison"
+        return ["Comparison (Percent)","Comparison (Revenue)","Individual (Percent)", "Individual (Revenue)"],"Comparison (Percent)"
     else:
         return [],None
 
@@ -479,7 +560,7 @@ def visualization_options(metric):
     Input("viz-dropdown","value")
 )
 def set_submetric(company,metric,viz):
-    if viz == "Comparison" or viz == None:
+    if viz == "Comparison (Percent)" or viz == "Comparison (Revenue)" or viz == None:
         return []
     else:
         local_df = global_df
@@ -579,7 +660,7 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
     prevent_initial_call=True,
 )
 def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_year, end_quarter,forecast_check,forecast_years):
-    if metric == "CapEx" or metric == "Inventory":
+    if metric == "CapEx" or metric == "Inventory" or metric == "Revenue":
         submetric = None
     graph = go.Figure()
     graph.update_layout(
@@ -602,8 +683,11 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
 
     local_df = global_df
     local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
-    if (submetric != None or submetric != "NaN") and viz == "Individual":
+    rev_df = global_df.loc[(global_df["company"] == company) & (global_df["metric"] == metric_to_var["Revenue"])]
+    rev_df["quarter-string"] = rev_df["year"].map(lambda x: str(x)[-2:]) + "Q" + rev_df["quarter"].map(str)
+    if (submetric != None or submetric != "NaN") and (viz == "Individual (Percent)" or viz == "Individual (Revenue)"):
         local_df = local_df.loc[local_df["sub-metric"] == submetric]
+    rev_df = rev_df.sort_values(by=["quarter-string"])
     local_df["quarter-string"] = local_df["year"].map(lambda x: str(x)[-2:]) + "Q" + local_df["quarter"].map(str)
     local_df = local_df.sort_values(by=["quarter-string"])
     start_q = join_quarter_year(start_quarter, start_year)
@@ -611,19 +695,35 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
 
     try:  
         index_start = local_df["quarter-string"].tolist().index(start_q)
+        index_start2 = rev_df["quarter-string"].tolist().index(start_q)
         index_end = len(local_df["quarter-string"].tolist()) - local_df["quarter-string"].tolist()[::-1].index(end_q) - 1
+        index_end2 = len(rev_df["quarter-string"].tolist()) - rev_df["quarter-string"].tolist()[::-1].index(end_q) - 1
     except ValueError:
         return graph, {}, np.array([]) ,[], {"display":"none"}
 
     filtered_data = local_df.iloc[index_start:index_end + 1]
-    filtered_data.loc[:,("value")] = filtered_data["value"].astype(float)
-
-    if viz == "Comparison":
+    rev_filtered = rev_df.iloc[index_start2:index_end2 + 1]
+    filtered_data.loc[:,("value")] = filtered_data["value"].astype(float).round(2)
+    rev_filtered = rev_filtered[["quarter-string", "value"]]
+    rev_filtered.columns = ["quarter-string","revenue"]
+    print(rev_filtered)
+    if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
         color="sub-metric",
         labels={
                 "quarter-string": "Quarters",
                 "value": "Percentage %",
+                "sub-metric": f'{metric.split()[-1]}'
+            },
+        title=f'{metric} for {company} from {start_q} to {end_q}')
+    elif viz == "Comparison (Revenue)":
+        filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
+        filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
+        graph = px.line(filtered_data, x="quarter-string", y="rev",
+        color="sub-metric",
+        labels={
+                "quarter-string": "Quarters",
+                "rev": "Dollar $USD",
                 "sub-metric": f'{metric.split()[-1]}'
             },
         title=f'{metric} for {company} from {start_q} to {end_q}')
@@ -642,19 +742,30 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 },
             title=f'{metric} for {company} from {start_q} to {end_q}', markers=True)
     else:
-        if forecast_check == True:
-            forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
-            print(forecast_data)
-            forecast = fut_forecast(forecast_data,int(forecast_years))
-            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-            graph = fig
-        else:
+        if viz == "Individual (Percent)":
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
             "quarter-string": "Quarters",
-            "value": "US$ Dollars (Millions)",
+            "value": "Percentage %",
                 },
             title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
+        else:
+            filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
+            filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
+            filtered_data["value"] = filtered_data["rev"]
+            if forecast_check == True:
+                forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev"],axis=1)
+                print(forecast_data)
+                forecast = fut_forecast(forecast_data,int(forecast_years))
+                fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+                graph = fig
+            else:
+                graph = px.line(filtered_data, x="quarter-string", y="rev",
+                labels={
+                "quarter-string": "Quarters",
+                "value": "US$ Dollars (Millions)",
+                    },
+                title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
 
     return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns], {"display":"inline"}
 
@@ -896,20 +1007,48 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
     Input("ticker-dropdown", "options"),
     prevent_initial_call=True,
 )
-def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
+def change_tickers(new_tickers, btnAdd, btnRemove, tickers):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-add-ticker' in changed_id:
+        new_tickers = new_tickers.split(",")
+        ticker_set = set(tickers)
+        for t in new_tickers:
+            t = t.upper()
+            tickers.append(t) if t not in ticker_set else 'Ignore'
+        with open("pull-tickers.txt", "wb") as f:
+            pickle.dump(tickers, f)
+    elif 'btn-remove-ticker' in changed_id:
+        for t in new_tickers:
+            try:
+                tickers.remove(t.upper())
+            except:
+                'Placeholder'
+        with open("pull-tickers.txt", "wb") as f:
+            pickle.dump(tickers, f)
+    return tickers
+
+@app.callback(
+    Output("regression-ticker-dropdown", "options"),
+    Input("input-ticker-regression", "value"),
+    Input("btn-add-ticker-regression", "n_clicks"),
+    Input("btn-remove-ticker-regression", "n_clicks"),
+    Input("regression-ticker-dropdown", "options"),
+    prevent_initial_call=True,
+)
+def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
+    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    if 'btn-add-ticker-regression' in changed_id:
         new_ticker = new_ticker.upper()
         if new_ticker not in tickers:
             tickers.append(new_ticker)
-            with open("tickers.txt", "wb") as f:
+            with open("regression-tickers.txt", "wb") as f:
                 pickle.dump(tickers, f)
-    elif 'btn-remove-ticker' in changed_id:
+    elif 'btn-remove-ticker-regression' in changed_id:
         try:
-            tickers.remove(new_ticker)
+            tickers.remove(new_ticker.upper())
         except:
             'Placeholder'
-        with open("tickers.txt", "wb") as f:
+        with open("regression-tickers.txt", "wb") as f:
             pickle.dump(tickers, f)
     return tickers
 
