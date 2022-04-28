@@ -1,6 +1,8 @@
 import pandas as pd
 import twder
+import datetime
 from datetime import date
+from forex_python.converter import CurrencyRates
 
 class Converter:
     def __init__(self, path='data/usd_twd.csv'):
@@ -53,3 +55,10 @@ class Converter:
             else:
                 return
         return usd_value * twd_usd_rate
+
+    def jpy_usd(self, jpy_value, year, quarter):
+        c = CurrencyRates()
+        year_quarter = str(year) + "-" + "Q" + str(quarter)
+        datetime_obj = pd.to_datetime(year_quarter)
+        conversion_rate = c.get_rate('USD', 'JPY', datetime_obj)
+        return jpy_value / conversion_rate

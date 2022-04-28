@@ -1,6 +1,7 @@
 """
 Imports
 """
+from re import X
 import time
 import requests
 import pandas as pd
@@ -18,120 +19,116 @@ import plotly.express as px
 import plotly.graph_objects as go
 import csv
 
-print(os.getcwd())
-intel_dir = os.getcwd()
-data_folder_path = os.path.join(intel_dir, 'data')
-print(data_folder_path)
-os.chdir(data_folder_path)
-
-dat_df = pd.read_csv('data.csv')
-print(data_df)
-
-
-"""
-UMC Multiple Linear Regression Example
-"""
-
-"""
-UMC = stocks.get_revenue('UMC')
-UMC_customers = stocks.get_revenue_list(stocks.top_customers['UMC'])
-conv = converter.Converter()
-UMC.at[14, 'totalRevenue'] = conv.usd_twd(float(UMC.at[14, 'totalRevenue']), 2018, 2)
-UMC.at[18, 'totalRevenue'] = conv.usd_twd(float(UMC.at[18, 'totalRevenue']), 2017, 2)
-UMC = UMC.iloc[::-1]
-UMC_customers = UMC_customers.iloc[::-1]
-
-UMC["revChange"] = pd.to_numeric(UMC.totalRevenue).diff()
-UMC["pctRevChange"] = pd.to_numeric(UMC.totalRevenue).pct_change()
-UMC_customers["qcom_revChange"] = pd.to_numeric(UMC_customers.qcom_revenue).diff()
-UMC_customers["qcom_pctRevChange"] = pd.to_numeric(UMC_customers.qcom_revenue).pct_change()
-UMC_customers["amd_revChange"] = pd.to_numeric(UMC_customers.amd_revenue).diff()
-UMC_customers["amd_pctRevChange"] = pd.to_numeric(UMC_customers.amd_revenue).pct_change()
-
-y_umc = UMC.pctRevChange[2:].to_numpy()
-x_qcom = UMC_customers.qcom_pctRevChange[1:].to_numpy().reshape(-1,1)
-x_amd = UMC_customers.amd_pctRevChange[1:].to_numpy().reshape(-1,1)
-x_combined = np.hstack((x_qcom, x_amd))
-x_combined_df = pd.DataFrame(x_combined, columns = ['qcom','amd'])
-
-model_linear = LinearRegression()
-reg = model_linear.fit(x_combined,y_umc)
-r_sq = model_linear.score(x_combined, y_umc)
-predicted = reg.predict(x_combined)
-
-#To Do: cutoff here
-plt.plot(list(range(len(x_combined))), reg.predict(x_combined), label = 'Predicted UMC Rev')
-plt.plot(list(range(len(x_combined))), y_umc, label = 'Actual UMC Rev')
-plt.legend()
-plt.show()
-
-colors = ['Positive' if c > 0 else 'Negative' for c in model_linear.coef_]
-
-fig = px.bar(
-    x = x_combined_df.columns, y = model_linear.coef_, color=colors,
-    color_discrete_sequence=['red', 'blue'],
-    labels=dict(x='Feature', y='Linear coefficient'),
-    title='Weight of each customer for predicting company revenue'
-)
-fig.show()
-"""
 
 """
 Preprocessing for linear regression
 """
-def preprocess(company, customers):
+def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company, customers):
     """
     Preprocessing for company revenue data from data.csv
     """
+    intel_dir = os.getcwd()
+    data_folder_path = os.path.join(intel_dir, 'data')
+    #change filepath to data folder to get data.csv
+    os.chdir(data_folder_path)
+    data_df = pd.read_csv('data.csv')
+    #change filepath back to main folder
+    os.chdir("..")
+
+    #get company data on metric from data_df
+    company_df = data_df[data_df["company"] == company]
+    company_df = company_df[company_df["metric"] == metric]
+    #drop rows based on start_year and end_year
+    company_df = company_df[company_df["year"] <= end_year]
+    company_df = company_df[company_df["year"] >= start_year]
+    company_df = company_df.drop(columns=['company', 'metric', 'sub-metric'])
+    #drop rows based on start_quarter
+    for index, row in company_df.iterrows():
+        if row['year'] == start_year:
+            if row['quarter'] < start_quarter:
+                company_df.drop(index, inplace=True)
+        else:
+            break
+    #drop rows based on end_quarter
+    company_df = company_df.iloc[::-1]
+    for index, row in company_df.iterrows():
+        if row['year'] == end_year:
+            if row['quarter'] > end_quarter:
+                company_df.drop(index, inplace=True)
+        else:
+            break
+    company_df = company_df.iloc[::-1]
 
     """
     Preprocessing for customers revenue data from stocks.py
     """
     if customers == 'ALL':
-        customers_df = stocks.get_revenue_list(stocks.top_customers['UMC'])
-        customers_df = customers_df.iloc[::-1]
+        customers_df = stocks.get_revenue_list(stocks.top_customers[company])
         
-    
-    for customer in customers:
-        customer
+    else:
+        customers_df = stocks.get_revenue(customers[0])
+        customers_df.rename(columns={'totalRevenue': 'placeholder'}, inplace=True)
+        customers_df = customers_df.drop(columns=['reportedCurrency'])
+        for indiv_customer in customers:
+            indiv_customer_df = stocks.get_revenue(indiv_customer)
+            indiv_customer_df = indiv_customer_df[['totalRevenue']]
+            indiv_customer_df.rename(columns={'totalRevenue': indiv_customer.lower() + '_revenue'}, inplace=True)
+            customers_df = pd.concat([customers_df, indiv_customer_df], axis=1)
+        customers_df = customers_df.drop(columns=['placeholder'])
 
-    print(stocks.top_customers['UMC'][0])
+    """
+    Merge company and customers df, check for 0s
+    """
+    merged_df = pd.merge(company_df, customers_df, how='inner', left_on=['year', 'quarter'], right_on =['year', 'quarter'])
+    #check if there are zeros in any customer rev, if so, throw error
+    merged_df_columns = list(merged_df.columns.values.tolist())
+    customer_names_list = merged_df_columns[3:]
+    for indiv_customer in customer_names_list:
+        customer_values = merged_df[indiv_customer].tolist()
+        if 0 in customer_values:
+            print("Error: revenue value of 0 for customer " + indiv_customer)
+            quit()
+
+    """
+    Extract pctRevChange for company into numpy array
+    """
+    merged_df["pctRevChange"] = pd.to_numeric(merged_df.value).pct_change()
+    y_company = merged_df.pctRevChange[1:].to_numpy()
+    
+    """
+    Extract pctRevChange for customers into numpy array
+    """
+    merged_df["placeholder"] = pd.to_numeric(merged_df.iloc[:, 3]).pct_change()
+    x_customers = merged_df.placeholder[1:].to_numpy().reshape(-1,1)
+    for indiv_customer in customer_names_list:
+        merged_df["customer_pctRevChange"] = pd.to_numeric(merged_df[indiv_customer]).pct_change()
+        x_indiv_customer = merged_df.customer_pctRevChange[1:].to_numpy().reshape(-1,1)
+        x_customers = np.hstack((x_customers, x_indiv_customer))
+        merged_df.drop(columns=['customer_pctRevChange'])
+    x_customers = np.delete(x_customers, 0, axis=1)
+
+    results_array = [y_company, x_customers]
+    return results_array
+
+x = preprocess(2015, 3, 2020, 1, 'rev', 'TSMC', ['AAPL', 'AMD', 'QCOM'])
+
 
 """
 Multiple Linear Regression Function, can input specific customers or 'ALL'
 """
-def regression(company, customers):
-    """
-    Preprocessing for company revenue data
-    """
-    company_df = stocks.get_revenue(company)
-    if company == 'UMC':
-        company_df.at[14, 'totalRevenue'] = conv.usd_twd(float(company_df.at[14, 'totalRevenue']), 2018, 2)
-        company_df.at[18, 'totalRevenue'] = conv.usd_twd(float(company_df.at[18, 'totalRevenue']), 2017, 2)
-    company_df = company_df.iloc[::-1]
-    company_df["pctRevChange"] = pd.to_numeric(company_df.totalRevenue).pct_change()
-    y_company = company_df.pctRevChange[2:].to_numpy()
-    """
-    Preprocessing for customers revenue data
-    """
-    if customers == 'ALL':
-        customers_df = stocks.get_revenue_list(stocks.top_customers['UMC'])
-        customers_df = customers_df.iloc[::-1]
-        
-    
-    for customer in customers:
-        customer
-    
-    #To Do: create x_combined variable with all customers and x_combined_df
-
+def regression(y_company, x_customers):
     """
     Multiple linear regression model
     """
     model_linear = LinearRegression()
-    reg = model_linear.fit(x_combined, y_company)
-    r_sq = model_linear.score(x_combined, y_company)
-    predicted = reg.predict(x_combined)
+    reg = model_linear.fit(x_customers, y_company)
+    r_sq = model_linear.score(x_customers, y_company)
+    predicted = reg.predict(x_customers)
+    coefficients = model_linear.coef_
 
+    return r_sq, predicted, coefficients
+
+    """
     plt.plot(list(range(len(x_combined))), reg.predict(x_combined), label = 'Predicted Company Rev')
     plt.plot(list(range(len(x_combined))), y_company, label = 'Actual Company Rev')
     plt.legend()
@@ -146,6 +143,7 @@ def regression(company, customers):
         title = 'Weight of each customer for predicting company revenue'
     )
     fig.show()
-    #To Do: return dfs of actual and predicted revenue
+    """
 
-
+y = regression(x[0], x[1])
+print(y)
