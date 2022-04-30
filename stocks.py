@@ -44,7 +44,10 @@ def get_revenue(ticker):
         if revenue_df["reportedCurrency"][0] == "TWD":
             revenue_df["reportedCurrency"] = revenue_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
             revenue_df["totalRevenue"] = revenue_df.apply(lambda x:converter.Converter().twd_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
-        revenue_df.rename({"totalRevenue":f'{ticker.lower()}_revenue'}, axis=1, inplace=True)
+        if revenue_df["reportedCurrency"][0] == "JPY":
+            revenue_df["reportedCurrency"] = revenue_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
+            revenue_df["totalRevenue"] = revenue_df.apply(lambda x:converter.Converter().jpy_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
+        #revenue_df.rename({"totalRevenue":f'{ticker.lower()}_revenue'}, axis=1, inplace=True)
         return revenue_df
     return pd.DataFrame()
 
@@ -77,5 +80,5 @@ def get_exchange_rate(fromCurr, toCurr):
     data = r.json()
     return data['Realtime Currency Exchange Rate']['Exchange Rate']
 
-print(get_revenue_list(['GFS','UMC'])) # Need to pull TSMC and SMIC revenue
-#print(get_customer_revenue('TSMC'))
+#print(get_revenue_list(top_customers['TSMC']))
+#print(get_revenue('AAPL'))

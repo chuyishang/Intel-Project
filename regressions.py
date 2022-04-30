@@ -68,10 +68,12 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
     else:
         customers_df = stocks.get_revenue(customers[0])
         customers_df.rename(columns={'totalRevenue': 'placeholder'}, inplace=True)
+        #customers_df.rename(columns={customers[0].lower() + '_revenue': 'placeholder'}, inplace=True)
         customers_df = customers_df.drop(columns=['reportedCurrency'])
         for indiv_customer in customers:
             indiv_customer_df = stocks.get_revenue(indiv_customer)
             indiv_customer_df = indiv_customer_df[['totalRevenue']]
+            #indiv_customer_df = indiv_customer_df[[indiv_customer.lower() + '_revenue']]
             indiv_customer_df.rename(columns={'totalRevenue': indiv_customer.lower() + '_revenue'}, inplace=True)
             customers_df = pd.concat([customers_df, indiv_customer_df], axis=1)
         customers_df = customers_df.drop(columns=['placeholder'])
