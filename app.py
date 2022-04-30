@@ -731,7 +731,11 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     filtered_data.loc[:,("value")] = filtered_data["value"].astype(float).round(2)
     rev_filtered = rev_filtered[["quarter-string", "value"]]
     rev_filtered.columns = ["quarter-string","revenue"]
-    print(rev_filtered)
+    last_index_array = len(filtered_data["value"].tolist())-1
+    quarter_diff = filtered_data["quarter"].tolist()[last_index_array] - filtered_data["quarter"].tolist()[0] + 1
+    number_quarters = filtered_data["year"].tolist()[last_index_array] - filtered_data["year"].tolist()[0] + quarter_diff
+    cagr = round((pow((filtered_data["value"].tolist()[last_index_array]/ filtered_data["value"].tolist()[0]),1/number_quarters) - 1) * 100,2)
+
     if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
         color="sub-metric",
@@ -760,20 +764,24 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
             graph = fig
         else:
+            filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
             "quarter-string": "Quarters",
             "value": "US$ Dollars (Millions)",
                 },
-            title=f'{metric} for {company} from {start_q} to {end_q}', markers=True)
+            hover_data=["quarter-string", "value","QoQ"],
+            title=f'{metric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
     else:
+        filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
         if viz == "Individual (Percent)":
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
             "quarter-string": "Quarters",
             "value": "Percentage %",
                 },
-            title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
+            hover_data=["quarter-string", "value","QoQ"],
+            title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
         else:
             filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
             filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
@@ -790,7 +798,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 "quarter-string": "Quarters",
                 "value": "US$ Dollars (Millions)",
                     },
-                title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}', markers=True)
+                hover_data=["quarter-string", "value","QoQ"],
+                title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
 
     return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns], {"display":"inline"}
 
