@@ -13,6 +13,7 @@ from prophet import Prophet
 from forecast import *
 from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
+import re
 
 pd.options.mode.chained_assignment = None
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -24,6 +25,9 @@ umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
 
+# Read revenue.csv
+revenue_df = pd.read_csv("data/revenue.csv")
+
 # Global dictionaries and variables
 metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev"}
 var_to_metric = {v:k for k, v in metric_to_var.items()}
@@ -33,17 +37,9 @@ company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC"
 firstYear = 2000
 currYear = datetime.now().year
 
-# Run once when pull-tickers.txt is empty
-#with open("regression-tickers.txt", "wb") as file:
-#    pickle.dump(["UMC", "GFS"], file)
-
-# Read ticker options
-with open("regression-tickers.txt", "rb") as f:
-    customer_ticker_options = pickle.load(f)
-
-# Run once when pull-tickers.txt is empty
-#with open("pull-tickers.txt", "wb") as file:
-#    pickle.dump(["UMC", "GFS"], file)
+# Get regression ticker options
+predictor_options = [t.split("_")[0].upper() for t in revenue_df.columns if "revenue" in t]
+print(f"Predictor Options: {predictor_options}")
 
 # Read ticker options
 with open("pull-tickers.txt", "rb") as f:
@@ -325,7 +321,7 @@ regression = dbc.Card(
     [
         html.Div(
             [
-                dbc.Label("Company"),
+                dbc.Label("Competitor"),
                 dcc.Dropdown(
                     options=[
                        "TSMC", "SMIC", "UMC", "Global Foundries"
@@ -334,29 +330,50 @@ regression = dbc.Card(
                 ),
             ],
         ),
+        
         html.Div([
-            dbc.Label("Custom Ticker"),
-            dcc.Input(
-                    id="input-ticker-regression",
-                    style={"margin-left": 10}
-                ),
-        ],
-        ),
-
-        html.Div([
-            html.Button("Add Ticker", id= "btn-add-ticker-regression", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, n_clicks=0),
-            html.Button("Remove Ticker", id= "btn-remove-ticker-regression", style={"margin-top": 10, "margin-bottom": 10}, n_clicks=0),
-        ]
-        ),
-        html.Div([
-            dbc.Label("Customer Tickers"),
+            dbc.Label("Predictor Company"),
             dcc.Dropdown(
                     id="regression-ticker-dropdown",
-                    options=customer_ticker_options,
+                    options=predictor_options,
                     multi=True
                 ),
             ]
         ),
+
+        html.Div(
+            [
+                dbc.Label("Starting Year"),
+                dcc.Dropdown(
+                    options= np.arange(firstYear, currYear),
+                    id = "regress-start-dropdown"
+                ),
+                dbc.Label("Starting Quarter"),
+                dcc.Dropdown(
+                    options= ["1", "2", "3", "4"],
+                    id = "regress-startq-dropdown"
+                )
+            ],
+            className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
+        ),
+
+        html.Div(
+            [
+                dbc.Label("Ending Year"),
+                dcc.Dropdown(
+                    options= np.arange(firstYear, currYear),
+                    id = "regress-end-dropdown"
+                ),
+                dbc.Label("Ending Quarter"),
+                dcc.Dropdown(
+                    options = ["1", "2", "3", "4"],
+                    id = "regress-endq-dropdown"
+                )
+                
+            ],
+            className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
+        ),
+
         html.Div(
             [
                 html.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),   
@@ -490,7 +507,15 @@ app.layout = html.Div([
                     [
                         dbc.Col(puller, md=4, align='start'),
                         dbc.Col(
-                            [dash_table.DataTable(data=[], id="df-pulled")
+                            [dash_table.DataTable(
+                                data=[],
+                                id="df-pulled",
+                                style_table={
+                                    'height': 600,
+                                    'overflowY': 'scroll',
+                                    'overflowX': 'scroll'
+                                }
+                                )
                             ],
                             md=8
                         )
@@ -1009,59 +1034,38 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
 )
 def change_tickers(new_tickers, btnAdd, btnRemove, tickers):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
+    new_tickers = new_tickers.split(",")
+    ticker_set = set(tickers)
     if 'btn-add-ticker' in changed_id:
-        new_tickers = new_tickers.split(",")
-        ticker_set = set(tickers)
         for t in new_tickers:
             t = t.upper()
+            t = re.sub(r'[^A-Z]', '', t.upper())
             tickers.append(t) if t not in ticker_set else 'Ignore'
         with open("pull-tickers.txt", "wb") as f:
             pickle.dump(tickers, f)
     elif 'btn-remove-ticker' in changed_id:
         for t in new_tickers:
-            try:
-                tickers.remove(t.upper())
-            except:
-                'Placeholder'
+            t = t.upper()
+            t = re.sub(r'[^A-Z]', '', t.upper())
+            if t in ticker_set:
+                tickers.remove(t)
         with open("pull-tickers.txt", "wb") as f:
             pickle.dump(tickers, f)
     return tickers
 
 @app.callback(
     Output("regression-ticker-dropdown", "options"),
-    Input("input-ticker-regression", "value"),
-    Input("btn-add-ticker-regression", "n_clicks"),
-    Input("btn-remove-ticker-regression", "n_clicks"),
-    Input("regression-ticker-dropdown", "options"),
-    prevent_initial_call=True,
-)
-def change_tickers(new_ticker, btnAdd, btnRemove, tickers):
-    changed_id = [p['prop_id'] for p in callback_context.triggered][0]
-    if 'btn-add-ticker-regression' in changed_id:
-        new_ticker = new_ticker.upper()
-        if new_ticker not in tickers:
-            tickers.append(new_ticker)
-            with open("regression-tickers.txt", "wb") as f:
-                pickle.dump(tickers, f)
-    elif 'btn-remove-ticker-regression' in changed_id:
-        try:
-            tickers.remove(new_ticker.upper())
-        except:
-            'Placeholder'
-        with open("regression-tickers.txt", "wb") as f:
-            pickle.dump(tickers, f)
-    return tickers
-
-@app.callback(
     Output("df-pulled", "data"),
     Output("df-pulled", "columns"),
     Input("ticker-dropdown", "value"),
     Input("ticker-dropdown", "options"),
     Input("btn-pull", "n_clicks"),
     Input("btn-update-all", "n_clicks"),
+    Input("regression-ticker-dropdown", "options"),
     prevent_initial_call=True,
 )
-def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate):
+def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate, regressionOptions):
+    global revenue_df
     if btnPull + btnUpdate > 0:
         changed_id = [p['prop_id'] for p in callback_context.triggered][0]
         tickers = []
@@ -1069,23 +1073,22 @@ def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate):
             tickers = tickerVal
         elif 'btn-update-all' in changed_id:
             tickers = tickerOptions
-        old_df = pd.read_csv("data/revenue.csv")
-        old_cols = old_df.columns
+        old_cols = revenue_df.columns
         #Pull tickers that haven't been updated yet, FIXME: Check more rigorously
-        filtered_tickers = [t for t in tickers if (f'{t.lower()}_revenue' not in old_cols or not old_df.iloc[-1,:][f'{t.lower()}_revenue'])]
+        filtered_tickers = [t for t in tickers if (f'{t.lower()}_revenue' not in old_cols or not revenue_df.iloc[-1,:][f'{t.lower()}_revenue'])]
         if filtered_tickers:
             new_df = stocks.get_revenue_list(filtered_tickers).replace({"":np.nan, "None":0.0})
             new_cols = new_df.columns
             combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
-            combined = pd.merge(old_df, new_df, how='outer', on=combine_cols).fillna(0.0) if (not old_df.empty) else new_df
-            combined = combined.drop_duplicates().groupby(["year", "quarter", "reportedCurrency"], as_index=False).max()
-            #print(combined)
-            combined.to_csv("data/revenue.csv", index=False)
-            return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns]
+            revenue_df = pd.merge(revenue_df, new_df, how='outer', on=combine_cols).fillna(0.0) if (not revenue_df.empty) else new_df
+            revenue_df = revenue_df.drop_duplicates().groupby(["year", "quarter", "reportedCurrency"], as_index=False).max()
+            print(revenue_df)
+            revenue_df.to_csv("data/revenue.csv", index=False)
+            return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], [t.split("_")[0].upper() for t in revenue_df.columns if "revenue" in t]
         recent_cols = ["year","quarter","reportedCurrency"] + [f'{t.lower()}_revenue' for t in tickers]
-        recent_df = old_df[recent_cols]
-        return recent_df.to_dict('records'), [{"name": i, "id": i} for i in recent_df.columns]
-    return [],[]
+        recent_df = revenue_df[recent_cols]
+        return recent_df.to_dict('records'), [{"name": i, "id": i} for i in recent_df.columns], regressionOptions
+    return [],[],regressionOptions
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
