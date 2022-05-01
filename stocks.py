@@ -23,11 +23,14 @@ Returns DataFrame with past 5 years of quarterly revenue for TICKER. If data doe
 DataFrame columns: ['reportedCurrency', 'totalRevenue', 'year', 'quarter']
 '''
 def get_revenue(ticker):
+    #Sleeps program after every 5 calls due to call limit
     global call_count, start_time
     if call_count >= 5:
         time.sleep(max(60 - (time.time() - start_time), 0))
         call_count = 0
         start_time = time.time()
+    
+    #Pulls data from API
     url = f'https://www.alphavantage.co/query?function=INCOME_STATEMENT&symbol={ticker}&apikey={api_key}'
     call_count += 1
     r = requests.get(url)
@@ -35,19 +38,30 @@ def get_revenue(ticker):
     if json_data:
         quarter_data = pd.DataFrame.from_dict(json_data['quarterlyReports'])
         revenue_df = quarter_data[["fiscalDateEnding", "reportedCurrency", "totalRevenue"]]
+
+        #Converts fiscalDateEnding into quarter and year
         revenue_df.insert(0, 'quarter', [int(s.split("-")[1]) // 3 for s in revenue_df["fiscalDateEnding"]])
         revenue_df.insert(0, 'year', [int(s.split("-")[0]) for s in revenue_df["fiscalDateEnding"]])
         revenue_df.drop(["fiscalDateEnding"], axis=1, inplace=True)
         if min(revenue_df['quarter']) == 0:
             revenue_df['quarter'] = [q + 1 for q in revenue_df['quarter']]
+
+        #Filters out non-numeric revenue values
         revenue_df['totalRevenue'] = pd.to_numeric(revenue_df['totalRevenue'], errors='ignore')
+        revenue_df = revenue_df[pd.to_numeric(revenue_df['totalRevenue'], errors='coerce').notnull()]
+
+        #Currency Conversion
         if revenue_df["reportedCurrency"][0] == "TWD":
-            revenue_df["reportedCurrency"] = revenue_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
+            revenue_df["reportedCurrency"] = "USD"
             revenue_df["totalRevenue"] = revenue_df.apply(lambda x:converter.Converter().twd_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
         if revenue_df["reportedCurrency"][0] == "JPY":
-            revenue_df["reportedCurrency"] = revenue_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
+            revenue_df["reportedCurrency"] = "JPY"
             revenue_df["totalRevenue"] = revenue_df.apply(lambda x:converter.Converter().jpy_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
-        #revenue_df.rename({"totalRevenue":f'{ticker.lower()}_revenue'}, axis=1, inplace=True)
+        
+        #Processing dataframe
+        revenue_df.rename({"totalRevenue":"revenue"}, axis=1, inplace=True)
+        revenue_df["company"] = ticker
+        revenue_df = revenue_df.round(2)
         return revenue_df
     return pd.DataFrame()
 
@@ -58,21 +72,11 @@ def get_revenue_list(ticker_list=[]):
     df = pd.DataFrame()
     for ticker in ticker_list:
         ticker_df = get_revenue(ticker)
-        if ticker_df["reportedCurrency"][0] == "TWD":
-            ticker_df["reportedCurrency"] = ticker_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
-            ticker_df["totalRevenue"] = ticker_df.apply(lambda x:converter.Converter().twd_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
-        if ticker_df["reportedCurrency"][0] == "JPY":
-            ticker_df["reportedCurrency"] = ticker_df["reportedCurrency"].map(lambda x:"USD", na_action='ignore')
-            ticker_df["totalRevenue"] = ticker_df.apply(lambda x:converter.Converter().jpy_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
-        ticker_df.rename({"totalRevenue":f'{ticker.lower()}_revenue'}, axis=1, inplace=True)
-        if df.empty:
-            df = ticker_df
-        else:
-            df = pd.merge(df, ticker_df, how='outer', on=['year', 'quarter', 'reportedCurrency']).fillna(0)
+        df = ticker_df if df.empty else pd.concat([df, ticker_df], axis=0)
     return df
 
 '''
-Returns realtime exchange rate from FROMCURR to TOCURR.
+Not used. Returns realtime exchange rate from FROMCURR to TOCURR.
 '''
 def get_exchange_rate(fromCurr, toCurr):
     url = f'https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency={fromCurr}&to_currency={toCurr}&apikey={api_key}'

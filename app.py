@@ -9,9 +9,9 @@ import dash_bootstrap_components as dbc
 from datetime import datetime
 import scraper, stocks, json, pickle
 import random
-from prophet import Prophet
-from forecast import *
-from prophet.plot import plot_plotly, plot_components_plotly
+#from prophet import Prophet
+#from forecast import *
+#from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 import re
 
@@ -19,14 +19,17 @@ pd.options.mode.chained_assignment = None
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Pull JSON files
-global_df = pd.read_json("data/data.json")
+#global_df = pd.read_json("data/data.json")
 global_df = pd.read_csv("data/data.csv")
 umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
 
-# Read revenue.csv
-revenue_df = pd.read_csv("data/revenue.csv")
+# Read revenue.csv, sets to empty df if csv is empty
+try:
+    revenue_df = pd.read_csv("data/revenue.csv")
+except:
+    revenue_df = pd.DataFrame()
 
 # Global dictionaries and variables
 metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev"}
@@ -38,7 +41,7 @@ firstYear = 2000
 currYear = datetime.now().year
 
 # Get regression ticker options
-predictor_options = [t.split("_")[0].upper() for t in revenue_df.columns if "revenue" in t]
+predictor_options = revenue_df["company"].unique() if not revenue_df.empty else []
 print(f"Predictor Options: {predictor_options}")
 
 # Read ticker options
@@ -323,12 +326,22 @@ regression = dbc.Card(
             [
                 dbc.Label("Competitor"),
                 dcc.Dropdown(
+                    id="regression-comp-dropdown",
                     options=[
                        "TSMC", "SMIC", "UMC", "Global Foundries"
                     ],
                     style={"margin-bottom": 10}
                 ),
             ],
+        ),
+
+        html.Div([
+            dbc.Label("Revenue Segment"),
+            dcc.Dropdown(
+                    id="regression-segment-dropdown",
+                    options=[],
+                ),
+            ]
         ),
         
         html.Div([
@@ -346,12 +359,12 @@ regression = dbc.Card(
                 dbc.Label("Starting Year"),
                 dcc.Dropdown(
                     options= np.arange(firstYear, currYear),
-                    id = "regress-start-dropdown"
+                    id = "regression-start-dropdown"
                 ),
                 dbc.Label("Starting Quarter"),
                 dcc.Dropdown(
                     options= ["1", "2", "3", "4"],
-                    id = "regress-startq-dropdown"
+                    id = "regression-startq-dropdown"
                 )
             ],
             className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
@@ -362,12 +375,12 @@ regression = dbc.Card(
                 dbc.Label("Ending Year"),
                 dcc.Dropdown(
                     options= np.arange(firstYear, currYear),
-                    id = "regress-end-dropdown"
+                    id = "regression-end-dropdown"
                 ),
                 dbc.Label("Ending Quarter"),
                 dcc.Dropdown(
                     options = ["1", "2", "3", "4"],
-                    id = "regress-endq-dropdown"
+                    id = "regression-endq-dropdown"
                 )
                 
             ],
@@ -760,9 +773,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            forecast = fut_forecast(forecast_data,int(forecast_years))
-            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-            graph = fig
+            #forecast = fut_forecast(forecast_data,int(forecast_years))
+            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            #graph = fig
         else:
             filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
             graph = px.line(filtered_data, x="quarter-string", y="value",
@@ -789,9 +802,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             if forecast_check == True:
                 forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev"],axis=1)
                 print(forecast_data)
-                forecast = fut_forecast(forecast_data,int(forecast_years))
-                fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-                graph = fig
+                #forecast = fut_forecast(forecast_data,int(forecast_years))
+                #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+                #graph = fig
             else:
                 graph = px.line(filtered_data, x="quarter-string", y="rev",
                 labels={
@@ -1063,9 +1076,18 @@ def change_tickers(new_tickers, btnAdd, btnRemove, tickers):
     return tickers
 
 @app.callback(
-    Output("regression-ticker-dropdown", "options"),
+    Output("regression-segment-dropdown", "options"),
+    Input("regression-comp-dropdown", "value"),
+    prevent_initial_call=True
+)
+def display_segment(competitor):
+    local_df = global_df.loc[global_df["company"] == competitor]
+    return local_df["sub-metric"].dropna().unique()
+
+@app.callback(
     Output("df-pulled", "data"),
     Output("df-pulled", "columns"),
+    Output("regression-ticker-dropdown", "options"),
     Input("ticker-dropdown", "value"),
     Input("ticker-dropdown", "options"),
     Input("btn-pull", "n_clicks"),
@@ -1083,21 +1105,94 @@ def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate, regressionOptions
         elif 'btn-update-all' in changed_id:
             tickers = tickerOptions
         old_cols = revenue_df.columns
+
         #Pull tickers that haven't been updated yet, FIXME: Check more rigorously
-        filtered_tickers = [t for t in tickers if (f'{t.lower()}_revenue' not in old_cols or not revenue_df.iloc[-1,:][f'{t.lower()}_revenue'])]
+        filtered_tickers = [t for t in tickers if t not in old_cols]
         if filtered_tickers:
-            new_df = stocks.get_revenue_list(filtered_tickers).replace({"":np.nan, "None":0.0})
-            new_cols = new_df.columns
-            combine_cols = [col for col in set(old_cols.append(new_cols)) if col in old_cols and col in new_cols]
-            revenue_df = pd.merge(revenue_df, new_df, how='outer', on=combine_cols).fillna(0.0) if (not revenue_df.empty) else new_df
-            revenue_df = revenue_df.drop_duplicates().groupby(["year", "quarter", "reportedCurrency"], as_index=False).max()
+            new_df = stocks.get_revenue_list(filtered_tickers)
+            revenue_df = pd.concat([revenue_df, new_df], axis=0)
+            revenue_df = revenue_df.drop_duplicates()
             print(revenue_df)
             revenue_df.to_csv("data/revenue.csv", index=False)
-            return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], [t.split("_")[0].upper() for t in revenue_df.columns if "revenue" in t]
-        recent_cols = ["year","quarter","reportedCurrency"] + [f'{t.lower()}_revenue' for t in tickers]
-        recent_df = revenue_df[recent_cols]
-        return recent_df.to_dict('records'), [{"name": i, "id": i} for i in recent_df.columns], regressionOptions
+            return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], revenue_df["company"].unique()
+        else:
+            tickerSet = set(tickerVal)
+            new_df = revenue_df.loc[revenue_df["company"] in tickerSet]
+            return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], regressionOptions
     return [],[],regressionOptions
+
+@app.callback(
+    Output("regression-start-dropdown","options"),
+    Input("regression-comp-dropdown","value"),
+    Input("regression-segment-dropdown","value"),
+    Input("regression-ticker-dropdown", "value"),
+)
+def setStartYearRegress(company,submetric,competitor):
+    if all([company, submetric, competitor]):
+        local_df = global_df.loc[(global_df["company"] == company) & (global_df["sub-metric"] == submetric)]
+        local_set = set(local_df["year"].dropna().unique())
+        local_rev_df = revenue_df["year","quarter",f'{competitor.lower()}_revenue']
+        rev_set = set(local_rev_df["year"].dropna().unique())
+    return np.arange(firstYear, currYear)
+
+@app.callback(
+    Output("regression-startq-dropdown","options"),
+    Input("regression-start-dropdown","value"),
+    Input("regression-comp-dropdown","value"),
+    Input("regression-segment-dropdown","value"),
+    Input("regression-ticker-dropdown", "value"),
+    prevent_initial_call=True
+)
+def setStartQuarterRegress(company,metric,submetric, startYear):
+    if all([company, metric, startYear]):
+        local_df = global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear)]
+        if submetric:
+            local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
+        quarters = local_df["quarter"].dropna().unique()
+        return quarters
+    return [1, 2, 3, 4]
+
+@app.callback(
+    Output("regression-end-dropdown","options"),
+    Input("regression-startq-dropdown","value"),
+    Input("regression-start-dropdown","value"),
+    Input("regression-comp-dropdown","value"),
+    Input("regression-segment-dropdown","value"),
+    Input("regression-ticker-dropdown", "value"),
+    prevent_initial_call=True
+)
+def setEndYearRegress(company,metric,submetric,startYear):
+    if all([company, metric, startYear]):
+        local_df = global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
+        if submetric:
+            local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
+        years = local_df.loc[(local_df["year"]) >= startYear]["year"].dropna().unique()
+        return years
+    return np.arange(firstYear, currYear)
+
+@app.callback(
+    Output("regression-endq-dropdown","options"),
+    Output("regression-end-dropdown","value"),
+    Input("regression-startq-dropdown","value"),
+    Input("regression-start-dropdown","value"),
+    Input("regression-comp-dropdown","value"),
+    Input("regression-segment-dropdown","value"),
+    Input("regression-ticker-dropdown", "value"),
+    prevent_initial_call=True
+)
+def setEndQuarterRegress(company,metric,submetric,startYear,startQuarter,endYear):
+    if all([company, metric, startYear, startQuarter, endYear]):
+        local_df = global_df
+        local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
+        if submetric:
+            local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
+        quarters = local_df.loc[local_df["year"] == endYear]["quarter"].dropna().unique()
+        if startYear == endYear:
+            quarters = [q for q in quarters if q >= startQuarter]
+        return quarters
+    return [1, 2, 3, 4]
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
