@@ -1,6 +1,7 @@
 from logging import Filterer
 from threading import local
 from dash import Dash, html, dcc, Input, Output, State, callback_context, dash_table
+from matplotlib.axis import Ticker
 import plotly.express as px
 import pandas as pd
 import numpy as np
@@ -18,28 +19,27 @@ import matplotlib as plt
 #from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 import re
+from parameters import *
 
 pd.options.mode.chained_assignment = None
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 # Pull JSON files
 #global_df = pd.read_json("data/data.json")
-global_df = pd.read_csv("data/data.csv")
+global_df = pd.read_csv(DATA_FILE)
 umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
 
-# Read revenue.csv, sets to empty df if csv is empty
+# Read REVENUE_FILE, sets to empty df if csv is empty
 try:
-    revenue_df = pd.read_csv("data/revenue.csv")
+    revenue_df = pd.read_csv(REVENUE_FILE)
 except:
     revenue_df = pd.DataFrame()
 
 # Global dictionaries and variables
 metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev"}
 var_to_metric = {v:k for k, v in metric_to_var.items()}
-tsmc_subs = global_df.loc[global_df["company"] == "TSMC"]["sub-metric"].unique().tolist()
-company_df = {"SMIC": smic, "UMC": umc, "Global Foundries": gf}
 company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC":"tsmc"}
 firstYear = 2000
 currYear = datetime.now().year
@@ -48,7 +48,7 @@ currYear = datetime.now().year
 predictor_options = revenue_df["company"].unique() if not revenue_df.empty else []
 
 # Read ticker options
-with open("pull-tickers.txt", "rb") as f:
+with open(TICKER_FILE, "rb") as f:
     ticker_options = pickle.load(f)
 
 controls = dbc.Card(
@@ -845,7 +845,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
 def export_graph(n_clicks,dataframe):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-data' in changed_id:
-        return dcc.send_data_frame(pd.DataFrame(dataframe).to_csv, "data_analysis.csv")
+        return dcc.send_data_frame(pd.DataFrame(dataframe).to_csv, EXPORT_FILE)
     return None
 
 # Scrape PDF callback
@@ -1082,7 +1082,7 @@ def change_tickers(new_tickers, btnAdd, btnRemove, tickers):
             t = t.upper()
             t = re.sub(r'[^A-Z]', '', t.upper())
             tickers.append(t) if t not in ticker_set else 'Ignore'
-        with open("pull-tickers.txt", "wb") as f:
+        with open(TICKER_FILE, "wb") as f:
             pickle.dump(tickers, f)
     elif 'btn-remove-ticker' in changed_id:
         for t in new_tickers:
@@ -1090,7 +1090,7 @@ def change_tickers(new_tickers, btnAdd, btnRemove, tickers):
             t = re.sub(r'[^A-Z]', '', t.upper())
             if t in ticker_set:
                 tickers.remove(t)
-        with open("pull-tickers.txt", "wb") as f:
+        with open(TICKER_FILE, "wb") as f:
             pickle.dump(tickers, f)
     return tickers
 
@@ -1123,7 +1123,7 @@ def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate, regressionOptions
             revenue_df = pd.concat([revenue_df, new_df], axis=0)
             revenue_df = revenue_df.drop_duplicates()
             print(revenue_df)
-            revenue_df.to_csv("data/revenue.csv", index=False)
+            revenue_df.to_csv(REVENUE_FILE, index=False)
             return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], revenue_df["company"].unique()
         tickerSet = set(tickerVal)
         new_df = revenue_df.loc[revenue_df["company"] in tickerSet]

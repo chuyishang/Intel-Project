@@ -12,13 +12,14 @@ import sklearn
 import os
 import sys
 import converter
+from parameters import DATA_FILE
 import stocks
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 import csv
-
+from parameters import *
 
 """
 Preprocessing for linear regression
@@ -31,7 +32,7 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
     data_folder_path = os.path.join(intel_dir, 'data')
     #change filepath to data folder to get data.csv
     os.chdir(data_folder_path)
-    data_df = pd.read_csv('data.csv')
+    data_df = pd.read_csv(DATA_FILE)
     #change filepath back to main folder
     os.chdir("..")
 
@@ -138,7 +139,7 @@ def regression(y_company, x_customers, company, customers, startYear, startQuart
     x_combined_df = pd.DataFrame(x_customers, columns = customers)
     coeff_fig = px.bar(
         x = x_combined_df.columns, y = model_linear.coef_, color = colors,
-        color_discrete_sequence=['green', 'red'],
+        color_discrete_map={'Positive':'green', 'Negative':'red'},
         labels = dict(x = 'Feature', y = 'Linear Coefficient', color = "Sign"),
         title = f'Visualizing coefficients for multiple linear regression (MLR) for {company}'
     )

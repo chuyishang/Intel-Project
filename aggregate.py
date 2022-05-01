@@ -1,8 +1,10 @@
+from parameters import DATA_FILE
 import scraper
 from csv import reader
 import json
 import pandas as pd
 import argparse
+from parameters import *
 
 """
 ***********************************************
@@ -36,10 +38,10 @@ def main():
 
     args = parser.parse_args()
     url_files = {
-        'tsmc':'urls/tsmc_urls.csv',
-        'smic':'urls/smic_urls.csv',
-        'umc':'urls/umc_urls.csv',
-        'gf':'urls/gf_urls.csv',
+        'tsmc':TSMC_URLS,
+        'smic':SMIC_URLS,
+        'umc':UMC_URLS,
+        'gf':GF_URLS,
     }
 
     if args.all:
@@ -47,7 +49,7 @@ def main():
         for comp, url_file in url_files.items():
             comp_data = aggregate_company(scraper.pull, url_file, comp)
             all_df = all_df.append(comp_data)
-            all_df.to_csv('data.csv', index=False)
+            all_df.to_csv(DATA_FILE, index=False)
         quit()
     
     company = args.comp
