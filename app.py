@@ -10,7 +10,6 @@ import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
 from datetime import datetime
 import scraper, stocks, json, pickle, regressions
-import random
 import sklearn
 from sklearn.linear_model import LinearRegression
 import matplotlib as plt
