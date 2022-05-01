@@ -20,7 +20,7 @@ call_count = 0
 start_time = time.time()
 '''
 Returns DataFrame with past 5 years of quarterly revenue for TICKER. If data does not exist, return empty DataFrame.
-DataFrame columns: ['reportedCurrency', 'totalRevenue', 'year', 'quarter']
+DataFrame columns: ['year', 'quarter', 'reportedCurrency', 'revenue', 'company']
 '''
 def get_revenue(ticker):
     #Sleeps program after every 5 calls due to call limit

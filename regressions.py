@@ -37,7 +37,7 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
 
     #get company data on metric from data_df
     company_df = data_df[data_df["company"] == company]
-    company_df = company_df[company_df["metric"] == metric]
+    company_df = company_df[company_df["sub-metric"] == metric]
     #drop rows based on start_year and end_year
     company_df = company_df[company_df["year"] <= end_year]
     company_df = company_df[company_df["year"] >= start_year]
@@ -67,16 +67,16 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
         
     else:
         customers_df = stocks.get_revenue(customers[0])
-        customers_df.rename(columns={'totalRevenue': 'placeholder'}, inplace=True)
+        customers_df.rename(columns={'revenue': 'placeholder'}, inplace=True)
         #customers_df.rename(columns={customers[0].lower() + '_revenue': 'placeholder'}, inplace=True)
         customers_df = customers_df.drop(columns=['reportedCurrency'])
         for indiv_customer in customers:
             indiv_customer_df = stocks.get_revenue(indiv_customer)
-            indiv_customer_df = indiv_customer_df[['totalRevenue']]
+            indiv_customer_df = indiv_customer_df[['revenue']]
             #indiv_customer_df = indiv_customer_df[[indiv_customer.lower() + '_revenue']]
-            indiv_customer_df.rename(columns={'totalRevenue': indiv_customer.lower() + '_revenue'}, inplace=True)
+            indiv_customer_df.rename(columns={'revenue': indiv_customer.lower() + '_revenue'}, inplace=True)
             customers_df = pd.concat([customers_df, indiv_customer_df], axis=1)
-        customers_df = customers_df.drop(columns=['placeholder'])
+        customers_df = customers_df.drop(columns=['placeholder', 'company'])
 
     """
     Merge company and customers df, check for 0s
@@ -112,13 +112,11 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
     results_array = [y_company, x_customers]
     return results_array
 
-x = preprocess(2015, 3, 2020, 1, 'rev', 'TSMC', ['AAPL', 'AMD', 'QCOM'])
-
 
 """
 Multiple Linear Regression Function, can input specific customers or 'ALL'
 """
-def regression(y_company, x_customers):
+def regression(y_company, x_customers, company, customers, startYear, startQuarter, endYear, endQuarter):
     """
     Multiple linear regression model
     """
@@ -128,24 +126,26 @@ def regression(y_company, x_customers):
     predicted = reg.predict(x_customers)
     coefficients = model_linear.coef_
 
-    return r_sq, predicted, coefficients
+    #Predicted vs. actual line graph
+    quarter_strings = [f"{(startQuarter + i - 1) % 4 + 1}Q{(startYear + i // 4) % 100}" for i in range(len(x_customers))]
+    predicted_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":reg.predict(x_customers), "Type":"Predicted"})
+    actual_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":y_company, "Type":"Actual"})
+    prediction_df = pd.concat([predicted_df, actual_df], axis=0)
+    prediction_fig = px.line(prediction_df, "Quarter", "Percent Change", color="Type", title = f"Quarterly Change in Revenue for {company}")
 
-    """
-    plt.plot(list(range(len(x_combined))), reg.predict(x_combined), label = 'Predicted Company Rev')
-    plt.plot(list(range(len(x_combined))), y_company, label = 'Actual Company Rev')
-    plt.legend()
-    plt.show()
-
+    #Linear coefficient bar graph
     colors = ['Positive' if c > 0 else 'Negative' for c in model_linear.coef_]
-
-    fig = px.bar(
+    x_combined_df = pd.DataFrame(x_customers, columns = customers)
+    coeff_fig = px.bar(
         x = x_combined_df.columns, y = model_linear.coef_, color = colors,
-        color_discrete_sequence=['red', 'blue'],
-        labels = dict(x = 'Feature', y = 'Linear coefficient'),
-        title = 'Weight of each customer for predicting company revenue'
+        color_discrete_sequence=['green', 'red'],
+        labels = dict(x = 'Feature', y = 'Linear Coefficient', color = "Sign"),
+        title = f'Visualizing coefficients for multiple linear regression (MLR) for {company}'
     )
-    fig.show()
-    """
 
-y = regression(x[0], x[1])
-print(y)
+    return r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig
+
+    
+#x = preprocess(2015, 3, 2020, 1, 'NORAM', 'TSMC', ['AAPL', 'QCOM'])
+#y = regression(x[0], x[1], 'TSMC', ['AAPL', 'QCOM'])
+#print(y)
