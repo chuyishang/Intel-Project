@@ -355,41 +355,53 @@ def get_rev_smic(year, quarter, url):
     print(year, quarter, url)
   return revenue_num
 
-def parse_smic(url, year_quarter):
+def parse_smic(url):
   """
   Pulls all SMIC information from a URL. Missing pieces will have None value.
   """
-  dfs = read_pdf(url, pages=[5, 6, 7, 8, 9])
-  df = [df for df in dfs if 'Revenue Analysis' in df.columns][0]
-  
   rq = requests.get(url)
   pdf = pdfplumber.open(BytesIO(rq.content))
-  inv_df = extract_smic_inv(pdf)
-  capex_df = extract_smic_capex(pdf, year_quarter)
+  try:
+    inv_df = extract_smic_inv(pdf)
+  except:
+    print("inv broken")
+    pass
+  #capex_df = extract_smic_capex(pdf, year_quarter)
+
+  smic_text = ""
+  for i in range(6):
+      #try-catch here
+      smic_text += pdf.pages[i].extract_text()
+
+  try:
+    geo_df = clean_smic_geo(smic_text)
+  except:
+    print("geo broken")
+    pass
+  try:
+    segment_df = clean_smic_seg(smic_text)
+  except:
+    print("segment broken")
+    pass
+  try:
+    tech_df = clean_smic_tech_robust(smic_text)
+  except:
+    print("tech broken")
+    pass
   
-  indices = df[df.iloc[:, 0].str.contains(r"By Geography|By Service Type|By Application|By Technology")].index.tolist()
-  geo_df = promote_row(df.iloc[indices[0]:indices[1], :])
-  service_df = promote_row(df.iloc[indices[1]:indices[2]-1, :])
-  segment_df = promote_row(df.iloc[indices[2]:indices[3], :])
-  tech_df = promote_row(df.iloc[indices[3]:, :])
+  print("DEBUG: successful")
   
+  return None
+
+  '''
   return {
     'inv': inv_df,
     'capex' : capex_df,
     'geo':geo_df,
-    'service' : service_df, 
     'segment' : segment_df,
     'tech' : tech_df
     }
-
-def promote_row(df):
-  """
-  Helper function.
-  """
-  df.columns = df.iloc[0]
-  df = df[1:].reset_index(drop=True)
-  df.index.name = None
-  return df
+  '''
 
 def extract_smic_inv(pdf):
   """
@@ -443,6 +455,80 @@ def extract_smic_capex(pdf, year_quarter):
       capex = re.findall('\$([\d\.,]+) million', target_text) or re.findall('\$([\d\.,]+)M', target_text)
   return pd.DataFrame({'quarter':quarters, "capex":capex})
 
+def clean_smic_tech_robust(smic_text):
+    digits = "\s+(\dQ\d+)\s+(\dQ\d+)\s+(\dQ\d+)"
+    oldHeader = "Total\s+(?:\\n)?Wafer\s+(?:\\n)?Revenues"
+    try:
+        techCols = np.asarray(re.findall(f"(By Technology|{oldHeader}){digits}", smic_text)[0])
+    except: 
+        techCols = np.array("Tech")
+        techCols = np.append(techCols, np.asarray(re.findall(f"{digits}", smic_text)[0]))
+    techArray = []
+    digit_re = "\d+(?:\.\d+)(?:\s+)?(?:n|µ|m)m"
+    slash = "\d+(?:\.\d+)?\/\d+(?:\.\d+)?\s+(?:n|µ|m)m"
+    above = "\d+(?:\.\d+)?(?:u|n|m)m\s+and\s+above"
+    numbers = "\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)"
+    techRegex = f"({digit_re}|{slash}|{above}){numbers}"
+    for i in re.finditer(techRegex, smic_text):
+        techArray.append(list(i.groups()))
+    techDF = pd.DataFrame(techArray, columns=techCols)
+    firstColName = techDF.columns[0]
+    print("firstColName")
+    techDF = techDF.drop_duplicates(subset=firstColName, keep="first")
+    return techDF
+    
+def clean_smic_geo(smic_text):
+    smicRegions = []
+    digits = "\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)"
+    regionCols = np.asarray(re.findall(r"(Net Revenue by Geography|By Geography)\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)", smic_text)[0])
+    try:
+        NorthAm = np.asarray(re.findall(f"(North America){digits}", smic_text)[0])
+        smicRegions.append(NorthAm)
+    except IndexError:
+        pass
+    try:
+        China = np.asarray(re.findall(f"(China){digits}", smic_text)[0])
+        smicRegions.append(China)
+    except IndexError:
+        pass
+    try:
+        EMEA = np.asarray(re.findall(f"(EMEA){digits}", smic_text)[0])
+        smicRegions.append(EMEA)
+    except IndexError:
+        pass
+    try:
+        europe = np.asarray(re.findall(f"(Europe){digits}", smic_text)[0])
+        smicRegions.append(europe)
+    except IndexError:
+        pass
+    try: 
+        APAC = np.asarray(re.findall(f"(Asia Pacific|Asia Pacific \(ex\. Japan\)){digits}", smic_text)[0])
+        smicRegions.append(APAC)
+    except IndexError:
+        pass
+    try:
+        Japan = np.asarray(re.findall(f"(Japan){digits}", smic_text)[0])
+        smicRegions.append(Japan)
+    except IndexError:
+        pass  
+    try:
+        Eurasia = np.asarray(re.findall(f"(Eurasia){digits}", smic_text)[0])
+        smicRegions.append(Eurasia)
+    except IndexError:
+        pass  
+    geoDF = pd.DataFrame(smicRegions, columns=regionCols)
+    return geoDF
+
+def clean_smic_seg(smic_text):
+    digits = "\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)"
+    quarters = "\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)"
+    segCols = np.asarray(re.findall(f"(By Service Type){quarters}", smic_text)[0])
+    fabless = np.asarray(re.findall(f"(Fabless).*?{digits}", smic_text)[0])
+    idm = np.asarray(re.findall(f"(Integrated device manufacturers).*?{digits}", smic_text)[0])
+    systemComp = np.asarray(re.findall(f"(System companies and others){digits}", smic_text)[0])
+    tsmcPlat = np.array([fabless, idm, systemComp])
+    platDF = pd.DataFrame(tsmcPlat, columns=segCols)
+    return platDF
 
 """
 ***********************************
