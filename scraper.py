@@ -557,6 +557,29 @@ def clean_umc_geo(umc_text):
   geoDF = pd.DataFrame(umcRegions, columns=regionCols)
   return geoDF
 
+def clean_umc_inv(umc_text):
+  """
+  Cleans UMC's inventory dataframe.
+  """
+  invCols = np.array(["Inventory"])
+  quarters = "\s+(\dQ\d{2})\s+(\dQ\d{2})\s+(\dQ\d{2})"
+  digits = "\s+(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)\s+(\d+(?:\.\d+)?)"
+  invCols = np.append(invCols,np.asarray(re.findall(f"(?:\(?Amount: NT\$ billion\)?){quarters}", umc_text)[0]))
+  inv = list(re.findall(f"(Inventories, net){digits}", umc_text)[0])
+  umcCapex = np.array([inv])
+  capexDF = pd.DataFrame(umcCapex, columns=invCols)
+  return capexDF
+
+def clean_umc_capex(umc_text):
+  """
+  Cleans UMC's capex dataframe.
+  """
+  digits = "\s+(\(?\d+(?:,\d+)?\)?)\s+(\(?\d+(?:,\d+)?\)?)"
+  invCols = ["Capex", "For 3-Month Period Ending Current Quarter", "For 3-Month Period Ending Last Year"]
+  inv = list(re.findall(f"(Acquisition of PP&E){digits}", umc_text)[0])
+  umcCapex = np.array([inv])
+  capexDF = pd.DataFrame(umcCapex, columns=invCols)
+  return capexDF
 
 """
 ****************

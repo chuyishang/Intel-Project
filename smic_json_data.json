@@ -1,0 +1,188 @@
+[
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev",
+        "value": 351.7
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "inv",
+        "value": "194"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "capex",
+        "value": "64"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "58.9"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_seg",
+        "sub-metric": "Fabless",
+        "value": "66.4"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_seg",
+        "sub-metric": "Integrated device manufacturers",
+        "value": "17.0"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_seg",
+        "sub-metric": "System companies and others",
+        "value": "16.6"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_tech",
+        "sub-metric": "0.13µm",
+        "value": "35.5"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_tech",
+        "sub-metric": "0.15µm",
+        "value": "1.5"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_tech",
+        "sub-metric": "0.18µm",
+        "value": "24.2"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_tech",
+        "sub-metric": "0.25µm",
+        "value": "0.3"
+    },
+    {
+        "company": "SMIC",
+        "year": 2010,
+        "quarter": 1,
+        "metric": "rev_tech",
+        "sub-metric": "0.35µm",
+        "value": "18.2"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev",
+        "value": 546.6
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "inv",
+        "value": "365"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "capex",
+        "value": "367.6"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_geo",
+        "sub-metric": "NORAM",
+        "value": "32.0"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_seg",
+        "sub-metric": "Fabless",
+        "value": "72.7"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_seg",
+        "sub-metric": "Integrated device manufacturers",
+        "value": "2.7"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_seg",
+        "sub-metric": "System companies and others",
+        "value": "24.6"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_tech",
+        "sub-metric": "40/45 nm",
+        "value": "15.3"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_tech",
+        "sub-metric": "55/65 nm",
+        "value": "25.2"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_tech",
+        "sub-metric": "0.13 µm",
+        "value": "10.9"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_tech",
+        "sub-metric": "0.15/0.18 µm",
+        "value": "39.9"
+    },
+    {
+        "company": "SMIC",
+        "year": 2015,
+        "quarter": 2,
+        "metric": "rev_tech",
+        "sub-metric": "0.25/0.35 µm",
+        "value": "3.9"
+    }
+]

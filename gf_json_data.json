@@ -1,0 +1,30 @@
+[
+    {
+        "company": "Global Foundries",
+        "year": 2021,
+        "quarter": 3,
+        "metric": "capex",
+        "value": "(649)"
+    },
+    {
+        "company": "Global Foundries",
+        "year": 2021,
+        "quarter": 3,
+        "metric": "inv",
+        "value": "1121"
+    },
+    {
+        "company": "Global Foundries",
+        "year": 2021,
+        "quarter": 4,
+        "metric": "capex",
+        "value": "($392)"
+    },
+    {
+        "company": "Global Foundries",
+        "year": 2021,
+        "quarter": 4,
+        "metric": "inv",
+        "value": "1078"
+    }
+]
