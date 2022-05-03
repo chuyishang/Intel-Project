@@ -18,8 +18,12 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
+from statsmodels.tools import add_constant
 import csv
 from parameters import *
+
+#Reading revenue.csv
+revenue_df = pd.read_csv(REVENUE_FILE)
 
 """
 Preprocessing for linear regression
@@ -28,14 +32,7 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
     """
     Preprocessing for company revenue data from data.csv
     """
-    intel_dir = os.getcwd()
-    data_folder_path = os.path.join(intel_dir, 'data')
-    #change filepath to data folder to get data.csv
-    os.chdir(data_folder_path)
     data_df = pd.read_csv(DATA_FILE)
-    #change filepath back to main folder
-    os.chdir("..")
-
     #get company data on metric from data_df
     company_df = data_df[data_df["company"] == company]
     company_df = company_df[company_df["sub-metric"] == metric]
@@ -64,38 +61,50 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
     Preprocessing for customers revenue data from stocks.py
     """
     if customers == 'ALL':
-        customers_df = stocks.get_revenue_list(stocks.top_customers[company])
-        
+        top_customers = set(stocks.top_customers[company])
+        customers_df = revenue_df[revenue_df["company"] in top_customers]     
     else:
-        customers_df = stocks.get_revenue(customers[0])
-        customers_df.rename(columns={'revenue': 'placeholder'}, inplace=True)
-        #customers_df.rename(columns={customers[0].lower() + '_revenue': 'placeholder'}, inplace=True)
-        customers_df = customers_df.drop(columns=['reportedCurrency'])
-        for indiv_customer in customers:
-            indiv_customer_df = stocks.get_revenue(indiv_customer)
-            indiv_customer_df = indiv_customer_df[['revenue']]
-            #indiv_customer_df = indiv_customer_df[[indiv_customer.lower() + '_revenue']]
-            indiv_customer_df.rename(columns={'revenue': indiv_customer.lower() + '_revenue'}, inplace=True)
-            customers_df = pd.concat([customers_df, indiv_customer_df], axis=1)
-        customers_df = customers_df.drop(columns=['placeholder', 'company'])
+        customers_df = pd.DataFrame(columns=["year", "quarter"])
+        for c in customers:
+            new_df = revenue_df[revenue_df["company"] == c][["year","quarter","revenue"]]
+            new_df.rename(columns={'revenue': f'{c.lower()}_revenue'}, inplace=True)
+            customers_df = customers_df.merge(new_df, on=["year", "quarter"], how='outer')
+    
+    print("Customers Dataframe", customers_df)
+
+    """
+    customers_df = stocks.get_revenue(customers[0])
+    customers_df.rename(columns={'revenue': 'placeholder'}, inplace=True)
+    #customers_df.rename(columns={customers[0].lower() + '_revenue': 'placeholder'}, inplace=True)
+    customers_df = customers_df.drop(columns=['reportedCurrency'])
+    for indiv_customer in customers:
+        indiv_customer_df = stocks.get_revenue(indiv_customer)
+        indiv_customer_df = indiv_customer_df[['revenue']]
+        #indiv_customer_df = indiv_customer_df[[indiv_customer.lower() + '_revenue']]
+        indiv_customer_df.rename(columns={'revenue': indiv_customer.lower() + '_revenue'}, inplace=True)
+        customers_df = pd.concat([customers_df, indiv_customer_df], axis=1)
+    customers_df = customers_df.drop(columns=['placeholder', 'company'])
+    """
 
     """
     Merge company and customers df, check for 0s
     """
     merged_df = pd.merge(company_df, customers_df, how='inner', left_on=['year', 'quarter'], right_on =['year', 'quarter'])
     #check if there are zeros in any customer rev, if so, throw error
-    merged_df_columns = list(merged_df.columns.values.tolist())
-    customer_names_list = merged_df_columns[3:]
+    #merged_df_columns = list(merged_df.columns.values.tolist())
+    customer_names_list = merged_df.columns[3:]
     for indiv_customer in customer_names_list:
         customer_values = merged_df[indiv_customer].tolist()
         if 0 in customer_values:
             print("Error: revenue value of 0 for customer " + indiv_customer)
             quit()
 
+
     """
     Extract pctRevChange for company into numpy array
     """
     merged_df["pctRevChange"] = pd.to_numeric(merged_df.value).pct_change()
+    print("Merged DF", merged_df)
     y_company = merged_df.pctRevChange[1:].to_numpy()
     
     """
@@ -107,9 +116,8 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
         merged_df["customer_pctRevChange"] = pd.to_numeric(merged_df[indiv_customer]).pct_change()
         x_indiv_customer = merged_df.customer_pctRevChange[1:].to_numpy().reshape(-1,1)
         x_customers = np.hstack((x_customers, x_indiv_customer))
-        merged_df.drop(columns=['customer_pctRevChange'])
+        merged_df.drop(columns=['customer_pctRevChange'], inplace=True)
     x_customers = np.delete(x_customers, 0, axis=1)
-
     results_array = [y_company, x_customers]
     return results_array
 
@@ -121,12 +129,16 @@ def regression(y_company, x_customers, company, customers, startYear, startQuart
     """
     Multiple linear regression model
     """
+    print(f"Y Company: {y_company}, X Customer: {x_customers}")
     model_linear = LinearRegression()
+    #x_customers = add_constant(x_customers)
+    #customers.append("Intercept")
     reg = model_linear.fit(x_customers, y_company)
     r_sq = model_linear.score(x_customers, y_company)
     predicted = reg.predict(x_customers)
     coefficients = model_linear.coef_
 
+    print(f"R: {r_sq}\nPredicted: {predicted}\nCoefficient:{coefficients}")
     #Predicted vs. actual line graph
     quarter_strings = [f"{(startQuarter + i - 1) % 4 + 1}Q{(startYear + i // 4) % 100}" for i in range(len(x_customers))]
     predicted_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":reg.predict(x_customers), "Type":"Predicted"})
