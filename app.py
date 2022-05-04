@@ -22,6 +22,20 @@ from parameters import *
 
 pd.options.mode.chained_assignment = None
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+FONT_AWESOME = "https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+
+roundbutton = {
+    "backgroundColor": "#15B8FC",
+    "border": "2px solid #15B8FC",
+    "border-radius": "50%",
+    "padding": 0,
+    "color": "white",
+    "textAlign": "center",
+    "display": "inline",
+    "fontSize": 15,
+    "height": 30,
+    "width": 30,
+}
 
 # Pull JSON files
 #global_df = pd.read_json("data/data.json")
@@ -397,12 +411,186 @@ regression = dbc.Card(
     body=True
 )
 
+modal_viz = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    """
+                    This tab visualizes data from the global dataset of historical revenue,
+                    inventory, and capex data for the following Intel Competitors: TSMC, SMIC, 
+                    UMC, GlobalFoundries. The data can be visualized by several metrics individually 
+                    and combo charts can be created for submetric comparisons. Additionally, for individually
+                    displayed data, forecasting using machine learning models can be enabled to estimate
+                    future growth of the selected metric/submetric."""),
+                    html.H4("Instructions"),
+                    html.P(["1) Select an Intel competitor: TSMC, SMIC, UMC, or GFS.", html.Br(),
+                    "2) Select a metric's data to visualize: Revenue, Inventory, CapEx, Revenue by Geography, Revenue by Segment, Revenue by Technology", html.Br(),
+                    "3) If Rev by Geo, Segment, or Tech is selected, user has option to select how to visualize this data. See Additional Info for differences between visualization styles", html.Br(),
+                    "4) (Optional) If an individual visualization style is chosen, user can select which submetric to visualize", html.Br(),
+                    "5) Select time range to visualize data for using yera and quarter drop downs (These will be limited for the years and quarters that data currently exists for, for chosen options)", html.Br(),
+                    "6) (Optional) If a single metric of submetric is visualized, user can turn on forecasting switch to forecast data for # of years indicated in the 'Years to Forecast' dropdown", html.Br(),
+                    "7) (Optional) Download data that is displayed by clicking 'Download Data' button, and download chart visualization by clicking camera icon on top right of visualization"]),
+                    html.H4("Output"),
+                    html.P([
+                    "Chart visualization for time range and metrics chosen for selected company", html.Br(),
+                    "Data table with filtered data used to display visualization", html.Br()
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P([
+                    "• [Visualization Style] Comparison visualization style will display stacked barchart when comparing by %, and a multi line chart when visualizing by absolute revenue.", html.Br(),
+                    "• [Visualization Style] Individual visualization style will display line chart for both percent and by revenue, but forecasting can only be enabled when displaying by revenue.", html.Br(),
+                    "• Data visualization are limited by data that exists in global dataset, so it is possible that certain quarters may be skipped in the visualization.", html.Br(),
+                    "• CAGR over the period chosen is displayed in title of the chart", html.Br(),
+                    "• Hovering over each point on the data visualization will display the Quarter over Quarter growth %, but this is growth from last quarter that exists in the dataset and is displayed ", html.Br(),
+                    ]),
+                     ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-viz",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-viz",
+            scrollable=True,
+            is_open=False,
+        )
+
+modal_scraping = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    """
+                    This tab scrapes quarterly PDF reports from companies and adds the data
+                    to the global data set. Additionally, this tab provides a manual option to input data."""),
+                    html.H4("Instructions"),
+                    html.P(["1) Enter URl to PDF for Intel Competitor that needs to be scraped.", html.Br(),
+                    "2) Select from TSMC, SMIC, UMC, GFS to indetify the company that the Quarterly Report is for.", html.Br(),
+                    "3) Select year and quarter of the inputted quarterly report.", html.Br(),
+                    "4) Click Scrape PDF, and see the scraped data on the right side of the tab.", html.Br(),
+                    "5) Click Approve if the data looks like it scraped properly, Reject if the data looks wrong, and Undo if Approve was accidentally clicked.", html.Br(),
+                    "1) [Manual Data Input] Select Company, Year, and Quarter, to see tables of metrics and submetrics to fill out.", html.Br(),
+                    "2) [Manual Data Input] Change any data labels if labels have changed from previous quarter, and after adding all data click Approve to add to data set.", html.Br(),
+                    "3) [Manual Data Input] Click Undo if data is accidentally added"]),
+                    html.H4("Output"),
+                    html.P([
+                    "Data table of data that will be inputted into global data set that can be visualized in data visualization tab."
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P([
+                    "• URL must be valid quarterly report for selected company or parsing will fail.", html.Br(),
+                    "• If quarterly report format changes drasticaly, parsing support might end for selected companies future reports.", html.Br(),
+                    "• All fields in manual data input must be filled to add to data set, user can delete rows for fields that no longer exist."
+                    ]),
+                     ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-scraping",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-scraping",
+            scrollable=True,
+            is_open=False,
+        )
+
+modal_pulling = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    "Extracts the past 5 years of revenue data for companies listed on US stock exchanges using the Alpha Vantage API. Saves pulled data to revenue.csv in the project directory."),
+                    html.H4("Instructions"),
+                    html.P(["1) (Optional) Add or remove a list of comma-separated tickers. Adding tickers does not automatically pull them.", html.Br(),
+                    "2) (Optional) Select 1+ company tickers to pull revenue for.", html.Br(),
+                    "3) Click 'Update Select Tickers' to pull revenue for companies in the 'Company Tickers' field. Click 'Update All Tickers' to update all ticker options in 'Company Tickers'", html.Br()]),
+                    html.H4("Output"),
+                    html.P([
+                    "Data table with 1 quarter of revenue data per company per row."
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P([
+                    "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
+                    "• Once a ticker option is added, it will be available the next time the dashboard is opened.", html.Br(),
+                    "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
+                    "• All tickers must be pulled once per quarter to update the revenue dataset."
+                    ]),
+                    ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-pulling",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-pulling",
+            scrollable=True,
+            is_open=False,
+        )
+
+modal_regression = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    """
+                    Applies multiple linear regression to estimate the relationship 
+                    between 1 Intel competitor's revenue segment and 1+ predictor companies' revenue."""),
+                    html.H4("Instructions"),
+                    html.P(["1) Select an Intel competitor: TSMC, SMIC, UMC, or GFS.", html.Br(),
+                    "2) Select 1 competitor revenue segment to regress on.", html.Br(),
+                    "3) Select 1+ predictor companies to regress on.", html.Br(),
+                    "4) Select the years and quarters in order: Starting Year, Starting Quarter, Ending Year, Ending Quarter."]),
+                    html.H4("Output"),
+                    html.P([
+                    "The regression model outputs 2 graphs:", html.Br(),
+                    "• The line graph compares the model's predicted values of the competitor's percent change in segment revenue quarter on quarter versus the actual percent change.", html.Br(),
+                    "• The bar graph visualizes the linear coefficient for each predictor company, and shows the strength and direction of the relationship between the competitor and predictor."
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P(["• All dropdowns are configured to only display options with available data.", html.Br(),
+                     "• The available predictor companies are those whose revenue have been pulled on the 'Pulling' tab. To add predictor company options, add a custom ticker on the 'Pulling' tab and pull its revenue."
+                    ]),
+                    ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-regression",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-regression",
+            scrollable=True,
+            is_open=False,
+        )
+
+
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label="Visualization", children=[
         dbc.Container(
             [
-                html.H1("Intel Competitor Visualizations", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_viz]),
+                html.Div([
+                html.H1("Intel Competitor Visualizations", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.Button("?", id= "open-viz", style=roundbutton)],
+                style={"margin":20}
+                ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -433,7 +621,12 @@ app.layout = html.Div([
         dcc.Tab(label="Scraping", children=[
         dbc.Container(
             [
-                html.H1("Intel Competitor Parsing", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_scraping]),
+                html.Div([
+                html.H1("Intel Competitor Parsing", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.Button("?", id= "open-scraping", style=roundbutton)],
+                style={"margin":20}
+                ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -515,7 +708,12 @@ app.layout = html.Div([
         ]),
         dcc.Tab(label="Pulling", children=[
             dbc.Container([
-                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_pulling]),
+                html.Div([
+                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.Button("?", id= "open-pulling", style=roundbutton)],
+                style={"margin":20}
+                ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -544,7 +742,13 @@ app.layout = html.Div([
 
         dcc.Tab(label="Regression", children=[
             dbc.Container([
-                html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_regression]),
+                html.Div([
+                    html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                    html.Button("?", id= "open-regression", style=roundbutton),
+                    ],
+                    style={"margin":20}
+                    ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -796,6 +1000,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             #graph = fig
         else:
             filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
+            filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
             "quarter-string": "Quarters",
@@ -805,6 +1010,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             title=f'{metric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
     else:
         filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
+        filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
         if viz == "Individual (Percent)":
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
@@ -1231,6 +1437,47 @@ def make_regression_graph(company, submetric, predictors, startYear, startQuarte
         r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig = regressions.regression(y_company, x_customers, company, predictors, startYear, startQuarter, endYear, endQuarter)
         return prediction_fig, coeff_fig, {"display":"inline-block"}, {"display":"inline-block"}
     return go.Figure(), go.Figure(), {"display":"none"}, {"display":"none"}
+
+@app.callback(
+    Output("modal-viz", "is_open"),
+    [Input("open-viz", "n_clicks"), Input("close-viz", "n_clicks")],
+    [State("modal-viz", "is_open")],
+)
+def toggle_modal_viz(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+@app.callback(
+    Output("modal-scraping", "is_open"),
+    [Input("open-scraping", "n_clicks"), Input("close-scraping", "n_clicks")],
+    [State("modal-scraping", "is_open")],
+)
+def toggle_modal_scraping(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+@app.callback(
+    Output("modal-pulling", "is_open"),
+    [Input("open-pulling", "n_clicks"), Input("close-pulling", "n_clicks")],
+    [State("modal-pulling", "is_open")],
+)
+def toggle_modal_pulling(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+@app.callback(
+    Output("modal-regression", "is_open"),
+    [Input("open-regression", "n_clicks"), Input("close-regression", "n_clicks")],
+    [State("modal-regression", "is_open")],
+)
+def toggle_modal_regression(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
