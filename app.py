@@ -510,6 +510,7 @@ modal_pulling = dbc.Modal([
                     "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
                     "• Once a ticker option is added, it will be available the next time the dashboard is opened.", html.Br(),
                     "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
+                    "• All tickers must be pulled once per quarter to update the revenue dataset."
                     ]),
                     ]
                 ),
