@@ -443,7 +443,6 @@ def extract_smic_capex(pdf, year_quarter):
       capex = re.findall('\$([\d\.,]+) million', target_text) or re.findall('\$([\d\.,]+)M', target_text)
   return pd.DataFrame({'quarter':quarters, "capex":capex})
 
-
 """
 ***********************************
 United Microelectronics Corporation
@@ -459,24 +458,38 @@ def pull_umc(year, quarter, url):
     umc_dfs = parse_umc(url)
     dict_geo_options_umc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
     year_quarter = '{}Q{}'.format(year, quarter)
-                
-    umc_geo = umc_dfs.get('geo')
-    for _, row in umc_geo.iterrows():
-        sub_geo = row[0]
-        sub_geo_value = row[1]
-        sub_geo_no_percent = sub_geo_value.replace("%","")
-        if sub_geo in dict_geo_options_umc:
-            sub_geo = dict_geo_options_umc.get(sub_geo)
-        aggregated_geo = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
-        data_umc.append(aggregated_geo)
+    conv = converter.Converter()
 
-    umc_tech = umc_dfs.get('tech')
-    for _, row in umc_tech.iterrows():
-        sub_tech = row[0]
-        sub_tech_value = row[1]
-        sub_tech_no_percent = sub_tech_value.replace("%","")
-        aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
-        data_umc.append(aggregated_tech)
+    try:            
+      umc_rev = get_rev_umc(year, quarter, url)
+      aggregated_rev = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': umc_rev}
+      data_umc.append(aggregated_rev)
+    except:
+      print(year, quarter, url)
+    
+    try:
+      umc_geo = umc_dfs.get('geo')
+      for _, row in umc_geo.iterrows():
+          sub_geo = row[0]
+          sub_geo_value = row[1]
+          sub_geo_no_percent = sub_geo_value.replace("%","")
+          if sub_geo in dict_geo_options_umc:
+              sub_geo = dict_geo_options_umc.get(sub_geo)
+          aggregated_geo = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
+          data_umc.append(aggregated_geo)
+    except:
+      print(year, quarter, url)
+
+    try:
+      umc_tech = umc_dfs.get('tech')
+      for _, row in umc_tech.iterrows():
+          sub_tech = row[0]
+          sub_tech_value = row[1]
+          sub_tech_no_percent = sub_tech_value.replace("%","")
+          aggregated_tech = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
+          data_umc.append(aggregated_tech)
+    except:
+      print(year, quarter, url)
 
     # umc_seg = umc_dfs.get('segment')
     # for _, row in umc_seg.iterrows():
@@ -487,6 +500,29 @@ def pull_umc(year, quarter, url):
     #     data_umc.append(aggregated_seg)
     
     # currently commented out because umc_seg scraper scrapes wrong table
+    try:
+      umc_inv = umc_dfs.get('inv')
+      umc_inv_value = umc_inv.iat[0,1]
+      umc_inv_value_commaless = umc_inv_value.replace(",","")
+      umc_inv_millions = float(umc_inv_value_commaless) * 1000
+      umc_inv_converted = conv.twd_usd(umc_inv_millions, year, quarter)
+      aggregated_inv = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': umc_inv_converted}
+      data_umc.append(aggregated_inv)
+    except:
+      print(year, quarter, url)
+
+    try:
+      umc_capex = umc_dfs.get('capex')
+      umc_capex_value = umc_capex.iat[0,1]
+      umc_capex_value_commaless = umc_capex_value.replace(",","")
+      umc_capex_value_clean1 = umc_capex_value_commaless.replace("(","")
+      umc_capex_value_clean2 = umc_capex_value_clean1.replace(")","")
+      umc_capex_value_float = float(umc_capex_value_clean2)
+      umc_capex_converted = conv.twd_usd(umc_capex_value_float, year, quarter)
+      aggregated_capex = {'company': 'UMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': umc_capex_converted}
+      data_umc.append(aggregated_capex)
+    except:
+      print(year, quarter, url)
 
   except Exception as err:
     print(year, quarter, url)
@@ -494,25 +530,70 @@ def pull_umc(year, quarter, url):
 
   return data_umc
 
+def get_rev_umc(year, quarter, url):
+  revenue_num = 0
+  try:
+    rq = requests.get(url, verify=False)
+    pdf = pdfplumber.open(BytesIO(rq.content))
+    text = ""
+    text += pdf.pages[0].extract_text()
+    revenue_regex = "US\$\d+,*\d*\.*\d*"
+    revenue = re.findall(f"{revenue_regex}", text)[0]
+    revenue_no_dollar_sign = revenue.replace("US$","")
+    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
+    revenue_num = float(revenue_no_comma)
+    if revenue_num < 10:
+      revenue_num *= 1000
+  except:
+    print(year, quarter, url)
+  return revenue_num
+
+
 def parse_umc(url):
   """
   Pulls all available UMC information from a URL. Missing pieces will have None value.
   """
-  rq = requests.get(url)
+  rq = requests.get(url, verify=False)
   pdf = pdfplumber.open(BytesIO(rq.content))
   umc_text = ""
+  umc_dict = {}
   for i in range(10):
       umc_text += pdf.pages[i].extract_text()
-  tech_df = clean_umc_tech_robust(umc_text)
-  segment_df = clean_umc_seg(umc_text)
-  geo_df = clean_umc_geo(umc_text)
-  capex_df = "INSERT CAPEX INFO HERE"
+  try:
+    tech_df = clean_umc_tech_robust(umc_text)
+    umc_dict['tech'] = tech_df
+  except:
+    print("tech_df error")
+  try:
+    segment_df = clean_umc_seg(umc_text)
+    umc_dict['segment'] = segment_df
+  except:
+    print("segment df error")
+  try:
+    geo_df = clean_umc_geo(umc_text)
+    umc_dict['geo'] = geo_df
+  except:
+    print("geo_df error")
+  try:
+    capex_df = clean_umc_capex(umc_text)
+    umc_dict['capex'] = capex_df
+  except:
+    print("capex_df error")
+  try:
+    inv_df = clean_umc_inv(umc_text)
+    umc_dict['inv'] = inv_df
+  except:
+    print("inv_df error")
+  """
   return {
     'tech': tech_df,
     'segment': segment_df,
     'geo': geo_df,
+    'inv': inv_df,
     'capex' : capex_df
     }
+  """
+  return umc_dict
 
 def clean_umc_tech_robust(umc_text):
   """
@@ -596,6 +677,10 @@ def pull_gf(year, quarter, url):
   try:
     gf_dfs = parse_gf(url)
 
+    revenue_num = get_rev_gf(year, quarter, url)
+    aggregated_rev = {'company': 'Global Foundries', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': revenue_num}
+    data_gf.append(aggregated_rev)
+    
     gf_capex = gf_dfs.get('capex')
     gf_capex_value = gf_capex.iat[0,2]
     gf_capex_value_commaless = gf_capex_value.replace(",","")
@@ -614,6 +699,21 @@ def pull_gf(year, quarter, url):
   
   return data_gf
 
+def get_rev_gf(year, quarter, url):
+  revenue_num = 0
+  try:
+    rq = requests.get(url)
+    pdf = pdfplumber.open(BytesIO(rq.content))
+    text = ""
+    text += pdf.pages[0].extract_text()
+    revenue_regex = "\$\d+,*\d*\.*\d*"
+    revenue = re.findall(f"{revenue_regex}", text)[0]
+    revenue_no_dollar_sign = revenue.replace("$","")
+    revenue_no_comma = revenue_no_dollar_sign.replace(",","")
+    revenue_num = float(revenue_no_comma) * 1000
+  except:
+    print(year, quarter, url)
+  return revenue_num
 
 def parse_gf(url):
   """
