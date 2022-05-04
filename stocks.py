@@ -26,7 +26,7 @@ def get_revenue(ticker):
     #Sleeps program after every 5 calls due to call limit
     global call_count, start_time
     if call_count >= 5:
-        time.sleep(max(65 - (time.time() - start_time), 0))
+        time.sleep(max(70 - (time.time() - start_time), 0))
         call_count = 0
         start_time = time.time()
     
