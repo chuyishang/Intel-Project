@@ -2,24 +2,14 @@
 Imports
 """
 from re import X
-import time
-import requests
 import pandas as pd
 import numpy as np
-import threading
-import matplotlib
-import sklearn
-import os
-import sys
-import converter
 from parameters import DATA_FILE
 import stocks
 from sklearn.linear_model import LinearRegression
-import matplotlib.pyplot as plt
 import plotly.express as px
 import plotly.graph_objects as go
 from statsmodels.tools import add_constant
-import csv
 from parameters import *
 
 #Reading revenue.csv
@@ -129,7 +119,6 @@ def regression(y_company, x_customers, company, customers, startYear, startQuart
     """
     Multiple linear regression model
     """
-    print(f"Y Company: {y_company}, X Customer: {x_customers}")
     model_linear = LinearRegression()
     #x_customers = add_constant(x_customers)
     #customers.append("Intercept")
@@ -137,6 +126,8 @@ def regression(y_company, x_customers, company, customers, startYear, startQuart
     r_sq = model_linear.score(x_customers, y_company)
     predicted = reg.predict(x_customers)
     coefficients = model_linear.coef_
+    print(f"Y Company: {y_company}, X Customer: {x_customers}")
+
 
     print(f"R: {r_sq}\nPredicted: {predicted}\nCoefficient:{coefficients}")
     #Predicted vs. actual line graph

@@ -22,6 +22,20 @@ from parameters import *
 
 pd.options.mode.chained_assignment = None
 app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
+FONT_AWESOME = "https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+
+roundbutton = {
+    "backgroundColor": "#15B8FC",
+    "border": "2px solid #15B8FC",
+    "border-radius": "50%",
+    "padding": 0,
+    "color": "white",
+    "textAlign": "center",
+    "display": "inline",
+    "fontSize": 15,
+    "height": 30,
+    "width": 30,
+}
 
 # Pull JSON files
 #global_df = pd.read_json("data/data.json")
@@ -397,12 +411,173 @@ regression = dbc.Card(
     body=True
 )
 
+modal_viz = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    """
+                    This tab uses multiple linear regression to estimate the relationship 
+                    between one Intel competitor's revenue segment and one
+                    or more predictor companies' revenue."""),
+                    html.H4("Instructions"),
+                    html.P(["1) Select an Intel competitor: TSMC, SMIC, UMC, or GFS.", html.Br(),
+                    "2) Select 1 competitor revenue segment to regress on.", html.Br(),
+                    "3) Select 1 or more predictor companies to regress on.", html.Br(),
+                    "4) Select the years and quarters in order: Starting Year, Starting Quarter, Ending Year, Ending Quarter."]),
+                    html.H4("Output"),
+                    html.P([
+                    "Data table with 1 quarter of revenue data per company per row."
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P([
+                    "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
+                    "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
+                    "• Most errors will result from making more than 5 calls. Wait 1 minute before clicking the 'Update' buttons again."
+                    ]),
+                     ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-viz",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-viz",
+            scrollable=True,
+            is_open=False,
+        )
+
+modal_scraping = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    """
+                    This tab uses multiple linear regression to estimate the relationship 
+                    between one Intel competitor's revenue segment and one
+                    or more predictor companies' revenue."""),
+                    html.H4("Instructions"),
+                    html.P(["1) Select an Intel competitor: TSMC, SMIC, UMC, or GFS.", html.Br(),
+                    "2) Select 1 competitor revenue segment to regress on.", html.Br(),
+                    "3) Select 1 or more predictor companies to regress on.", html.Br(),
+                    "4) Select the years and quarters in order: Starting Year, Starting Quarter, Ending Year, Ending Quarter."]),
+                    html.H4("Output"),
+                    html.P([
+                    "Data table with 1 quarter of revenue data per company per row."
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P([
+                    "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
+                    "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
+                    "• Most errors will result from making more than 5 calls. Wait 1 minute before clicking the 'Update' buttons again."
+                    ]),
+                     ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-scraping",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-scraping",
+            scrollable=True,
+            is_open=False,
+        )
+
+modal_pulling = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    "Extracts the past 5 years of revenue data for companies listed on US stock exchanges using the Alpha Vantage API. Saves pulled data to revenue.csv in the project directory."),
+                    html.H4("Instructions"),
+                    html.P(["1) (Optional) Add or remove a list of comma-separated tickers. Adding tickers does not automatically pull them.", html.Br(),
+                    "2) (Optional) Select 1+ company tickers to pull revenue for.", html.Br(),
+                    "3) Click 'Update Select Tickers' to pull revenue for companies in the 'Company Tickers' field. Click 'Update All Tickers' to update all ticker options in 'Company Tickers'", html.Br()]),
+                    html.H4("Output"),
+                    html.P([
+                    "Data table with 1 quarter of revenue data per company per row."
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P([
+                    "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
+                    "• Once a ticker option is added, it will be available the next time the dashboard is opened.", html.Br(),
+                    "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
+                    ]),
+                    ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-pulling",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-pulling",
+            scrollable=True,
+            is_open=False,
+        )
+
+modal_regression = dbc.Modal([
+                dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
+                dbc.ModalBody([
+                    html.H4("Function"),
+                    html.P(
+                    """
+                    Applies multiple linear regression to estimate the relationship 
+                    between 1 Intel competitor's revenue segment and 1+ predictor companies' revenue."""),
+                    html.H4("Instructions"),
+                    html.P(["1) Select an Intel competitor: TSMC, SMIC, UMC, or GFS.", html.Br(),
+                    "2) Select 1 competitor revenue segment to regress on.", html.Br(),
+                    "3) Select 1+ predictor companies to regress on.", html.Br(),
+                    "4) Select the years and quarters in order: Starting Year, Starting Quarter, Ending Year, Ending Quarter."]),
+                    html.H4("Output"),
+                    html.P([
+                    "The regression model outputs 2 graphs:", html.Br(),
+                    "• The line graph compares the model's predicted values of the competitor's percent change in segment revenue quarter on quarter versus the actual percent change.", html.Br(),
+                    "• The bar graph visualizes the linear coefficient for each predictor company, and shows the strength and direction of the relationship between the competitor and predictor."
+                    ]),
+                    html.H4("Additional Info"),
+                    html.P(["• All dropdowns are configured to only display options with available data.", html.Br(),
+                     "• The available predictor companies are those whose revenue have been pulled on the 'Pulling' tab. To add predictor company options, add a custom ticker on the 'Pulling' tab and pull its revenue."
+                    ]),
+                    ]
+                ),
+                dbc.ModalFooter(
+                    dbc.Button(
+                        "Close",
+                        id="close-regression",
+                        className="ms-auto",
+                        n_clicks=0,
+                    )
+                ),
+            ],
+            id="modal-regression",
+            scrollable=True,
+            is_open=False,
+        )
+
+
 app.layout = html.Div([
     dcc.Tabs([
         dcc.Tab(label="Visualization", children=[
         dbc.Container(
             [
-                html.H1("Intel Competitor Visualizations", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_viz]),
+                html.Div([
+                html.H1("Intel Competitor Visualizations", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.Button("?", id= "open-viz", style=roundbutton)],
+                style={"margin":20}
+                ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -433,7 +608,12 @@ app.layout = html.Div([
         dcc.Tab(label="Scraping", children=[
         dbc.Container(
             [
-                html.H1("Intel Competitor Parsing", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_scraping]),
+                html.Div([
+                html.H1("Intel Competitor Parsing", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.Button("?", id= "open-scraping", style=roundbutton)],
+                style={"margin":20}
+                ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -515,7 +695,12 @@ app.layout = html.Div([
         ]),
         dcc.Tab(label="Pulling", children=[
             dbc.Container([
-                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_pulling]),
+                html.Div([
+                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.Button("?", id= "open-pulling", style=roundbutton)],
+                style={"margin":20}
+                ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -544,7 +729,13 @@ app.layout = html.Div([
 
         dcc.Tab(label="Regression", children=[
             dbc.Container([
-                html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline-block', 'margin': 20}),
+                html.Div([modal_regression]),
+                html.Div([
+                    html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                    html.Button("?", id= "open-regression", style=roundbutton),
+                    ],
+                    style={"margin":20}
+                    ),
                 html.Hr(),
                 dbc.Row(
                     [
@@ -1231,6 +1422,47 @@ def make_regression_graph(company, submetric, predictors, startYear, startQuarte
         r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig = regressions.regression(y_company, x_customers, company, predictors, startYear, startQuarter, endYear, endQuarter)
         return prediction_fig, coeff_fig, {"display":"inline-block"}, {"display":"inline-block"}
     return go.Figure(), go.Figure(), {"display":"none"}, {"display":"none"}
+
+@app.callback(
+    Output("modal-viz", "is_open"),
+    [Input("open-viz", "n_clicks"), Input("close-viz", "n_clicks")],
+    [State("modal-viz", "is_open")],
+)
+def toggle_modal_viz(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+@app.callback(
+    Output("modal-scraping", "is_open"),
+    [Input("open-scraping", "n_clicks"), Input("close-scraping", "n_clicks")],
+    [State("modal-scraping", "is_open")],
+)
+def toggle_modal_scraping(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+@app.callback(
+    Output("modal-pulling", "is_open"),
+    [Input("open-pulling", "n_clicks"), Input("close-pulling", "n_clicks")],
+    [State("modal-pulling", "is_open")],
+)
+def toggle_modal_pulling(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+@app.callback(
+    Output("modal-regression", "is_open"),
+    [Input("open-regression", "n_clicks"), Input("close-regression", "n_clicks")],
+    [State("modal-regression", "is_open")],
+)
+def toggle_modal_regression(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
 
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
