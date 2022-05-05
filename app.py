@@ -136,26 +136,26 @@ controls = dbc.Card(
                 )
                 
             ],
-            className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
+            className="mb-3", style={'width': '48%', 'float': 'left', 'margin': '10', 'display':'inline-block'}
         ),
-        dbc.Label("Turn on Forecast", html_for="forecasting_switch"),
-        daq.BooleanSwitch(id='forecasting-switch', on=False),
-        dbc.Label("Years to Forecast", html_for="forecasting-dropdown"),
-        dcc.Dropdown(
-            options = ["1", "2", "3", "4","5","6","7","8"],
-            id = "forecasting-dropdown",
-            value="3",
-            style={"margin-bottom": 10}
+        html.Div([
+            dbc.Label("Turn on Forecast", html_for="forecasting_switch"),
+            daq.BooleanSwitch(id='forecasting-switch', on=False),
+            dbc.Label("Years to Forecast", html_for="forecasting-dropdown"),
+            dcc.Dropdown(
+                options = ["1", "2", "3", "4","5","6","7","8"],
+                id = "forecasting-dropdown",
+                value="3",
+                style={"margin-bottom": 10})
+        ],
         ),
-        html.Div(
-            [
-                dbc.Button("Download Data", className="ms-auto", id= "btn-data"),
-                dcc.Download(id="download-data-csv"),
-                dcc.Store(id="dataframe", data=[]),
-                dcc.Store(id="json-store", data=[])
-                
-            ]
-        ),
+        html.Div([
+            dbc.Button("Download Data", className="ms-auto", id= "btn-data"),
+            dcc.Download(id="download-data-csv"),
+            dcc.Store(id="dataframe", data=[]),
+            dcc.Store(id="json-store", data=[])
+        ])
+        
     ],
     body=True,
 )
@@ -164,14 +164,14 @@ parsing = html.Div(
     [
     dbc.Card(
     [
+        html.H3("PDF Scraper"),
         html.Div(
             [
                 dbc.Label("URL"),
-                dcc.Input(
+                dbc.Input(
                     id="url-input".format("url"),
                     type="url",
                     placeholder="Enter URL to Parse".format("url"),
-                    style={"margin-left": 10}
                 ),
             ],
         ),
@@ -189,11 +189,10 @@ parsing = html.Div(
         html.Div(
             [
                 dbc.Label("Year"),
-                dcc.Input(
+                dbc.Input(
                     id="year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
-                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -213,9 +212,11 @@ parsing = html.Div(
         ),
     ],
     body=True,
+    style={"margin-bottom": 10}
     ),
     dbc.Card(
     [
+        html.H3("Manual Input"),
         html.Div(
             [
                 dbc.Label("Company"),
@@ -230,11 +231,10 @@ parsing = html.Div(
         html.Div(
             [
                 dbc.Label("Year"),
-                dcc.Input(
+                dbc.Input(
                     id="manual-year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
-                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -249,7 +249,7 @@ parsing = html.Div(
         ),
         html.Div(
             [
-                dbc.Button("Manual Input", id= "btn-manual", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
+                dbc.Button("Start Manual Input", id= "btn-manual", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
             ]
         )
     ],
@@ -262,18 +262,17 @@ puller = dbc.Card(
     [
         html.Div([
             dbc.Label("Custom Ticker"),
-            dcc.Input(
+            dbc.Input(
                     id="input-ticker",
-                    style={"margin-left": 10},
                     value=""
                 ),
         ],
         ),
 
-        html.Div([
-            dbc.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, className="ms-auto", n_clicks=0),
-            dbc.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, className="ms-auto", n_clicks=0),
-        ]
+        html.Div(
+            dbc.ButtonGroup([
+            dbc.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-bottom": 10}, outline=True, color="primary", n_clicks=0),
+            dbc.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, outline=True, color="primary", n_clicks=0),])
         ),
         html.Div([
             dbc.Label("Company Tickers"),
@@ -285,10 +284,10 @@ puller = dbc.Card(
             ]
         ),
         html.Div(
-            [
-                dbc.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10, "margin-right": 10}, className="ms-auto", n_clicks=0),
-                dbc.Button("Update All Tickers", id= "btn-update-all", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
-   
+            [dbc.ButtonGroup([
+                dbc.Button("Update Selected Tickers", id="btn-pull", style={"margin-top": 10}, outline=True, color="primary", n_clicks=0),
+                dbc.Button("Update All Tickers", id="btn-update-all", style={"margin-top": 10}, outline=True, color="primary", n_clicks=0),   
+            ]),
             ]
         ),
         html.Div(
@@ -306,10 +305,11 @@ puller = dbc.Card(
 buttons = html.Div(
     [
         html.Div(
-            [
-            dbc.Button("Approve", id= "btn-approve", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0),   
-            dbc.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0),
-            dbc.Button("Undo", id= "btn-undo", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0)
+            [dbc.ButtonGroup([
+            dbc.Button("Approve", id= "btn-approve", style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0),   
+            dbc.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0),
+            dbc.Button("Undo", id= "btn-undo",  style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0)],
+            )
             ]   
         ),
         html.Div(
@@ -405,7 +405,7 @@ regression = dbc.Card(
 
         html.Div(
             [
-                dbc.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10}, className="ms-auto", n_clicks=0),   
+                dbc.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10, "display":"inline"}, className="ms-auto", n_clicks=0),
             ]
         ),
     ],
@@ -434,8 +434,8 @@ modal_viz = dbc.Modal([
                     "7) (Optional) Download data that is displayed by clicking 'Download Data' button, and download chart visualization by clicking camera icon on top right of visualization"]),
                     html.H4("Output"),
                     html.P([
-                    "Chart visualization for time range and metrics chosen for selected company", html.Br(),
-                    "Data table with filtered data used to display visualization", html.Br()
+                    "• Chart visualization for time range and metrics chosen for selected company", html.Br(),
+                    "• Data table with filtered data used to display visualization", html.Br()
                     ]),
                     html.H4("Additional Info"),
                     html.P([
@@ -523,6 +523,7 @@ modal_pulling = dbc.Modal([
                     "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
                     "• Once a ticker option is added, it will be available the next time the dashboard is opened.", html.Br(),
                     "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
+                    "• When pulling more than 5 tickers, errors may occur due to the call limit. Wait at least 10 seconds and pull again.", html.Br(),
                     "• All tickers must be pulled once per quarter to update the revenue dataset."
                     ]),
                     ]
@@ -580,15 +581,35 @@ modal_regression = dbc.Modal([
             is_open=False,
         )
 
+navbar = dbc.Navbar(
+    dbc.Container(
+        [
+            html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src=app.get_asset_url('intellogo.png'), height="40px", width="auto")),
+                    ],
+                    align="center",
+                    className="g-0",
+                ),
+                style={"textDecoration": "none"},
+            ),
+        ],
+        fluid=True
+    ),
+    style={"margin-bottom":10}
+)
 
 app.layout = html.Div([
-    dcc.Tabs([
-        dcc.Tab(label="Visualization", children=[
+    navbar,
+    dbc.Tabs([
+        dbc.Tab(label="Visualization", children=[
         dbc.Container(
             [
                 html.Div([modal_viz]),
                 html.Div([
-                html.H1("Intel Competitor Visualizations", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.H2("Competitor Visualizations", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                 html.Button("?", id= "open-viz", style=roundbutton)],
                 style={"margin":20}
                 ),
@@ -619,12 +640,12 @@ app.layout = html.Div([
             fluid=True,
         )
         ]),
-        dcc.Tab(label="Scraping", children=[
+        dbc.Tab(label="Scraping", children=[
         dbc.Container(
             [
                 html.Div([modal_scraping]),
                 html.Div([
-                html.H1("Intel Competitor Parsing", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.H2("Competitor Parsing", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                 html.Button("?", id= "open-scraping", style=roundbutton)],
                 style={"margin":20}
                 ),
@@ -634,7 +655,7 @@ app.layout = html.Div([
                         dbc.Col(parsing, md=4, align='start'),
                         dbc.Col(
                             [
-                                dash_table.DataTable(data=[], id="df-scraped"),
+                                dash_table.DataTable(data=[], id="df-scraped", style_cell={"margin-bottom":10}),
                                 html.Div(
                                     [
                                     dash_table.DataTable(
@@ -707,11 +728,11 @@ app.layout = html.Div([
             fluid=True,
         )
         ]),
-        dcc.Tab(label="Pulling", children=[
+        dbc.Tab(label="Pulling", children=[
             dbc.Container([
                 html.Div([modal_pulling]),
                 html.Div([
-                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.H2("Revenue Extraction", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                 html.Button("?", id= "open-pulling", style=roundbutton)],
                 style={"margin":20}
                 ),
@@ -741,11 +762,11 @@ app.layout = html.Div([
         ],
         ),
 
-        dcc.Tab(label="Regression", children=[
+        dbc.Tab(label="Regression", children=[
             dbc.Container([
                 html.Div([modal_regression]),
                 html.Div([
-                    html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                    html.H2("Competitor Regression", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                     html.Button("?", id= "open-regression", style=roundbutton),
                     ],
                     style={"margin":20}
@@ -953,6 +974,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     local_df = local_df.sort_values(by=["quarter-string"])
     start_q = join_quarter_year(start_quarter, start_year)
     end_q = join_quarter_year(end_quarter, end_year)
+    print(company, metric)
+    print(local_df)
 
     try:  
         index_start = local_df["quarter-string"].tolist().index(start_q)
@@ -988,7 +1011,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         color="sub-metric",
         labels={
                 "quarter-string": "Quarters",
-                "rev": "Dollar $USD",
+                "rev": "US$ Dollars (Millions)",
                 "sub-metric": f'{metric.split()[-1]}'
             },
         title=f'{metric} for {company} from {start_q} to {end_q}')
@@ -1008,7 +1031,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             "value": "US$ Dollars (Millions)",
                 },
             hover_data=["quarter-string", "value","QoQ"],
-            title=f'{metric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
+            title=f'{metric} for {company} from {start_q} to {end_q}, CAGR = {cagr}%', markers=True)
     else:
         filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
         filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
@@ -1019,7 +1042,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             "value": "Percentage %",
                 },
             hover_data=["quarter-string", "value","QoQ"],
-            title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
+            title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}, CAGR = {cagr}%', markers=True)
         else:
             filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
             filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
@@ -1435,7 +1458,7 @@ def make_regression_graph(company, submetric, predictors, startYear, startQuarte
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-regress' in changed_id:
         y_company, x_customers = regressions.preprocess(startYear, startQuarter, endYear, endQuarter, submetric, company, predictors)
-        r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig = regressions.regression(y_company, x_customers, company, predictors, startYear, startQuarter, endYear, endQuarter)
+        r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig = regressions.regression(y_company, x_customers, company, predictors, submetric, startYear, startQuarter, endYear, endQuarter)
         return prediction_fig, coeff_fig, {"display":"inline-block"}, {"display":"inline-block"}
     return go.Figure(), go.Figure(), {"display":"none"}, {"display":"none"}
 

@@ -115,7 +115,7 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
 """
 Multiple Linear Regression Function, can input specific customers or 'ALL'
 """
-def regression(y_company, x_customers, company, customers, startYear, startQuarter, endYear, endQuarter):
+def regression(y_company, x_customers, company, customers, metric, startYear, startQuarter, endYear, endQuarter):
     """
     Multiple linear regression model
     """
@@ -135,7 +135,7 @@ def regression(y_company, x_customers, company, customers, startYear, startQuart
     predicted_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":reg.predict(x_customers), "Type":"Predicted"})
     actual_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":y_company, "Type":"Actual"})
     prediction_df = pd.concat([predicted_df, actual_df], axis=0)
-    prediction_fig = px.line(prediction_df, "Quarter", "Percent Change", color="Type", title = f"Quarterly Change in Revenue for {company}")
+    prediction_fig = px.line(prediction_df, "Quarter", "Percent Change", color="Type", title = f"Quarterly Change in Revenue for {company}: {metric}")
 
     #Linear coefficient bar graph
     colors = ['Positive' if c > 0 else 'Negative' for c in model_linear.coef_]
