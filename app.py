@@ -21,8 +21,7 @@ import re
 from parameters import *
 
 pd.options.mode.chained_assignment = None
-app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
-FONT_AWESOME = "https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 roundbutton = {
     "backgroundColor": "#15B8FC",
@@ -145,11 +144,12 @@ controls = dbc.Card(
         dcc.Dropdown(
             options = ["1", "2", "3", "4","5","6","7","8"],
             id = "forecasting-dropdown",
-            value="3"
+            value="3",
+            style={"margin-bottom": 10}
         ),
         html.Div(
             [
-                html.Button("Download Data", id= "btn-data"),
+                dbc.Button("Download Data", className="ms-auto", id= "btn-data"),
                 dcc.Download(id="download-data-csv"),
                 dcc.Store(id="dataframe", data=[]),
                 dcc.Store(id="json-store", data=[])
@@ -208,7 +208,7 @@ parsing = html.Div(
         ),
         html.Div(
             [
-                html.Button("Scrape PDF", id= "btn-scrape", style={"margin-top": 10}, n_clicks=0),   
+                dbc.Button("Scrape PDF", id= "btn-scrape", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
             ]
         ),
     ],
@@ -249,7 +249,7 @@ parsing = html.Div(
         ),
         html.Div(
             [
-                html.Button("Manual Input", id= "btn-manual", style={"margin-top": 10}, n_clicks=0),   
+                dbc.Button("Manual Input", id= "btn-manual", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
             ]
         )
     ],
@@ -264,14 +264,15 @@ puller = dbc.Card(
             dbc.Label("Custom Ticker"),
             dcc.Input(
                     id="input-ticker",
-                    style={"margin-left": 10}
+                    style={"margin-left": 10},
+                    value=""
                 ),
         ],
         ),
 
         html.Div([
-            html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, n_clicks=0),
-            html.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, n_clicks=0),
+            dbc.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, className="ms-auto", n_clicks=0),
+            dbc.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, className="ms-auto", n_clicks=0),
         ]
         ),
         html.Div([
@@ -285,8 +286,8 @@ puller = dbc.Card(
         ),
         html.Div(
             [
-                html.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),
-                html.Button("Update All Tickers", id= "btn-update-all", style={"margin-top": 10}, n_clicks=0),   
+                dbc.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10, "margin-right": 10}, className="ms-auto", n_clicks=0),
+                dbc.Button("Update All Tickers", id= "btn-update-all", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
    
             ]
         ),
@@ -306,9 +307,9 @@ buttons = html.Div(
     [
         html.Div(
             [
-            html.Button("Approve", id= "btn-approve", style={"margin-right": 10, "display":"none"}, n_clicks=0),   
-            html.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, n_clicks=0),
-            html.Button("Undo", id= "btn-undo", style={"margin-right": 10, "display":"none"}, n_clicks=0)
+            dbc.Button("Approve", id= "btn-approve", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0),   
+            dbc.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0),
+            dbc.Button("Undo", id= "btn-undo", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0)
             ]   
         ),
         html.Div(
@@ -323,8 +324,8 @@ manual_buttons = html.Div(
     [
         html.Div(
             [
-            html.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, n_clicks=0),   
-            html.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, n_clicks=0)
+            dbc.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0),   
+            dbc.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0)
             ]   
         ),
         html.Div(
@@ -404,7 +405,7 @@ regression = dbc.Card(
 
         html.Div(
             [
-                html.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),   
+                dbc.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10}, className="ms-auto", n_clicks=0),   
             ]
         ),
     ],
@@ -650,7 +651,7 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    html.Button('Add Row', id='seg-rows', n_clicks=0),
+                                    dbc.Button('Add Row', id='seg-rows', className="ms-auto", n_clicks=0),
                                     dash_table.DataTable(
                                         id = 'tech-submetrics-dt',
                                         columns=(
@@ -664,7 +665,7 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    html.Button('Add Row', id='tech-rows', n_clicks=0),
+                                    dbc.Button('Add Row', id='tech-rows', className="ms-auto", n_clicks=0),
                                     dash_table.DataTable(
                                         id = 'geo-submetrics-dt',
                                         columns=(
@@ -678,7 +679,7 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    html.Button('Add Row', id='geo-rows', n_clicks=0),
+                                    dbc.Button('Add Row', id='geo-rows', className="ms-auto", n_clicks=0),
                                     ],
                                     id='manual-input',
                                     style={"display":"none"},
