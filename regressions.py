@@ -144,7 +144,7 @@ def regression(y_company, x_customers, company, customers, metric, startYear, st
         x = x_combined_df.columns, y = model_linear.coef_, color = colors,
         color_discrete_map={'Positive':'green', 'Negative':'red'},
         labels = dict(x = 'Feature', y = 'Linear Coefficient', color = "Sign"),
-        title = f'Visualizing coefficients for multiple linear regression (MLR) for {company}'
+        title = f'Visualizing coefficients for multiple linear regression (MLR) for {company}: {metric}'
     )
 
     return r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig

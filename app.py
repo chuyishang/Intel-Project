@@ -470,21 +470,21 @@ modal_scraping = dbc.Modal([
                     This tab scrapes quarterly PDF reports from companies and adds the data
                     to the global data set. Additionally, this tab provides a manual option to input data."""),
                     html.H4("Instructions"),
-                    html.P(["1) Enter URl to PDF for Intel Competitor that needs to be scraped.", html.Br(),
-                    "2) Select from TSMC, SMIC, UMC, GFS to indetify the company that the Quarterly Report is for.", html.Br(),
+                    html.P(["1) Enter URL to PDF for Intel Competitor that needs to be scraped.", html.Br(),
+                    "2) Select from TSMC, SMIC, UMC, GFS to idetify the company that the Quarterly Report is for.", html.Br(),
                     "3) Select year and quarter of the inputted quarterly report.", html.Br(),
-                    "4) Click Scrape PDF, and see the scraped data on the right side of the tab.", html.Br(),
-                    "5) Click Approve if the data looks like it scraped properly, Reject if the data looks wrong, and Undo if Approve was accidentally clicked.", html.Br(),
+                    "4) Click 'Scrape PDF', and see the scraped data on the right side of the tab.", html.Br(),
+                    "5) Click 'Approve' if the data appears to be scraped properly, 'Reject' if the data looks incorrect, and 'Undo' if 'Approve' was accidentally clicked.", html.Br(),
                     "1) [Manual Data Input] Select Company, Year, and Quarter, to see tables of metrics and submetrics to fill out.", html.Br(),
-                    "2) [Manual Data Input] Change any data labels if labels have changed from previous quarter, and after adding all data click Approve to add to data set.", html.Br(),
-                    "3) [Manual Data Input] Click Undo if data is accidentally added"]),
+                    "2) [Manual Data Input] Change any data labels if labels have changed from previous quarter, and after adding all data click 'Approve' to add to data set.", html.Br(),
+                    "3) [Manual Data Input] Click 'Undo' if data is accidentally added."]),
                     html.H4("Output"),
                     html.P([
                     "Data table of data that will be inputted into global data set that can be visualized in data visualization tab."
                     ]),
                     html.H4("Additional Info"),
                     html.P([
-                    "• URL must be valid quarterly report for selected company or parsing will fail.", html.Br(),
+                    "• URL must be a valid quarterly report for selected company or parsing will fail.", html.Br(),
                     "• If quarterly report format changes drasticaly, parsing support might end for selected companies future reports.", html.Br(),
                     "• All fields in manual data input must be filled to add to data set, user can delete rows for fields that no longer exist."
                     ]),
