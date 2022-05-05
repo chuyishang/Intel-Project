@@ -418,23 +418,32 @@ modal_viz = dbc.Modal([
                     html.H4("Function"),
                     html.P(
                     """
-                    This tab uses multiple linear regression to estimate the relationship 
-                    between one Intel competitor's revenue segment and one
-                    or more predictor companies' revenue."""),
+                    This tab visualizes data from the global dataset of historical revenue,
+                    inventory, and capex data for the following Intel Competitors: TSMC, SMIC, 
+                    UMC, GlobalFoundries. The data can be visualized by several metrics individually 
+                    and combo charts can be created for submetric comparisons. Additionally, for individually
+                    displayed data, forecasting using machine learning models can be enabled to estimate
+                    future growth of the selected metric/submetric."""),
                     html.H4("Instructions"),
                     html.P(["1) Select an Intel competitor: TSMC, SMIC, UMC, or GFS.", html.Br(),
-                    "2) Select 1 competitor revenue segment to regress on.", html.Br(),
-                    "3) Select 1 or more predictor companies to regress on.", html.Br(),
-                    "4) Select the years and quarters in order: Starting Year, Starting Quarter, Ending Year, Ending Quarter."]),
+                    "2) Select a metric's data to visualize: Revenue, Inventory, CapEx, Revenue by Geography, Revenue by Segment, Revenue by Technology", html.Br(),
+                    "3) If Rev by Geo, Segment, or Tech is selected, user has option to select how to visualize this data. See Additional Info for differences between visualization styles", html.Br(),
+                    "4) (Optional) If an individual visualization style is chosen, user can select which submetric to visualize", html.Br(),
+                    "5) Select time range to visualize data for using yera and quarter drop downs (These will be limited for the years and quarters that data currently exists for, for chosen options)", html.Br(),
+                    "6) (Optional) If a single metric of submetric is visualized, user can turn on forecasting switch to forecast data for # of years indicated in the 'Years to Forecast' dropdown", html.Br(),
+                    "7) (Optional) Download data that is displayed by clicking 'Download Data' button, and download chart visualization by clicking camera icon on top right of visualization"]),
                     html.H4("Output"),
                     html.P([
-                    "Data table with 1 quarter of revenue data per company per row."
+                    "Chart visualization for time range and metrics chosen for selected company", html.Br(),
+                    "Data table with filtered data used to display visualization", html.Br()
                     ]),
                     html.H4("Additional Info"),
                     html.P([
-                    "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
-                    "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
-                    "• Most errors will result from making more than 5 calls. Wait 1 minute before clicking the 'Update' buttons again."
+                    "• [Visualization Style] Comparison visualization style will display stacked barchart when comparing by %, and a multi line chart when visualizing by absolute revenue.", html.Br(),
+                    "• [Visualization Style] Individual visualization style will display line chart for both percent and by revenue, but forecasting can only be enabled when displaying by revenue.", html.Br(),
+                    "• Data visualization are limited by data that exists in global dataset, so it is possible that certain quarters may be skipped in the visualization.", html.Br(),
+                    "• CAGR over the period chosen is displayed in title of the chart", html.Br(),
+                    "• Hovering over each point on the data visualization will display the Quarter over Quarter growth %, but this is growth from last quarter that exists in the dataset and is displayed ", html.Br(),
                     ]),
                      ]
                 ),
@@ -458,23 +467,26 @@ modal_scraping = dbc.Modal([
                     html.H4("Function"),
                     html.P(
                     """
-                    This tab uses multiple linear regression to estimate the relationship 
-                    between one Intel competitor's revenue segment and one
-                    or more predictor companies' revenue."""),
+                    This tab scrapes quarterly PDF reports from companies and adds the data
+                    to the global data set. Additionally, this tab provides a manual option to input data."""),
                     html.H4("Instructions"),
-                    html.P(["1) Select an Intel competitor: TSMC, SMIC, UMC, or GFS.", html.Br(),
-                    "2) Select 1 competitor revenue segment to regress on.", html.Br(),
-                    "3) Select 1 or more predictor companies to regress on.", html.Br(),
-                    "4) Select the years and quarters in order: Starting Year, Starting Quarter, Ending Year, Ending Quarter."]),
+                    html.P(["1) Enter URl to PDF for Intel Competitor that needs to be scraped.", html.Br(),
+                    "2) Select from TSMC, SMIC, UMC, GFS to indetify the company that the Quarterly Report is for.", html.Br(),
+                    "3) Select year and quarter of the inputted quarterly report.", html.Br(),
+                    "4) Click Scrape PDF, and see the scraped data on the right side of the tab.", html.Br(),
+                    "5) Click Approve if the data looks like it scraped properly, Reject if the data looks wrong, and Undo if Approve was accidentally clicked.", html.Br(),
+                    "1) [Manual Data Input] Select Company, Year, and Quarter, to see tables of metrics and submetrics to fill out.", html.Br(),
+                    "2) [Manual Data Input] Change any data labels if labels have changed from previous quarter, and after adding all data click Approve to add to data set.", html.Br(),
+                    "3) [Manual Data Input] Click Undo if data is accidentally added"]),
                     html.H4("Output"),
                     html.P([
-                    "Data table with 1 quarter of revenue data per company per row."
+                    "Data table of data that will be inputted into global data set that can be visualized in data visualization tab."
                     ]),
                     html.H4("Additional Info"),
                     html.P([
-                    "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
-                    "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
-                    "• Most errors will result from making more than 5 calls. Wait 1 minute before clicking the 'Update' buttons again."
+                    "• URL must be valid quarterly report for selected company or parsing will fail.", html.Br(),
+                    "• If quarterly report format changes drasticaly, parsing support might end for selected companies future reports.", html.Br(),
+                    "• All fields in manual data input must be filled to add to data set, user can delete rows for fields that no longer exist."
                     ]),
                      ]
                 ),
@@ -989,6 +1001,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             #graph = fig
         else:
             filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
+            filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
             "quarter-string": "Quarters",
@@ -998,6 +1011,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             title=f'{metric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
     else:
         filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
+        filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
         if viz == "Individual (Percent)":
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
