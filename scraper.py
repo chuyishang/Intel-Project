@@ -53,51 +53,69 @@ def pull_tsmc(year, quarter, url):
     dict_geo_options_tsmc = {'North America':'NORAM', 'Asia Pacific':'ASIAPAC'}
     conv = converter.Converter()
 
-    tsmc_rev_converted = get_rev_tsmc(year, quarter, url)
-    aggregated_rev = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'sub-metric': '','value': tsmc_rev_converted}
-    data_tsmc.append(aggregated_rev)
+    try:
+      tsmc_rev_converted = get_rev_tsmc(year, quarter, url)
+      aggregated_rev = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'sub-metric': '','value': tsmc_rev_converted}
+      data_tsmc.append(aggregated_rev)
+    except:
+      print("rev error")
 
-    tsmc_inv = tsmc_dfs.get('inv')
-    tsmc_inv_value = tsmc_inv.iat[0,1]
-    tsmc_inv_value_commaless = tsmc_inv_value.replace(",","")
-    tsmc_inv_millions = float(tsmc_inv_value_commaless) * 1000
-    tsmc_inv_converted = conv.twd_usd(tsmc_inv_millions, year, quarter)
-    aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv_converted}
-    data_tsmc.append(aggregated_inv)
+    try:
+      tsmc_inv = tsmc_dfs.get('inv')
+      tsmc_inv_value = tsmc_inv.iat[0,1]
+      tsmc_inv_value_commaless = tsmc_inv_value.replace(",","")
+      tsmc_inv_millions = float(tsmc_inv_value_commaless) * 1000
+      tsmc_inv_converted = conv.twd_usd(tsmc_inv_millions, year, quarter)
+      aggregated_inv = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': tsmc_inv_converted}
+      data_tsmc.append(aggregated_inv)
+    except:
+      print("inv error")
     
-    tsmc_capex = tsmc_dfs.get('capex')
-    tsmc_capex_value = tsmc_capex.iat[1,1]
-    tsmc_capex_value_commaless = tsmc_capex_value.replace(",","")
-    tsmc_capex_millions = float(tsmc_capex_value_commaless) * 1000
-    tsmc_capex_converted = conv.twd_usd(tsmc_capex_millions, year, quarter)
-    aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex_converted}
-    data_tsmc.append(aggregated_capex)
+    try:
+      tsmc_capex = tsmc_dfs.get('capex')
+      tsmc_capex_value = tsmc_capex.iat[1,1]
+      tsmc_capex_value_commaless = tsmc_capex_value.replace(",","")
+      tsmc_capex_millions = float(tsmc_capex_value_commaless) * 1000
+      tsmc_capex_converted = conv.twd_usd(tsmc_capex_millions, year, quarter)
+      aggregated_capex = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': tsmc_capex_converted}
+      data_tsmc.append(aggregated_capex)
+    except:
+      print("capex error")
                 
-    tsmc_geo = tsmc_dfs.get('geo')
-    for index, row in tsmc_geo.iterrows():
-        sub_geo = row[0]
-        sub_geo_value = row[1]
-        sub_geo_no_percent = sub_geo_value.replace("%","")
-        if sub_geo in dict_geo_options_tsmc:
-            sub_geo = dict_geo_options_tsmc.get(sub_geo)
-        aggregated_geo = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
-        data_tsmc.append(aggregated_geo)
+    try:
+      tsmc_geo = tsmc_dfs.get('geo')
+      for _, row in tsmc_geo.iterrows():
+          sub_geo = row[0]
+          sub_geo_value = row[1]
+          sub_geo_no_percent = sub_geo_value.replace("%","")
+          if sub_geo in dict_geo_options_tsmc:
+              sub_geo = dict_geo_options_tsmc.get(sub_geo)
+          aggregated_geo = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
+          data_tsmc.append(aggregated_geo)
+    except:
+      print("geo error")
 
-    tsmc_seg = tsmc_dfs.get('segment')
-    for index, row in tsmc_seg.iterrows():
-        sub_seg = row[0]
-        sub_seg_value = row[1]
-        sub_seg_no_percent = sub_seg_value.replace("%","")
-        aggregated_seg = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
-        data_tsmc.append(aggregated_seg)
+    try:
+      tsmc_seg = tsmc_dfs.get('segment')
+      for _, row in tsmc_seg.iterrows():
+          sub_seg = row[0]
+          sub_seg_value = row[1]
+          sub_seg_no_percent = sub_seg_value.replace("%","")
+          aggregated_seg = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
+          data_tsmc.append(aggregated_seg)
+    except:
+      print("seg error")
 
-    tsmc_tech = tsmc_dfs.get('tech')
-    for index, row in tsmc_tech.iterrows():
-        sub_tech = row[0]
-        sub_tech_value = row[1]
-        sub_tech_no_percent = sub_tech_value.replace("%","")
-        aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
-        data_tsmc.append(aggregated_tech)
+    try:
+      tsmc_tech = tsmc_dfs.get('tech')
+      for _, row in tsmc_tech.iterrows():
+          sub_tech = row[0]
+          sub_tech_value = row[1]
+          sub_tech_no_percent = sub_tech_value.replace("%","")
+          aggregated_tech = {'company': 'TSMC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
+          data_tsmc.append(aggregated_tech)
+    except:
+      print("tech error")
 
   except Exception as err:
     print(year, quarter, url)
@@ -290,48 +308,66 @@ def pull_smic(year, quarter, url):
     'Mainland China and Hong Kong':'CHINAHK','Chinese Mainland and Hong Kong, China':'CHINAHK', 
     'Eurasia(2)':'EURASIA', 'North America':'NORAM', 'Eurasia':'EURASIA'}
 
-    revenue_num = get_rev_smic(year, quarter, url)
-    aggregated_rev = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': revenue_num}
-    data_smic.append(aggregated_rev)
+    try:
+      revenue_num = get_rev_smic(year, quarter, url)
+      aggregated_rev = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev', 'value': revenue_num}
+      data_smic.append(aggregated_rev)
+    except:
+      print("rev error")
 
-    smic_inv = smic_dfs.get('inv')
-    inv_value_old = smic_inv.iat[0,1]
-    inv_value_converted = inv_value_old[:len(inv_value_old) - 4]
-    inv_value_converted_commaless = inv_value_converted.replace(",","")
-    aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': inv_value_converted_commaless}
-    data_smic.append(aggregated_inv)
+    try:
+      smic_inv = smic_dfs.get('inv')
+      inv_value_old = smic_inv.iat[0,1]
+      inv_value_converted = inv_value_old[:len(inv_value_old) - 4]
+      inv_value_converted_commaless = inv_value_converted.replace(",","")
+      aggregated_inv = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'inv', 'value': inv_value_converted_commaless}
+      data_smic.append(aggregated_inv)
+    except:
+      print("inv error")
     
-    smic_capex = smic_dfs.get('capex')
-    smic_capex_value = smic_capex.iat[0,1]
-    smic_capex_value_commaless = smic_capex_value.replace(",","")
-    aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex_value_commaless}
-    data_smic.append(aggregated_capex)
+    try:
+      smic_capex = smic_dfs.get('capex')
+      smic_capex_value = smic_capex.iat[0,1]
+      smic_capex_value_commaless = smic_capex_value.replace(",","")
+      aggregated_capex = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'capex', 'value': smic_capex_value_commaless}
+      data_smic.append(aggregated_capex)
+    except:
+      print("capex error")
     
-    smic_geo = smic_dfs.get('geo')
-    for _, row in smic_geo.iterrows():
-        sub_geo = row[0]
-        sub_geo_value = row[1]
-        sub_geo_no_percent = sub_geo_value.replace("%","")
-        if sub_geo in dict_geo_options_smic:
-            sub_geo = dict_geo_options_smic.get(sub_geo)
-        aggregated_geo = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
-        data_smic.append(aggregated_geo)
+    try:
+      smic_geo = smic_dfs.get('geo')
+      for _, row in smic_geo.iterrows():
+          sub_geo = row[0]
+          sub_geo_value = row[1]
+          sub_geo_no_percent = sub_geo_value.replace("%","")
+          if sub_geo in dict_geo_options_smic:
+              sub_geo = dict_geo_options_smic.get(sub_geo)
+          aggregated_geo = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_geo', 'sub-metric' : sub_geo, 'value': sub_geo_no_percent}
+          data_smic.append(aggregated_geo)
+    except:
+      print("geo error")
 
-    smic_seg = smic_dfs.get('segment')
-    for _, row in smic_seg.iterrows():
-        sub_seg = row[0]
-        sub_seg_value = row[1]
-        sub_seg_no_percent = sub_seg_value.replace("%","")
-        aggregated_seg = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
-        data_smic.append(aggregated_seg)
+    try:
+      smic_seg = smic_dfs.get('segment')
+      for _, row in smic_seg.iterrows():
+          sub_seg = row[0]
+          sub_seg_value = row[1]
+          sub_seg_no_percent = sub_seg_value.replace("%","")
+          aggregated_seg = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_seg', 'sub-metric' : sub_seg, 'value': sub_seg_no_percent}
+          data_smic.append(aggregated_seg)
+    except:
+      print("seg error")
 
-    smic_tech = smic_dfs.get('tech')
-    for _, row in smic_tech.iterrows():
-        sub_tech = row[0]
-        sub_tech_value = row[1]
-        sub_tech_no_percent = sub_tech_value.replace("%","")
-        aggregated_tech = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
-        data_smic.append(aggregated_tech)
+    try:
+      smic_tech = smic_dfs.get('tech')
+      for _, row in smic_tech.iterrows():
+          sub_tech = row[0]
+          sub_tech_value = row[1]
+          sub_tech_no_percent = sub_tech_value.replace("%","")
+          aggregated_tech = {'company': 'SMIC', 'year': year, 'quarter': quarter, 'metric': 'rev_tech', 'sub-metric' : sub_tech, 'value': sub_tech_no_percent}
+          data_smic.append(aggregated_tech)
+    except:
+      print("tech error")
 
   except Exception as err:
     print(year, quarter, url)
@@ -355,53 +391,61 @@ def get_rev_smic(year, quarter, url):
     print(year, quarter, url)
   return revenue_num
 
-def parse_smic(url):
+def parse_smic(url, year_quarter):
   """
   Pulls all SMIC information from a URL. Missing pieces will have None value.
   """
+  dfs = read_pdf(url, pages=[5, 6, 7, 8, 9])
+  df = [df for df in dfs if 'Revenue Analysis' in df.columns][0]
+  
   rq = requests.get(url)
   pdf = pdfplumber.open(BytesIO(rq.content))
+  smic_dfs = {}
   try:
     inv_df = extract_smic_inv(pdf)
+    smic_dfs['inv'] = inv_df
   except:
     print("inv broken")
-    pass
-  #capex_df = extract_smic_capex(pdf, year_quarter)
-
-  smic_text = ""
-  for i in range(6):
-      #try-catch here
-      smic_text += pdf.pages[i].extract_text()
-
+  
   try:
-    geo_df = clean_smic_geo(smic_text)
+    capex_df = extract_smic_capex(pdf, year_quarter)
+    smic_dfs['capex'] = capex_df
+  except:
+    print("capex broken")
+
+  indices = df[df.iloc[:, 0].str.contains(r"By Geography|By Service Type|By Application|By Technology")].index.tolist()
+  
+  try:
+    geo_df = promote_row(df.iloc[indices[0]:indices[1], :])
+    smic_dfs['geo'] = geo_df
   except:
     print("geo broken")
-    pass
   try:
-    segment_df = clean_smic_seg(smic_text)
+    service_df = promote_row(df.iloc[indices[1]:indices[2]-1, :])
+    smic_dfs['service'] = service_df
   except:
-    print("segment broken")
-    pass
+    print("service broken")
   try:
-    tech_df = clean_smic_tech_robust(smic_text)
+    segment_df = promote_row(df.iloc[indices[2]:indices[3], :])
+    smic_dfs['segment'] = segment_df
+  except:
+    print('seg broken')
+  try:
+    tech_df = promote_row(df.iloc[indices[3]:, :])
+    smic_dfs['tech'] = tech_df
   except:
     print("tech broken")
-    pass
   
-  print("DEBUG: successful")
-  
-  return None
+  return smic_dfs
 
-  '''
-  return {
-    'inv': inv_df,
-    'capex' : capex_df,
-    'geo':geo_df,
-    'segment' : segment_df,
-    'tech' : tech_df
-    }
-  '''
+def promote_row(df):
+  """
+  Helper function.
+  """
+  df.columns = df.iloc[0]
+  df = df[1:].reset_index(drop=True)
+  df.index.name = None
+  return df
 
 def extract_smic_inv(pdf):
   """
@@ -455,80 +499,6 @@ def extract_smic_capex(pdf, year_quarter):
       capex = re.findall('\$([\d\.,]+) million', target_text) or re.findall('\$([\d\.,]+)M', target_text)
   return pd.DataFrame({'quarter':quarters, "capex":capex})
 
-def clean_smic_tech_robust(smic_text):
-    digits = "\s+(\dQ\d+)\s+(\dQ\d+)\s+(\dQ\d+)"
-    oldHeader = "Total\s+(?:\\n)?Wafer\s+(?:\\n)?Revenues"
-    try:
-        techCols = np.asarray(re.findall(f"(By Technology|{oldHeader}){digits}", smic_text)[0])
-    except: 
-        techCols = np.array("Tech")
-        techCols = np.append(techCols, np.asarray(re.findall(f"{digits}", smic_text)[0]))
-    techArray = []
-    digit_re = "\d+(?:\.\d+)(?:\s+)?(?:n|µ|m)m"
-    slash = "\d+(?:\.\d+)?\/\d+(?:\.\d+)?\s+(?:n|µ|m)m"
-    above = "\d+(?:\.\d+)?(?:u|n|m)m\s+and\s+above"
-    numbers = "\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)"
-    techRegex = f"({digit_re}|{slash}|{above}){numbers}"
-    for i in re.finditer(techRegex, smic_text):
-        techArray.append(list(i.groups()))
-    techDF = pd.DataFrame(techArray, columns=techCols)
-    firstColName = techDF.columns[0]
-    print("firstColName")
-    techDF = techDF.drop_duplicates(subset=firstColName, keep="first")
-    return techDF
-    
-def clean_smic_geo(smic_text):
-    smicRegions = []
-    digits = "\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)"
-    regionCols = np.asarray(re.findall(r"(Net Revenue by Geography|By Geography)\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)", smic_text)[0])
-    try:
-        NorthAm = np.asarray(re.findall(f"(North America){digits}", smic_text)[0])
-        smicRegions.append(NorthAm)
-    except IndexError:
-        pass
-    try:
-        China = np.asarray(re.findall(f"(China){digits}", smic_text)[0])
-        smicRegions.append(China)
-    except IndexError:
-        pass
-    try:
-        EMEA = np.asarray(re.findall(f"(EMEA){digits}", smic_text)[0])
-        smicRegions.append(EMEA)
-    except IndexError:
-        pass
-    try:
-        europe = np.asarray(re.findall(f"(Europe){digits}", smic_text)[0])
-        smicRegions.append(europe)
-    except IndexError:
-        pass
-    try: 
-        APAC = np.asarray(re.findall(f"(Asia Pacific|Asia Pacific \(ex\. Japan\)){digits}", smic_text)[0])
-        smicRegions.append(APAC)
-    except IndexError:
-        pass
-    try:
-        Japan = np.asarray(re.findall(f"(Japan){digits}", smic_text)[0])
-        smicRegions.append(Japan)
-    except IndexError:
-        pass  
-    try:
-        Eurasia = np.asarray(re.findall(f"(Eurasia){digits}", smic_text)[0])
-        smicRegions.append(Eurasia)
-    except IndexError:
-        pass  
-    geoDF = pd.DataFrame(smicRegions, columns=regionCols)
-    return geoDF
-
-def clean_smic_seg(smic_text):
-    digits = "\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)\s+(\d+(?:\.\d+)?%)"
-    quarters = "\s+(\d+Q\d+)\s+(\d+Q\d+)\s+(\d+Q\d+)"
-    segCols = np.asarray(re.findall(f"(By Service Type){quarters}", smic_text)[0])
-    fabless = np.asarray(re.findall(f"(Fabless).*?{digits}", smic_text)[0])
-    idm = np.asarray(re.findall(f"(Integrated device manufacturers).*?{digits}", smic_text)[0])
-    systemComp = np.asarray(re.findall(f"(System companies and others){digits}", smic_text)[0])
-    tsmcPlat = np.array([fabless, idm, systemComp])
-    platDF = pd.DataFrame(tsmcPlat, columns=segCols)
-    return platDF
 
 """
 ***********************************
