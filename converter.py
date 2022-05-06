@@ -2,7 +2,7 @@ import pandas as pd
 import twder
 import datetime
 from datetime import date
-from forex_python.converter import CurrencyRates
+# from forex_python.converter import CurrencyRates
 
 class Converter:
     def __init__(self, path='data/usd_twd.csv'):
