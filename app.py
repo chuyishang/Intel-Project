@@ -1189,26 +1189,21 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
     if 'btn-reject' in changed_id:
         return 'Update has been rejected.'
     elif 'btn-approve' in changed_id: 
-        with open("data/data.json") as json_data:
-            old_data = json.load(json_data)
-            json_data.close()
+        old_data = pd.read_csv("data/data.csv").to_dict('records')
         if json_store[-1] in old_data:
             return "Data already exists in the global dataset."
         else:
-            old_data.extend(json_store)
-            with open("data/data.json","w") as json_file:
-                json.dump(old_data,json_file,indent=4,separators=(',',': '))
-                json_file.close()
+            pd.DataFrame.from_dict(json_store).to_csv('data/data.csv',mode='a',index=False,header=False)
             return f'{company} {quarter_year} has been added to the global dataset.'
     elif 'btn-undo' in changed_id:
-        with open("data/data.json") as current_json:
-            current = json.load(current_json)
-            current_json.close()
+        current = pd.read_csv("data/data.csv").to_dict('records')
+        current_df = pd.read_csv("data/data.csv")
+        print(current)
+        print(json_store[-1])
+        print(json_store[-1] in current)
         if json_store[-1] in current:
-            current = current[:-(len(json_store))]
-            with open("data/data.json","w") as json_file:
-                json.dump(current,json_file,indent=4,separators=(',',': '))
-                json_file.close()
+            current_df = current_df.iloc[:-(len(json_store)),:]
+            current_df.to_csv('data/data.csv',mode='w',index=False)
             return "Data been removed from global dataset."
         else:
             return "There is nothing left to undo."
@@ -1255,24 +1250,19 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
                 "year":year,
                 "quarter":quarter,
                 "metric":["rev","inv","capex"],
+                "sub-metric":['','',''],
                 "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
             })
             if company == "TSMC" or company == "UMC":
-                master_df["value"] = conv.twd_usd(master_df["value"].astype(float),year,quarter)
                 metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
             master_json = master_df.to_dict('records')
             metrics_json = metrics_df.to_dict('records')
-            with open("data/data.json") as json_data:
-                old_data = json.load(json_data)
-                json_data.close()
+            old_data = pd.read_csv("data/data.csv").to_dict('records')
             if master_json[-1] in old_data:
                 return "Data already exists in the global dataset."
             else:
-                old_data.extend(master_json)
-                old_data.extend(metrics_json)
-                with open("data/data.json","w") as json_file:
-                    json.dump(old_data,json_file,indent=4,separators=(',',': '))
-                    json_file.close()
+                master_df.to_csv('data/data.csv',mode='a',index=False,header=False)
+                metrics_df.to_csv('data/data.csv',mode='a',index=False,header=False)
                 return f'{company} {year} Q{quarter} has been added to the global dataset.'
         else:
             return "Unable to add to dataset. Certain values are blank."
@@ -1294,21 +1284,18 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
             "year":year,
             "quarter":quarter,
             "metric":["rev","inv","capex"],
+            "sub-metric":['','',''],
             "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
         })
         if company == "TSMC" or company == "UMC":
-            master_df["value"] = conv.twd_usd(master_df["value"].astype(float),year,quarter)
             metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
         master_json = master_df.to_dict('records')
         metrics_json = metrics_df.to_dict('records')
-        with open("data/data.json") as current_json:
-            current = json.load(current_json)
-            current_json.close()
+        current = pd.read_csv("data/data.csv").to_dict('records')
+        current_df = pd.read_csv("data/data.csv")
         if master_json[-1] in current:
-            current = current[:-(len(master_json)+len(metrics_json))]
-            with open("data/data.json","w") as json_file:
-                json.dump(current,json_file,indent=4,separators=(',',': '))
-                json_file.close()
+            current_df = current_df.iloc[:-(len(master_json)+len(metrics_json)),:]
+            current_df.to_csv('data/data.csv',mode='w',index=False)
             return "Data been removed from global dataset."
         else:
             return "There is nothing left to undo."
