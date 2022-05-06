@@ -13,16 +13,16 @@ import scraper, stocks, json, pickle, regressions
 import sklearn
 from sklearn.linear_model import LinearRegression
 import matplotlib as plt
-#from prophet import Prophet
-#from forecast import *
-#from prophet.plot import plot_plotly, plot_components_plotly
+from prophet import Prophet
+from forecast import *
+from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 import re
 from parameters import *
+import converter
 
 pd.options.mode.chained_assignment = None
-app = Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
-FONT_AWESOME = "https://use.fontawesome.com/releases/v5.10.2/css/all.css"
+app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 roundbutton = {
     "backgroundColor": "#15B8FC",
@@ -137,25 +137,26 @@ controls = dbc.Card(
                 )
                 
             ],
-            className="mb-3", style={'width': '48%', 'float': 'left', 'display': 'inline-block', 'margin': '10'}
+            className="mb-3", style={'width': '48%', 'float': 'left', 'margin': '10', 'display':'inline-block'}
         ),
-        dbc.Label("Turn on Forecast", html_for="forecasting_switch"),
-        daq.BooleanSwitch(id='forecasting-switch', on=False),
-        dbc.Label("Years to Forecast", html_for="forecasting-dropdown"),
-        dcc.Dropdown(
-            options = ["1", "2", "3", "4","5","6","7","8"],
-            id = "forecasting-dropdown",
-            value="3"
+        html.Div([
+            dbc.Label("Turn on Forecast", html_for="forecasting_switch"),
+            daq.BooleanSwitch(id='forecasting-switch', on=False),
+            dbc.Label("Years to Forecast", html_for="forecasting-dropdown"),
+            dcc.Dropdown(
+                options = ["1", "2", "3", "4","5","6","7","8"],
+                id = "forecasting-dropdown",
+                value="3",
+                style={"margin-bottom": 10})
+        ],
         ),
-        html.Div(
-            [
-                html.Button("Download Data", id= "btn-data"),
-                dcc.Download(id="download-data-csv"),
-                dcc.Store(id="dataframe", data=[]),
-                dcc.Store(id="json-store", data=[])
-                
-            ]
-        ),
+        html.Div([
+            dbc.Button("Download Data", className="ms-auto", id= "btn-data"),
+            dcc.Download(id="download-data-csv"),
+            dcc.Store(id="dataframe", data=[]),
+            dcc.Store(id="json-store", data=[])
+        ])
+        
     ],
     body=True,
 )
@@ -164,14 +165,14 @@ parsing = html.Div(
     [
     dbc.Card(
     [
+        html.H3("PDF Scraper"),
         html.Div(
             [
                 dbc.Label("URL"),
-                dcc.Input(
+                dbc.Input(
                     id="url-input".format("url"),
                     type="url",
                     placeholder="Enter URL to Parse".format("url"),
-                    style={"margin-left": 10}
                 ),
             ],
         ),
@@ -189,11 +190,10 @@ parsing = html.Div(
         html.Div(
             [
                 dbc.Label("Year"),
-                dcc.Input(
+                dbc.Input(
                     id="year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
-                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -208,14 +208,16 @@ parsing = html.Div(
         ),
         html.Div(
             [
-                html.Button("Scrape PDF", id= "btn-scrape", style={"margin-top": 10}, n_clicks=0),   
+                dbc.Button("Scrape PDF", id= "btn-scrape", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
             ]
         ),
     ],
     body=True,
+    style={"margin-bottom": 10}
     ),
     dbc.Card(
     [
+        html.H3("Manual Input"),
         html.Div(
             [
                 dbc.Label("Company"),
@@ -230,11 +232,10 @@ parsing = html.Div(
         html.Div(
             [
                 dbc.Label("Year"),
-                dcc.Input(
+                dbc.Input(
                     id="manual-year-input".format("number"),
                     type="number",
                     placeholder="Enter Year".format("number"),
-                    style={"margin-left": 10, "margin-top":10}
                 ),
             ],
         ),
@@ -249,7 +250,7 @@ parsing = html.Div(
         ),
         html.Div(
             [
-                html.Button("Manual Input", id= "btn-manual", style={"margin-top": 10}, n_clicks=0),   
+                dbc.Button("Start Manual Input", id= "btn-manual", style={"margin-top": 10}, className="ms-auto", n_clicks=0),   
             ]
         )
     ],
@@ -262,17 +263,17 @@ puller = dbc.Card(
     [
         html.Div([
             dbc.Label("Custom Ticker"),
-            dcc.Input(
+            dbc.Input(
                     id="input-ticker",
-                    style={"margin-left": 10}
+                    value=""
                 ),
         ],
         ),
 
-        html.Div([
-            html.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-right": 10, "margin-bottom": 10}, n_clicks=0),
-            html.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, n_clicks=0),
-        ]
+        html.Div(
+            dbc.ButtonGroup([
+            dbc.Button("Add Ticker", id= "btn-add-ticker", style={"margin-top": 10, "margin-bottom": 10}, outline=True, color="primary", n_clicks=0),
+            dbc.Button("Remove Ticker", id= "btn-remove-ticker", style={"margin-top": 10, "margin-bottom": 10}, outline=True, color="primary", n_clicks=0),])
         ),
         html.Div([
             dbc.Label("Company Tickers"),
@@ -284,10 +285,10 @@ puller = dbc.Card(
             ]
         ),
         html.Div(
-            [
-                html.Button("Update Selected Tickers", id= "btn-pull", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),
-                html.Button("Update All Tickers", id= "btn-update-all", style={"margin-top": 10}, n_clicks=0),   
-   
+            [dbc.ButtonGroup([
+                dbc.Button("Update Selected Tickers", id="btn-pull", style={"margin-top": 10}, outline=True, color="primary", n_clicks=0),
+                dbc.Button("Update All Tickers", id="btn-update-all", style={"margin-top": 10}, outline=True, color="primary", n_clicks=0),   
+            ]),
             ]
         ),
         html.Div(
@@ -305,10 +306,11 @@ puller = dbc.Card(
 buttons = html.Div(
     [
         html.Div(
-            [
-            html.Button("Approve", id= "btn-approve", style={"margin-right": 10, "display":"none"}, n_clicks=0),   
-            html.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, n_clicks=0),
-            html.Button("Undo", id= "btn-undo", style={"margin-right": 10, "display":"none"}, n_clicks=0)
+            [dbc.ButtonGroup([
+            dbc.Button("Approve", id= "btn-approve", style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0),   
+            dbc.Button("Reject", id= "btn-reject", style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0),
+            dbc.Button("Undo", id= "btn-undo",  style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0)],
+            )
             ]   
         ),
         html.Div(
@@ -323,8 +325,8 @@ manual_buttons = html.Div(
     [
         html.Div(
             [
-            html.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, n_clicks=0),   
-            html.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, n_clicks=0)
+            dbc.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0),   
+            dbc.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0)
             ]   
         ),
         html.Div(
@@ -404,7 +406,7 @@ regression = dbc.Card(
 
         html.Div(
             [
-                html.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10}, n_clicks=0),   
+                dbc.Button("Regress", id= "btn-regress", style={"margin-top": 10, "margin-right": 10, "display":"inline"}, className="ms-auto", n_clicks=0),
             ]
         ),
     ],
@@ -433,8 +435,8 @@ modal_viz = dbc.Modal([
                     "7) (Optional) Download data that is displayed by clicking 'Download Data' button, and download chart visualization by clicking camera icon on top right of visualization"]),
                     html.H4("Output"),
                     html.P([
-                    "Chart visualization for time range and metrics chosen for selected company", html.Br(),
-                    "Data table with filtered data used to display visualization", html.Br()
+                    "• Chart visualization for time range and metrics chosen for selected company", html.Br(),
+                    "• Data table with filtered data used to display visualization", html.Br()
                     ]),
                     html.H4("Additional Info"),
                     html.P([
@@ -469,21 +471,21 @@ modal_scraping = dbc.Modal([
                     This tab scrapes quarterly PDF reports from companies and adds the data
                     to the global data set. Additionally, this tab provides a manual option to input data."""),
                     html.H4("Instructions"),
-                    html.P(["1) Enter URl to PDF for Intel Competitor that needs to be scraped.", html.Br(),
-                    "2) Select from TSMC, SMIC, UMC, GFS to indetify the company that the Quarterly Report is for.", html.Br(),
+                    html.P(["1) Enter URL to PDF for Intel Competitor that needs to be scraped.", html.Br(),
+                    "2) Select from TSMC, SMIC, UMC, GFS to idetify the company that the Quarterly Report is for.", html.Br(),
                     "3) Select year and quarter of the inputted quarterly report.", html.Br(),
-                    "4) Click Scrape PDF, and see the scraped data on the right side of the tab.", html.Br(),
-                    "5) Click Approve if the data looks like it scraped properly, Reject if the data looks wrong, and Undo if Approve was accidentally clicked.", html.Br(),
+                    "4) Click 'Scrape PDF', and see the scraped data on the right side of the tab.", html.Br(),
+                    "5) Click 'Approve' if the data appears to be scraped properly, 'Reject' if the data looks incorrect, and 'Undo' if 'Approve' was accidentally clicked.", html.Br(),
                     "1) [Manual Data Input] Select Company, Year, and Quarter, to see tables of metrics and submetrics to fill out.", html.Br(),
-                    "2) [Manual Data Input] Change any data labels if labels have changed from previous quarter, and after adding all data click Approve to add to data set.", html.Br(),
-                    "3) [Manual Data Input] Click Undo if data is accidentally added"]),
+                    "2) [Manual Data Input] Change any data labels if labels have changed from previous quarter, and after adding all data click 'Approve' to add to data set.", html.Br(),
+                    "3) [Manual Data Input] Click 'Undo' if data is accidentally added."]),
                     html.H4("Output"),
                     html.P([
                     "Data table of data that will be inputted into global data set that can be visualized in data visualization tab."
                     ]),
                     html.H4("Additional Info"),
                     html.P([
-                    "• URL must be valid quarterly report for selected company or parsing will fail.", html.Br(),
+                    "• URL must be a valid quarterly report for selected company or parsing will fail.", html.Br(),
                     "• If quarterly report format changes drasticaly, parsing support might end for selected companies future reports.", html.Br(),
                     "• All fields in manual data input must be filled to add to data set, user can delete rows for fields that no longer exist."
                     ]),
@@ -522,6 +524,7 @@ modal_pulling = dbc.Modal([
                     "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
                     "• Once a ticker option is added, it will be available the next time the dashboard is opened.", html.Br(),
                     "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
+                    "• When pulling more than 5 tickers, errors may occur due to the call limit. Wait at least 10 seconds and pull again.", html.Br(),
                     "• All tickers must be pulled once per quarter to update the revenue dataset."
                     ]),
                     ]
@@ -579,15 +582,35 @@ modal_regression = dbc.Modal([
             is_open=False,
         )
 
+navbar = dbc.Navbar(
+    dbc.Container(
+        [
+            html.A(
+                # Use row and col to control vertical alignment of logo / brand
+                dbc.Row(
+                    [
+                        dbc.Col(html.Img(src=app.get_asset_url('intellogo.png'), height="40px", width="auto")),
+                    ],
+                    align="center",
+                    className="g-0",
+                ),
+                style={"textDecoration": "none"},
+            ),
+        ],
+        fluid=True
+    ),
+    style={"margin-bottom":10}
+)
 
 app.layout = html.Div([
-    dcc.Tabs([
-        dcc.Tab(label="Visualization", children=[
+    navbar,
+    dbc.Tabs([
+        dbc.Tab(label="Visualization", children=[
         dbc.Container(
             [
                 html.Div([modal_viz]),
                 html.Div([
-                html.H1("Intel Competitor Visualizations", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.H2("Competitor Visualizations", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                 html.Button("?", id= "open-viz", style=roundbutton)],
                 style={"margin":20}
                 ),
@@ -618,12 +641,12 @@ app.layout = html.Div([
             fluid=True,
         )
         ]),
-        dcc.Tab(label="Scraping", children=[
+        dbc.Tab(label="Scraping", children=[
         dbc.Container(
             [
                 html.Div([modal_scraping]),
                 html.Div([
-                html.H1("Intel Competitor Parsing", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.H2("Competitor Parsing", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                 html.Button("?", id= "open-scraping", style=roundbutton)],
                 style={"margin":20}
                 ),
@@ -633,7 +656,7 @@ app.layout = html.Div([
                         dbc.Col(parsing, md=4, align='start'),
                         dbc.Col(
                             [
-                                dash_table.DataTable(data=[], id="df-scraped"),
+                                dash_table.DataTable(data=[], id="df-scraped", style_cell={"margin-bottom":10}),
                                 html.Div(
                                     [
                                     dash_table.DataTable(
@@ -653,7 +676,7 @@ app.layout = html.Div([
                                         id = 'seg-submetrics-dt',
                                         columns=(
                                             [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
-                                            [{'id': 'rev-seg-value','name':'Value ($USD)'}]
+                                            [{'id': 'rev-seg-value','name':'Percent (%)'}]
                                         ),
                                         data=[
                                             {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
@@ -662,12 +685,12 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    html.Button('Add Row', id='seg-rows', n_clicks=0),
+                                    dbc.Button('Add Row', id='seg-rows', className="ms-auto", n_clicks=0),
                                     dash_table.DataTable(
                                         id = 'tech-submetrics-dt',
                                         columns=(
                                             [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
-                                            [{'id': 'rev-tech-value','name':'Value ($USD)'}]
+                                            [{'id': 'rev-tech-value','name':'Percent (%)'}]
                                         ),
                                         data=[
                                             {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
@@ -676,12 +699,12 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    html.Button('Add Row', id='tech-rows', n_clicks=0),
+                                    dbc.Button('Add Row', id='tech-rows', className="ms-auto", n_clicks=0),
                                     dash_table.DataTable(
                                         id = 'geo-submetrics-dt',
                                         columns=(
                                             [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
-                                            [{'id': 'rev-geo-value','name':'Value ($USD)'}]
+                                            [{'id': 'rev-geo-value','name':'Percent (%)'}]
                                         ),
                                         data=[
                                             {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
@@ -690,7 +713,7 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    html.Button('Add Row', id='geo-rows', n_clicks=0),
+                                    dbc.Button('Add Row', id='geo-rows', className="ms-auto", n_clicks=0),
                                     ],
                                     id='manual-input',
                                     style={"display":"none"},
@@ -706,11 +729,11 @@ app.layout = html.Div([
             fluid=True,
         )
         ]),
-        dcc.Tab(label="Pulling", children=[
+        dbc.Tab(label="Pulling", children=[
             dbc.Container([
                 html.Div([modal_pulling]),
                 html.Div([
-                html.H1("Revenue Extraction", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                html.H2("Revenue Extraction", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                 html.Button("?", id= "open-pulling", style=roundbutton)],
                 style={"margin":20}
                 ),
@@ -740,11 +763,11 @@ app.layout = html.Div([
         ],
         ),
 
-        dcc.Tab(label="Regression", children=[
+        dbc.Tab(label="Regression", children=[
             dbc.Container([
                 html.Div([modal_regression]),
                 html.Div([
-                    html.H1("Competitor Regression", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
+                    html.H2("Competitor Regression", style={'width': '48%', 'display': 'inline', "margin":20, "margin-left":0}),
                     html.Button("?", id= "open-regression", style=roundbutton),
                     ],
                     style={"margin":20}
@@ -952,6 +975,8 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     local_df = local_df.sort_values(by=["quarter-string"])
     start_q = join_quarter_year(start_quarter, start_year)
     end_q = join_quarter_year(end_quarter, end_year)
+    print(company, metric)
+    print(local_df)
 
     try:  
         index_start = local_df["quarter-string"].tolist().index(start_q)
@@ -987,7 +1012,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         color="sub-metric",
         labels={
                 "quarter-string": "Quarters",
-                "rev": "Dollar $USD",
+                "rev": "US$ Dollars (Millions)",
                 "sub-metric": f'{metric.split()[-1]}'
             },
         title=f'{metric} for {company} from {start_q} to {end_q}')
@@ -995,9 +1020,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            #forecast = fut_forecast(forecast_data,int(forecast_years))
-            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-            #graph = fig
+            forecast = fut_forecast(forecast_data,int(forecast_years))
+            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            graph = fig
         else:
             filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
             filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
@@ -1007,7 +1032,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             "value": "US$ Dollars (Millions)",
                 },
             hover_data=["quarter-string", "value","QoQ"],
-            title=f'{metric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
+            title=f'{metric} for {company} from {start_q} to {end_q}, CAGR = {cagr}%', markers=True)
     else:
         filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
         filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
@@ -1018,17 +1043,17 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             "value": "Percentage %",
                 },
             hover_data=["quarter-string", "value","QoQ"],
-            title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}. CAGR = {cagr}%', markers=True)
+            title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}, CAGR = {cagr}%', markers=True)
         else:
             filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
             filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
             filtered_data["value"] = filtered_data["rev"]
             if forecast_check == True:
-                forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev"],axis=1)
+                forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev","QoQ"],axis=1)
                 print(forecast_data)
-                #forecast = fut_forecast(forecast_data,int(forecast_years))
-                #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-                #graph = fig
+                forecast = fut_forecast(forecast_data,int(forecast_years))
+                fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+                graph = fig
             else:
                 graph = px.line(filtered_data, x="quarter-string", y="rev",
                 labels={
@@ -1085,6 +1110,7 @@ def scrape_pdf(url, company, year, quarter, click):
     Output("seg-submetrics-dt","data"),
     Output("tech-submetrics-dt","data"),
     Output("geo-submetrics-dt","data"),
+    Output("manual-dt","columns"),
     Input("manual-company-input","value"),
     Input("manual-year-input","value"),
     Input("manual-quarter-input","value"),
@@ -1101,6 +1127,11 @@ def scrape_pdf(url, company, year, quarter, click):
     prevent_initial_call=True
 )
 def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_clicks,sr,tech_clicks,tr,geo_clicks,gr):
+    columns4=(
+        [{'id': 'revenue','name':'Revenue ($USD)'}]+
+        [{'id': 'inventory','name':'Inventory ($USD)'}]+
+        [{'id': 'capex','name':'Capex ($USD)'}]
+    )
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-manual' in changed_id:
         local_df = global_df.loc[global_df["company"] == company]
@@ -1119,17 +1150,23 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
         geo_seg_data = [
             dict({"rev-geo":rev_geo[j]}, **{c['id']: None for c in columns3[1:]}) for j in range(len(rev_geo))
         ]
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data
+        if company == "UMC" or company == "TSMC":
+            columns4=(
+                [{'id': 'revenue','name':'Revenue ($NT)'}]+
+                [{'id': 'inventory','name':'Inventory ($NT)'}]+
+                [{'id': 'capex','name':'Capex ($NT)'}]
+            )
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data,columns4
     if 'seg-rows' in changed_id:
         sr.append({c['id']: None for c in columns1})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4
     if 'tech-rows' in changed_id:
         tr.append({c['id']: None for c in columns2})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4
     if 'geo-rows' in changed_id:
         gr.append({c['id']: None for c in columns3})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
-    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr, columns4
+    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns4
 
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
@@ -1152,26 +1189,21 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
     if 'btn-reject' in changed_id:
         return 'Update has been rejected.'
     elif 'btn-approve' in changed_id: 
-        with open("data/data.json") as json_data:
-            old_data = json.load(json_data)
-            json_data.close()
+        old_data = pd.read_csv("data/data.csv").to_dict('records')
         if json_store[-1] in old_data:
             return "Data already exists in the global dataset."
         else:
-            old_data.extend(json_store)
-            with open("data/data.json","w") as json_file:
-                json.dump(old_data,json_file,indent=4,separators=(',',': '))
-                json_file.close()
+            pd.DataFrame.from_dict(json_store).to_csv('data/data.csv',mode='a',index=False,header=False)
             return f'{company} {quarter_year} has been added to the global dataset.'
     elif 'btn-undo' in changed_id:
-        with open("data/data.json") as current_json:
-            current = json.load(current_json)
-            current_json.close()
+        current = pd.read_csv("data/data.csv").to_dict('records')
+        current_df = pd.read_csv("data/data.csv")
+        print(current)
+        print(json_store[-1])
+        print(json_store[-1] in current)
         if json_store[-1] in current:
-            current = current[:-(len(json_store))]
-            with open("data/data.json","w") as json_file:
-                json.dump(current,json_file,indent=4,separators=(',',': '))
-                json_file.close()
+            current_df = current_df.iloc[:-(len(json_store)),:]
+            current_df.to_csv('data/data.csv',mode='w',index=False)
             return "Data been removed from global dataset."
         else:
             return "There is nothing left to undo."
@@ -1194,6 +1226,7 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
     prevent_initial_call=True,
 )
 def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc):
+    conv = converter.Converter()
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     manual_df = pd.DataFrame(manual, columns=[c['id'] for c in mc])
     seg_df = pd.DataFrame(seg, columns=[c['id'] for c in sc])
@@ -1217,21 +1250,19 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
                 "year":year,
                 "quarter":quarter,
                 "metric":["rev","inv","capex"],
+                "sub-metric":['','',''],
                 "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
             })
+            if company == "TSMC" or company == "UMC":
+                metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
             master_json = master_df.to_dict('records')
             metrics_json = metrics_df.to_dict('records')
-            with open("data/data.json") as json_data:
-                old_data = json.load(json_data)
-                json_data.close()
+            old_data = pd.read_csv("data/data.csv").to_dict('records')
             if master_json[-1] in old_data:
                 return "Data already exists in the global dataset."
             else:
-                old_data.extend(master_json)
-                old_data.extend(metrics_json)
-                with open("data/data.json","w") as json_file:
-                    json.dump(old_data,json_file,indent=4,separators=(',',': '))
-                    json_file.close()
+                master_df.to_csv('data/data.csv',mode='a',index=False,header=False)
+                metrics_df.to_csv('data/data.csv',mode='a',index=False,header=False)
                 return f'{company} {year} Q{quarter} has been added to the global dataset.'
         else:
             return "Unable to add to dataset. Certain values are blank."
@@ -1253,18 +1284,18 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
             "year":year,
             "quarter":quarter,
             "metric":["rev","inv","capex"],
+            "sub-metric":['','',''],
             "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
         })
+        if company == "TSMC" or company == "UMC":
+            metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
         master_json = master_df.to_dict('records')
         metrics_json = metrics_df.to_dict('records')
-        with open("data/data.json") as current_json:
-            current = json.load(current_json)
-            current_json.close()
+        current = pd.read_csv("data/data.csv").to_dict('records')
+        current_df = pd.read_csv("data/data.csv")
         if master_json[-1] in current:
-            current = current[:-(len(master_json)+len(metrics_json))]
-            with open("data/data.json","w") as json_file:
-                json.dump(current,json_file,indent=4,separators=(',',': '))
-                json_file.close()
+            current_df = current_df.iloc[:-(len(master_json)+len(metrics_json)),:]
+            current_df.to_csv('data/data.csv',mode='w',index=False)
             return "Data been removed from global dataset."
         else:
             return "There is nothing left to undo."
@@ -1434,7 +1465,7 @@ def make_regression_graph(company, submetric, predictors, startYear, startQuarte
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-regress' in changed_id:
         y_company, x_customers = regressions.preprocess(startYear, startQuarter, endYear, endQuarter, submetric, company, predictors)
-        r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig = regressions.regression(y_company, x_customers, company, predictors, startYear, startQuarter, endYear, endQuarter)
+        r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig = regressions.regression(y_company, x_customers, company, predictors, submetric, startYear, startQuarter, endYear, endQuarter)
         return prediction_fig, coeff_fig, {"display":"inline-block"}, {"display":"inline-block"}
     return go.Figure(), go.Figure(), {"display":"none"}, {"display":"none"}
 
