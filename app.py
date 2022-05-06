@@ -676,7 +676,7 @@ app.layout = html.Div([
                                         id = 'seg-submetrics-dt',
                                         columns=(
                                             [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
-                                            [{'id': 'rev-seg-value','name':'Value ($USD)'}]
+                                            [{'id': 'rev-seg-value','name':'Percent (%)'}]
                                         ),
                                         data=[
                                             {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
@@ -690,7 +690,7 @@ app.layout = html.Div([
                                         id = 'tech-submetrics-dt',
                                         columns=(
                                             [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
-                                            [{'id': 'rev-tech-value','name':'Value ($USD)'}]
+                                            [{'id': 'rev-tech-value','name':'Percent (%)'}]
                                         ),
                                         data=[
                                             {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
@@ -704,7 +704,7 @@ app.layout = html.Div([
                                         id = 'geo-submetrics-dt',
                                         columns=(
                                             [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
-                                            [{'id': 'rev-geo-value','name':'Value ($USD)'}]
+                                            [{'id': 'rev-geo-value','name':'Percent (%)'}]
                                         ),
                                         data=[
                                             {'column-{}'.format(i): (j + (i-1)*5) for i in range(1, 5)}
@@ -1110,9 +1110,6 @@ def scrape_pdf(url, company, year, quarter, click):
     Output("seg-submetrics-dt","data"),
     Output("tech-submetrics-dt","data"),
     Output("geo-submetrics-dt","data"),
-    Output("seg-submetrics-dt","columns"),
-    Output("tech-submetrics-dt","columns"),
-    Output("geo-submetrics-dt","columns"),
     Output("manual-dt","columns"),
     Input("manual-company-input","value"),
     Input("manual-year-input","value"),
@@ -1130,18 +1127,6 @@ def scrape_pdf(url, company, year, quarter, click):
     prevent_initial_call=True
 )
 def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_clicks,sr,tech_clicks,tr,geo_clicks,gr):
-    columns1=(
-        [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
-        [{'id': 'rev-seg-value','name':'Value ($USD)'}]
-    )
-    columns2=(
-        [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
-        [{'id': 'rev-tech-value','name':'Value ($USD)'}]
-    )
-    columns3=(
-        [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
-        [{'id': 'rev-geo-value','name':'Value ($USD)'}]
-    )
     columns4=(
         [{'id': 'revenue','name':'Revenue ($USD)'}]+
         [{'id': 'inventory','name':'Inventory ($USD)'}]+
@@ -1166,34 +1151,22 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
             dict({"rev-geo":rev_geo[j]}, **{c['id']: None for c in columns3[1:]}) for j in range(len(rev_geo))
         ]
         if company == "UMC" or company == "TSMC":
-            columns1=(
-                [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
-                [{'id': 'rev-seg-value','name':'Value ($NT)'}]
-            )
-            columns2=(
-                [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
-                [{'id': 'rev-tech-value','name':'Value ($NT)'}]
-            )
-            columns3=(
-                [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
-                [{'id': 'rev-geo-value','name':'Value ($NT)'}]
-            )
             columns4=(
                 [{'id': 'revenue','name':'Revenue ($NT)'}]+
                 [{'id': 'inventory','name':'Inventory ($NT)'}]+
                 [{'id': 'capex','name':'Capex ($NT)'}]
             )
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data,columns1,columns2,columns3,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data,columns4
     if 'seg-rows' in changed_id:
         sr.append({c['id']: None for c in columns1})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns1,columns2,columns3,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4
     if 'tech-rows' in changed_id:
         tr.append({c['id']: None for c in columns2})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns1,columns2,columns3,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4
     if 'geo-rows' in changed_id:
         gr.append({c['id']: None for c in columns3})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns1,columns2,columns3,columns4
-    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns1,columns2,columns3,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr, columns4
+    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns4
 
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
