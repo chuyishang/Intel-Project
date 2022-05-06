@@ -19,6 +19,7 @@ from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 import re
 from parameters import *
+import converter
 
 pd.options.mode.chained_assignment = None
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
@@ -1109,6 +1110,10 @@ def scrape_pdf(url, company, year, quarter, click):
     Output("seg-submetrics-dt","data"),
     Output("tech-submetrics-dt","data"),
     Output("geo-submetrics-dt","data"),
+    Output("seg-submetrics-dt","columns"),
+    Output("tech-submetrics-dt","columns"),
+    Output("geo-submetrics-dt","columns"),
+    Output("manual-dt","columns"),
     Input("manual-company-input","value"),
     Input("manual-year-input","value"),
     Input("manual-quarter-input","value"),
@@ -1125,6 +1130,23 @@ def scrape_pdf(url, company, year, quarter, click):
     prevent_initial_call=True
 )
 def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_clicks,sr,tech_clicks,tr,geo_clicks,gr):
+    columns1=(
+        [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
+        [{'id': 'rev-seg-value','name':'Value ($USD)'}]
+    )
+    columns2=(
+        [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
+        [{'id': 'rev-tech-value','name':'Value ($USD)'}]
+    )
+    columns3=(
+        [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
+        [{'id': 'rev-geo-value','name':'Value ($USD)'}]
+    )
+    columns4=(
+        [{'id': 'revenue','name':'Revenue ($USD)'}]+
+        [{'id': 'inventory','name':'Inventory ($USD)'}]+
+        [{'id': 'capex','name':'Capex ($USD)'}]
+    )
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-manual' in changed_id:
         local_df = global_df.loc[global_df["company"] == company]
@@ -1143,17 +1165,35 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
         geo_seg_data = [
             dict({"rev-geo":rev_geo[j]}, **{c['id']: None for c in columns3[1:]}) for j in range(len(rev_geo))
         ]
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data
+        if company == "UMC" or company == "TSMC":
+            columns1=(
+                [{'id': 'rev-seg','name':'Revenue by Segment Submetric'}]+
+                [{'id': 'rev-seg-value','name':'Value ($NT)'}]
+            )
+            columns2=(
+                [{'id': 'rev-tech','name':'Revenue by Technology Submetric'}]+
+                [{'id': 'rev-tech-value','name':'Value ($NT)'}]
+            )
+            columns3=(
+                [{'id': 'rev-geo','name':'Revenue by Geographic Submetric'}]+
+                [{'id': 'rev-geo-value','name':'Value ($NT)'}]
+            )
+            columns4=(
+                [{'id': 'revenue','name':'Revenue ($NT)'}]+
+                [{'id': 'inventory','name':'Inventory ($NT)'}]+
+                [{'id': 'capex','name':'Capex ($NT)'}]
+            )
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data,columns1,columns2,columns3,columns4
     if 'seg-rows' in changed_id:
         sr.append({c['id']: None for c in columns1})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns1,columns2,columns3,columns4
     if 'tech-rows' in changed_id:
         tr.append({c['id']: None for c in columns2})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns1,columns2,columns3,columns4
     if 'geo-rows' in changed_id:
         gr.append({c['id']: None for c in columns3})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr
-    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns1,columns2,columns3,columns4
+    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns1,columns2,columns3,columns4
 
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
@@ -1218,6 +1258,7 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
     prevent_initial_call=True,
 )
 def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc):
+    conv = converter.Converter()
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     manual_df = pd.DataFrame(manual, columns=[c['id'] for c in mc])
     seg_df = pd.DataFrame(seg, columns=[c['id'] for c in sc])
@@ -1243,6 +1284,9 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
                 "metric":["rev","inv","capex"],
                 "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
             })
+            if company == "TSMC" or company == "UMC":
+                master_df["value"] = conv.twd_usd(master_df["value"].astype(float),year,quarter)
+                metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
             master_json = master_df.to_dict('records')
             metrics_json = metrics_df.to_dict('records')
             with open("data/data.json") as json_data:
@@ -1279,6 +1323,9 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
             "metric":["rev","inv","capex"],
             "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
         })
+        if company == "TSMC" or company == "UMC":
+            master_df["value"] = conv.twd_usd(master_df["value"].astype(float),year,quarter)
+            metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
         master_json = master_df.to_dict('records')
         metrics_json = metrics_df.to_dict('records')
         with open("data/data.json") as current_json:
