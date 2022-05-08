@@ -41,7 +41,7 @@ roundbutton = {
 #global_df = pd.read_json("data/data.json")
 global_df = pd.read_csv(DATA_FILE)
 global_df = global_df.drop_duplicates()
-global_df['value'] = abs(global_df['value'].str.replace(",","").astype(float))
+global_df['value'] = abs(global_df['value'].astype(str).str.replace(",","").astype(float))
 global_df['year'] = global_df['year'].astype(int)
 global_df['quarter'] = global_df['quarter'].astype(int)
 
