@@ -464,7 +464,7 @@ SMIC,2012,3,rev_geo,Communications,46.7
 SMIC,2012,3,rev_geo,Consumer,43.1
 SMIC,2012,3,rev_geo,Others,8.7
 SMIC,2012,3,rev_seg,North America,55.2
-SMIC,2012,3,rev_seg,(2)China,35.3
+SMIC,2012,3,rev_seg,China,35.3
 SMIC,2013,4,rev,,491.8
 SMIC,2013,4,inv,,286
 SMIC,2013,4,capex,,114.3
@@ -1437,9 +1437,9 @@ UMC,2021,4,rev_tech,90nm<x<=0.13um,12
 UMC,2021,4,rev_tech,0.13um<x<=0.18um,13
 UMC,2021,4,rev_tech,0.18um<x<=0.35um,7
 UMC,2021,4,rev_tech,0.5um and above,3
-Global Foundries,2021,3,capex,,(649)
+Global Foundries,2021,3,capex,,-649
 Global Foundries,2021,3,inv,,1121
-Global Foundries,2021,4,capex,,($392)
+Global Foundries,2021,4,capex,,-392
 Global Foundries,2021,4,inv,,1078
 TSMC,2009,1,rev,,1170.3703703703704
 TSMC,2009,2,rev,,2243.0104276862626
@@ -1906,7 +1906,7 @@ SMIC,2012,3,rev_geo,Communications,46.7
 SMIC,2012,3,rev_geo,Consumer,43.1
 SMIC,2012,3,rev_geo,Others,8.7
 SMIC,2012,3,rev_seg,North America,55.2
-SMIC,2012,3,rev_seg,(2)China,35.3
+SMIC,2012,3,rev_seg,China,35.3
 SMIC,2013,4,rev,,491.8
 SMIC,2013,4,inv,,286
 SMIC,2013,4,capex,,114.3
@@ -3024,10 +3024,10 @@ UMC,2021,4,rev_tech,0.5um and above,3
 UMC,2021,4,inv,,827.0433469915894
 UMC,2021,4,capex,,528.610452160161
 Global Foundries,2021,3,rev,,1850.0
-Global Foundries,2021,3,capex,,(649)
+Global Foundries,2021,3,capex,,-649
 Global Foundries,2021,3,inv,,1121
 Global Foundries,2021,4,rev,,1700.0
-Global Foundries,2021,4,capex,,($392)
+Global Foundries,2021,4,capex,,-392
 Global Foundries,2021,4,inv,,1078
 Global Foundries,2021,3,capex,-649,
 Global Foundries,2021,3,inv,1121,
@@ -4022,7 +4022,7 @@ SMIC,2012,3,rev_geo,Communications,46.7
 SMIC,2012,3,rev_geo,Consumer,43.1
 SMIC,2012,3,rev_geo,Others,8.7
 SMIC,2012,3,rev_seg,North America,55.2
-SMIC,2012,3,rev_seg,(2)China,35.3
+SMIC,2012,3,rev_seg,China,35.3
 SMIC,2013,1,rev,,501.6
 SMIC,2013,1,inv,,284
 SMIC,2013,1,capex,,184.7
@@ -5259,10 +5259,10 @@ UMC,2021,4,rev_tech,0.5um and above,3
 UMC,2021,4,inv,,827.0433469915894
 UMC,2021,4,capex,,528.610452160161
 Global Foundries,2021,3,rev,,1850.0
-Global Foundries,2021,3,capex,,(649)
+Global Foundries,2021,3,capex,,-649
 Global Foundries,2021,3,inv,,1121
 Global Foundries,2021,4,rev,,1700.0
-Global Foundries,2021,4,capex,,($392)
+Global Foundries,2021,4,capex,,-392
 Global Foundries,2021,4,inv,,1078
 company,year,quarter,metric,sub-metric,value
 TSMC,2009,1,rev,,1170.3703703703704
@@ -6230,7 +6230,7 @@ SMIC,2012,3,rev_geo,Communications,46.7
 SMIC,2012,3,rev_geo,Consumer,43.1
 SMIC,2012,3,rev_geo,Others,8.7
 SMIC,2012,3,rev_seg,North America,55.2
-SMIC,2012,3,rev_seg,(2)China,35.3
+SMIC,2012,3,rev_seg,China,35.3
 SMIC,2013,1,rev,,501.6
 SMIC,2013,1,inv,,284
 SMIC,2013,1,capex,,184.7
@@ -7467,10 +7467,10 @@ UMC,2021,4,rev_tech,0.5um and above,3
 UMC,2021,4,inv,,827.0433469915894
 UMC,2021,4,capex,,528.610452160161
 Global Foundries,2021,3,rev,,1850.0
-Global Foundries,2021,3,capex,,(649)
+Global Foundries,2021,3,capex,,-649
 Global Foundries,2021,3,inv,,1121
 Global Foundries,2021,4,rev,,1700.0
-Global Foundries,2021,4,capex,,($392)
+Global Foundries,2021,4,capex,,-392
 Global Foundries,2021,4,inv,,1078
 UMC,2001,1,rev,,21.021.5
 UMC,2001,2,rev,,21.021.5
