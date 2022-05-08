@@ -40,6 +40,7 @@ roundbutton = {
 # Pull JSON files
 #global_df = pd.read_json("data/data.json")
 global_df = pd.read_csv(DATA_FILE)
+global_df = global_df.drop_duplicates()
 umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
@@ -993,9 +994,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     rev_filtered = rev_filtered[["quarter-string", "value"]]
     rev_filtered.columns = ["quarter-string","revenue"]
     last_index_array = len(filtered_data["value"].tolist())-1
-    quarter_diff = filtered_data["quarter"].tolist()[last_index_array] - filtered_data["quarter"].tolist()[0] + 1
-    number_quarters = filtered_data["year"].tolist()[last_index_array] - filtered_data["year"].tolist()[0] + quarter_diff
-    cagr = round((pow((filtered_data["value"].tolist()[last_index_array]/ filtered_data["value"].tolist()[0]),1/number_quarters) - 1) * 100,2)
+    quarter_diff = filtered_data["quarter"].astype(float).tolist()[last_index_array] - filtered_data["quarter"].astype(float).tolist()[0] + 1
+    number_quarters = filtered_data["year"].astype(float).tolist()[last_index_array] - filtered_data["year"].astype(float).tolist()[0] + quarter_diff
+    cagr = round((pow((filtered_data["value"].astype(float).tolist()[last_index_array]/ filtered_data["value"].astype(float).tolist()[0]),1/number_quarters) - 1) * 100,2)
 
     if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
