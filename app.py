@@ -41,6 +41,10 @@ roundbutton = {
 #global_df = pd.read_json("data/data.json")
 global_df = pd.read_csv(DATA_FILE)
 global_df = global_df.drop_duplicates()
+global_df['value'] = abs(global_df['value'].str.replace(",","").astype(float))
+global_df['year'] = global_df['year'].astype(int)
+global_df['quarter'] = global_df['quarter'].astype(int)
+
 umc = pd.read_json("data/umc_json_data.json")
 smic = pd.read_json("data/smic_json_data.json")
 gf = pd.read_json("data/gf_json_data.json")
@@ -865,7 +869,7 @@ def setStartYear(company,metric,submetric):
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
         years = local_df["year"].dropna().unique()
-        return years
+        return np.sort(years)
     return np.arange(firstYear, currYear)
 
 @app.callback(
@@ -899,7 +903,7 @@ def setEndYear(company,metric,submetric,startYear):
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
         years = local_df.loc[(local_df["year"]) >= startYear]["year"].dropna().unique()
-        return years
+        return np.sort(years)
     return np.arange(firstYear, currYear)
 
 @app.callback(
