@@ -13,9 +13,9 @@ import scraper, stocks, json, pickle, regressions
 import sklearn
 from sklearn.linear_model import LinearRegression
 import matplotlib as plt
-from prophet import Prophet
-from forecast import *
-from prophet.plot import plot_plotly, plot_components_plotly
+#from prophet import Prophet
+#from forecast import *
+#from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 import re
 from parameters import *
@@ -523,9 +523,10 @@ modal_pulling = dbc.Modal([
                     html.P([
                     "• Tickers must be listed on a US stock exchange (NYSE, NASDAQ), or they will cause an error.", html.Br(),
                     "• Once a ticker option is added, it will be available the next time the dashboard is opened.", html.Br(),
+                    "• All tickers must be pulled once per quarter to update the revenue dataset.", html.Br(),
                     "• Alpha Vantage API limits calls to 5 calls per minute. The program automatically waits until the next 5 companies can be pulled. Please keep the dashboard open while data is pulled.", html.Br(),
-                    "• When pulling more than 5 tickers, errors may occur due to the call limit. Wait at least 10 seconds and pull again.", html.Br(),
-                    "• All tickers must be pulled once per quarter to update the revenue dataset."
+                    "• When pulling more than 5 tickers, unexpected errors may occur due to the call limit. Wait at least 10 seconds and pull again.", html.Br(),
+                    "• The revenue will be in the same currency as the company's income statement. Our program automatically converts NTD to USD."
                     ]),
                     ]
                 ),
@@ -1020,9 +1021,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            forecast = fut_forecast(forecast_data,int(forecast_years))
-            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-            graph = fig
+            #forecast = fut_forecast(forecast_data,int(forecast_years))
+            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            #graph = fig
         else:
             filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
             filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
@@ -1051,9 +1052,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             if forecast_check == True:
                 forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev","QoQ"],axis=1)
                 print(forecast_data)
-                forecast = fut_forecast(forecast_data,int(forecast_years))
-                fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-                graph = fig
+                #forecast = fut_forecast(forecast_data,int(forecast_years))
+                #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+                #graph = fig
             else:
                 graph = px.line(filtered_data, x="quarter-string", y="rev",
                 labels={
@@ -1198,9 +1199,9 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
     elif 'btn-undo' in changed_id:
         current = pd.read_csv("data/data.csv").to_dict('records')
         current_df = pd.read_csv("data/data.csv")
-        print(current)
-        print(json_store[-1])
-        print(json_store[-1] in current)
+        #print(current)
+        #print(json_store[-1])
+        #print(json_store[-1] in current)
         if json_store[-1] in current:
             current_df = current_df.iloc[:-(len(json_store)),:]
             current_df.to_csv('data/data.csv',mode='w',index=False)
@@ -1350,21 +1351,22 @@ def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate, regressionOptions
             tickers = tickerVal
         elif 'btn-update-all' in changed_id:
             tickers = tickerOptions
-        old_cols = revenue_df.columns
+        #old_cols = revenue_df.columns
 
         #Pull tickers that haven't been updated yet, FIXME: Check more rigorously
-        filtered_tickers = [t for t in tickers if t not in old_cols]
-        if filtered_tickers:
-            new_df = stocks.get_revenue_list(filtered_tickers)
+        #filtered_tickers = [t for t in tickers if t not in old_cols] if tickers else []
+        if tickers:
+            new_df = stocks.get_revenue_list(tickers)
             revenue_df = pd.concat([revenue_df, new_df], axis=0)
             revenue_df = revenue_df.drop_duplicates()
-            print(revenue_df)
             revenue_df.to_csv(REVENUE_FILE, index=False)
+            new_df = new_df.round(2)
+            print(new_df)
             return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], revenue_df["company"].unique()
-        tickerSet = set(tickerVal)
-        new_df = revenue_df.loc[revenue_df["company"] in tickerSet]
-        return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], regressionOptions
-    return [],[],regressionOptions
+        #tickerSet = set(tickerVal) if tickerVal else set()
+        #new_df = revenue_df.loc[revenue_df["company"] in tickerVal]
+        #return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], regressionOptions
+    return [], [], regressionOptions
 
 @app.callback(
     Output("regression-segment-dropdown", "options"),

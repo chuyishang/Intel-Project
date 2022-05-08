@@ -3,14 +3,15 @@ import twder
 import datetime
 from datetime import date
 from forex_python.converter import CurrencyRates
+from parameters import *
 
 class Converter:
-    def __init__(self, path='data/usd_twd.csv'):
+    def __init__(self, path=USD_TWD_FILE):
         """
         Specify path to currency dataframe.
         """
         self.path = path
-        self.twd_usd_df = pd.read_csv("data/usd_twd.csv")
+        self.twd_usd_df = pd.read_csv(USD_TWD_FILE)
 
     def twd_usd(self, twd_value, year, quarter):
         """
@@ -32,7 +33,7 @@ class Converter:
                     return
             else:
                 return
-        return twd_value / twd_usd_rate
+        return float(twd_value) / float(twd_usd_rate)
 
     def usd_twd(self, usd_value, year, quarter):
         """

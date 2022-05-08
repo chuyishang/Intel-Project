@@ -1,9 +1,9 @@
 from codecs import ignore_errors
+import json
 import time
 import requests
 import pandas as pd
 import numpy as np
-import threading
 import converter
 import time
 from forex_python.converter import CurrencyRates
@@ -26,7 +26,7 @@ def get_revenue(ticker):
     #Sleeps program after every 5 calls due to call limit
     global call_count, start_time
     if call_count >= 5:
-        time.sleep(max(70 - (time.time() - start_time), 0))
+        time.sleep(60)
         call_count = 0
         start_time = time.time()
     
@@ -51,17 +51,18 @@ def get_revenue(ticker):
         revenue_df = revenue_df[pd.to_numeric(revenue_df['totalRevenue'], errors='coerce').notnull()]
 
         #Currency Conversion
-        if revenue_df["reportedCurrency"][0] == "TWD":
+        currency = revenue_df["reportedCurrency"].tolist()[0]
+        if currency == "TWD":
             revenue_df["reportedCurrency"] = "USD"
             revenue_df["totalRevenue"] = revenue_df.apply(lambda x:converter.Converter().twd_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
-        if revenue_df["reportedCurrency"][0] == "JPY":
+        if currency == "JPY":
             revenue_df["reportedCurrency"] = "JPY"
             revenue_df["totalRevenue"] = revenue_df.apply(lambda x:converter.Converter().jpy_usd(x[-1], x[0], x[1]) if x[-1] else None, axis=1)
         
         #Processing dataframe
         revenue_df.rename({"totalRevenue":"revenue"}, axis=1, inplace=True)
         revenue_df["company"] = ticker
-        revenue_df = revenue_df.round(2)
+        print(revenue_df)
         return revenue_df
     return pd.DataFrame()
 
@@ -84,5 +85,7 @@ def get_exchange_rate(fromCurr, toCurr):
     data = r.json()
     return data['Realtime Currency Exchange Rate']['Exchange Rate']
 
+#Test statements
+#print(get_revenue_list(["UMC","GFS"]))
 #print(get_revenue_list(top_customers['TSMC']))
 #print(get_revenue('AAPL'))
