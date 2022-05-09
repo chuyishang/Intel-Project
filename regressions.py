@@ -119,9 +119,10 @@ def regression(y_company, x_customers, company, customers, metric, startYear, st
     """
     Multiple linear regression model
     """
-    model_linear = LinearRegression()
-    #x_customers = add_constant(x_customers)
-    #customers.append("Intercept")
+    model_linear = LinearRegression(fit_intercept=False)
+    x_customers = add_constant(x_customers, prepend=False)
+    customers.append("Intercept")
+    print(x_customers)
     reg = model_linear.fit(x_customers, y_company)
     r_sq = model_linear.score(x_customers, y_company)
     predicted = reg.predict(x_customers)
@@ -136,12 +137,16 @@ def regression(y_company, x_customers, company, customers, metric, startYear, st
     actual_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":y_company, "Type":"Actual"})
     prediction_df = pd.concat([predicted_df, actual_df], axis=0)
     prediction_fig = px.line(prediction_df, "Quarter", "Percent Change", color="Type", title = f"Quarterly Change in Revenue for {company}: {metric}")
-
+    print(customers)
+    
+    print("Intercept: " + str(model_linear.intercept_))
+    
+    print(coefficients)
     #Linear coefficient bar graph
-    colors = ['Positive' if c > 0 else 'Negative' for c in model_linear.coef_]
+    colors = ['Positive' if c > 0 else 'Negative' for c in coefficients]
     x_combined_df = pd.DataFrame(x_customers, columns = customers)
     coeff_fig = px.bar(
-        x = x_combined_df.columns, y = model_linear.coef_, color = colors,
+        x = customers, y = coefficients, color = colors,
         color_discrete_map={'Positive':'green', 'Negative':'red'},
         labels = dict(x = 'Feature', y = 'Linear Coefficient', color = "Sign"),
         title = f'Visualizing coefficients for multiple linear regression (MLR) for {company}: {metric}'
