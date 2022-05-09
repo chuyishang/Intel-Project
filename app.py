@@ -998,9 +998,12 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     rev_filtered = rev_filtered[["quarter-string", "value"]]
     rev_filtered.columns = ["quarter-string","revenue"]
     last_index_array = len(filtered_data["value"].tolist())-1
-    quarter_diff = filtered_data["quarter"].astype(float).tolist()[last_index_array] - filtered_data["quarter"].astype(float).tolist()[0] + 1
-    number_quarters = filtered_data["year"].astype(float).tolist()[last_index_array] - filtered_data["year"].astype(float).tolist()[0] + quarter_diff
-    cagr = round((pow((filtered_data["value"].astype(float).tolist()[last_index_array]/ filtered_data["value"].astype(float).tolist()[0]),1/number_quarters) - 1) * 100,2)
+    filtered_data["quarter"] = pd.to_numeric(filtered_data["quarter"])
+    filtered_data["year"] = pd.to_numeric(filtered_data["year"])
+    filtered_data["value"] = pd.to_numeric(filtered_data["value"])
+    quarter_diff = filtered_data["quarter"].tolist()[last_index_array] - filtered_data["quarter"].tolist()[0] + 1
+    number_quarters = filtered_data["year"].tolist()[last_index_array] - filtered_data["year"].tolist()[0] + quarter_diff
+    cagr = round((pow((filtered_data["value"].tolist()[last_index_array]/ filtered_data["value"].tolist()[0]),1/number_quarters) - 1) * 100,2)
 
     if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
@@ -1107,6 +1110,8 @@ def scrape_pdf(url, company, year, quarter, click):
         new_json = scraper.pull(url, quarter, year, abbrev)
         new_df = pd.DataFrame.from_dict(new_json)
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"}, {"display":"block"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], new_json
+    new_df = pd.DataFrame()
+    return {"display":"none"}, {"display":"none"}, {"display":"none"}, {"display":"none"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], {}
 
 @app.callback(
     Output("btn-add","style"),
