@@ -1906,23 +1906,19 @@ TSMC,2005,4,rev_seg,Communication,41
 TSMC,2005,4,rev_seg,Consumer,21
 TSMC,2005,4,rev_seg,Industrial/Others,5
 TSMC,2005,4,rev_seg,Memory,1
-TSMC,2009,1,rev_tech,0.25um/0.35um,11
 TSMC,2009,1,rev_seg,Computer,26
 TSMC,2009,1,rev_seg,Communication,46
 TSMC,2009,1,rev_seg,Consumer,21
 TSMC,2009,1,rev_seg,Industrial/Others,7
-TSMC,2009,2,rev_tech,0.25um/0.35um,9
 TSMC,2009,2,rev_seg,Computer,28
 TSMC,2009,2,rev_seg,Communication,45
 TSMC,2009,2,rev_seg,Consumer,21
 TSMC,2009,2,rev_seg,Industrial/Others,6
-TSMC,2009,4,rev_tech,0.25um/0.35um,9
 TSMC,2009,4,rev_seg,Computer,3
 TSMC,2009,4,rev_seg,Communication,39
 TSMC,2009,4,rev_seg,Consumer,13
 TSMC,2009,4,rev_seg,Industrial/Others,15
 TSMC,2013,4,rev_geo,EMEA,7
-TSMC,2013,4,rev_tech,0.25um/0.35um,5
 TSMC,2021,4,rev_seg,Smartphone,44
 TSMC,2021,4,rev_seg,High Performance Computing,37
 TSMC,2021,4,rev_seg,Internet of Things,9
