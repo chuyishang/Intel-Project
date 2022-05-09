@@ -13,9 +13,9 @@ import scraper, stocks, json, pickle, regressions
 import sklearn
 from sklearn.linear_model import LinearRegression
 import matplotlib as plt
-#from prophet import Prophet
-#from forecast import *
-#from prophet.plot import plot_plotly, plot_components_plotly
+from prophet import Prophet
+from forecast import *
+from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 import re
 from parameters import *
@@ -886,7 +886,7 @@ def setStartQuarter(company,metric,submetric, startYear):
         if submetric:
             local_df = local_df.loc[(local_df["sub-metric"] == submetric)]
         quarters = local_df["quarter"].dropna().unique()
-        return quarters
+        return np.sort(quarters)
     return [1, 2, 3, 4]
 
 @app.callback(
@@ -924,7 +924,7 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
         quarters = local_df.loc[local_df["year"] == endYear]["quarter"].dropna().unique()
         if startYear == endYear:
             quarters = [q for q in quarters if q >= startQuarter]
-        return quarters
+        return np.sort(quarters)
     return [1, 2, 3, 4]
 
 #graph call back
@@ -1004,7 +1004,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     quarter_diff = filtered_data["quarter"].tolist()[last_index_array] - filtered_data["quarter"].tolist()[0] + 1
     number_quarters = filtered_data["year"].tolist()[last_index_array] - filtered_data["year"].tolist()[0] + quarter_diff
     cagr = round((pow((filtered_data["value"].tolist()[last_index_array]/ filtered_data["value"].tolist()[0]),1/number_quarters) - 1) * 100,2)
-
+    filtered_data = filtered_data.sort_values(by=["year","quarter"])
     if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
         color="sub-metric",
@@ -1014,6 +1014,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 "sub-metric": f'{metric.split()[-1]}'
             },
         title=f'{metric} for {company} from {start_q} to {end_q}')
+        graph.update_layout(barmode='stack',xaxis={'categoryorder':'array', 'categoryarray':[filtered_data['quarter-string']]})
     elif viz == "Comparison (Revenue)":
         filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
         filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
@@ -1029,9 +1030,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            #forecast = fut_forecast(forecast_data,int(forecast_years))
-            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-            #graph = fig
+            forecast = fut_forecast(forecast_data,int(forecast_years))
+            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            graph = fig
         else:
             filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
             filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
@@ -1060,9 +1061,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             if forecast_check == True:
                 forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev","QoQ"],axis=1)
                 print(forecast_data)
-                #forecast = fut_forecast(forecast_data,int(forecast_years))
-                #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-                #graph = fig
+                forecast = fut_forecast(forecast_data,int(forecast_years))
+                fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+                graph = fig
             else:
                 graph = px.line(filtered_data, x="quarter-string", y="rev",
                 labels={

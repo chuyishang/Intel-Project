@@ -132,7 +132,7 @@ def regression(y_company, x_customers, company, customers, metric, startYear, st
 
     print(f"R: {r_sq}\nPredicted: {predicted}\nCoefficient:{coefficients}")
     #Predicted vs. actual line graph
-    quarter_strings = [f"{(startQuarter + i - 1) % 4 + 1}Q{(startYear + i // 4) % 100}" for i in range(len(x_customers))]
+    quarter_strings = [f"{(startQuarter + i - 1) % 4 + 1}Q{(startYear + (i + startQuarter) // 4) % 100}" for i in range(len(x_customers))]
     predicted_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":reg.predict(x_customers), "Type":"Predicted"})
     actual_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":y_company, "Type":"Actual"})
     prediction_df = pd.concat([predicted_df, actual_df], axis=0)
