@@ -13,9 +13,9 @@ import scraper, stocks, json, pickle, regressions
 import sklearn
 from sklearn.linear_model import LinearRegression
 import matplotlib as plt
-#from prophet import Prophet
-#from forecast import *
-#from prophet.plot import plot_plotly, plot_components_plotly
+from prophet import Prophet
+from forecast import *
+from prophet.plot import plot_plotly, plot_components_plotly
 import dash_daq as daq
 import re
 from parameters import *
@@ -1029,9 +1029,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             print(forecast_data)
-            #forecast = fut_forecast(forecast_data,int(forecast_years))
-            #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-            #graph = fig
+            forecast = fut_forecast(forecast_data,int(forecast_years))
+            fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+            graph = fig
         else:
             filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
             filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
@@ -1060,9 +1060,9 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             if forecast_check == True:
                 forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev","QoQ"],axis=1)
                 print(forecast_data)
-                #forecast = fut_forecast(forecast_data,int(forecast_years))
-                #fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
-                #graph = fig
+                forecast = fut_forecast(forecast_data,int(forecast_years))
+                fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
+                graph = fig
             else:
                 graph = px.line(filtered_data, x="quarter-string", y="rev",
                 labels={
