@@ -4,3 +4,5 @@ pdfplumber
 yahoo_fin
 prophet
 twder
+forex-python
+dash-daq
