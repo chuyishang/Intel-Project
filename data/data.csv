@@ -1923,10 +1923,10 @@ TSMC,2019,2,rev_seg,Automotive,5
 TSMC,2019,2,rev_seg,Digital Consumer Electronics,6
 TSMC,2019,2,rev_seg,Others,4
 SMIC,2004,1,rev_geo,NORAM,41.4
-SMIC,2004,1,rev_geo,Taiwan,41.4
-SMIC,2004,1,rev_geo,South Korea,41.4
-SMIC,2004,1,rev_geo,Japan,41.4
-SMIC,2004,1,rev_geo,Europe,41.4
+SMIC,2004,1,rev_geo,Taiwan,13.3
+SMIC,2004,1,rev_geo,South Korea,12.2
+SMIC,2004,1,rev_geo,Japan,16.3
+SMIC,2004,1,rev_geo,Europe,15.1
 SMIC,2004,1,rev_geo,ASIAPAC,1.7
 SMIC,2004,1,rev_seg,Computer,25.1
 SMIC,2004,1,rev_seg,Communications,56
@@ -1949,8 +1949,8 @@ SMIC,2004,3,rev_geo,NORAM,41.8
 SMIC,2004,3,rev_geo,ASIAPAC,31.5
 SMIC,2004,3,rev_geo,Japan,15.6
 SMIC,2004,3,rev_geo,Europe,11.1
-SMIC,2004,3,rev_geo,Computer,20.5
-SMIC,2004,3,rev_geo,Communications,57.2
+SMIC,2004,3,rev_seg,Computer,20.5
+SMIC,2004,3,rev_seg,Communications,57.2
 SMIC,2004,3,rev_seg,Consumer,17.1
 SMIC,2004,3,rev_seg,Others,5.2
 SMIC,2004,4,rev_geo,NORAM,34.9
@@ -2942,7 +2942,7 @@ SMIC,2018,1,rev_tech,0.11/0.13  µm,7.6
 SMIC,2018,1,rev_tech,0.15/0.18  µm,38.9
 SMIC,2018,1,rev_tech,0.25/0.35  µm,3.9
 SMIC,2020,1,rev_geo,US,25.5
-SMIC,2020,1,rev_geo,Mainland China and Hong Kong,61.6
+SMIC,2020,1,rev_geo,CHINAHK,61.6
 SMIC,2020,1,rev_geo,Eurasia,12.9
 SMIC,2020,1,rev_seg,Computer,5.1
 SMIC,2020,1,rev_seg,Communications,48.9
