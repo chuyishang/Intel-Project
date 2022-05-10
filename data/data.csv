@@ -2750,7 +2750,7 @@ SMIC,2008,2,rev_tech,0.35mm,18.3
 SMIC,2008,3,rev_geo,NORAM,58.6
 SMIC,2008,3,rev_geo,ASIAPAC,34.6
 SMIC,2008,3,rev_geo,Japan,2.1
-SMIC,2008,3,rev_seg,Europe,4.7
+SMIC,2008,3,rev_geo,Europe,4.7
 SMIC,2008,3,rev_seg,Computer,5.4
 SMIC,2008,3,rev_seg,Communications,53.0
 SMIC,2008,3,rev_seg,Consumer,32.8
@@ -2764,7 +2764,7 @@ SMIC,2008,3,rev_tech,0.35 µm,19.1
 SMIC,2008,4,rev_geo,NORAM,59.9
 SMIC,2008,4,rev_geo,ASIAPAC,36.0
 SMIC,2008,4,rev_geo,Japan,1.7
-SMIC,2008,4,rev_seg,Europe,2.4
+SMIC,2008,4,rev_geo,Europe,2.4
 SMIC,2008,4,rev_seg,Computer,4.5
 SMIC,2008,4,rev_seg,Communications,45.9
 SMIC,2008,4,rev_seg,Consumer,37.5
@@ -2778,7 +2778,7 @@ SMIC,2008,4,rev_tech,0.35 µm,19.2
 SMIC,2009,1,rev_geo,NORAM,60.4
 SMIC,2009,1,rev_geo,China,32.3
 SMIC,2009,1,rev_geo,ASIAPAC,5.2
-SMIC,2009,1,rev_seg,Europe,2.1
+SMIC,2009,1,rev_geo,Europe,2.1
 SMIC,2009,1,rev_seg,Computer,4.2
 SMIC,2009,1,rev_seg,Communications,50.9
 SMIC,2009,1,rev_seg,Consumer,32.9
@@ -2793,7 +2793,7 @@ SMIC,2009,1,rev_tech,0.35 µm,28.3
 SMIC,2009,2,rev_geo,NORAM,61.4
 SMIC,2009,2,rev_geo,China,33.2
 SMIC,2009,2,rev_geo,ASIAPAC,3.9
-SMIC,2009,2,rev_seg,Europe,1.5
+SMIC,2009,2,rev_geo,Europe,1.5
 SMIC,2009,2,rev_seg,Computer,4.3
 SMIC,2009,2,rev_seg,Communications,53.5
 SMIC,2009,2,rev_seg,Consumer,36.1
