@@ -1187,7 +1187,7 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
     if 'geo-rows' in changed_id:
         gr.append({c['id']: None for c in columns3})
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr, columns4,{"display":"none"}, {"display":"none"}
-    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns4,{"display":"none"}, {"display":"none"}
+    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns4,{"display":"inline"}, {"display":"inline"}
 
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
