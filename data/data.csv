@@ -425,10 +425,13 @@ SMIC,2021,4,rev_tech,90 nm,2.5
 SMIC,2021,4,rev_tech,0.11/0.13 μm,5.3
 SMIC,2021,4,rev_tech,0.15/0.18 μm,28.6
 SMIC,2021,4,rev_tech,0.25/0.35 μm,2.9
+UMC,2004,1,rev,,767
 UMC,2004,1,rev_geo,NORAM,39
 UMC,2004,1,rev_geo,ASIAPAC,40
 UMC,2004,1,rev_geo,Europe,18
 UMC,2004,1,rev_geo,Japan,3
+UMC,2004,1,rev_tech,0.13um,7
+UMC,2004,1,rev_tech,0.15um,3
 UMC,2004,1,rev_tech,0.15um<x<=0.18um,28
 UMC,2004,1,rev_tech,0.18um<x<=0.25um,25
 UMC,2004,1,rev_tech,0.25um<x<=0.35um,25
@@ -445,6 +448,9 @@ UMC,2006,1,rev_geo,NORAM,46
 UMC,2006,1,rev_geo,ASIAPAC,43
 UMC,2006,1,rev_geo,Europe,9
 UMC,2006,1,rev_geo,Japan,2
+UMC,2006,1,rev_tech,<=90nm,13
+UMC,2006,1,rev_tech,0.13um,20
+UMC,2006,1,rev_tech,0.15um,12
 UMC,2006,1,rev_tech,0.15um<x<=0.18um,21
 UMC,2006,1,rev_tech,0.18um<x<=0.25um,5
 UMC,2006,1,rev_tech,0.25um<x<=0.35um,21
@@ -453,14 +459,18 @@ UMC,2007,1,rev_geo,NORAM,47
 UMC,2007,1,rev_geo,ASIAPAC,43
 UMC,2007,1,rev_geo,Europe,7
 UMC,2007,1,rev_geo,Japan,3
-UMC,2007,1,rev_tech,0.15um<x<=0.18um,19
-UMC,2007,1,rev_tech,0.18um<x<=0.25um,6
-UMC,2007,1,rev_tech,0.25um<x<=0.35um,19
+UMC,2007,1,rev_tech,65nm,0
+UMC,2007,1,rev_tech,90nm,21
+UMC,2007,1,rev_tech,90nm<x<=0.13um,16
+UMC,2007,1,rev_tech,0.13um<x<=0.18um,30
+UMC,2007,1,rev_tech,0.18um<x<=0.35um,25
 UMC,2007,1,rev_tech,0.5um and above,8
 UMC,2008,1,rev_geo,NORAM,58
 UMC,2008,1,rev_geo,ASIAPAC,29
 UMC,2008,1,rev_geo,Europe,11
 UMC,2008,1,rev_geo,Japan,2
+UMC,2008,1,rev_tech,65nm,7
+UMC,2008,1,rev_tech,90nm,30
 UMC,2008,1,rev_tech,90nm<x<=0.13um,21
 UMC,2008,1,rev_tech,0.13um<x<=0.18um,22
 UMC,2008,1,rev_tech,0.18um<x<=0.35um,14
@@ -469,6 +479,8 @@ UMC,2009,1,rev_geo,NORAM,53
 UMC,2009,1,rev_geo,ASIAPAC,37
 UMC,2009,1,rev_geo,Europe,9
 UMC,2009,1,rev_geo,Japan,1
+UMC,2009,1,rev_tech,65nm,11
+UMC,2009,1,rev_tech,90nm,27
 UMC,2009,1,rev_tech,90nm<x<=0.13um,16
 UMC,2009,1,rev_tech,0.13um<x<=0.18um,22
 UMC,2009,1,rev_tech,0.18um<x<=0.35um,18
@@ -615,26 +627,38 @@ UMC,2021,1,rev_tech,90nm<x<=0.13um,11
 UMC,2021,1,rev_tech,0.13um<x<=0.18um,13
 UMC,2021,1,rev_tech,0.18um<x<=0.35um,8
 UMC,2021,1,rev_tech,0.5um and above,2
+UMC,2004,2,rev,,864
 UMC,2004,2,rev_geo,NORAM,43
 UMC,2004,2,rev_geo,ASIAPAC,39
 UMC,2004,2,rev_geo,Europe,14
 UMC,2004,2,rev_geo,Japan,4
+UMC,2004,2,rev_tech,90nm,0
+UMC,2004,2,rev_tech,0.13um,6
+UMC,2004,2,rev_tech,0.15um,8
 UMC,2004,2,rev_tech,0.15um<x<=0.18um,24
 UMC,2004,2,rev_tech,0.18um<x<=0.25um,22
 UMC,2004,2,rev_tech,0.25um<x<=0.35um,28
 UMC,2004,2,rev_tech,0.5um and above,12
+UMC,2004,3,rev,,1018
 UMC,2004,3,rev_geo,NORAM,40
 UMC,2004,3,rev_geo,ASIAPAC,38
 UMC,2004,3,rev_geo,Europe,18
 UMC,2004,3,rev_geo,Japan,4
+UMC,2004,3,rev_tech,90nm,0
+UMC,2004,3,rev_tech,0.13um,9
+UMC,2004,3,rev_tech,0.15um,8
 UMC,2004,3,rev_tech,0.15um<x<=0.18um,26
 UMC,2004,3,rev_tech,0.18um<x<=0.25um,25
 UMC,2004,3,rev_tech,0.25um<x<=0.35um,22
 UMC,2004,3,rev_tech,0.5um and above,10
+UMC,2004,4,rev,,891
 UMC,2004,4,rev_geo,NORAM,49
 UMC,2004,4,rev_geo,ASIAPAC,32
 UMC,2004,4,rev_geo,Europe,16
 UMC,2004,4,rev_geo,Japan,3
+UMC,2004,4,rev_tech,90nm,8
+UMC,2004,4,rev_tech,0.13um,19
+UMC,2004,4,rev_tech,0.15um,16
 UMC,2004,4,rev_tech,0.15um<x<=0.18um,19
 UMC,2004,4,rev_tech,0.18um<x<=0.25um,12
 UMC,2004,4,rev_tech,0.25um<x<=0.35um,17
@@ -667,6 +691,9 @@ UMC,2006,2,rev_geo,NORAM,51
 UMC,2006,2,rev_geo,ASIAPAC,35
 UMC,2006,2,rev_geo,Europe,11
 UMC,2006,2,rev_geo,Japan,3
+UMC,2006,2,rev_tech,<=90nm,16
+UMC,2006,2,rev_tech,0.13um,22
+UMC,2006,2,rev_tech,0.15um,9
 UMC,2006,2,rev_tech,0.15um<x<=0.18um,20
 UMC,2006,2,rev_tech,0.18um<x<=0.25um,6
 UMC,2006,2,rev_tech,0.25um<x<=0.35um,18
@@ -675,6 +702,9 @@ UMC,2006,3,rev_geo,NORAM,60
 UMC,2006,3,rev_geo,ASIAPAC,27
 UMC,2006,3,rev_geo,Europe,10
 UMC,2006,3,rev_geo,Japan,3
+UMC,2006,3,rev_tech,<=90nm,21
+UMC,2006,3,rev_tech,0.13um,25
+UMC,2006,3,rev_tech,0.15um,7
 UMC,2006,3,rev_tech,0.15um<x<=0.18um,19
 UMC,2006,3,rev_tech,0.18um<x<=0.25um,6
 UMC,2006,3,rev_tech,0.25um<x<=0.35um,13
@@ -683,6 +713,9 @@ UMC,2006,4,rev_geo,NORAM,53
 UMC,2006,4,rev_geo,ASIAPAC,37
 UMC,2006,4,rev_geo,Europe,7
 UMC,2006,4,rev_geo,Japan,3
+UMC,2006,4,rev_tech,<=90nm,21
+UMC,2006,4,rev_tech,0.13um,20
+UMC,2006,4,rev_tech,0.15um,9
 UMC,2006,4,rev_tech,0.15um<x<=0.18um,18
 UMC,2006,4,rev_tech,0.18um<x<=0.25um,6
 UMC,2006,4,rev_tech,0.25um<x<=0.35um,17
@@ -691,22 +724,28 @@ UMC,2007,2,rev_geo,NORAM,47
 UMC,2007,2,rev_geo,ASIAPAC,43
 UMC,2007,2,rev_geo,Europe,8
 UMC,2007,2,rev_geo,Japan,2
-UMC,2007,2,rev_tech,0.15um<x<=0.18um,20
-UMC,2007,2,rev_tech,0.18um<x<=0.25um,4
-UMC,2007,2,rev_tech,0.25um<x<=0.35um,18
+UMC,2007,2,rev_tech,65nm,0
+UMC,2007,2,rev_tech,90nm,17
+UMC,2007,2,rev_tech,90nm<x<=0.13um,25
+UMC,2007,2,rev_tech,0.13um<x<=0.18um,29
+UMC,2007,2,rev_tech,0.18um<x<=0.35um,22
 UMC,2007,2,rev_tech,0.5um and above,7
 UMC,2007,3,rev_geo,NORAM,49
 UMC,2007,3,rev_geo,ASIAPAC,40
 UMC,2007,3,rev_geo,Europe,9
 UMC,2007,3,rev_geo,Japan,2
-UMC,2007,3,rev_tech,0.15um<x<=0.18um,17
-UMC,2007,3,rev_tech,0.18um<x<=0.25um,3
-UMC,2007,3,rev_tech,0.25um<x<=0.35um,17
+UMC,2007,3,rev_tech,65nm,1
+UMC,2007,3,rev_tech,90nm,24
+UMC,2007,3,rev_tech,90nm<x<=0.13um,23
+UMC,2007,3,rev_tech,0.13um<x<=0.18um,26
+UMC,2007,3,rev_tech,0.18um<x<=0.35um,20
 UMC,2007,3,rev_tech,0.5um and above,6
 UMC,2007,4,rev_geo,NORAM,51
 UMC,2007,4,rev_geo,ASIAPAC,37
 UMC,2007,4,rev_geo,Europe,10
 UMC,2007,4,rev_geo,Japan,2
+UMC,2007,4,rev_tech,65nm,3
+UMC,2007,4,rev_tech,90nm,23
 UMC,2007,4,rev_tech,90nm<x<=0.13um,22
 UMC,2007,4,rev_tech,0.13um<x<=0.18um,27
 UMC,2007,4,rev_tech,0.18um<x<=0.35um,18
@@ -715,6 +754,8 @@ UMC,2008,2,rev_geo,NORAM,50
 UMC,2008,2,rev_geo,ASIAPAC,35
 UMC,2008,2,rev_geo,Europe,13
 UMC,2008,2,rev_geo,Japan,2
+UMC,2008,2,rev_tech,65nm,5
+UMC,2008,2,rev_tech,90nm,31
 UMC,2008,2,rev_tech,90nm<x<=0.13um,21
 UMC,2008,2,rev_tech,0.13um<x<=0.18um,20
 UMC,2008,2,rev_tech,0.18um<x<=0.35um,18
@@ -723,6 +764,8 @@ UMC,2008,3,rev_geo,NORAM,60
 UMC,2008,3,rev_geo,ASIAPAC,32
 UMC,2008,3,rev_geo,Europe,6
 UMC,2008,3,rev_geo,Japan,2
+UMC,2008,3,rev_tech,65nm,7
+UMC,2008,3,rev_tech,90nm,31
 UMC,2008,3,rev_tech,90nm<x<=0.13um,20
 UMC,2008,3,rev_tech,0.13um<x<=0.18um,21
 UMC,2008,3,rev_tech,0.18um<x<=0.35um,16
@@ -731,6 +774,8 @@ UMC,2008,4,rev_geo,NORAM,57
 UMC,2008,4,rev_geo,ASIAPAC,31
 UMC,2008,4,rev_geo,Europe,10
 UMC,2008,4,rev_geo,Japan,2
+UMC,2008,4,rev_tech,65nm,8
+UMC,2008,4,rev_tech,90nm,27
 UMC,2008,4,rev_tech,90nm<x<=0.13um,22
 UMC,2008,4,rev_tech,0.13um<x<=0.18um,23
 UMC,2008,4,rev_tech,0.18um<x<=0.35um,15
@@ -739,6 +784,8 @@ UMC,2009,2,rev_geo,NORAM,47
 UMC,2009,2,rev_geo,ASIAPAC,42
 UMC,2009,2,rev_geo,Europe,10
 UMC,2009,2,rev_geo,Japan,1
+UMC,2009,2,rev_tech,65nm,12
+UMC,2009,2,rev_tech,90nm,27
 UMC,2009,2,rev_tech,90nm<x<=0.13um,19
 UMC,2009,2,rev_tech,0.13um<x<=0.18um,21
 UMC,2009,2,rev_tech,0.18um<x<=0.35um,16
@@ -767,6 +814,7 @@ UMC,2010,2,rev_geo,NORAM,46
 UMC,2010,2,rev_geo,ASIAPAC,42
 UMC,2010,2,rev_geo,Europe,11
 UMC,2010,2,rev_geo,Japan,1
+UMC,2010,2,rev_tech,40nm and below,3
 UMC,2010,2,rev_tech,40nm<x<=65nm,21
 UMC,2010,2,rev_tech,65nm<x<=90nm,18
 UMC,2010,2,rev_tech,90nm<x<=0.13um,22
@@ -777,6 +825,7 @@ UMC,2010,3,rev_geo,NORAM,46
 UMC,2010,3,rev_geo,ASIAPAC,40
 UMC,2010,3,rev_geo,Europe,13
 UMC,2010,3,rev_geo,Japan,1
+UMC,2010,3,rev_tech,40nm and below,4
 UMC,2010,3,rev_tech,40nm<x<=65nm,26
 UMC,2010,3,rev_tech,65nm<x<=90nm,14
 UMC,2010,3,rev_tech,90nm<x<=0.13um,24
@@ -898,7 +947,7 @@ UMC,2014,2,rev_geo,ASIAPAC,46
 UMC,2014,2,rev_geo,Europe,5
 UMC,2014,2,rev_geo,Japan,6
 UMC,2014,2,rev_tech,28nm and below,1
-UMC,2014,2,rev_tech,40nm <x<=28nm,21
+UMC,2014,2,rev_tech,28nm<x<=40nm,21
 UMC,2014,2,rev_tech,40nm<x<=65nm,31
 UMC,2014,2,rev_tech,65nm<x<=90nm,6
 UMC,2014,2,rev_tech,90nm<x<=0.13um,13
@@ -1017,6 +1066,7 @@ UMC,2017,3,rev_geo,NORAM,43
 UMC,2017,3,rev_geo,ASIAPAC,47
 UMC,2017,3,rev_geo,Europe,8
 UMC,2017,3,rev_geo,Japan,2
+UMC,2017,3,rev_tech,14nm and below,1
 UMC,2017,3,rev_tech,14nm<x<=28nm,15
 UMC,2017,3,rev_tech,28nm<x<=40nm,29
 UMC,2017,3,rev_tech,40nm<x<=65nm,12
@@ -1029,6 +1079,7 @@ UMC,2017,4,rev_geo,NORAM,43
 UMC,2017,4,rev_geo,ASIAPAC,45
 UMC,2017,4,rev_geo,Europe,9
 UMC,2017,4,rev_geo,Japan,3
+UMC,2017,4,rev_tech,14nm and below,2
 UMC,2017,4,rev_tech,14nm<x<=28nm,15
 UMC,2017,4,rev_tech,28nm<x<=40nm,28
 UMC,2017,4,rev_tech,40nm<x<=65nm,12
@@ -1816,34 +1867,6 @@ SMIC,2020,2,rev_seg,Communications,46.9
 SMIC,2020,2,rev_seg,Consumer,36.9
 SMIC,2020,2,rev_seg,Auto/Industrial,4.3
 SMIC,2020,2,rev_seg,Others,6.0
-TSMC,2001,4,rev_geo,NORAM,80
-TSMC,2001,4,rev_geo,ASIAPAC,13
-TSMC,2001,4,rev_geo,EMEA,3
-TSMC,2001,4,rev_geo,Japan,5
-TSMC,2001,4,rev_tech,X ≤ 0.15 µ,21
-TSMC,2001,4,rev_tech,0.15 µ < X ≤ 0.18 µ,24
-TSMC,2001,4,rev_tech,0.18 µ < X ≤ 0.25 µ,29
-TSMC,2001,4,rev_tech,0.25µ < X ≤ 0.35 µ,15
-TSMC,2001,4,rev_tech,X ≥ 0.50 µ,11
-TSMC,2001,4,rev_seg,Computer,57
-TSMC,2001,4,rev_seg,Communication,20
-TSMC,2001,4,rev_seg,Consumer,19
-TSMC,2001,4,rev_seg,Industrial / Others,2
-TSMC,2001,4,rev_seg,Memory,3
-TSMC,2005,4,rev_geo,NORAM,77
-TSMC,2005,4,rev_geo,ASIAPAC,11
-TSMC,2005,4,rev_geo,EMEA,8
-TSMC,2005,4,rev_geo,Japan,4
-TSMC,2005,4,rev_tech,90nm,17
-TSMC,2005,4,rev_tech,0.11/0.13um,32
-TSMC,2005,4,rev_tech,0.15/0.18um,32
-TSMC,2005,4,rev_tech,0.25um/0.35um,14
-TSMC,2005,4,rev_tech,0.50um+,5
-TSMC,2005,4,rev_seg,Computer,35
-TSMC,2005,4,rev_seg,Communication,41
-TSMC,2005,4,rev_seg,Consumer,21
-TSMC,2005,4,rev_seg,Industrial/Standard,5
-TSMC,2005,4,rev_seg,Memory,1
 TSMC,2009,1,rev_seg,Computer,26
 TSMC,2009,1,rev_seg,Communication,46
 TSMC,2009,1,rev_seg,Consumer,21
@@ -2100,9 +2123,6 @@ SMIC,2013,4,rev_seg,Computer,1.9
 SMIC,2013,4,rev_seg,Communications,39.8
 SMIC,2013,4,rev_seg,Consumer,48.3
 SMIC,2013,4,rev_seg,Others,10.0
-SMIC,2013,4,rev_tech,0.11/0.13 µm ,12.2
-SMIC,2013,4,rev_tech,0.15/0.18 µm ,41.5
-SMIC,2013,4,rev_tech,0.25/0.35 µm,5.4
 SMIC,2014,1,rev_geo,NORAM,46.6
 SMIC,2014,1,rev_geo,China,40.6
 SMIC,2014,1,rev_geo,Eurasia,12.8
@@ -2175,9 +2195,6 @@ SMIC,2015,2,rev_seg,Computer,4.5
 SMIC,2015,2,rev_seg,Communications,49.4
 SMIC,2015,2,rev_seg,Consumer,37.7
 SMIC,2015,2,rev_seg,Others,8.4
-SMIC,2015,2,rev_tech,0.11/0.13 µm ,10.9
-SMIC,2015,2,rev_tech,0.15/0.18 µm ,39.9
-SMIC,2015,2,rev_tech,0.25/0.35 µm,3.9
 SMIC,2015,3,rev_geo,NORAM,33.9
 SMIC,2015,3,rev_geo,China,47.9
 SMIC,2015,3,rev_geo,Eurasia,18.2
@@ -2206,8 +2223,6 @@ SMIC,2015,4,rev_tech,90 nm,2.9
 SMIC,2015,4,rev_tech,0.11/0.13 µm ,9.8
 SMIC,2015,4,rev_tech,0.15/0.18 µm ,43.7
 SMIC,2015,4,rev_tech,0.25/0.35 µm,2.7
-SMIC,2016,1,rev_tech,0.15/0.18 µm ,41.5
-SMIC,2016,1,rev_tech,0.25/0.35 µm,3.4
 SMIC,2016,2,rev_geo,NORAM,26.5
 SMIC,2016,2,rev_geo,China,52
 SMIC,2016,2,rev_geo,Eurasia,21.5
@@ -2243,9 +2258,6 @@ SMIC,2016,4,rev_seg,Computer,3.9
 SMIC,2016,4,rev_seg,Communications,44.3
 SMIC,2016,4,rev_seg,Consumer,37.4
 SMIC,2016,4,rev_seg,Others,14.4
-SMIC,2016,4,rev_tech,0.11/0.13 µm ,14.8
-SMIC,2016,4,rev_tech,0.15/0.18 µm ,34.2
-SMIC,2016,4,rev_tech,0.25/0.35 µm,2.5
 SMIC,2017,1,rev_geo,NORAM,38.4
 SMIC,2017,1,rev_geo,China,46.6
 SMIC,2017,1,rev_geo,Eurasia,15
@@ -2284,9 +2296,6 @@ SMIC,2017,3,rev_seg,Communications,45.3
 SMIC,2017,3,rev_seg,Consumer,37
 SMIC,2017,3,rev_seg,Auto/Industrial,8.1
 SMIC,2017,3,rev_seg,Others,3.8
-SMIC,2017,3,rev_tech,0.11/0.13 µm ,8.1
-SMIC,2017,3,rev_tech,0.15/0.18 µm ,37.8
-SMIC,2017,3,rev_tech,0.25/0.35 µm,3.1
 SMIC,2017,4,rev_geo,NORAM,38.1
 SMIC,2017,4,rev_geo,China,51.3
 SMIC,2017,4,rev_geo,Eurasia,10.6
@@ -2295,9 +2304,6 @@ SMIC,2017,4,rev_seg,Communications,42.5
 SMIC,2017,4,rev_seg,Consumer,37.6
 SMIC,2017,4,rev_seg,Auto/Industrial,8.8
 SMIC,2017,4,rev_seg,Others,4.5
-SMIC,2017,4,rev_tech,0.11/0.13 µm ,6.3
-SMIC,2017,4,rev_tech,0.15/0.18 µm ,37.8
-SMIC,2017,4,rev_tech,0.25/0.35 µm,3.2
 SMIC,2018,1,rev_geo,China,62.4
 SMIC,2018,1,rev_geo,Eurasia,9
 SMIC,2018,1,rev_seg,Computer,6.8
@@ -2334,10 +2340,6 @@ SMIC,2018,3,rev_seg,Communications,46.3
 SMIC,2018,3,rev_seg,Consumer,32.5
 SMIC,2018,3,rev_seg,Auto/Industrial,7.5
 SMIC,2018,3,rev_seg,Others,6.2
-SMIC,2018,3,rev_tech,55/65 nm,21
-SMIC,2018,3,rev_tech,0.11/0.13 µm ,8.7
-SMIC,2018,3,rev_tech,0.15/0.18 µm ,39.5
-SMIC,2018,3,rev_tech,0.25/0.35 µm,3.6
 SMIC,2018,4,rev_geo,NORAM,31.7
 SMIC,2018,4,rev_geo,China,57.5
 SMIC,2018,4,rev_geo,Eurasia,10.8
@@ -2346,16 +2348,13 @@ SMIC,2018,4,rev_seg,Communications,44.7
 SMIC,2018,4,rev_seg,Consumer,32.1
 SMIC,2018,4,rev_seg,Auto/Industrial,8
 SMIC,2018,4,rev_seg,Others,8.8
-SMIC,2018,4,rev_tech,55/65 nm,23
-SMIC,2018,4,rev_tech,0.11/0.13 µm ,7.3
-SMIC,2018,4,rev_tech,0.15/0.18 µm ,38.7
-SMIC,2018,4,rev_tech,0.25/0.35 µm,3.6
 SMIC,2019,1,rev_geo,United States,32.3
 SMIC,2019,1,rev_geo,China,53.9
 SMIC,2019,1,rev_geo,Eurasia,13.8
 SMIC,2019,1,rev_seg,Computer,5.1
 SMIC,2019,1,rev_seg,Communications,43
 SMIC,2019,1,rev_seg,Consumer,32.5
+SMIC,2019,1,rev_seg,Auto/Industrial,9.8
 SMIC,2019,1,rev_seg,Others,9.6
 SMIC,2019,1,rev_tech,28 nm,3
 SMIC,2019,1,rev_tech,40/45 nm,15.3
@@ -2370,7 +2369,8 @@ SMIC,2019,2,rev_geo,Eurasia,15.6
 SMIC,2019,2,rev_seg,Computer,4.6
 SMIC,2019,2,rev_seg,Communications,48.9
 SMIC,2019,2,rev_seg,Consumer,31.1
-SMIC,2019,2,rev_seg,Others,6.7
+SMIC,2019,2,rev_seg,Others,8.7
+SMIC,2019,2,rev_seg,Auto/Industrial,6.7
 SMIC,2019,2,rev_tech,28 nm,3.8
 SMIC,2019,2,rev_tech,40/45 nm,19.2
 SMIC,2019,2,rev_tech,55/65 nm,26.2
@@ -2382,9 +2382,7 @@ SMIC,2019,3,rev_seg,Computer,5.6
 SMIC,2019,3,rev_seg,Communications,46.1
 SMIC,2019,3,rev_seg,Consumer,34.9
 SMIC,2019,3,rev_seg,Others,8.6
-SMIC,2019,3,rev_tech,0.11/0.13 µm ,6.6
-SMIC,2019,3,rev_tech,0.15/0.18 µm ,35.8
-SMIC,2019,3,rev_tech,0.25/0.35 µm,4.2
+SMIC,2019,3,rev_seg,Auto/Industrial,4.8
 SMIC,2019,4,rev_geo,NORAM,22.2
 SMIC,2019,4,rev_geo,China,65.1
 SMIC,2019,4,rev_geo,Eurasia,12.7
@@ -2392,15 +2390,12 @@ SMIC,2019,4,rev_seg,Computer,5.5
 SMIC,2019,4,rev_seg,Communications,44.4
 SMIC,2019,4,rev_seg,Consumer,38.1
 SMIC,2019,4,rev_seg,Others,8.9
-SMIC,2019,4,rev_tech,55/65 nm,31.9
-SMIC,2019,4,rev_tech,0.11/0.13 µm ,6.2
-SMIC,2019,4,rev_tech,0.15/0.18 µm ,35.0
-SMIC,2019,4,rev_tech,0.25/0.35 µm,4.1
+SMIC,2019,4,rev_seg,Auto/Industrial,3.1
 UMC,2009,1,rev_seg,Computer,15
 UMC,2009,1,rev_seg,Communications,57
 UMC,2009,1,rev_seg,Consumer,25
 UMC,2009,1,rev_seg,Memory,1
-UMC,2009,1,rev_seg,Others,1
+UMC,2009,1,rev_seg,Others,2
 UMC,2009,2,rev_seg,Computer,15
 UMC,2009,2,rev_seg,Communications,62
 UMC,2009,2,rev_seg,Consumer,21
@@ -2754,7 +2749,7 @@ SMIC,2008,3,rev_geo,Europe,4.7
 SMIC,2008,3,rev_seg,Computer,5.4
 SMIC,2008,3,rev_seg,Communications,53.0
 SMIC,2008,3,rev_seg,Consumer,32.8
-SMIC,2008,3,rev_tech,Others,8.8
+SMIC,2008,3,rev_seg,Others,8.8
 SMIC,2008,3,rev_tech,0.09 µm,19.4
 SMIC,2008,3,rev_tech,0.13 µm,25.1
 SMIC,2008,3,rev_tech,0.15 µm,2.0
@@ -2768,7 +2763,7 @@ SMIC,2008,4,rev_geo,Europe,2.4
 SMIC,2008,4,rev_seg,Computer,4.5
 SMIC,2008,4,rev_seg,Communications,45.9
 SMIC,2008,4,rev_seg,Consumer,37.5
-SMIC,2008,4,rev_tech,Others,12.1
+SMIC,2008,4,rev_seg,Others,12.1
 SMIC,2008,4,rev_tech,0.09 µm,11.1
 SMIC,2008,4,rev_tech,0.13 µm,34.4
 SMIC,2008,4,rev_tech,0.15 µm,2.2
@@ -2782,7 +2777,7 @@ SMIC,2009,1,rev_geo,Europe,2.1
 SMIC,2009,1,rev_seg,Computer,4.2
 SMIC,2009,1,rev_seg,Communications,50.9
 SMIC,2009,1,rev_seg,Consumer,32.9
-SMIC,2009,1,rev_tech,Others,12.0
+SMIC,2009,1,rev_seg,Others,12
 SMIC,2009,1,rev_tech,0.065 µm,0.1
 SMIC,2009,1,rev_tech,0.09 µm,8.1
 SMIC,2009,1,rev_tech,0.13 µm,30.8
@@ -2797,7 +2792,7 @@ SMIC,2009,2,rev_geo,Europe,1.5
 SMIC,2009,2,rev_seg,Computer,4.3
 SMIC,2009,2,rev_seg,Communications,53.5
 SMIC,2009,2,rev_seg,Consumer,36.1
-SMIC,2009,2,rev_tech,Others,6.1
+SMIC,2009,2,rev_seg,Others,6.1
 SMIC,2009,2,rev_tech,0.065 µm,0.1
 SMIC,2009,2,rev_tech,0.09 µm,16.6
 SMIC,2009,2,rev_tech,0.13 µm,29.7
@@ -2827,7 +2822,7 @@ SMIC,2009,4,rev_geo,Europe,2.9
 SMIC,2009,4,rev_seg,Computer,6.2
 SMIC,2009,4,rev_seg,Communications,49.0
 SMIC,2009,4,rev_seg,Consumer,38.3
-SMIC,2009,4,rev_tech,Others,6.5
+SMIC,2009,4,rev_seg,Others,6.5
 SMIC,2009,4,rev_tech,0.065 µm,2.5
 SMIC,2009,4,rev_tech,0.09 µm,16.2
 SMIC,2009,4,rev_tech,0.13 µm,39.5
@@ -2915,13 +2910,7 @@ SMIC,2011,4,rev_seg,Computer,3.3
 SMIC,2011,4,rev_seg,Communications,44.1
 SMIC,2011,4,rev_seg,Consumer,42.5
 SMIC,2011,4,rev_seg,Others,10.1
-SMIC,2012,1,rev_tech,0.13  µm,22.7
-SMIC,2012,1,rev_tech,0.15/0.18  µm,39.4
-SMIC,2012,1,rev_tech,0.25/0.35  µm,6.7
 SMIC,2014,1,rev_seg,Computer,3
-SMIC,2014,1,rev_tech,0.13  µm,12.9
-SMIC,2014,1,rev_tech,0.15/0.18  µm,46.8
-SMIC,2014,1,rev_tech,0.25/0.35  µm,4.9
 SMIC,2016,1,rev_geo,NORAM,29.4
 SMIC,2016,1,rev_geo,China,47.2
 SMIC,2016,1,rev_geo,Eurasia,23.4
@@ -2938,9 +2927,6 @@ SMIC,2016,1,rev_tech,0.15/0.18  µm,41.5
 SMIC,2016,1,rev_tech,0.25/0.35  µm,3.4
 SMIC,2018,1,rev_geo,NORAM,28.6
 SMIC,2018,1,rev_seg,Auto/Industrial,8.5
-SMIC,2018,1,rev_tech,0.11/0.13  µm,7.6
-SMIC,2018,1,rev_tech,0.15/0.18  µm,38.9
-SMIC,2018,1,rev_tech,0.25/0.35  µm,3.9
 SMIC,2020,1,rev_geo,US,25.5
 SMIC,2020,1,rev_geo,CHINAHK,61.6
 SMIC,2020,1,rev_geo,Eurasia,12.9
@@ -2949,12 +2935,10 @@ SMIC,2020,1,rev_seg,Communications,48.9
 SMIC,2020,1,rev_seg,Consumer,35.4
 SMIC,2020,1,rev_seg,Auto/Industrial,2.9
 SMIC,2020,1,rev_seg,Others,7.7
-SMIC,2020,1,rev_tech,0.11/0.13  µm,5.4
-SMIC,2020,1,rev_tech,0.15/0.18  µm,33.4
-SMIC,2020,1,rev_tech,0.25/0.35  µm,4.3
 UMC,2005,1,rev_tech,90nm,7
 UMC,2005,1,rev_tech,0.13um,20
 UMC,2005,1,rev_tech,0.15um,12
+UMC,2005,1,rev_seg,Memory,2
 UMC,2005,1,rev_seg,Computer,20
 UMC,2005,1,rev_seg,Communications,44
 UMC,2005,1,rev_seg,Consumer,32
@@ -2978,10 +2962,6 @@ UMC,2005,4,rev_seg,Others,1
 UMC,2005,4,rev_tech,90nm,15
 UMC,2005,4,rev_tech,0.13um,23
 UMC,2005,4,rev_tech,0.15um,10
-UMC,2009,1,rev_seg,Communications,57
-UMC,2009,1,rev_seg,Others,2
-UMC,2009,1,rev_tech,65nm,11
-UMC,2009,1,rev_tech,90nm,27
 UMC,2017,2,rev_tech,14nm and below,1
 UMC,2001,1,rev,,650.6190034045187
 UMC,2001,2,rev,,639.1456369717239
@@ -3671,3 +3651,9 @@ TSMC,2021,1,capex,,8857.851505303383
 TSMC,2021,2,capex,,5996.232852115205
 TSMC,2021,3,capex,,6754.024346580737
 TSMC,2021,4,capex,,8466.537272661923
+Global Foundries,3,2021,rev,,1850
+Global Foundries,3,2021,capex,,649
+Global Foundries,3,2021,inv,,1121
+Global Foundries,4,2021,rev,,1700
+Global Foundries,4,2021,capex,,392
+Global Foundries,4,2021,inv,,1078

@@ -1,0 +1,29 @@
+company,year,quarter,metric,sub-metric,value
+TSMC,2001,4,rev_geo,NORAM,80
+TSMC,2001,4,rev_geo,ASIAPAC,13
+TSMC,2001,4,rev_geo,EMEA,3
+TSMC,2001,4,rev_geo,Japan,5
+TSMC,2001,4,rev_tech,X ≤ 0.15 µ,21
+TSMC,2001,4,rev_tech,0.15 µ < X ≤ 0.18 µ,24
+TSMC,2001,4,rev_tech,0.18 µ < X ≤ 0.25 µ,29
+TSMC,2001,4,rev_tech,0.25µ < X ≤ 0.35 µ,15
+TSMC,2001,4,rev_tech,X ≥ 0.50 µ,11
+TSMC,2001,4,rev_seg,Computer,57
+TSMC,2001,4,rev_seg,Communication,20
+TSMC,2001,4,rev_seg,Consumer,19
+TSMC,2001,4,rev_seg,Industrial / Others,2
+TSMC,2001,4,rev_seg,Memory,3
+TSMC,2005,4,rev_geo,NORAM,77
+TSMC,2005,4,rev_geo,ASIAPAC,11
+TSMC,2005,4,rev_geo,EMEA,8
+TSMC,2005,4,rev_geo,Japan,4
+TSMC,2005,4,rev_tech,90nm,17
+TSMC,2005,4,rev_tech,0.11/0.13um,32
+TSMC,2005,4,rev_tech,0.15/0.18um,32
+TSMC,2005,4,rev_tech,0.25um/0.35um,14
+TSMC,2005,4,rev_tech,0.50um+,5
+TSMC,2005,4,rev_seg,Computer,35
+TSMC,2005,4,rev_seg,Communication,41
+TSMC,2005,4,rev_seg,Consumer,21
+TSMC,2005,4,rev_seg,Industrial/Standard,5
+TSMC,2005,4,rev_seg,Memory,1

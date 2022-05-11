@@ -1,30 +1,29 @@
 from cmath import nan
 from logging import Filterer
 from threading import local
+#Dash imports
 from dash import Dash, html, dcc, Input, Output, State, callback_context, dash_table
-from matplotlib.axis import Ticker
-import plotly.express as px
-import pandas as pd
-import numpy as np
-import statsmodels.api as sm
-import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
-from datetime import datetime
-import scraper, stocks, json, pickle, regressions
-import sklearn
-from sklearn.linear_model import LinearRegression
-import matplotlib as plt
+import dash_daq as daq
+import plotly.express as px
+import plotly.graph_objs as go
+#Forecasting imports
 from prophet import Prophet
 from forecast import *
 from prophet.plot import plot_plotly, plot_components_plotly
-import dash_daq as daq
-import re
+#Import other files in directory
+import scraper, stocks, pickle, regressions, converter
 from parameters import *
-import converter
+#Data analysis imports
+import pandas as pd
+import numpy as np
+from datetime import datetime
+import re
 
 pd.options.mode.chained_assignment = None
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 
+#Styling for help buttons
 roundbutton = {
     "backgroundColor": "#15B8FC",
     "border": "2px solid #15B8FC",
@@ -38,38 +37,34 @@ roundbutton = {
     "width": 30,
 }
 
-# Pull JSON files
-#global_df = pd.read_json("data/data.json")
+#Read DATA_FILE to populate global dataset
 global_df = pd.read_csv(DATA_FILE)
 global_df = global_df.drop_duplicates()
 global_df['value'] = abs(global_df['value'].astype(str).str.replace(",","").astype(float))
 global_df['year'] = global_df['year'].astype(int)
 global_df['quarter'] = global_df['quarter'].astype(int)
 
-umc = pd.read_json("data/umc_json_data.json")
-smic = pd.read_json("data/smic_json_data.json")
-gf = pd.read_json("data/gf_json_data.json")
-
-# Read REVENUE_FILE, sets to empty df if csv is empty
+#Read REVENUE_FILE, sets to empty df if csv is empty
 try:
     revenue_df = pd.read_csv(REVENUE_FILE)
 except:
     revenue_df = pd.DataFrame()
 
-# Global dictionaries and variables
+#Global dictionaries and variables
 metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev"}
 var_to_metric = {v:k for k, v in metric_to_var.items()}
 company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC":"tsmc"}
 firstYear = 2000
 currYear = datetime.now().year
 
-# Get regression ticker options
+#Get regression predictor options
 predictor_options = revenue_df["company"].unique() if not revenue_df.empty else []
 
-# Read ticker options
+#Read ticker options
 with open(TICKER_FILE, "rb") as f:
     ticker_options = pickle.load(f)
 
+#Visualization tab input panel
 controls = dbc.Card(
     [  
         html.Div(
@@ -167,6 +162,7 @@ controls = dbc.Card(
     body=True,
 )
 
+#Scraping tab input panel
 parsing = html.Div(
     [
     dbc.Card(
@@ -265,6 +261,7 @@ parsing = html.Div(
     ]
 )
 
+#Pulling tab input panel
 puller = dbc.Card(
     [
         html.Div([
@@ -309,6 +306,7 @@ puller = dbc.Card(
     body=True
 )
 
+#Scraper tab: Automatic scraper action buttons
 buttons = html.Div(
     [
         html.Div(
@@ -329,13 +327,16 @@ buttons = html.Div(
     style={"display":"inline"},
 )
 
+#Scraper tab: Manual input action buttons
 manual_buttons = html.Div(
     [
         html.Div(
             [
-            dbc.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0),   
-            dbc.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, className="ms-auto", n_clicks=0)
-            ]   
+            dbc.ButtonGroup([
+            dbc.Button("Add to Data", id= "btn-add", style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0),   
+            dbc.Button("Undo", id= "btn-undo-manual", style={"margin-right": 10, "display":"none"}, color="primary", outline=True, n_clicks=0)])
+            ],
+            style={"margin-top":10}   
         ),
         html.Div(
             id='confirmation-msg2',
@@ -345,6 +346,7 @@ manual_buttons = html.Div(
     ],
 )
 
+#Regression tab input panel
 regression = dbc.Card(
     [
         html.Div(
@@ -421,6 +423,7 @@ regression = dbc.Card(
     body=True
 )
 
+#Visualization tab help button
 modal_viz = dbc.Modal([
                 dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
                 dbc.ModalBody([
@@ -470,6 +473,7 @@ modal_viz = dbc.Modal([
             is_open=False,
         )
 
+#Scraping tab help button
 modal_scraping = dbc.Modal([
                 dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
                 dbc.ModalBody([
@@ -478,15 +482,17 @@ modal_scraping = dbc.Modal([
                     """
                     This tab scrapes quarterly PDF reports from companies and adds the data
                     to the global data set. Additionally, this tab provides a manual option to input data."""),
-                    html.H4("Instructions"),
+                    html.H4("Automatic Scraper Instructions"),
                     html.P(["1) Enter URL to PDF for Intel Competitor that needs to be scraped.", html.Br(),
                     "2) Select from TSMC, SMIC, UMC, GFS to idetify the company that the Quarterly Report is for.", html.Br(),
                     "3) Select year and quarter of the inputted quarterly report.", html.Br(),
                     "4) Click 'Scrape PDF', and see the scraped data on the right side of the tab.", html.Br(),
-                    "5) Click 'Approve' if the data appears to be scraped properly, 'Reject' if the data looks incorrect, and 'Undo' if 'Approve' was accidentally clicked.", html.Br(),
-                    "1) [Manual Data Input] Select Company, Year, and Quarter, to see tables of metrics and submetrics to fill out.", html.Br(),
-                    "2) [Manual Data Input] Change any data labels if labels have changed from previous quarter, and after adding all data click 'Approve' to add to data set.", html.Br(),
-                    "3) [Manual Data Input] Click 'Undo' if data is accidentally added."]),
+                    "5) Click 'Approve' if the data appears to be scraped properly, 'Reject' if the data looks incorrect, and 'Undo' if 'Approve' was accidentally clicked.", html.Br(),]),
+                    html.H4("Manual Input Instructions"),
+                    html.P([
+                    "1) Select Company, Year, and Quarter, to see tables of metrics and submetrics to fill out.", html.Br(),
+                    "2) Change any data labels if labels have changed from previous quarter, and after adding all data click 'Approve' to add to data set.", html.Br(),
+                    "3) Click 'Undo' if data is accidentally added."]),
                     html.H4("Output"),
                     html.P([
                     "Data table of data that will be inputted into global data set that can be visualized in data visualization tab."
@@ -513,6 +519,7 @@ modal_scraping = dbc.Modal([
             is_open=False,
         )
 
+#Pulling tab help button
 modal_pulling = dbc.Modal([
                 dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
                 dbc.ModalBody([
@@ -552,6 +559,7 @@ modal_pulling = dbc.Modal([
             is_open=False,
         )
 
+#Regression tab help button
 modal_regression = dbc.Modal([
                 dbc.ModalHeader(dbc.ModalTitle("Information"), close_button=True),
                 dbc.ModalBody([
@@ -591,11 +599,11 @@ modal_regression = dbc.Modal([
             is_open=False,
         )
 
+#Displays Intel logo in navigation bar
 navbar = dbc.Navbar(
     dbc.Container(
         [
             html.A(
-                # Use row and col to control vertical alignment of logo / brand
                 dbc.Row(
                     [
                         dbc.Col(html.Img(src=app.get_asset_url('intellogo.png'), height="40px", width="auto")),
@@ -611,6 +619,7 @@ navbar = dbc.Navbar(
     style={"margin-bottom":10}
 )
 
+#Layout of dashboard, aggregates all the visual components
 app.layout = html.Div([
     navbar,
     dbc.Tabs([
@@ -698,7 +707,7 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    dbc.Button('Add Row', id='seg-rows', className="ms-auto", n_clicks=0),
+                                    dbc.Button('Add Row', id='seg-rows', className="ms-auto", style={"margin-top":10, "margin-bottom":10}, n_clicks=0),
                                     dash_table.DataTable(
                                         id = 'tech-submetrics-dt',
                                         columns=(
@@ -712,7 +721,7 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    dbc.Button('Add Row', id='tech-rows', className="ms-auto", n_clicks=0),
+                                    dbc.Button('Add Row', id='tech-rows', className="ms-auto", style={"margin-top":10, "margin-bottom":10}, n_clicks=0),
                                     dash_table.DataTable(
                                         id = 'geo-submetrics-dt',
                                         columns=(
@@ -726,7 +735,7 @@ app.layout = html.Div([
                                         editable=True,
                                         row_deletable=True
                                     ),
-                                    dbc.Button('Add Row', id='geo-rows', className="ms-auto", n_clicks=0),
+                                    dbc.Button('Add Row', id='geo-rows', className="ms-auto", style={"margin-top":10}, n_clicks=0),
                                     ],
                                     id='manual-input',
                                     style={"display":"none"},
@@ -823,11 +832,13 @@ app.layout = html.Div([
     ])
 ])
 
+#VISUALIZATION TAB CALLBACKS
+'''Returns metric dropdown options depending on the selected company's available data'''
 @app.callback(
     Output("metric-dropdown","options"),
     Input("company-dropdown", "value")
 )
-def setMetric(company):
+def set_metric(company):
     if company:
         local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company)]
@@ -836,7 +847,7 @@ def setMetric(company):
         return metrics
     return ["Revenue by Technology", "Revenue by Segment", "Revenue by Geography", "CapEx", "Inventory"]
 
-#viz call back options
+'''Returns visualization style options depending on the selected company's available data'''
 @app.callback(
     Output("viz-dropdown","options"),
     Output("viz-dropdown","value"),
@@ -848,7 +859,7 @@ def visualization_options(metric):
     else:
         return [],None
 
-#submetric call back
+'''Returns submetric dropdown options depending on the selected company's available data'''
 @app.callback(
     Output("submetric-dropdown","options"),
     Input("company-dropdown","value"),
@@ -863,13 +874,14 @@ def set_submetric(company,metric,viz):
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
         return local_df["sub-metric"].dropna().unique()
 
+'''Returns starting year options depending on the selected company's available data'''
 @app.callback(
     Output("start-dropdown","options"),
     Input("company-dropdown","value"),
     Input("metric-dropdown","value"),
     Input("submetric-dropdown", "value"),
 )
-def setStartYear(company,metric,submetric):
+def set_start_year(company,metric,submetric):
     if all([company, metric]):
         local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
@@ -879,6 +891,7 @@ def setStartYear(company,metric,submetric):
         return np.sort(years)
     return np.arange(firstYear, currYear)
 
+'''Returns starting quarter options depending on the selected company's available data'''
 @app.callback(
     Output("startq-dropdown","options"),
     Input("company-dropdown","value"),
@@ -886,7 +899,7 @@ def setStartYear(company,metric,submetric):
     Input("submetric-dropdown", "value"),
     Input("start-dropdown","value")
 )
-def setStartQuarter(company,metric,submetric, startYear):
+def set_start_quarter(company,metric,submetric, startYear):
     if all([company, metric, startYear]):
         local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric]) & (local_df["year"] == startYear)]
@@ -896,6 +909,7 @@ def setStartQuarter(company,metric,submetric, startYear):
         return np.sort(quarters)
     return [1, 2, 3, 4]
 
+'''Returns ending year options depending on the selected company's available data'''
 @app.callback(
     Output("end-dropdown","options"),
     Input("company-dropdown","value"),
@@ -903,7 +917,7 @@ def setStartQuarter(company,metric,submetric, startYear):
     Input("submetric-dropdown", "value"),
     Input("start-dropdown", "value"),
 )
-def setEndYear(company,metric,submetric,startYear):
+def set_end_year(company,metric,submetric,startYear):
     if all([company, metric, startYear]):
         local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
@@ -913,6 +927,7 @@ def setEndYear(company,metric,submetric,startYear):
         return np.sort(years)
     return np.arange(firstYear, currYear)
 
+'''Returns ending quarter options depending on the selected company's available data'''
 @app.callback(
     Output("endq-dropdown","options"),
     Input("company-dropdown","value"),
@@ -922,7 +937,7 @@ def setEndYear(company,metric,submetric,startYear):
     Input("startq-dropdown", "value"),
     Input("end-dropdown", "value"),
 )
-def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
+def set_end_quarter(company,metric,submetric,startYear,startQuarter,endYear):
     if all([company, metric, startYear, startQuarter, endYear]):
         local_df = global_df
         local_df = local_df.loc[(local_df["company"] == company) & (local_df["metric"] == metric_to_var[metric])]
@@ -934,7 +949,7 @@ def setEndQuarter(company,metric,submetric,startYear,startQuarter,endYear):
         return np.sort(quarters)
     return [1, 2, 3, 4]
 
-#graph call back
+'''Creates graphs on visualization tab, returns data table used in the graph'''
 @app.callback(
     Output("graph", "figure"),
     Output("dataframe","data"),
@@ -988,8 +1003,6 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     local_df = local_df.sort_values(by=["quarter-string"])
     start_q = join_quarter_year(start_quarter, start_year)
     end_q = join_quarter_year(end_quarter, end_year)
-    print(company, metric)
-    print(local_df)
 
     try:  
         index_start = local_df["quarter-string"].tolist().index(start_q)
@@ -1036,7 +1049,6 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     elif submetric == None or submetric == "NaN":
         if forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
-            print(forecast_data)
             forecast = fut_forecast(forecast_data,int(forecast_years))
             fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
             graph = fig
@@ -1067,7 +1079,6 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
             filtered_data["value"] = filtered_data["rev"]
             if forecast_check == True:
                 forecast_data = filtered_data.drop(["quarter-string","metric","revenue","rev","QoQ"],axis=1)
-                print(forecast_data)
                 forecast = fut_forecast(forecast_data,int(forecast_years))
                 fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
                 graph = fig
@@ -1082,7 +1093,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
 
     return graph,filtered_data.to_dict(), filtered_data.to_dict('records'), [{"name": i, "id": i} for i in filtered_data.columns], {"display":"inline"}
 
-# Download data callback
+'''Download data from visualization tab'''
 @app.callback(
     Output("download-data-csv","data"),
     Input("btn-data","n_clicks"),
@@ -1095,7 +1106,19 @@ def export_graph(n_clicks,dataframe):
         return dcc.send_data_frame(pd.DataFrame(dataframe).to_csv, EXPORT_FILE)
     return None
 
-# Scrape PDF callback
+'''Displays visualization tab help button'''
+@app.callback(
+    Output("modal-viz", "is_open"),
+    [Input("open-viz", "n_clicks"), Input("close-viz", "n_clicks")],
+    [State("modal-viz", "is_open")],
+)
+def toggle_modal_viz(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+#SCRAPING TAB CALLBACKS
+'''Automatic scraper on scraping tab, returns table of scraped data and action buttons'''
 @app.callback(
     Output("btn-approve","style"),
     Output("btn-reject","style"),
@@ -1121,6 +1144,7 @@ def scrape_pdf(url, company, year, quarter, click):
     new_df = pd.DataFrame()
     return {"display":"none"}, {"display":"none"}, {"display":"none"}, {"display":"none"}, new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], {}
 
+'''Enables manual input on scraping tab, returns blank tables'''
 @app.callback(
     Output("btn-add","style"),
     Output("btn-undo-manual","style"),
@@ -1189,10 +1213,8 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr, columns4,{"display":"none"}, {"display":"none"}
     return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns4,{"display":"inline"}, {"display":"inline"}
 
-# Gets called when user clicks 'Approve' or 'Reject'
+'''Updates global dataset when 'Approve', 'Reject', 'Undo' buttons are clicked for automatic scraping, returns confirmation message'''
 @app.callback(
-    #Output("btn-approve","style"),
-    #Output("btn-reject","style"),
     Output("confirmation-msg","children"),
     Input("btn-approve","n_clicks"),
     Input("btn-reject","n_clicks"),
@@ -1235,6 +1257,8 @@ def update_global(approve, reject, undo, company, year, quarter,json_store):
         else:
             return "There is nothing left to undo."
     return ""
+
+'''Updates global dataset when 'Approve', 'Reject', or 'Undo' buttons are clicked for manual input, returns confirmation message'''
 @app.callback(
     Output("confirmation-msg2","children"),
     Input("btn-add","n_clicks"),
@@ -1281,7 +1305,7 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
                 "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
             })
             if company == "TSMC" or company == "UMC":
-                metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
+                metrics_df["value"] = metrics_df["value"].apply(lambda x: conv.twd_usd(x,year,quarter))
             master_json = master_df.to_dict('records')
             metrics_json = metrics_df.to_dict('records')
             old_data = pd.read_csv("data/data.csv").to_dict('records')
@@ -1315,7 +1339,7 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
             "value":[manual_df["revenue"].tolist()[0],manual_df["inventory"].tolist()[0],manual_df["capex"].tolist()[0]],
         })
         if company == "TSMC" or company == "UMC":
-            metrics_df["value"] = conv.twd_usd(metrics_df["value"].astype(float),year,quarter)
+            metrics_df["value"] = metrics_df["value"].apply(lambda x: conv.twd_usd(x,year,quarter))
         master_json = master_df.to_dict('records')
         metrics_json = metrics_df.to_dict('records')
         current = pd.read_csv("data/data.csv").to_dict('records')
@@ -1327,7 +1351,19 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
         else:
             return "There is nothing left to undo."
 
+'''Displays scraping tab help button'''
+@app.callback(
+    Output("modal-scraping", "is_open"),
+    [Input("open-scraping", "n_clicks"), Input("close-scraping", "n_clicks")],
+    [State("modal-scraping", "is_open")],
+)
+def toggle_modal_scraping(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
 
+#PULLING TAB CALLBACKS
+'''Adds or removes a comma-separated list of tickers to the ticker dropdown'''
 @app.callback(
     Output("ticker-dropdown", "options"),
     Input("input-ticker", "value"),
@@ -1357,6 +1393,7 @@ def change_tickers(new_tickers, btnAdd, btnRemove, tickers):
             pickle.dump(tickers, f)
     return tickers
 
+'''Pulls revenue for selected or all tickers from Alpha Vantage API, returns resulting data table'''
 @app.callback(
     Output("df-pulled", "data"),
     Output("df-pulled", "columns"),
@@ -1377,23 +1414,28 @@ def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate, regressionOptions
             tickers = tickerVal
         elif 'btn-update-all' in changed_id:
             tickers = tickerOptions
-        #old_cols = revenue_df.columns
-
-        #Pull tickers that haven't been updated yet, FIXME: Check more rigorously
-        #filtered_tickers = [t for t in tickers if t not in old_cols] if tickers else []
         if tickers:
             new_df = stocks.get_revenue_list(tickers)
             revenue_df = pd.concat([revenue_df, new_df], axis=0)
             revenue_df = revenue_df.drop_duplicates()
             revenue_df.to_csv(REVENUE_FILE, index=False)
             new_df = new_df.round(2)
-            print(new_df)
             return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], revenue_df["company"].unique()
-        #tickerSet = set(tickerVal) if tickerVal else set()
-        #new_df = revenue_df.loc[revenue_df["company"] in tickerVal]
-        #return new_df.to_dict('records'), [{"name": i, "id": i} for i in new_df.columns], regressionOptions
     return [], [], regressionOptions
 
+'''Displays pulling tab help button'''
+@app.callback(
+    Output("modal-pulling", "is_open"),
+    [Input("open-pulling", "n_clicks"), Input("close-pulling", "n_clicks")],
+    [State("modal-pulling", "is_open")],
+)
+def toggle_modal_pulling(n1, n2, is_open):
+    if n1 or n2:
+        return not is_open
+    return is_open
+
+#REGRESSION TAB CALLBACKS
+'''Returns revenue segment dropdown options depending on the selected company's available data'''
 @app.callback(
     Output("regression-segment-dropdown", "options"),
     Input("regression-comp-dropdown", "value"),
@@ -1402,7 +1444,8 @@ def pull_revenue(tickerVal, tickerOptions, btnPull, btnUpdate, regressionOptions
 def display_segment(competitor):
     local_df = global_df.loc[global_df["company"] == competitor]
     return local_df["sub-metric"].dropna().unique()
-    
+
+'''Returns starting year options depending on the competitor's and predictors' available data'''
 @app.callback(
     Output("regression-start-dropdown","options"),
     Input("regression-comp-dropdown","value"),
@@ -1410,7 +1453,7 @@ def display_segment(competitor):
     Input("regression-ticker-dropdown", "value"),
     prevent_initial_call=True,
 )
-def setStartYearRegress(competitor, submetric, predictors):
+def set_start_year_regress(competitor, submetric, predictors):
     if all([competitor, submetric, predictors]):
         local_df = global_df.loc[(global_df["company"] == competitor) & (global_df["sub-metric"] == submetric)]
         local_set = set(local_df["year"].unique())
@@ -1419,6 +1462,7 @@ def setStartYearRegress(competitor, submetric, predictors):
         return sorted(list(local_set))
     return np.arange(firstYear, currYear)
 
+'''Returns starting quarter options depending on the competitor's and predictors' available data'''
 @app.callback(
     Output("regression-startq-dropdown","options"),
     Input("regression-comp-dropdown","value"),
@@ -1427,7 +1471,7 @@ def setStartYearRegress(competitor, submetric, predictors):
     Input("regression-start-dropdown","value"),
     prevent_initial_call=True
 )
-def setStartQuarterRegress(competitor, submetric, predictors, startYear):
+def set_start_quarter_regress(competitor, submetric, predictors, startYear):
     if all([competitor, submetric, predictors, startYear]):
         local_df = global_df.loc[(global_df["company"] == competitor) & (global_df["sub-metric"] == submetric) & (global_df["year"] == startYear)]
         quarters = set(local_df["quarter"].dropna().unique())
@@ -1436,6 +1480,7 @@ def setStartQuarterRegress(competitor, submetric, predictors, startYear):
         return sorted(list(quarters))
     return [1, 2, 3, 4]
 
+'''Returns ending year options depending on the competitor's and predictors' available data'''
 @app.callback(
     Output("regression-end-dropdown","options"),
     Input("regression-comp-dropdown","value"),
@@ -1444,7 +1489,7 @@ def setStartQuarterRegress(competitor, submetric, predictors, startYear):
     Input("regression-start-dropdown","value"),
     prevent_initial_call=True
 )
-def setEndYearRegress(competitor, submetric, predictors, startYear):
+def set_end_year_regress(competitor, submetric, predictors, startYear):
     if all([competitor, submetric, predictors, startYear]):
         local_df = global_df.loc[(global_df["company"] == competitor) & (global_df["sub-metric"] == submetric)]
         years = set(local_df.loc[(local_df["year"]) >= startYear]["year"].unique())
@@ -1453,6 +1498,7 @@ def setEndYearRegress(competitor, submetric, predictors, startYear):
         return sorted(list(years))
     return np.arange(firstYear, currYear)
 
+'''Returns ending quarter options depending on the competitor's and predictors' available data'''
 @app.callback(
     Output("regression-endq-dropdown","options"),
     Input("regression-comp-dropdown","value"),
@@ -1463,7 +1509,7 @@ def setEndYearRegress(competitor, submetric, predictors, startYear):
     Input("regression-end-dropdown","value"),
     prevent_initial_call=True
 )
-def setEndQuarterRegress(competitor, submetric, predictors, startYear, startQuarter, endYear):
+def set_end_quarter_regress(competitor, submetric, predictors, startYear, startQuarter, endYear):
     if all([competitor, submetric, predictors, startYear, startQuarter, endYear]):
         local_df = global_df.loc[(global_df["company"] == competitor) & (global_df["sub-metric"] == submetric)]
         quarters = set(local_df.loc[local_df["year"] == endYear]["quarter"].unique()) if startYear != endYear else set([q for q in [1, 2, 3, 4] if q >= startQuarter])
@@ -1472,11 +1518,10 @@ def setEndQuarterRegress(competitor, submetric, predictors, startYear, startQuar
         return sorted(list(quarters))
     return [1, 2, 3, 4]
 
+'''Generates 2 regression plots: predicted vs. actual revenue growth, linear coefficients for each predictor'''
 @app.callback(
     Output("regression-graph1", "figure"),
     Output("regression-graph2", "figure"),
-    #Output("df-regression", "data"),
-    #Output("df-regression", "columns"),
     Output("regression-graph-block","style"),
     Output("regression-table-block","style"),
     Input("regression-comp-dropdown","value"),
@@ -1497,36 +1542,7 @@ def make_regression_graph(company, submetric, predictors, startYear, startQuarte
         return prediction_fig, coeff_fig, {"display":"inline-block"}, {"display":"inline-block"}
     return go.Figure(), go.Figure(), {"display":"none"}, {"display":"none"}
 
-@app.callback(
-    Output("modal-viz", "is_open"),
-    [Input("open-viz", "n_clicks"), Input("close-viz", "n_clicks")],
-    [State("modal-viz", "is_open")],
-)
-def toggle_modal_viz(n1, n2, is_open):
-    if n1 or n2:
-        return not is_open
-    return is_open
-
-@app.callback(
-    Output("modal-scraping", "is_open"),
-    [Input("open-scraping", "n_clicks"), Input("close-scraping", "n_clicks")],
-    [State("modal-scraping", "is_open")],
-)
-def toggle_modal_scraping(n1, n2, is_open):
-    if n1 or n2:
-        return not is_open
-    return is_open
-
-@app.callback(
-    Output("modal-pulling", "is_open"),
-    [Input("open-pulling", "n_clicks"), Input("close-pulling", "n_clicks")],
-    [State("modal-pulling", "is_open")],
-)
-def toggle_modal_pulling(n1, n2, is_open):
-    if n1 or n2:
-        return not is_open
-    return is_open
-
+'''Displays regression tab help button'''
 @app.callback(
     Output("modal-regression", "is_open"),
     [Input("open-regression", "n_clicks"), Input("close-regression", "n_clicks")],
@@ -1537,7 +1553,7 @@ def toggle_modal_regression(n1, n2, is_open):
         return not is_open
     return is_open
 
-
+'''Formats quarter and year into quarter-string for x-axis labels on visualizations'''
 def join_quarter_year(quarter, year):
     return str(year)[-2:]+ "Q" + str(quarter)
 

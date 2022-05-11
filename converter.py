@@ -17,6 +17,7 @@ class Converter:
         """
         Retrieves equivalent USD value from given year and quarter.
         """
+        twd_value = float(twd_value)
         q_key = {1: "Jan ", 2: "Apr ", 3:"Jul ", 4:"Oct "}
         q_month = {1: 1, 2: 4, 3: 7, 4: 10}
         key = q_key[quarter] + str(year)[-2:]
@@ -33,7 +34,7 @@ class Converter:
                     return
             else:
                 return
-        return float(twd_value) / float(twd_usd_rate)
+        return twd_value / twd_usd_rate
 
     def usd_twd(self, usd_value, year, quarter):
         """

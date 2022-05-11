@@ -60,8 +60,6 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
             new_df.rename(columns={'revenue': f'{c.lower()}_revenue'}, inplace=True)
             customers_df = customers_df.merge(new_df, on=["year", "quarter"], how='outer')
     
-    print("Customers Dataframe", customers_df)
-
     """
     customers_df = stocks.get_revenue(customers[0])
     customers_df.rename(columns={'revenue': 'placeholder'}, inplace=True)
@@ -94,7 +92,6 @@ def preprocess(start_year, start_quarter, end_year, end_quarter, metric, company
     Extract pctRevChange for company into numpy array
     """
     merged_df["pctRevChange"] = pd.to_numeric(merged_df.value).pct_change()
-    print("Merged DF", merged_df)
     y_company = merged_df.pctRevChange[1:].to_numpy()
     
     """
@@ -122,26 +119,16 @@ def regression(y_company, x_customers, company, customers, metric, startYear, st
     model_linear = LinearRegression(fit_intercept=False)
     x_customers = add_constant(x_customers, prepend=False)
     customers.append("Intercept")
-    print(x_customers)
     reg = model_linear.fit(x_customers, y_company)
     r_sq = model_linear.score(x_customers, y_company)
     predicted = reg.predict(x_customers)
     coefficients = model_linear.coef_
-    print(f"Y Company: {y_company}, X Customer: {x_customers}")
-
-
-    print(f"R: {r_sq}\nPredicted: {predicted}\nCoefficient:{coefficients}")
     #Predicted vs. actual line graph
     quarter_strings = [f"{(startQuarter + i - 1) % 4 + 1}Q{(startYear + (i + startQuarter) // 4) % 100}" for i in range(len(x_customers))]
     predicted_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":reg.predict(x_customers), "Type":"Predicted"})
     actual_df = pd.DataFrame({"Quarter":quarter_strings, "Percent Change":y_company, "Type":"Actual"})
     prediction_df = pd.concat([predicted_df, actual_df], axis=0)
-    prediction_fig = px.line(prediction_df, "Quarter", "Percent Change", color="Type", title = f"Quarterly Change in Revenue for {company}: {metric}")
-    print(customers)
-    
-    print("Intercept: " + str(model_linear.intercept_))
-    
-    print(coefficients)
+    prediction_fig = px.line(prediction_df, "Quarter", "Percent Change", color="Type", title = f"Quarterly Revenue Growth for {company}: {metric} from {quarter_strings[0]} to {quarter_strings[-1]}")
     #Linear coefficient bar graph
     colors = ['Positive' if c > 0 else 'Negative' for c in coefficients]
     x_combined_df = pd.DataFrame(x_customers, columns = customers)
@@ -149,7 +136,7 @@ def regression(y_company, x_customers, company, customers, metric, startYear, st
         x = customers, y = coefficients, color = colors,
         color_discrete_map={'Positive':'green', 'Negative':'red'},
         labels = dict(x = 'Feature', y = 'Linear Coefficient', color = "Sign"),
-        title = f'Visualizing coefficients for multiple linear regression (MLR) for {company}: {metric}'
+        title = f'Multiple Linear Regression Coefficients for {company}: {metric} from {quarter_strings[0]} to {quarter_strings[-1]}'
     )
 
     return r_sq, predicted, coefficients, model_linear, reg, prediction_fig, coeff_fig
