@@ -1,3 +1,4 @@
+from cmath import nan
 from logging import Filterer
 from threading import local
 from dash import Dash, html, dcc, Input, Output, State, callback_context, dash_table
@@ -324,6 +325,8 @@ buttons = html.Div(
             style={"display":"none"}
         ),    
     ],
+    id = "auto-parsing-buttons",
+    style={"display":"inline"},
 )
 
 manual_buttons = html.Div(
@@ -662,7 +665,11 @@ app.layout = html.Div([
                         dbc.Col(parsing, md=4, align='start'),
                         dbc.Col(
                             [
-                                dash_table.DataTable(data=[], id="df-scraped", style_cell={"margin-bottom":10}),
+                                html.Div(
+                                    dash_table.DataTable(data=[], id="df-scraped", style_cell={"margin-bottom":10}),
+                                    id = 'auto-parsing-dt',
+                                    style = {"display":"inline"},
+                                ),
                                 html.Div(
                                     [
                                     dash_table.DataTable(
@@ -1123,6 +1130,8 @@ def scrape_pdf(url, company, year, quarter, click):
     Output("tech-submetrics-dt","data"),
     Output("geo-submetrics-dt","data"),
     Output("manual-dt","columns"),
+    Output("auto-parsing-dt","style"),
+    Output("auto-parsing-buttons","style"),
     Input("manual-company-input","value"),
     Input("manual-year-input","value"),
     Input("manual-quarter-input","value"),
@@ -1168,17 +1177,17 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
                 [{'id': 'inventory','name':'Inventory ($NT)'}]+
                 [{'id': 'capex','name':'Capex ($NT)'}]
             )
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data,columns4,{"display":"none"}, {"display":"none"}
     if 'seg-rows' in changed_id:
         sr.append({c['id']: None for c in columns1})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4,{"display":"none"}, {"display":"none"}
     if 'tech-rows' in changed_id:
         tr.append({c['id']: None for c in columns2})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr,columns4,{"display":"none"}, {"display":"none"}
     if 'geo-rows' in changed_id:
         gr.append({c['id']: None for c in columns3})
-        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr, columns4
-    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns4
+        return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"}, sr,tr,gr, columns4,{"display":"none"}, {"display":"none"}
+    return {"display":"none"}, {"display":"none"}, {"display":"none"},{"display":"none"}, sr,tr,gr,columns4,{"display":"none"}, {"display":"none"}
 
 # Gets called when user clicks 'Approve' or 'Reject'
 @app.callback(
@@ -1197,22 +1206,28 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
 def update_global(approve, reject, undo, company, year, quarter,json_store):
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     quarter_year = join_quarter_year(quarter, year)
-    
+
     if 'btn-reject' in changed_id:
         return 'Update has been rejected.'
     elif 'btn-approve' in changed_id: 
         old_data = pd.read_csv("data/data.csv").to_dict('records')
+        json_store = pd.DataFrame.from_dict(json_store)
+        if "sub-metric" not in json_store.columns:
+            json_store.insert(4,"sub-metric","")
+        json_store = json_store.to_dict('records')
         if json_store[-1] in old_data:
             return "Data already exists in the global dataset."
         else:
             pd.DataFrame.from_dict(json_store).to_csv('data/data.csv',mode='a',index=False,header=False)
             return f'{company} {quarter_year} has been added to the global dataset.'
     elif 'btn-undo' in changed_id:
-        current = pd.read_csv("data/data.csv").to_dict('records')
+        json_store = pd.DataFrame.from_dict(json_store)
+        if "sub-metric" not in json_store.columns:
+            json_store.insert(4,"sub-metric",np.nan)
+        json_store = json_store.drop(columns="sub-metric")
+        json_store = json_store.to_dict('records')
+        current = pd.read_csv("data/data.csv").drop(columns="sub-metric").to_dict('records')
         current_df = pd.read_csv("data/data.csv")
-        #print(current)
-        #print(json_store[-1])
-        #print(json_store[-1] in current)
         if json_store[-1] in current:
             current_df = current_df.iloc[:-(len(json_store)),:]
             current_df.to_csv('data/data.csv',mode='w',index=False)
