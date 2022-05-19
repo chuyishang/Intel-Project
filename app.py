@@ -40,7 +40,7 @@ roundbutton = {
 #Read DATA_FILE to populate global dataset
 global_df = pd.read_csv(DATA_FILE)
 global_df = global_df.drop_duplicates()
-global_df['value'] = abs(global_df['value'].astype(str).str.replace(",","").astype(float))
+global_df['value'] = global_df['value'].astype(str).str.replace(",","").astype(float)
 global_df['year'] = global_df['year'].astype(int)
 global_df['quarter'] = global_df['quarter'].astype(int)
 
@@ -51,7 +51,7 @@ except:
     revenue_df = pd.DataFrame()
 
 #Global dictionaries and variables
-metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev"}
+metric_to_var = {"Revenue by Technology": "rev_tech", "Revenue by Segment": "rev_seg", "Revenue by Geography": "rev_geo", "CapEx": "capex", "Inventory": "inv", "Revenue":"rev", "Gross Margin":"gross_margin"}
 var_to_metric = {v:k for k, v in metric_to_var.items()}
 company_abbrev = {"SMIC": "smic", "UMC": "umc", "Global Foundries": "gf", "TSMC":"tsmc"}
 firstYear = 2000
@@ -686,7 +686,8 @@ app.layout = html.Div([
                                         columns=(
                                             [{'id': 'revenue','name':'Revenue ($USD)'}]+
                                             [{'id': 'inventory','name':'Inventory ($USD)'}]+
-                                            [{'id': 'capex','name':'Capex ($USD)'}]
+                                            [{'id': 'capex','name':'Capex ($USD)'}]+
+                                            [{'id': 'gross_margin','name':'Gross Margin (%)'}]
                                         ),
                                         data=[
                                             {'column-{}'.format(i): (j + (i-1)*3) for i in range(1, 3)}
@@ -845,7 +846,7 @@ def set_metric(company):
         metrics = local_df["metric"].dropna().unique()
         metrics = [var_to_metric[m] for m in metrics]
         return metrics
-    return ["Revenue by Technology", "Revenue by Segment", "Revenue by Geography", "CapEx", "Inventory"]
+    return ["Revenue by Technology", "Revenue by Segment", "Revenue by Geography", "CapEx", "Inventory", "Revenue", "Gross Margin"]
 
 '''Returns visualization style options depending on the selected company's available data'''
 @app.callback(
@@ -854,7 +855,7 @@ def set_metric(company):
     Input("metric-dropdown","value")
 )
 def visualization_options(metric):
-    if metric != "CapEx" and metric != "Inventory" and metric != "Revenue" and metric != None:
+    if metric != "CapEx" and metric != "Inventory" and metric != "Revenue" and metric != "Gross Margin" and metric != None:
         return ["Comparison (Percent)","Comparison (Revenue)","Individual (Percent)", "Individual (Revenue)"],"Comparison (Percent)"
     else:
         return [],None
@@ -971,7 +972,7 @@ def set_end_quarter(company,metric,submetric,startYear,startQuarter,endYear):
     prevent_initial_call=True,
 )
 def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_year, end_quarter,forecast_check,forecast_years):
-    if metric == "CapEx" or metric == "Inventory" or metric == "Revenue":
+    if metric == "CapEx" or metric == "Inventory" or metric == "Revenue" or metric == "Gross Margin":
         submetric = None
     graph = go.Figure()
     graph.update_layout(
@@ -1023,7 +1024,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     filtered_data["value"] = pd.to_numeric(filtered_data["value"])
     quarter_diff = filtered_data["quarter"].tolist()[last_index_array] - filtered_data["quarter"].tolist()[0] + 1
     number_quarters = filtered_data["year"].tolist()[last_index_array] - filtered_data["year"].tolist()[0] + quarter_diff
-    cagr = round((pow((filtered_data["value"].tolist()[last_index_array]/ filtered_data["value"].tolist()[0]),1/number_quarters) - 1) * 100,2)
+    cagr = round(abs(pow((filtered_data["value"].tolist()[last_index_array]/ filtered_data["value"].tolist()[0]),1/number_quarters) - 1) * 100,2)
     filtered_data = filtered_data.sort_values(by=["year","quarter"])
     if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
@@ -1046,8 +1047,18 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 "sub-metric": f'{metric.split()[-1]}'
             },
         title=f'{metric} for {company} from {start_q} to {end_q}')
+    #individual metrics
     elif submetric == None or submetric == "NaN":
-        if forecast_check == True:
+        if metric == "Gross Margin":
+            filtered_data["value_percent"] = filtered_data["value"].apply(lambda x: str(x)+"%")
+            graph = px.line(filtered_data, x="quarter-string", y="value",
+            labels={
+            "quarter-string": "Quarters",
+            "value": "Percentage %",
+                },
+            hover_data=["quarter-string", "value"],
+            title=f'{metric} for {company} from {start_q} to {end_q}', markers=True)
+        elif forecast_check == True:
             forecast_data = filtered_data.drop(["quarter-string","metric"],axis=1)
             forecast = fut_forecast(forecast_data,int(forecast_years))
             fig = plot_plotly(forecast[0], forecast[1], xlabel="Date", ylabel="Value of Metric")
@@ -1062,9 +1073,11 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 },
             hover_data=["quarter-string", "value","QoQ"],
             title=f'{metric} for {company} from {start_q} to {end_q}, CAGR = {cagr}%', markers=True)
+    #individual submetric
     else:
         filtered_data["QoQ"] = filtered_data.value.pct_change().mul(100).round(2)
         filtered_data["QoQ"] = filtered_data["QoQ"].apply(lambda x: str(x)+"%")
+        #Graph for individual submetric by percent
         if viz == "Individual (Percent)":
             graph = px.line(filtered_data, x="quarter-string", y="value",
             labels={
@@ -1073,6 +1086,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
                 },
             hover_data=["quarter-string", "value","QoQ"],
             title=f'{metric}: {submetric} for {company} from {start_q} to {end_q}, CAGR = {cagr}%', markers=True)
+        #Graph for individual submetric in dollars
         else:
             filtered_data = filtered_data.join(rev_filtered.set_index('quarter-string'), on='quarter-string')
             filtered_data["rev"] = [round(a*b,2) for a,b in zip([float(x)/100 for x in filtered_data["value"].tolist()],[float(x) for x in filtered_data["revenue"].tolist()])]
@@ -1175,7 +1189,8 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
     columns4=(
         [{'id': 'revenue','name':'Revenue ($USD)'}]+
         [{'id': 'inventory','name':'Inventory ($USD)'}]+
-        [{'id': 'capex','name':'Capex ($USD)'}]
+        [{'id': 'capex','name':'Capex ($USD)'}] +
+        [{'id': 'gross_margin','name':'Gross Margin (%)'}]
     )
     changed_id = [p['prop_id'] for p in callback_context.triggered][0]
     if 'btn-manual' in changed_id:
@@ -1199,7 +1214,8 @@ def manual_input_dfs(company,year,quarter,click,columns1,columns2,columns3,seg_c
             columns4=(
                 [{'id': 'revenue','name':'Revenue ($NT)'}]+
                 [{'id': 'inventory','name':'Inventory ($NT)'}]+
-                [{'id': 'capex','name':'Capex ($NT)'}]
+                [{'id': 'capex','name':'Capex ($NT)'}]+
+                [{'id': 'gross_margin','name':'Gross Margin (%)'}]
             )
         return {"display":"inline"}, {"display":"inline"}, {"display":"inline"},{"display":"inline"},rev_seg_data, tech_seg_data, geo_seg_data,columns4,{"display":"none"}, {"display":"none"}
     if 'seg-rows' in changed_id:
@@ -1306,10 +1322,19 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
             })
             if company == "TSMC" or company == "UMC":
                 metrics_df["value"] = metrics_df["value"].apply(lambda x: conv.twd_usd(x,year,quarter))
+            gross_margin_df = pd.DataFrame({
+                "company":company,
+                "year":year,
+                "quarter":quarter,
+                "metric":["gross_margin"],
+                "sub-metric":[''],
+                "value":[manual_df["gross_margin"].tolist()[0]],
+            })
+            metrics_df = metrics_df.append(gross_margin_df)
             master_json = master_df.to_dict('records')
             metrics_json = metrics_df.to_dict('records')
             old_data = pd.read_csv("data/data.csv").to_dict('records')
-            if master_json[-1] in old_data:
+            if metrics_json[-1] in old_data:
                 return "Data already exists in the global dataset."
             else:
                 master_df.to_csv('data/data.csv',mode='a',index=False,header=False)
@@ -1340,11 +1365,20 @@ def upload_manual(add,undo,company,year,quarter,manual,seg,tech,geo,mc,sc,tc,gc)
         })
         if company == "TSMC" or company == "UMC":
             metrics_df["value"] = metrics_df["value"].apply(lambda x: conv.twd_usd(x,year,quarter))
+        gross_margin_df = pd.DataFrame({
+                "company":company,
+                "year":year,
+                "quarter":quarter,
+                "metric":["gross_margin"],
+                "sub-metric":[''],
+                "value":[manual_df["gross_margin"].tolist()[0]],
+            })
+        metrics_df = metrics_df.append(gross_margin_df)
         master_json = master_df.to_dict('records')
         metrics_json = metrics_df.to_dict('records')
         current = pd.read_csv("data/data.csv").to_dict('records')
         current_df = pd.read_csv("data/data.csv")
-        if master_json[-1] in current:
+        if metris_json[-1] in current:
             current_df = current_df.iloc[:-(len(master_json)+len(metrics_json)),:]
             current_df.to_csv('data/data.csv',mode='w',index=False)
             return "Data been removed from global dataset."
