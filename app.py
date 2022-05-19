@@ -1024,7 +1024,7 @@ def make_graph(company, metric, viz, submetric, start_year, start_quarter, end_y
     filtered_data["value"] = pd.to_numeric(filtered_data["value"])
     quarter_diff = filtered_data["quarter"].tolist()[last_index_array] - filtered_data["quarter"].tolist()[0] + 1
     number_quarters = filtered_data["year"].tolist()[last_index_array] - filtered_data["year"].tolist()[0] + quarter_diff
-    cagr = round(abs(pow((filtered_data["value"].tolist()[last_index_array]/ filtered_data["value"].tolist()[0]),1/number_quarters) - 1) * 100,2)
+    cagr = round(abs(pow((filtered_data["value"].tolist()[last_index_array]/ (filtered_data["value"].tolist()[0]+0.00001)),1/number_quarters) - 1) * 100,2)
     filtered_data = filtered_data.sort_values(by=["year","quarter"])
     if viz == "Comparison (Percent)":
         graph = px.bar(filtered_data, x="quarter-string", y="value",
