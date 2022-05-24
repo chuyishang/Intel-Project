@@ -2,17 +2,20 @@
 
 ---
 
-This is the repository for the Intel project! Here's the broad file structure:
+This is the repository for the IFS competitor intelligence dashboard. Here's the broad file structure:
 
 ```
 data
-	- data.json (the full data)
-workspace
-	- any individual files/tests
+	- data.csv (the full data)
+	- revenue.csv (full customer data)
+	- usd_twd.csv (historical conversion between USD and TWD)
+app.py (the dash application)
 scraper.py (the core scraper module)
-aggregate.py (for pulling data)
-dashboard.py (the dash application)
-test_data.py (test suite for the scraped data)
+aggregate.py (for pulling competitor data)
+stocks.py (for pulling ticker data)
+regressions.py (for conducting regressions)
+forecast.py (a wrapper around Prophet)
+converter.py (for currentcy conversion)
+parameters.py (storing constants for the program)
 ```
-
-Make sure you communicate clearly about who is working on what file. It might be helpful, as least in the beginning, to push to things to the workspace folder.
+To launch the dashboard from the terminal, first run `pip3 install -r requirements.txt`. Then run `python3 app.py`.
